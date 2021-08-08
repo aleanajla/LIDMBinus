@@ -7,27 +7,36 @@ const Home = () => {
     return (
         <View style={styles.pages}>
             <View style = {styles.header}>
-                <Bell1 style = {styles.bell} />
-                <User style= {styles.user}/>
+                <View style = {styles.welcome}>
+                    <Text>Welcome back,</Text>
+                    <Text style = {{paddingLeft: 10}}>Andrew Willy</Text>
+                </View>
+                <View style = {styles.imgHeader}>
+                    <Bell1 styles = {styles.bell}/>
+                    <User styles = {styles.user}/>
+                </View>
             </View>
         </View>
     )
 }
 
-export default Home;
-
 const styles = StyleSheet.create({
-    pages : {
-        flex : 1,
-        backgroundColor : '#F6F5F5'
+    welcome :{
+        paddingLeft: 30
     },
-    bell:{
-        
+    pages : {
+        //flex : 1,
+        backgroundColor : '#F6F5F5'
     },
     header :{
         flexDirection : 'row'
     },
-    user: {
-        
+    bell :{
+        // justifyContent: 'flex-End'
+    },
+    imgHeader :{
+        flexDirection : 'row'
     }
 })
+
+export default Home;

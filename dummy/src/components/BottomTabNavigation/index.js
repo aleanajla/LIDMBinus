@@ -1,8 +1,15 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
-import TabItem from '../Tabitem';
+import TabItem from '../TabItem';
 
 const BottomTabNavigation = ({ state, descriptors, navigation }) => {
+
+    // const focusedOptions = descriptors[state.routes[state.index].key].options;
+
+    // if (focusedOptions.tabBarVisible === false) {
+    //   return null;
+    // }
+
     return (
         <View style={styles.container}>
             {state.routes.map((route, index) => {
@@ -18,20 +25,20 @@ const BottomTabNavigation = ({ state, descriptors, navigation }) => {
 
             const onPress = () => {
                 const event = navigation.emit({
-                type: 'tabPress',
-                target: route.key,
-                canPreventDefault: true,
+                    type: 'tabPress',
+                    target: route.key,
+                    canPreventDefault: true,
                 });
 
                 if (!isFocused && !event.defaultPrevented) {
                 // The `merge: true` option makes sure that the params inside the tab screen are preserved
-                navigation.navigate({ name: route.name, merge: true });
+                   navigation.navigate({ name: route.name, merge: true });
                 }
             };
 
             const onLongPress = () => {
                 navigation.emit({
-                type: 'tabLongPress',
+                //type: 'tabLongPress',
                 target: route.key,
                 });
             };
@@ -57,8 +64,8 @@ const styles = StyleSheet.create({
         flexDirection : 'row',
         backgroundColor : '#28527A',
         justifyContent : 'space-between',
-        paddingLeft : 1, //STOP RIBUT BROTHER brother spread love not hate --awai
-        paddingTop : 13, // STOP THE HATE MAN love each other like god love you --awai
+        paddingLeft : 1, 
+        paddingTop : 13, 
         paddingBottom : 18
     }
 })

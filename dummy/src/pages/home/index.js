@@ -1,14 +1,33 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
+import { Bell1, User} from '../../assets'
 
-const home = () => {
+const Home = () => {
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Home Screen anida</Text>
+        <View style={styles.pages}>
+            <View style = {styles.header}>
+                <Bell1 style = {styles.bell} />
+                <User style= {styles.user}/>
+            </View>
         </View>
     )
 }
 
-export default home
+export default Home;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    pages : {
+        flex : 1,
+        backgroundColor : '#F6F5F5'
+    },
+    bell:{
+        
+    },
+    header :{
+        flexDirection : 'row'
+    },
+    user: {
+        
+    }
+})

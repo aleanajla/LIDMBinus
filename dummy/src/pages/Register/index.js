@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, Button, SafeAreaView, Alert, Image} from 'react-native'
 
-const register = () => {
+const Register = () => {
     return (
         <View style={{flexDirection: row, flex: 1, alignItems: 'center', justifyContent: 'center'}}>
             <Image source={require('./logo-kampus-merdeka.png')}/>
@@ -22,7 +22,7 @@ const register = () => {
     )
 }
 
-export default register;
+export default Register;
 
 const styles = StyleSheet.create({
     underline: {textDecorationLine: 'underline'},

@@ -1,58 +1,58 @@
-import arrow_back_ios from './arrow_back_ios.svg'
-import arrow_back_triangle from './arrow_back_triangle.svg'
-import arrow_foward_triangle from './arrow_foward_triagle.svg'
-import arrow_right_blue from './arrow_right_blue.svg'
-import arrow_right_white from './arrow_right_white'
-import arrow_triangle_down_blue from './arrow_triangle_down_blue.svg'
-import bell1 from './bell(1).svg'
-import book from './book.svg'
-import calender from './calender.svg'
-import check from './check.svg'
-import circle_plus from './circle_plus.svg'
-import clipboard from './clipboard.svg'
-import download from './download.svg'
-import edit from './edit.svg'
-import home from './home.svg'
-import info_blue from './infoinfo_blue.svg'
-import info_white from './infor_white.svg'
-import logout from '.logout.svg'
-import scroll_to_top from './Scroll to top.svg'
-import settings from './settings.svg'
-import share_white from './share_white.svg'
-import sort from './sort.svg'
-import study from './study'
-import user from './user (2).svg'
-import user_black from './user_black.svg'
-import vectoreye from './Vectoreye.svg'
-import eye_closed from './eye-clogo_kampus_merdeka.svg'
+import Arrow_back_ios from './arrow_back_ios.svg'
+import Arrow_back_triangle from './arrow_back_triangle.svg'
+import Arrow_forward_triangle from './arrow_forward_triangle.svg'
+import Arrow_right_blue from './arrow_right_blue.svg'
+import Arrow_right_white from './arrow_right_white.svg'
+import Arrow_triangle_down_blue from './arrow_triangle_down_blue.svg'
+import Bell1 from './bell (1).svg'
+import Book from './book.svg'
+import Calender from './calender.svg'
+import Check from './check.svg'
+import Circle_plus from './circle_plus.svg'
+import Clipboard from './clipboard.svg'
+import Download from './download.svg'
+import Edit from './edit.svg'
+import Home from './home.svg'
+import Info_blue from './info_blue.svg'
+import Info_white from './info_white.svg'
+import Logout from './logout.svg'
+import Scroll_to_top from './Scroll to Top.svg'
+import Settings from './settings.svg'
+import Share_white from './share_white.svg'
+import Sort from './sort.svg'
+import Study from './study.svg'
+import User from './profile (1).svg'
+import User_black from './user_black.svg'
+import Vectoreye from './Vectoreye.svg'
+import Eye_closed from './eye-closed.svg'
 
 
 export{
-    arrow_back_ios,
-    arrow_back_triangle,
-    arrow_foward_triangle,
-    arrow_right_blue,
-    arrow_right_white,
-    arrow_triangle_down_blue,
-    bell1,
-    book,
-    calender,
-    check,
-    circle_plus,
-    clipboard,
-    download,
-    edit,
-    home,
-    info_blue
-    info_white,
-    logout,
-    scroll_to_top,
-    settings,
-    share_white,
-    sort,
-    study,
-    user,
-    user_black,
-    vectoreye,
-    eye_closed
+    Arrow_back_ios,
+    Arrow_back_triangle,
+    Arrow_forward_triangle,
+    Arrow_right_blue,
+    Arrow_right_white,
+    Arrow_triangle_down_blue,
+    Bell1,
+    Book,
+    Calender,
+    Check,
+    Circle_plus,
+    Clipboard,
+    Download,
+    Edit,
+    Home,
+    Info_blue,
+    Info_white,
+    Logout,
+    Scroll_to_top,
+    Settings,
+    Share_white,
+    Sort,
+    Study,
+    User,
+    User_black,
+    Vectoreye,
+    Eye_closed
 }

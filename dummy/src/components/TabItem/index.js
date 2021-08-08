@@ -1,38 +1,42 @@
 import React from 'react'
-import { StyleSheet, Text, TouchableOpacity } from 'react-native'
+import { View, StyleSheet, Text, TouchableOpacity } from 'react-native'
 import { WARNA_UTAMA } from '../../utils/constants'
-import {study, calender, home, book, clipboard} from '../../assets'
+import {Book, Clipboard, Home, Calender, Study} from '../../assets'
 
 const TabItem = ({label, isFocused, onLongPress, onPress}) => {
     
     const Icon = () => {
-        if(label === "home"){
-            return <home/>;
+
+        if(label === "Perpus"){
+            return <Book/>;
         }
-        if(label === "perpus"){
-            return <book/>;
+        if(label === "Score"){
+            return <Clipboard/>;
         }
-        if(label === "score"){
-            return <clipboard/>;
+        if(label === "Home"){
+            return <Home/>;
         }
-        if(label === "calender"){
-            return <calender/>;
+        if(label === "Calender"){
+            return <Calender/>;
         }
-        if(label === "learning"){
-            return <study/>;
+        if(label === "Learning"){
+            return <Study/>;
         }
     }
 
     return (
-        <TouchableOpacity
-            onPress={onPress}
-            onLongPress={onLongPress}
-            style={styles.container}
-            >
-            <Text style={styles.text}>
-                {label}
-            </Text>
-        </TouchableOpacity>
+        <View>
+            <TouchableOpacity
+                onPress={onPress}
+                onLongPress={onLongPress}
+                style={styles.container}
+                >
+                    {/* <Icon /> */}
+                {<Text style={styles.text}>
+                {label.toUpperCase()}
+                </Text>}
+            </TouchableOpacity>
+        </View>
     )
 }
 

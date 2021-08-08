@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-const score = () => {
+const Score = () => {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text>Score Screen</Text>
@@ -9,6 +9,6 @@ const score = () => {
     )
 }
 
-export default score
+export default Score
 
 const styles = StyleSheet.create({})

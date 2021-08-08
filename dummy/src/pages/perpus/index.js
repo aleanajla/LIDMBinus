@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-const perpus = () => {
+const Perpus = () => {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text>Library Screen</Text>
@@ -9,6 +9,6 @@ const perpus = () => {
     )
 }
 
-export default perpus
+export default Perpus;
 
 const styles = StyleSheet.create({})

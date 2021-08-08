@@ -1,8 +1,8 @@
-import Home from './Home'
-import Learning from './Learning'
-import Perpus from './Perpus'
-import Schedule from './Schedule'
-import Score from './Score'
+import Home from './home'
+import Learning from './learning'
+import Perpus from './perpus'
+import Schedule from './schedule'
+import Score from './score'
 
 export{
     Home,
@@ -11,4 +11,3 @@ export{
     Schedule,
     Score
 }
-

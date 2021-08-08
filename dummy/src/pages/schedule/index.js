@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-const schedule = () => {
+const Schedule = () => {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text>Schedule Screen</Text>
@@ -9,6 +9,6 @@ const schedule = () => {
     )
 }
 
-export default schedule
+export default Schedule;
 
 const styles = StyleSheet.create({})

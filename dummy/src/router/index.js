@@ -2,19 +2,21 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {home, learning, perpus, schedule, score} from '../pages'
+import { Home, Learning, Perpus, Schedule, Score } from '../pages';
+import { BottomTabNavigator } from '../components';
+
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const MainApp = () => {
     return(
-        <Tab.Navigator>
-            <Tab.Screen name="learning" component={learning} />
-            <Tab.Screen name="perpus" component={perpus} />
-            <Tab.Screen name="home" component={home} />
-            <Tab.Screen name="schedule" component={schedule} />
-            <Tab.Screen name="score" component={score} />
+        <Tab.Navigator tabBar={props => <BottomTabNavigator {...props}/>} >
+            <Tab.Screen name="Perpus" component={Perpus} options={{headerShown: false}}/>
+            <Tab.Screen name="Score" component={Score} options={{headerShown: false}}/>
+            <Tab.Screen name="Home" component={Home} options={{headerShown: false}}/>
+            <Tab.Screen name="Schedule" component={Schedule} options={{headerShown: false}}/>
+            <Tab.Screen name="Learning" component={Learning} options={{headerShown: false}}/>
         </Tab.Navigator>
     )
 }

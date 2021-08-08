@@ -9,6 +9,6 @@ const learning = () => {
     )
 }
 
-export default learning
+export default learning;
 
 const styles = StyleSheet.create({})

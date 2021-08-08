@@ -1,14 +1,14 @@
-import home from './home'
-import learning from './learning'
-import perpus from './perpus'
-import schedule from './schedule'
-import score from './score'
+import Home from './Home'
+import Learning from './Learning'
+import Perpus from './Perpus'
+import Schedule from './Schedule'
+import Score from './Score'
 
 export{
-    home,
-    learning,
-    perpus,
-    schedule,
-    score
+    Home,
+    Learning,
+    Perpus,
+    Schedule,
+    Score
 }
 

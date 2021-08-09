@@ -28,7 +28,7 @@ import Eye_closed from './eye-closed.svg'
 import Bad from './Bad.png'
 import Enough from './Enough.png'
 import Good from './Good.png'
-import VeryBad from './Very Bad.png'
+import VeryBad from './VeryBad.png'
 import VeryGood from './VeryGood.png'
 
 

@@ -12,8 +12,8 @@ const Home = () => {
                     <Text style = {{fontSize: 20,fontWeight: 'bold', color: WARNA_SEKUNDER}}>Andrew Willy</Text>
                 </View>
                 <View style = {styles.imgHeader}>
-                    <Bell1 styles = {styles.bell}/>
-                    <User styles = {styles.user}/>
+                    <Bell1 style = {styles.bell}/>
+                    <User style = {styles.user}/>
                 </View>
             </View>
             <View style = {[styles.garis, styles.shadow]}/>
@@ -35,26 +35,34 @@ const styles = StyleSheet.create({
         paddingTop: 15,
         backgroundColor: '#F6F5F5'
     },
-    bell :{
-        // justifyContent: 'flex-End'
-        
-    },
     imgHeader :{
         flexDirection : 'row',
-        left :120,
-        justifyContent : 'space-between',
-        flex: 0.4
+        justifyContent : 'flex-end',
+        paddingRight : 20,
+        // justifyContent : 'space-between',
+        flex: 1
+    },
+    bell :{
+        fontSize : 25, 
+        padding : 17,
+        right:10,
+        top:3.5
     },
     garis:{
         paddingTop: 8,
         borderBottomColor: '#28527A',
         borderBottomWidth: 1,
+        // elevation: 5,
     },
     shadow :{
-        shadowColor: '#000000',
-        shadowOffset: {width: 4, height: 4},
-        shadowOpacity: 10,
-        shadowRadius: 10,
+        // shadowColor: '#000000',
+        // shadowOffset: {
+        //     width: 0, 
+        //     height: 4
+        // },
+        // shadowOpacity: 10,
+        // shadowRadius: 10,
+        // elevation:10
     }
 })
 

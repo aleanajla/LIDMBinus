@@ -25,6 +25,11 @@ import User from './Profile (1).svg'
 import User_black from './user_black.svg'
 import Vectoreye from './Vectoreye.svg'
 import Eye_closed from './eye-closed.svg'
+import Bad from './Bad.png'
+import Enough from './Enough.png'
+import Good from './Good.png'
+import VeryBad from './Very Bad.png'
+import VeryGood from './VeryGood.png'
 
 
 export{
@@ -54,5 +59,10 @@ export{
     User,
     User_black,
     Vectoreye,
-    Eye_closed
+    Eye_closed,
+    Bad,
+    Enough,
+    Good,
+    VeryBad,
+    VeryGood
 }

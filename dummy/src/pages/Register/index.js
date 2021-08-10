@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Button, SafeAreaView, Alert, Image} from 'react
 const Register = () => {
     return (
         <View style={{flexDirection: row, flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-            <Image source={require('./logo-kampus-merdeka.png')}/>
+            {/* <Image source={require('./logo-kampus-merdeka.png')}/> */}
 
             <Button 
                 onPress = {onPressCreateAccount}
@@ -24,7 +24,7 @@ const Register = () => {
 
 export default Register;
 
-const styles = StyleSheet.create({
-    underline: {textDecorationLine: 'underline'},
+// const styles = StyleSheet.create({
+//     underline: {textDecorationLine: 'underline'},
     
-    );
+//     );

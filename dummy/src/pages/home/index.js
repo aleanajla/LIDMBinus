@@ -1,9 +1,9 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { Bell1, User} from '../../assets'
 
-const Home = () => {
+const Home = ({navigation}) => {
     return (
         <View style={styles.pages}>
             <View style = {styles.header}>
@@ -17,6 +17,24 @@ const Home = () => {
                 </View>
             </View>
             <View style = {[styles.garis, styles.shadow]}/>
+            
+            <View style ={styles.countainerRow}>
+                <View style={[styles.containerLeftRight, {flex:1}]}>
+                    <Text> Halo </Text>
+                </View>
+                <View style={[styles.containerLeftRight, {flex:1}]}>
+                    <Text> Saya </Text>
+                </View> 
+            </View>
+
+            {/* button */}
+            <View style={styles.containerLeftRight}>
+                <TouchableOpacity onPress= {() => { 
+                    navigation.navigate('Register', {type:'test'});
+                }}>
+                    <Text style={{alignItems:'center'}}>Register</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }
@@ -63,6 +81,24 @@ const styles = StyleSheet.create({
         // shadowOpacity: 10,
         // shadowRadius: 10,
         // elevation:10
+    },
+    countainerRow:{
+        marginBottom: 5,
+        padding:15,
+        flexDirection: 'row',
+    },
+    containerLeftRight:{
+        backgroundColor: '#FFF',
+        padding: 15,
+        margin: 15,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 4
+        },
+        shadowOpacity: 0.2,
+        shadowRadius: 5,
+        elevation: 5,
     }
 })
 

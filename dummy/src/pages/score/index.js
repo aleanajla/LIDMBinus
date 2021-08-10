@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Image } from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { Download, Info_blue, VeryGood, VeryBad, Good, Enough, Bad} from '../../assets'
 //import { VeryGood, VeryBad, Good, Enough, Bad } from '../../assets'
@@ -24,7 +24,7 @@ const Score = () => {
                             borderBottomWidth: 2,}}/>
                     </View>
                     <View style={styles.grading}>
-                        <View>
+                        <View style={{alignItems:'center'}}>
                             <Text style={styles.gradingTitle}>Grading</Text>
                         </View>
                         <View style = {{paddingTop: 8,
@@ -40,14 +40,19 @@ const Score = () => {
                             </View>
                             <View style ={styles.indikasi}>
                                 <Text style ={styles.ketIndikasi}>Very Good</Text>
+                                <Image source={require('../../assets/icons/Good.png')}/>
                                 <Text style ={styles.ketIndikasi}>Good</Text>
+                                <Image source={require('../../assets/icons/Good.png')}/>
                                 <Text style ={styles.ketIndikasi}>Enough</Text>
+                                <Image source={require('../../assets/icons/Good.png')}/>
                                 <Text style ={styles.ketIndikasi}>Bad</Text>
+                                <Image source={require('../../assets/icons/Good.png')}/>
                                 <Text style ={styles.ketIndikasi}>Very Bad</Text>
+                                <Image source={require('../../assets/icons/Bad.png')}/>
                             </View>
                         </View>
+                        </View>
                     </View>
-                </View>
                 {/* <View style = {style.scoreContainer}>
                         <View style = {style.scoreHeader}>
                             <Text>Presentation skills</Text>
@@ -126,7 +131,14 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 20,
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
-        alignItems : 'center'
+        shadowColor: '#000',
+        shadowOpacity: 0.2,
+        shadowRadius: 5,
+        shadowOffset: {
+            width: 0,
+            height: 4
+        },
+        elevation: 5,
     },
     gradingTitle:{
         flexDirection : 'row',

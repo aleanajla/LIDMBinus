@@ -34,6 +34,7 @@ import Youtube2 from './youtube(2).png'
 import Youtube3 from './youtube(3).png'
 import Youtube4 from './youtube(4).png'
 import Youtube5 from './youtube(5).png'
+import LogoKampus from './logo.png'
 
 export {
     Badge,
@@ -72,4 +73,5 @@ export {
     Youtube3,
     Youtube4,
     Youtube5,
+    LogoKampus
 }

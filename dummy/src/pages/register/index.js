@@ -1,7 +1,7 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, TouchableOpacity, paddingTop, TextInput } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 
-const signIn = () => {
+const Register = () =>{
     return (
         <View style={styles.page}>
             <View style={styles.up}>
@@ -10,31 +10,19 @@ const signIn = () => {
                 />
             </View>
             <View style={styles.loginText}>
-                <Text style={styles.textBold}>Email</Text>
-                <View style={styles.box}>
-                    <TextInput style={styles.input} placeholder="Email"/>
-                </View>
-                <Text style={[styles.textBold, {paddingTop:31}]}>Password</Text>
-                <View style={styles.box}>
-                    <TextInput style={styles.input} placeholder="Password"/>
-                </View>
+                <Text style={styles.textBold}>Pilih Posisi yang Sesuai</Text>
+                <View style={styles.box}></View>
             </View>
             <View style={[ styles.down, {paddingTop: 30}]}>
                 <TouchableOpacity>
-                    <Text style={styles.text}>LOGIN</Text>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text style={styles.text}>SIGN UP</Text>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text style={{fontSize: 15, color: '#28527A', fontWeight: 'bold'}}>Forgot Password? </Text>
+                    <Text style={styles.text}>SELANJUTNYA</Text>
                 </TouchableOpacity>
             </View>
         </View>
     )
 }
 
-export default signIn;
+export default Register;
 
 const styles = StyleSheet.create({
     page:{
@@ -48,7 +36,7 @@ const styles = StyleSheet.create({
     loginText:{
         paddingRight : 50,
         paddingLeft : 50,
-        paddingTop : 40,
+        paddingTop : 70,
     },
     textBold:{
         fontSize : 18,
@@ -60,13 +48,13 @@ const styles = StyleSheet.create({
         alignItems : 'center'
     },
     text:{
-        width: 122,
-        height : 34,
+        width: 130,
+        height : 37,
         fontSize: 15,
         fontWeight : 'bold',
         color: '#28527A',
-        paddingTop: 7,
-        paddingLeft : 37,
+        padding: 8,
+        paddingLeft : 14,
         margin : 9,
         // alignItems: 'center',
         backgroundColor : '#FAD586',
@@ -83,8 +71,5 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 10,
         borderBottomRightRadius: 10,
         borderTopRightRadius: 10,
-    },
-    input:{
-        marginLeft: 10,
     }
 })

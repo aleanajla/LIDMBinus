@@ -76,6 +76,22 @@ const News = () => {
                         peraturan menteri, tidak sampai mengubah Peraturan...
                     </Text>
                     <Text style= {styles.more}>read more...</Text>
+import { StyleSheet, Text, View } from 'react-native'
+
+const News = () => {
+    return (
+        <View>
+            <View style = {styles.conHeader}>
+                <View style = {styles.optHeader}>
+                    <Text style = {styles.titleHeader}>Dashboard</Text>
+                </View>
+
+                <View style = {styles.optHeader}>
+                    <Text style = {styles.titleHeader}>Program</Text>
+                </View>
+
+                <View style = {styles.optHeader2}>
+                    <Text style = {styles.titleHeader2}>News</Text>
                 </View>
             </View>
         </View>
@@ -123,6 +139,12 @@ const styles = StyleSheet.create({
 
     },
     optHeader: {
+    conHeader: {
+        flexDirection: 'row',
+        padding:15
+    },
+    optHeader: {
+        // padding: 20,
         margin:8,
         // backgroundColor : '#ffffff',
         width: 105,
@@ -202,4 +224,5 @@ const styles = StyleSheet.create({
         padding : 2,
         
     },
+    }
 })

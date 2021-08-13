@@ -81,8 +81,7 @@ export {
     LogoKampus,
     Nadiem,
     Nadiem2,
-    KampusMerdeka
+    KampusMerdeka,
     info1,
-    info2,
-    LogoKampus
+    info2
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Home, Learning, Perpus, Schedule, Score } from '../pages';
+import { Home, Learning, Perpus, Schedule, Score, Program, News, CreateAccount, Register, SignIn, Profile} from '../pages';
 import { BottomTabNavigator } from '../components';
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType';
 import { Book4, Group8, Home2,Study4,Test4 } from '../assets';
@@ -27,7 +27,7 @@ const MainApp = () => {
                                 width: 20,
                                 height: 20
                             }}
-                       />
+                       />   
                     }
                 }}/>
                 <Tab.Screen name="Score" component={Score} options={{headerShown: false}}/>
@@ -43,11 +43,20 @@ const router = () => {
     return (
         <Stack.Navigator>
             <Stack.Screen name="MainApp" component={MainApp} options={{headerShown: false}} />
+            <Stack.Screen name="Program" component= {Program} options= {{headerShown: false}}/>
+            <Stack.Screen name="News" component={News} options={{headerShown: false}}/>
+            <Stack.Screen name="Register" component={Register} options={{headerShown: false}}/>
+            <Stack.Screen name="CreateAccount" component={CreateAccount} options={{headerShown: false}}/>
+            <Stack.Screen name="SignIn" component={SignIn} options={{headerShown: false}}/>
+            <Stack.Screen name="Profile" component={Profile} options={{headerShown: false}}/>
         </Stack.Navigator>
     )
 }
 
 
-export default router
+export default router;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+
+
+})

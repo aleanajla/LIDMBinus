@@ -1,11 +1,24 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, ScrollView} from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity} from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { Bell1, User } from '../../assets'
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType'
 import ImageBackground from 'react-native/Libraries/Image/ImageBackground'
+import {SliderBox} from 'react-native-image-slider-box'
+import { useNavigation } from '@react-navigation/core'
+import { Program, News } from '../../pages/index.js'
+
+const image = [
+    require('../../assets/slider/poster.jpg'),
+    require('../../assets/slider/poster2.png'),
+    require('../../assets/slider/poster3.png'),
+    require('../../assets/slider/poster4.png')
+];
 
 const Home = () => {
+    
+    const navigation = useNavigation();
+
     return (
         <ScrollView>
             <View style={styles.pages}>
@@ -23,22 +36,47 @@ const Home = () => {
                     <View style = {styles.garis}/>
                 </View>
                 <View style = {styles.conHeader}>
-                    <View style = {styles.optHeader2}>
-                        <Text style = {styles.titleHeader2}>Dashboard</Text>
-                    </View>
-
-                    <View style = {styles.optHeader}>
-                        <Text style = {styles.titleHeader}>Program</Text>
-                    </View>
-
-                    <View style = {styles.optHeader}>
-                        <Text style = {styles.titleHeader}>News</Text>
-                    </View>
+                    
+                    <TouchableOpacity
+                    onPress={()=>{
+                        navigation.navigate('Home',{type:''});
+                    }}> 
+                            <View style = {styles.optHeader2}>
+                                <Text style = {styles.titleHeader2}>Dashboard</Text>
+                            </View>
+                    </TouchableOpacity>
+                    
+                    <TouchableOpacity
+                    onPress={()=>{
+                        navigation.navigate('Program',{type:''});
+                    }}> 
+                        <View style = {styles.optHeader}>
+                            <Text style = {styles.titleHeader}>Program</Text>
+                        </View>
+                    </TouchableOpacity>
+                    
+                    <TouchableOpacity
+                    onPress={()=>{
+                        navigation.navigate('News',{type:''});
+                    }}>
+                        <View style = {styles.optHeader}>
+                            <Text style = {styles.titleHeader}>News</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+                <View style = {styles.sliderCon}>
+                    <SliderBox images = {image}
+                        sliderBoxHeight = {162}
+                        onCurrentImagePressed={index => console.warn(`image ${index} pressed`)}
+                        dotColor="#FAD586"
+                        inactiveDotColor="#28527A"
+                        ImageComponentStyle={{borderRadius: 20, width: '94%', marginTop: 5,marginBottom:30}}
+                    />
                 </View>
                 <View style = {styles.conPoints}>
                     <View>
                         <Image source = {require('../../assets/images/trophy.png')}
-                                        style = {{width:70, height:70, marginTop:5}} />
+                            style = {{width:70, height:70, marginTop:5}} />
                     </View>
                     <View style = {styles.conMid}>
                         <View style = {styles.midUpper}>
@@ -53,7 +91,7 @@ const Home = () => {
                     </View>
                     <View style = {styles.rightPoints}>
                         <Image source = {require('../../assets/images/coins.png')}
-                                            style = {{width:73, height:73, marginTop:8, marginLeft:35}} />
+                            style = {{width:73, height:73, marginTop:8, marginLeft:35}} />
                     </View>
                 </View>
                 <View style={styles.containerRow}>
@@ -117,26 +155,6 @@ const Home = () => {
                 </View>
             </View>
         </ScrollView>
-    )
-}
-
-const News = () => {
-    return (
-        <View>
-            <View style = {styles.conHeader}>
-                <View style = {styles.optHeader}>
-                    <Text style = {styles.titleHeader}>Dashboard</Text>
-                </View>
-
-                <View style = {styles.optHeader}>
-                    <Text style = {styles.titleHeader}>Program</Text>
-                </View>
-
-                <View style = {styles.optHeader2}>
-                    <Text style = {styles.titleHeader2}>News</Text>
-                </View>
-            </View>
-        </View>
     )
 }
 
@@ -217,6 +235,9 @@ const styles = StyleSheet.create({
         // shadowOpacity: 10,
         // shadowRadius: 10,
         // elevation:10
+    },
+    sliderCon: {
+        
     },
     conPoints :{
         backgroundColor : 'white',

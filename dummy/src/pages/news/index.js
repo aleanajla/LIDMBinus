@@ -1,9 +1,20 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { Bell1, User} from '../../assets'
+import {SliderBox} from 'react-native-image-slider-box'
+import { useNavigation } from '@react-navigation/core'
+import { Program, Home } from '../../pages/index.js'
+
+const image =[
+    require('../../assets/slider/News1.png'),
+    require('../../assets/slider/News2.png'),
+    require('../../assets/slider/News3.png'),
+    require('../../assets/slider/News4.png')
+];
 
 const News = () => {
+    const navigation = useNavigation();
     return (
         <View style={styles.pages}>
             <View style = {styles.header}>
@@ -16,16 +27,26 @@ const News = () => {
                     <User style = {styles.user}/>
                 </View>
             </View>
-            <View style = {[styles.garis, styles.shadow]}/>
+            <View style = {styles.garis}/>
             <View>
                 <View style = {styles.conHeader}>
-                    <View style = {styles.optHeader}>
-                        <Text style = {styles.titleHeader}>Dashboard</Text>
-                    </View>
+                    <TouchableOpacity
+                        onPress={()=>{
+                            navigation.navigate('Home',{type:''});
+                        }}>
+                        <View style = {styles.optHeader}>
+                            <Text style = {styles.titleHeader}>Dashboard</Text>
+                        </View>
+                    </TouchableOpacity>
 
-                    <View style = {styles.optHeader}>
-                        <Text style = {styles.titleHeader}>Program</Text>
-                    </View>
+                    <TouchableOpacity
+                    onPress={()=>{
+                        navigation.navigate('Program',{type:''});
+                    }}> 
+                        <View style = {styles.optHeader}>
+                            <Text style = {styles.titleHeader}>Program</Text>
+                        </View>
+                    </TouchableOpacity>
 
                     <View style = {styles.optHeader2}>
                         <Text style = {styles.titleHeader2}>News</Text>
@@ -33,7 +54,15 @@ const News = () => {
                 </View>
             </View>
             
-            <View style={styles.square}></View>
+            <View>
+                <SliderBox images = {image}
+                    sliderBoxHeight = {145}
+                    onCurrentImagePressed={index => console.warn(`image ${index} pressed`)}
+                    dotColor="#FAD586"
+                    inactiveDotColor="#28527A"
+                    ImageComponentStyle={{borderRadius: 20, width: '94%', marginTop: 5, marginBottom:25}}
+                />
+            </View>
 
             <View>
                 <Text  style = {styles.newsHeader}>News About Kampus Merdeka</Text>
@@ -76,22 +105,6 @@ const News = () => {
                         peraturan menteri, tidak sampai mengubah Peraturan...
                     </Text>
                     <Text style= {styles.more}>read more...</Text>
-import { StyleSheet, Text, View } from 'react-native'
-
-const News = () => {
-    return (
-        <View>
-            <View style = {styles.conHeader}>
-                <View style = {styles.optHeader}>
-                    <Text style = {styles.titleHeader}>Dashboard</Text>
-                </View>
-
-                <View style = {styles.optHeader}>
-                    <Text style = {styles.titleHeader}>Program</Text>
-                </View>
-
-                <View style = {styles.optHeader2}>
-                    <Text style = {styles.titleHeader2}>News</Text>
                 </View>
             </View>
         </View>
@@ -105,13 +118,13 @@ const styles = StyleSheet.create({
         paddingLeft: 30
     },
     pages : {
-        backgroundColor : '#FFFFFF',
+        backgroundColor : '#F6F5F5',
         fontFamily: 'Open-Sans'
     },
     header :{
         flexDirection : 'row',
         paddingTop: 15,
-        backgroundColor: '#FFFFFF'
+        backgroundColor: '#F6F5F5'
     },
     imgHeader :{
         flexDirection : 'row',
@@ -137,11 +150,6 @@ const styles = StyleSheet.create({
         // paddingRight:10,
         paddingBottom : 10,
 
-    },
-    optHeader: {
-    conHeader: {
-        flexDirection: 'row',
-        padding:15
     },
     optHeader: {
         // padding: 20,
@@ -222,7 +230,5 @@ const styles = StyleSheet.create({
         fontWeight : 'bold',
         color : WARNA_SEKUNDER,
         padding : 2,
-        
-    },
     }
 })

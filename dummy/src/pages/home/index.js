@@ -22,6 +22,19 @@ const Home = () => {
                 <View>
                     <View style = {styles.garis}/>
                 </View>
+                <View style = {styles.conHeader}>
+                    <View style = {styles.optHeader2}>
+                        <Text style = {styles.titleHeader2}>Dashboard</Text>
+                    </View>
+
+                    <View style = {styles.optHeader}>
+                        <Text style = {styles.titleHeader}>Program</Text>
+                    </View>
+
+                    <View style = {styles.optHeader}>
+                        <Text style = {styles.titleHeader}>News</Text>
+                    </View>
+                </View>
                 <View style = {styles.conPoints}>
                     <View>
                         <Image source = {require('../../assets/images/trophy.png')}
@@ -107,9 +120,62 @@ const Home = () => {
     )
 }
 
+const News = () => {
+    return (
+        <View>
+            <View style = {styles.conHeader}>
+                <View style = {styles.optHeader}>
+                    <Text style = {styles.titleHeader}>Dashboard</Text>
+                </View>
+
+                <View style = {styles.optHeader}>
+                    <Text style = {styles.titleHeader}>Program</Text>
+                </View>
+
+                <View style = {styles.optHeader2}>
+                    <Text style = {styles.titleHeader2}>News</Text>
+                </View>
+            </View>
+        </View>
+    )
+}
+
 export default Home;
 
 const styles = StyleSheet.create({
+    conHeader: {
+        flexDirection: 'row',
+        paddingLeft:15,
+        paddingRight:15,
+        paddingTop:10,
+        paddingBottom:10
+    },
+    optHeader: {
+        // padding: 20,
+        margin:8,
+        // backgroundColor : '#ffffff',
+        width: 105,
+        height: 35,
+        borderRadius:20,
+        alignItems: 'center'
+    },
+    titleHeader: {
+        color: '#28527A',
+        marginTop: 6
+    },
+    titleHeader2: {
+        color: '#28527A',
+        marginTop:6,
+        fontWeight: 'bold'
+    },
+    optHeader2: {
+        backgroundColor: '#FAD586',
+        margin: 8,
+        width: 105,
+        height: 35,
+        borderRadius:20,
+        alignItems: 'center'
+    },
     welcome :{
         paddingLeft: 30
     },
@@ -155,7 +221,8 @@ const styles = StyleSheet.create({
     conPoints :{
         backgroundColor : 'white',
         padding:15,
-        margin: 15,
+        marginLeft: 15,
+        marginRight:15,
         borderRadius: 7,
         flexDirection: 'row',
         shadowColor: '#000',

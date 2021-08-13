@@ -20,7 +20,7 @@ import Portfolio from './portfolio.svg'
 import Ppt from './ppt.svg'
 import Project_management from './project-management.png'
 import Question from './question.png'
-import Redeem_points from './redeem-points.svg'
+import Redeem_points from './redeem-points.png'
 import Research from './research.png'
 import Shift from './shift.png'
 import Smartfren from './smartfren.png'
@@ -34,8 +34,8 @@ import Youtube2 from './youtube(2).png'
 import Youtube3 from './youtube(3).png'
 import Youtube4 from './youtube(4).png'
 import Youtube5 from './youtube(5).png'
-import info1 from 'info1.png'
-import info2 from 'info2.png'
+import info1 from './info1.png'
+import info2 from './info2.png'
 import LogoKampus from './logo.png'
 
 export {
@@ -76,6 +76,6 @@ export {
     Youtube4,
     Youtube5,
     info1,
-    info2
+    info2,
     LogoKampus
 }

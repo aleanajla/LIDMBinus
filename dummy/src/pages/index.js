@@ -9,6 +9,8 @@ import CreateAccount from './createAccount'
 import Profile from './profile'
 import Program from './program'
 import News from './news'
+import ShareMaterials from './shareMaterials'
+import VideoLearning from './videoLearning'
 
 
 export{
@@ -22,5 +24,7 @@ export{
     Profile,
     Program,
     News,
-    CreateAccount
+    CreateAccount,
+    ShareMaterials,
+    VideoLearning
 }

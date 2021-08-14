@@ -35,6 +35,7 @@ const Home = () => {
                 <View>
                     <View style = {styles.garis}/>
                 </View>
+                
                 <View style = {styles.conHeader}>
                     
                     <TouchableOpacity

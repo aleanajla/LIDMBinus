@@ -1,14 +1,25 @@
-// import Book4 from './book 4.png'
-// import Group8 from './Group 8.png'
-// import Home2 from './home.png'
-// import Study4 from './study 4.png'
-// import Test4 from './test 4.png'
+const images = {
+    Perpus: {
+      imgName: 'Perpus', 
+      uri: require('../../assets/iconNavbar/book_4.png')
+    },
+    Schedule: {
+      imgName: 'Schedule', 
+      uri: require('../../assets/iconNavbar/Group_8.png')
+    },
+    Home: {
+        imgName: 'Home', 
+        uri: require('../../assets/iconNavbar/home.png')
+      },
+    Score: {
+        imgName: 'Score', 
+        uri: require('../../assets/iconNavbar/test_4.png')
+      },
+    Learning: {
+        imgName: 'Learning', 
+        uri: require('../../assets/iconNavbar/study_4.png')
+      },
+  }
 
-// export{
-//     Book4,
-//     Group8,
-//     Home2,
-//     Study4,
-//     Test4
-// }
+  export { images };
     

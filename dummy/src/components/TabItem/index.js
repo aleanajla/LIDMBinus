@@ -1,26 +1,24 @@
 import React from 'react'
-import { View, StyleSheet, Text, TouchableOpacity } from 'react-native'
+import { View, StyleSheet, Text, TouchableOpacity, Image } from 'react-native'
 import { WARNA_UTAMA } from '../../utils/constants'
-import {Book, Clipboard, Home, Calender, Study} from '../../assets'
+import {images} from '../../assets/iconNavbar'
 
 const TabItem = ({label, isFocused, onLongPress, onPress}) => {
-    
-    const Icon = () => {
-
+    const Icon = (label) => {
         if(label === "Perpus"){
-            return <Book/>;
+            return images.Perpus.uri;
         }
         if(label === "Score"){
-            return <Clipboard/>;
+            return images.Score.uri;
         }
         if(label === "Home"){
-            return <Home/>;
+            return images.Home.uri;
         }
-        if(label === "Calender"){
-            return <Calender/>;
+        if(label === "Schedule"){
+            return images.Schedule.uri;
         }
         if(label === "Learning"){
-            return <Study/>;
+            return images.Learning.uri;
         }
     }
 
@@ -31,10 +29,7 @@ const TabItem = ({label, isFocused, onLongPress, onPress}) => {
                 onLongPress={onLongPress}
                 style={styles.container}
                 >
-                    {/* <Icon /> */}
-                {<Text style={styles.text}>
-                {label.toUpperCase()}
-                </Text>}
+                    <Image source= {Icon(label)} styles = {styles.navbar}/>
             </TouchableOpacity>
         </View>
     )
@@ -44,10 +39,13 @@ export default TabItem
 
 const styles = StyleSheet.create({
     container:{
-        alignContent : 'center',
-        padding: 5
+        paddingLeft: 20,
+        paddingRight : 20,
     },
     text: {
         color: WARNA_UTAMA
+    },
+    navbar: {
+        alignItems: 'center'
     }
 })

@@ -6,7 +6,7 @@ import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/Deprecate
 import ImageBackground from 'react-native/Libraries/Image/ImageBackground'
 import {SliderBox} from 'react-native-image-slider-box'
 import { useNavigation } from '@react-navigation/core'
-import { Program, News } from '../../pages/index.js'
+import { Program, News, BrowseAllRewards } from '../../pages/index.js'
 
 const image = [
     require('../../assets/slider/poster.jpg'),
@@ -96,6 +96,10 @@ const Home = () => {
                     </View>
                 </View>
                 <View style={styles.containerRow}>
+                <TouchableOpacity
+                    onPress={()=>{
+                        navigation.navigate('BrowseAllRewards',{type:''});
+                    }}>
                         <View style = {[styles.conLeftRight, {flex:1}]}>
                             <View>
                                 <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18}}>Browse</Text>
@@ -107,7 +111,8 @@ const Home = () => {
                                 <Image source = {require('../../assets/images/badge.png')}
                                     style = {{width:60,height:60,marginLeft:20,marginTop:5}} />
                             </View>
-                    </View>
+                        </View>
+                    </TouchableOpacity>
 
                     <View style = {[styles.conLeftRight, {flex:1}]}>
                             <View>

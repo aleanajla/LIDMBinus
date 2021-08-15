@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View, SafeAreaView, Image } from 'react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Home, Learning, Perpus, Schedule, Score, Program, News, CreateAccount, Register, SignIn, Profile, ShareMaterials, VideoLearning} from '../pages/index.js';
+import { Home, Learning, Perpus, Schedule, Score, Program, News, CreateAccount, Register, SignIn, Profile, ShareMaterials, VideoLearning, Magang, DetailsProgram, BrowseAllRewards, ConTerms, DetailNews, Announcement, DetailAnnouncement} from '../pages/index.js';
 import { BottomTabNavigator } from '../components';
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType';
 
@@ -36,7 +36,13 @@ const router = () => {
             <Stack.Screen name="Profile" component={Profile} options={{headerShown: false}}/>
             <Stack.Screen name="ShareMaterials" component={ShareMaterials} options={{headerShown: false}}/>
             <Stack.Screen name="VideoLearning" component={VideoLearning} options={{headerShown: false}}/>
-
+            <Stack.Screen name="Magang" component={Magang} options={{headerShown: false}}/>
+            <Stack.Screen name="DetailsProgram" component={DetailsProgram} options={{headerShown: false}}/>
+            <Stack.Screen name="BrowseAllRewards" component={BrowseAllRewards} options={{headerShown: false}}/>
+            <Stack.Screen name="ConTerms" component={ConTerms} options={{headerShown: false}}/>
+            <Stack.Screen name="DetailNews" component={DetailNews} options={{headerShown: false}}/>
+            <Stack.Screen name="Announcement" component={Announcement} options={{headerShown: false}}/>
+            <Stack.Screen name="DetailAnnouncement" component={DetailAnnouncement} options={{headerShown: false}}/>
         </Stack.Navigator>
     )
 }

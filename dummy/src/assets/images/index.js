@@ -17,7 +17,7 @@ import Kampus_merdeka from './kampus merdeka.jpg'
 import Lazada from './lazada.png'
 import Logo_kampus_merdeka from './logo-kampus-merdeka.png'
 import Motivate from './motivate.png'
-import Portfolio from './portfolio.svg'
+import Portfolio from './portfolio.png'
 import Project_management from './project-management.png'
 import Question from './question.png'
 import Redeem_points from './redeem-points.png'
@@ -40,6 +40,12 @@ import LogoKampus from './logo.png'
 import Nadiem from './nadiem.png'
 import Nadiem2 from './nadiem2.png'
 import KampusMerdeka from './kampusMerdeka.png'
+import Shopee from './shopee.png'
+import Dicoding from './dicoding.png'
+import Gojek from './gojek.png'
+import Udemy from './udemy.png'
+import Arkademi from './arkademi.png'
+import Gramedia from './gramedia.png'
 
 export {
     Badge,
@@ -83,5 +89,11 @@ export {
     Info1,
     Info2,
     Book7,
-    Book8
+    Book8,
+    Gramedia,
+    Arkademi,
+    Gojek,
+    Udemy,
+    Shopee,
+    Dicoding
 }

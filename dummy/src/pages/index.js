@@ -11,6 +11,13 @@ import Program from './program'
 import News from './news'
 import ShareMaterials from './shareMaterials'
 import VideoLearning from './videoLearning'
+import Magang from './magang'
+import DetailsProgram from './detailsProgram'
+import BrowseAllRewards from './browseAllRewards'
+import ConTerms from './conTerms'
+import DetailNews from './detailNews'
+import Announcement from './announcement'
+import DetailAnnouncement from './detailAnnouncement'
 
 
 export{
@@ -26,5 +33,12 @@ export{
     News,
     CreateAccount,
     ShareMaterials,
-    VideoLearning
+    VideoLearning,
+    Magang,
+    DetailsProgram,
+    BrowseAllRewards,
+    ConTerms,
+    DetailNews,
+    Announcement,
+    DetailAnnouncement
 }

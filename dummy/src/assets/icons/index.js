@@ -9,15 +9,15 @@ import Calender from './calender.svg'
 import Check from './check.svg'
 import Circle_plus from './circle_plus.svg'
 import Clipboard from './clipboard.svg'
-import Download from './download.svg'
+import Download from './download.png'
 import Edit from './edit.svg'
 import Home from './home.svg'
 import Info_blue from './info_blue.svg'
-import Info_white from './info_white.svg'
+import Info_white from './info_white.png'
 import Logout from './logout.svg'
 import Scroll_to_top from './Scroll to Top.svg'
 import Settings from './settings.png'
-import Share_white from './share_white.svg'
+import Share_white from './share_white.png'
 import Sort from './sort.svg'
 import Study from './study.svg'
 import User from './Profile (1).svg'
@@ -33,6 +33,9 @@ import Arrow_right from './arrow_right.png'
 import Arrow_right2 from './arrow_right2.png'
 import Pdf from './pdf.png'
 import Ppt from './ppt.png'
+import CheckGreen from './checkGreen.png'
+import ArrowBack from './arrowBack.png'
+import ArrowBackBlue from './arrowBackBlue.png'
 
 
 export{
@@ -70,5 +73,8 @@ export{
     Arrow_right,
     Arrow_right2,
     Ppt,
-    Pdf
+    Pdf,
+    CheckGreen,
+    ArrowBack,
+    ArrowBackBlue
 }

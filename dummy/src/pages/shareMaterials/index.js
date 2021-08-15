@@ -201,7 +201,15 @@ const styles = StyleSheet.create({
         marginRight: 10,
         marginTop: 19,
         borderRadius: 15,
-        flexDirection : 'row'
+        flexDirection : 'row',
+        elevation : 5,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 2, 
+            height: 4
+        },
+        shadowOpacity: 0.2,
+        shadowRadius: 5,
     },
     left:{
         justifyContent : 'center',

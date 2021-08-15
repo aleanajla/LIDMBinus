@@ -9,7 +9,9 @@ const BrowseAllRewards = () => {
     return(
         <ScrollView>
             <View style={styles.pages}>
-                <Image source = {require('../../assets/icons/arrowBackBlue.png')} style={{marginTop : 15, left:17, width : 34, height:34}}/>
+                <TouchableOpacity onPress={()=>{navigation.navigate('Home',{type:''});}}>
+                    <Image source = {require('../../assets/icons/arrowBackBlue.png')} style={{marginTop : 15, left:17, width : 34, height:34}}/>
+                </TouchableOpacity>
                 <View style={styles.boxCoin}>
                     <View style={styles.top}>
                         <Image source = {require('../../assets/images/trophy.png')} style={{width:20, height:20, marginLeft:12}}/>
@@ -26,39 +28,8 @@ const BrowseAllRewards = () => {
                 </View>
                 <Text style={styles.reward}>Reward Exchange</Text>
                 <View style={styles.food}>
-                <Text style={styles.foodTitle}>Food</Text>
-                    <ScrollView horizontal={true}>
-                        <View style={styles.box}>
-                            <View style={styles.boxTop}>
-                                <Image source = {require('../../assets/images/shopee.png')}/>
-                            </View>
-                            <View style={styles.bottom2}>
-                            <Text style={styles.title}>Shopee</Text>
-                            <Text style={styles.desc}>eVoucher Shopee Food 25k</Text>
-                            <Text style={styles.desc}>100 Points</Text>
-                            </View>
-                        </View>
-                    </ScrollView>
-                </View>
-                <View style={styles.food}>
-                <Text style={styles.foodTitle}>Food</Text>
-                    <ScrollView horizontal={true}>
-                        <View style={styles.box}>
-                            <View style={styles.boxTop}>
-                                {/* <Image source = {require('../../assets/images/shopee.png')}/> */}
-                            </View>
-                        </View>
-                    </ScrollView>
-                </View>
-                <View style={styles.food}>
-                <Text style={styles.foodTitle}>Food</Text>
-                    <ScrollView horizontal={true}>
-                        <View style={styles.box}>
-                            <View style={styles.boxTop}>
-                                {/* <Image source = {require('../../assets/images/shopee.png')}/> */}
-                            </View>
-                        </View>
-                    </ScrollView>
+                    <Text style={styles.foodTitle}>Food</Text>
+                    
                 </View>
             </View>
         </ScrollView>
@@ -153,6 +124,6 @@ const styles = StyleSheet.create({
     bottom2:{
         width : '100%',
         height : '100%',
-        color : 'E5E5E5'
+        color : '#E5E5E5'
     }
 })

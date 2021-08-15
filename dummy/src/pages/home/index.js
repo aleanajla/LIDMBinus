@@ -6,7 +6,7 @@ import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/Deprecate
 import ImageBackground from 'react-native/Libraries/Image/ImageBackground'
 import {SliderBox} from 'react-native-image-slider-box'
 import { useNavigation } from '@react-navigation/core'
-import { Program, News, BrowseAllRewards } from '../../pages/index.js'
+import { Program, News, BrowseAllRewards, Announcement } from '../../pages/index.js'
 
 const image = [
     require('../../assets/slider/poster.jpg'),
@@ -127,6 +127,7 @@ const Home = () => {
                 </View>
 
                 <View style = {styles.containerAnnounce}>
+                <TouchableOpacity onPress={()=>{navigation.navigate('Announcement',{type:''});}}>
                     <View style = {{flexDirection: 'row'}}>
                         <Text style = {{color: '#FFFFFF', fontSize: 25, fontWeight:'bold', marginLeft:20, marginTop:10}}>
                             Announce
@@ -135,6 +136,7 @@ const Home = () => {
                             style = {styles.arrow}
                         />
                     </View>
+                </TouchableOpacity>
                     <View style = {styles.announceLR}>
                         <View style = {styles.announceLR2}>
                             <Text style = {styles.announcement1}>11 May 2021</Text>

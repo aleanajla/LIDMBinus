@@ -4,7 +4,7 @@ import Arrow_forward_triangle from './arrow_forward_triangle.svg'
 import Arrow_right_blue from './arrow_right_blue.svg'
 import Arrow_right_white from './arrow_right_white.png'
 import Arrow_triangle_down_blue from './arrow_triangle_down_blue.svg'
-import Bell1 from './bell (1).svg'
+import Bell1 from './bell.png'
 import Book from './book.svg'
 import Calender from './calender.svg'
 import Check from './check.svg'
@@ -15,13 +15,13 @@ import Edit from './edit.svg'
 import Home from './home.svg'
 import Info_blue from './info_blue.svg'
 import Info_white from './info_white.svg'
-import Logout from './logout.svg'
+import Logout from './logout.png'
 import Scroll_to_top from './Scroll to Top.svg'
 import Settings from './settings.png'
 import Share_white from './share_white.svg'
 import Sort from './sort.svg'
 import Study from './study.svg'
-import User from './Profile (1).svg'
+import User from './profile.png'
 import User_black from './user_black.svg'
 import Vectoreye from './Vectoreye.svg'
 import Eye_closed from './eye-closed.svg'
@@ -30,6 +30,8 @@ import Enough from './Enough.png'
 import Good from './Good.png'
 import VeryBad from './VeryBad.png'
 import VeryGood from './VeryGood.png'
+import person_outline from './person_outline.png'
+import close from './close.png'
 
 
 export{
@@ -64,5 +66,7 @@ export{
     Enough,
     Good,
     VeryBad,
-    VeryGood
+    VeryGood,
+    person_outline,
+    close
 }

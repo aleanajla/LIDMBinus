@@ -9,6 +9,7 @@ import CreateAccount from './createAccount'
 import Profile from './profile'
 import Program from './program'
 import News from './news'
+import Settingss from './settingss'
 
 
 export{
@@ -22,5 +23,6 @@ export{
     Profile,
     Program,
     News,
-    CreateAccount
+    CreateAccount,
+    Settingss
 }

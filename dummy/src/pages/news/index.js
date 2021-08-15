@@ -1,10 +1,9 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
-import { Bell1, User} from '../../assets'
 import {SliderBox} from 'react-native-image-slider-box'
 import { useNavigation } from '@react-navigation/core'
-import { Program, Home } from '../../pages/index.js'
+import { Program, Home, Profile} from '../../pages/index.js'
 
 const image =[
     require('../../assets/slider/News1.png'),
@@ -23,8 +22,13 @@ const News = () => {
                     <Text style = {{fontSize: 20,fontWeight: 'bold', color: WARNA_SEKUNDER}}>Andrew Willy</Text>
                 </View>
                 <View style = {styles.imgHeader}>
-                    <Bell1 style = {styles.bell}/>
-                    <User style = {styles.user}/>
+                    <Image source ={require('../../assets/icons/bell.png')} style = {styles.bell} />
+                    <TouchableOpacity
+                        onPress = {()=>{
+                            navigation.navigate('Profile',{type:''})
+                        }}> 
+                            <Image source = {require('../../assets/icons/profile.png')} />
+                    </TouchableOpacity>
                 </View>
             </View>
             <View style = {styles.garis}/>

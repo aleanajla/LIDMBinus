@@ -1,7 +1,10 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
+import { Settingss } from '../../pages/index.js'
+import { useNavigation } from '@react-navigation/core'
 
 const Profile = () => {
+    const navigation = useNavigation();
     return (
         <View style = {styles.profileCon}>
             <View style = {styles.header}>
@@ -12,7 +15,13 @@ const Profile = () => {
                     <Text style = {styles.univ}>Universitas Bina Nusantara</Text>
                 </View>
                 <View style = {styles.conSetting}>
-                    <Image source = {require('../../assets/icons/settings.png')} style = {styles.setting}/>
+                    <TouchableOpacity
+                         onPress = {()=>{
+                            navigation.navigate('Settingss',{type:''})
+                        }}
+                    >
+                        <Image source = {require('../../assets/icons/settings.png')} style = {styles.setting}/>
+                    </TouchableOpacity>
                 </View>
             </View>
             <View style = {styles.programCon}>

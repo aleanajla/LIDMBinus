@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, ScrollView,TouchableOpacity } from 'reac
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { Bell1, User} from '../../assets'
 import { useNavigation } from '@react-navigation/core'
-import { News, Home } from '../../pages/index.js'
+import { News, Home, Magang } from '../../pages/index.js'
 
 const Program = () => {
     const navigation = useNavigation();
@@ -86,18 +86,20 @@ const Program = () => {
                                 <Text style = {styles.datePeriod}>15 Juni 2021 - 30 Juni 2021</Text>
                             </View>
                         </View>
-                        <View style = {styles.conRow1}>
-                            <View style = {styles.conImage}>
-                                <Image source = {require('../../assets/images/internship.png')}/>
+                        <TouchableOpacity onPress={()=>{navigation.navigate('Magang',{type:''});}}> 
+                            <View style = {styles.conRow1}>
+                                <View style = {styles.conImage}>
+                                    <Image source = {require('../../assets/images/internship.png')}/>
+                                </View>
+                                <View style = {styles.conTitle}>
+                                    <Text style = {styles.titleProg}>Magang</Text>
+                                </View>
+                                <View>
+                                    <Text style = {styles.regPeriod}>Registration Period:</Text>
+                                    <Text style = {styles.datePeriod}>10 Juni 2021 - 31 Juni 2021</Text>
+                                </View>
                             </View>
-                            <View style = {styles.conTitle}>
-                                <Text style = {styles.titleProg}>Magang</Text>
-                            </View>
-                            <View>
-                                <Text style = {styles.regPeriod}>Registration Period:</Text>
-                                <Text style = {styles.datePeriod}>10 Juni 2021 - 31 Juni 2021</Text>
-                            </View>
-                        </View>
+                        </TouchableOpacity>
                         <View style = {styles.conRow1}>
                             <View style = {styles.conImage}>
                                 <Image source = {require('../../assets/images/shift.png')}/>

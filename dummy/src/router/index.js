@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View, SafeAreaView, Image } from 'react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Home, Learning, Perpus, Schedule, Score, Program, News, CreateAccount, Register, SignIn, Profile, ShareMaterials, VideoLearning, Magang, DetailsProgram, BrowseAllRewards, ConTerms, DetailNews, Announcement, DetailAnnouncement, Notificationn} from '../pages/index.js';
+import { Home, Learning, Perpus, Schedule, Score, Program, News, CreateAccount, Register, SignIn, Profile, ShareMaterials, VideoLearning, Magang, DetailsProgram, BrowseAllRewards, ConTerms, DetailNews, Announcement, DetailAnnouncement, Notificationn, Settingss} from '../pages/index.js';
 import { BottomTabNavigator } from '../components';
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType';
 
@@ -34,6 +34,7 @@ const router = () => {
             <Stack.Screen name="CreateAccount" component={CreateAccount} options={{headerShown: false}}/>
             <Stack.Screen name="SignIn" component={SignIn} options={{headerShown: false}}/>
             <Stack.Screen name="Profile" component={Profile} options={{headerShown: false}}/>
+            <Stack.Screen name="Settingss" component={Settingss} options={{headerShown: false}}/>
             <Stack.Screen name="ShareMaterials" component={ShareMaterials} options={{headerShown: false}}/>
             <Stack.Screen name="VideoLearning" component={VideoLearning} options={{headerShown: false}}/>
             <Stack.Screen name="Magang" component={Magang} options={{headerShown: false}}/>

@@ -16,9 +16,7 @@ const image = [
 ];
 
 const Home = () => {
-    
     const navigation = useNavigation();
-
     return (
         <ScrollView>
             <View style={styles.pages}>
@@ -28,8 +26,13 @@ const Home = () => {
                         <Text style = {{fontSize: 20,fontWeight: 'bold', color: WARNA_SEKUNDER}}>Andrew Willy</Text>
                     </View>
                     <View style = {styles.imgHeader}>
-                        <Bell1 style = {styles.bell}/>
-                        <User style = {styles.user}/>
+                        <Image source ={require('../../assets/icons/bell.png')} style = {styles.bell} />
+                        <TouchableOpacity
+                        onPress = {()=>{
+                            navigation.navigate('Profile',{type:''})
+                        }}> 
+                            <Image source = {require('../../assets/icons/profile.png')} />
+                        </TouchableOpacity>
                     </View>
                 </View>
                 <View>
@@ -163,7 +166,7 @@ const Home = () => {
                 </View>
             </View>
         </ScrollView>
-    )
+    );
 }
 
 export default Home;

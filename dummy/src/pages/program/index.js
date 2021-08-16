@@ -6,9 +6,7 @@ import { useNavigation } from '@react-navigation/core'
 import { News, Home, Magang } from '../../pages/index.js'
 
 const Program = () => {
-
     const navigation = useNavigation();
-
     return (
         <ScrollView>
             <View style = {styles.progContainer}>
@@ -18,8 +16,14 @@ const Program = () => {
                         <Text style = {{fontSize: 20,fontWeight: 'bold', color: WARNA_SEKUNDER}}>Andrew Willy</Text>
                     </View>
                     <View style = {styles.imgHeader}>
-                        <Bell1 style = {styles.bell}/>
-                        <User style = {styles.user}/>
+                        <Image source ={require('../../assets/icons/bell.png')} style = {styles.bell} />
+                        <TouchableOpacity
+                        onPress = {()=>{
+                            navigation.navigate('Profile',{type:''})
+                        }}> 
+                            <Image source = {require('../../assets/icons/profile.png')} />
+                        </TouchableOpacity>
+                        
                     </View>
                 </View>
                 <View style = {styles.garis}/>
@@ -233,7 +237,6 @@ const styles = StyleSheet.create({
     },
     ket: {
         flexDirection : 'row',
-        // marginTop: 10
     },
     eachPoint:{
         flexDirection: 'row'

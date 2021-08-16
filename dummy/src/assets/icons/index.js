@@ -3,7 +3,7 @@ import Arrow_back_triangle from './arrow_back_triangle.svg'
 import Arrow_forward_triangle from './arrow_forward_triangle.svg'
 import Arrow_right_white from './arrow_right_white.png'
 import Arrow_triangle_down_blue from './arrow_triangle_down_blue.svg'
-import Bell1 from './bell (1).svg'
+import Bell1 from './bell.png'
 import Book from './book.svg'
 import Calender from './calender.svg'
 import Check from './check.svg'
@@ -20,7 +20,7 @@ import Settings from './settings.png'
 import Share_white from './share_white.png'
 import Sort from './sort.svg'
 import Study from './study.svg'
-import User from './Profile (1).svg'
+import User from './profile.png'
 import User_black from './user_black.svg'
 import Vectoreye from './Vectoreye.svg'
 import Eye_closed from './eye-closed.svg'
@@ -29,6 +29,8 @@ import Enough from './Enough.png'
 import Good from './Good.png'
 import VeryBad from './VeryBad.png'
 import VeryGood from './VeryGood.png'
+import person_outline from './person_outline.png'
+import close from './close.png'
 import Arrow_right from './arrow_right.png'
 import Arrow_right2 from './arrow_right2.png'
 import Pdf from './pdf.png'
@@ -70,6 +72,8 @@ export{
     Good,
     VeryBad,
     VeryGood,
+    person_outline,
+    close
     Arrow_right,
     Arrow_right2,
     Ppt,

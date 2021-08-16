@@ -18,6 +18,7 @@ import ConTerms from './conTerms'
 import DetailNews from './detailNews'
 import Announcement from './announcement'
 import DetailAnnouncement from './detailAnnouncement'
+import Notificationn from './notificationn'
 
 
 export{
@@ -40,5 +41,6 @@ export{
     ConTerms,
     DetailNews,
     Announcement,
-    DetailAnnouncement
+    DetailAnnouncement,
+    Notificationn
 }

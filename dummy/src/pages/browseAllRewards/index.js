@@ -29,7 +29,141 @@ const BrowseAllRewards = () => {
                 <Text style={styles.reward}>Reward Exchange</Text>
                 <View style={styles.food}>
                     <Text style={styles.foodTitle}>Food</Text>
-                    
+                    <ScrollView horizontal={true}>
+                    <View style={styles.row}>
+                        <View style={styles.container}>
+                            <View style={styles.boxTop}>
+                                <Image source = {require('../../assets/images/shopee.png')}/>
+                            </View>
+                            <View style={styles.boxBottom}>
+                                <Text style={styles.title}>Shopee</Text>
+                                <Text style={styles.desc}>eVoucher Shopee Food 25k</Text>
+                                <Text style={styles.desc}>100 Points</Text>
+                                <View style={styles.reedemBox}>
+                                    <Text style={styles.reedem}>Reedem</Text>
+                                </View>
+                            </View>
+                        </View>
+                        <View style={styles.container}>
+                            <View style={styles.boxTop}>
+                                <Image source = {require('../../assets/images/gojek.png')}/>
+                            </View>
+                            <View style={styles.boxBottom}>
+                                <Text style={styles.title}>Gojek</Text>
+                                <Text style={styles.desc}>eVoucher Gofood 25k</Text>
+                                <Text style={styles.desc}>100 Points</Text>
+                                <View style={styles.reedemBox}>
+                                    <Text style={styles.reedem}>Reedem</Text>
+                                </View>
+                            </View>
+                        </View>
+                        <View style={styles.container}>
+                            <View style={styles.boxTop}>
+                                <Image source = {require('../../assets/images/gojek.png')}/>
+                            </View>
+                            <View style={styles.boxBottom}>
+                                <Text style={styles.title}>Shopee</Text>
+                                <Text style={styles.desc}>eVoucher gofood 75k</Text>
+                                <Text style={styles.desc}>300 Points</Text>
+                                <View style={styles.reedemBox}>
+                                    <Text style={styles.reedem}>Reedem</Text>
+                                </View>
+                            </View>
+                        </View>
+                    </View>
+                    </ScrollView>
+                </View>
+                <View style={styles.food}>
+                    <Text style={styles.foodTitle}>Education</Text>
+                    <ScrollView horizontal={true}>
+                    <View style={styles.row}>
+                        <View style={styles.container}>
+                            <View style={styles.boxTop}>
+                                <Image source = {require('../../assets/images/dicoding.png')}/>
+                            </View>
+                            <View style={styles.boxBottom}>
+                                <Text style={styles.title}>Dicoding</Text>
+                                <Text style={styles.desc}>eVoucher Course 150k</Text>
+                                <Text style={styles.desc}>500 Points</Text>
+                                <View style={styles.reedemBox}>
+                                    <Text style={styles.reedem}>Reedem</Text>
+                                </View>
+                            </View>
+                        </View>
+                        <View style={styles.container}>
+                            <View style={styles.boxTop}>
+                                <Image source = {require('../../assets/images/arkademi.png')}/>
+                            </View>
+                            <View style={styles.boxBottom}>
+                                <Text style={styles.title}>Arkademi</Text>
+                                <Text style={styles.desc}>eVoucher Course 150k</Text>
+                                <Text style={styles.desc}>500 Points</Text>
+                                <View style={styles.reedemBox}>
+                                    <Text style={styles.reedem}>Reedem</Text>
+                                </View>
+                            </View>
+                        </View>
+                        <View style={styles.container}>
+                            <View style={styles.boxTop}>
+                                <Image source = {require('../../assets/images/udemy.png')}/>
+                            </View>
+                            <View style={styles.boxBottom}>
+                                <Text style={styles.title}>udemy</Text>
+                                <Text style={styles.desc}>eVoucher Course 150k</Text>
+                                <Text style={styles.desc}>500 Points</Text>
+                                <View style={styles.reedemBox}>
+                                    <Text style={styles.reedem}>Reedem</Text>
+                                </View>
+                            </View>
+                        </View>
+                    </View>
+                    </ScrollView>
+                </View>
+                <View style={styles.food}>
+                    <Text style={styles.foodTitle}>Stationary</Text>
+                    <ScrollView horizontal={true}>
+                    <View style={styles.row}>
+                        <View style={styles.container}>
+                            <View style={styles.boxTop}>
+                                <Image source = {require('../../assets/images/gramedia.png')}/>
+                            </View>
+                            <View style={styles.boxBottom}>
+                                <Text style={styles.title}>Gramedia</Text>
+                                <Text style={styles.desc}>eVoucher Digital 25k</Text>
+                                <Text style={styles.desc}>100 Points</Text>
+                                <View style={styles.reedemBox}>
+                                    <Text style={styles.reedem}>Reedem</Text>
+                                </View>
+                            </View>
+                        </View>
+                        <View style={styles.container}>
+                            <View style={styles.boxTop}>
+                                <Image source = {require('../../assets/images/gramedia.png')}/>
+                            </View>
+                            <View style={styles.boxBottom}>
+                                <Text style={styles.title}>Gramedia</Text>
+                                <Text style={styles.desc}>eVoucher Digital 50k</Text>
+                                <Text style={styles.desc}>200 Points</Text>
+                                <View style={styles.reedemBox}>
+                                    <Text style={styles.reedem}>Reedem</Text>
+                                </View>
+                            </View>
+                        </View>
+                        <View style={styles.container}>
+                            <View style={styles.boxTop}>
+                                <Image source = {require('../../assets/images/gramedia.png')}/>
+                            </View>
+                            <View style={styles.boxBottom}>
+                                <Text style={styles.title}>Gramedia</Text>
+                                <Text style={styles.desc}>eVoucher Digital 50k</Text>
+                                <Text style={styles.desc}>200 Points</Text>
+                                <View style={styles.reedemBox}>
+                                    <Text style={styles.reedem}>Reedem</Text>
+                                </View>
+                            </View>
+                        </View>
+                    </View>
+                    </ScrollView>
                 </View>
             </View>
         </ScrollView>
@@ -83,47 +217,68 @@ const styles = StyleSheet.create({
         left : 18,
         marginTop : 20
     },
-    box:{
-        width : 131,
-        height : 137,
-        marginLeft : 17,
-        // shadowColor: '#000',
-        // shadowOffset: {
-        //     width: 2, 
-        //     height: 4
-        // },
-        // shadowOpacity: 0.2,
-        // shadowRadius: 5,
-        // elevation:10
-    },
     foodTitle:{
-        fontSize : 20, 
+        fontSize : 18, 
         color : '#28527A', 
         fontWeight : 'bold', 
         left : 18,
-        marginTop : 12,
+        marginTop : 8,
         marginBottom : 12
     },
-    boxTop:{
+    row:{
+        flexDirection : 'row'
+    },
+    container:{
+        width : 161,
+        height : 167,
         backgroundColor : '#F6F5F5',
-        height : 68,
+        left : 17,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 2, 
+            height: 4
+        },
+        shadowOpacity: 0.2,
+        shadowRadius: 5,
+        elevation:10,
+        marginBottom : 20,
+        marginRight : 17
+    },
+    boxTop:{
+        width : '100%',
+        height : 70,
         justifyContent : 'center',
         alignItems : 'center'
     },
-    title:{
+    boxBottom:{
         width : '100%',
-        color : '#022E57',
+        backgroundColor : 'white',
+        // height : '100%'
+        height : 97,
+        padding : 8,
+    },
+    title:{
         fontSize : 15,
+        color : '#022E57',
         fontWeight : 'bold'
     },
     desc:{
-        width : '100%',
-        color : '#022E57',
-        fontSize : 12
+        fontSize : 11,
+        color : '#022E57'
     },
-    bottom2:{
-        width : '100%',
-        height : '100%',
-        color : '#E5E5E5'
+    reedemBox:{
+        width : 71,
+        backgroundColor : '#FAD586',
+        height : 23,
+        marginTop : 4,
+        borderRadius : 10,
+        alignItems : 'center',
+        justifyContent : 'center'
+    },
+    reedem:{
+        fontSize : 12,
+        color : '#28527A',
+        fontWeight : 'bold'
     }
+    
 })

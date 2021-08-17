@@ -19,6 +19,9 @@ import ConTerms from './conTerms'
 import DetailNews from './detailNews'
 import Announcement from './announcement'
 import DetailAnnouncement from './detailAnnouncement'
+import howToGetPoints from './howToGetPoints'
+import Certificate from './certificate'
+import myRewards from './myRewards'
 import Notificationn from './notificationn'
 import Information from './information'
 
@@ -46,5 +49,8 @@ export{
     Announcement,
     DetailAnnouncement,
     Notificationn,
-    Information
+    Information,
+    howToGetPoints,
+    Certificate,
+    myRewards
 }

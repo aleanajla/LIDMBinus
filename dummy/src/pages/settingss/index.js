@@ -27,10 +27,6 @@ const Settingss = () => {
                             <Text style={styles.text}> > </Text>
                         </View>
                         <View style={styles.container}>
-                            <Text style={styles.text}>Account Details</Text>
-                            <Text style={styles.text}> > </Text>
-                        </View>
-                        <View style={styles.container}>
                             <Text style={styles.text}>Change Password</Text>
                             <Text style={styles.text}> > </Text>
                         </View>
@@ -42,12 +38,7 @@ const Settingss = () => {
                     <View style = {[styles.garis]}/>
                     <View style = {styles.notifCon}>
                         <View style={styles.container}>
-                            <Text style={styles.text}>Manage Notification</Text>
-                            <Text style={styles.text}> > </Text>
-                        </View>
-                        <View style={styles.container}>
                             <Text style={styles.text}>Notification</Text>
-                            
                         </View>
                     </View>
                 </View>
@@ -176,5 +167,5 @@ const styles = StyleSheet.create({
     },
     notifCon: {
         marginTop:10
-    }
+    },
 })

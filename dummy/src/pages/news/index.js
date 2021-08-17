@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import {SliderBox} from 'react-native-image-slider-box'
 import { useNavigation } from '@react-navigation/core'
-import { Program, Home, Profile} from '../../pages/index.js'
+import { Program, Home, Profile, DetailNews} from '../../pages/index.js'
 
 const image =[
     require('../../assets/slider/News1.png'),
@@ -72,18 +72,20 @@ const News = () => {
                 <Text  style = {styles.newsHeader}>News About Kampus Merdeka</Text>
             </View>
 
-            <View style={styles.eachNews}>
-                <View styles={styles.left}>
-                    <Image source={require('../../assets/images/nadiem.png')}/>
+            <TouchableOpacity onPress={()=>{navigation.navigate('DetailNews',{type:''});}}>
+                <View style={styles.eachNews}>
+                    <View styles={styles.left}>
+                        <Image source={require('../../assets/images/nadiem.png')}/>
+                    </View>
+                    <View style={styles.right}>
+                        <Text style = {styles.title}>Kampus Merdeka ala Mas Menteri Nadiem Makarim, Seperti Apa Konsepnya?</Text>
+                        <Text style = {styles.desc}>Menteri Pendidikan dan Kebudayaan Republik Indonesia, Nadiem Makarim,  baru saja
+                            mengeluarkan lima permendikbud mengenai landasan penerapan kebijakan Merdeka...
+                        </Text>
+                        <Text style= {styles.more}>read more...</Text>
+                    </View>
                 </View>
-                <View style={styles.right}>
-                    <Text style = {styles.title}>Kampus Merdeka ala Mas Menteri Nadiem Makarim, Seperti Apa Konsepnya?</Text>
-                    <Text style = {styles.desc}>Menteri Pendidikan dan Kebudayaan Republik Indonesia, Nadiem Makarim,  baru saja
-                        mengeluarkan lima permendikbud mengenai landasan penerapan kebijakan Merdeka...
-                    </Text>
-                    <Text style= {styles.more}>read more...</Text>
-                </View>
-            </View>
+            </TouchableOpacity>
 
             <View style={styles.eachNews}>
                 <View styles={styles.left}>

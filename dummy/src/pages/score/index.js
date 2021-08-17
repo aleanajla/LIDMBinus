@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, ScrollView } from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
-import { Download, Info_blue} from '../../assets'
+// import { Download, Info_blue} from '../../assets'
 
 const Score = () => {
     return (

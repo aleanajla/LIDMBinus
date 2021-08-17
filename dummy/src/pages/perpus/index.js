@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
         flex: 1
     },
     bell :{
-        fontSize : 25, 
+        // fontSize : 25, 
         padding : 17,
         right:10,
         top:3.5

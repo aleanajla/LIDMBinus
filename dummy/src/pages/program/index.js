@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, ScrollView,TouchableOpacity } from 'reac
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { Bell1, User} from '../../assets'
 import { useNavigation } from '@react-navigation/core'
-import { News, Home, Magang } from '../../pages/index.js'
+import { News, Home, Magang, Profile } from '../../pages/index.js'
 
 const Program = () => {
     const navigation = useNavigation();

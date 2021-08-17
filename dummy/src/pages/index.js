@@ -19,6 +19,9 @@ import ConTerms from './conTerms'
 import DetailNews from './detailNews'
 import Announcement from './announcement'
 import DetailAnnouncement from './detailAnnouncement'
+import howToGetPoints from './howToGetPoints'
+import Certificate from './certificate'
+import myRewards from './myRewards'
 
 
 export{
@@ -33,7 +36,7 @@ export{
     Program,
     News,
     CreateAccount,
-    Settingss
+    Settingss,
     ShareMaterials,
     VideoLearning,
     Magang,
@@ -42,5 +45,8 @@ export{
     ConTerms,
     DetailNews,
     Announcement,
-    DetailAnnouncement
+    DetailAnnouncement,
+    howToGetPoints,
+    Certificate,
+    myRewards
 }

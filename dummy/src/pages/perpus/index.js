@@ -3,9 +3,12 @@ import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity} from 'reac
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType'
 import ImageBackground from 'react-native/Libraries/Image/ImageBackground'
-import { Bell1, User } from '../../assets'
+// import { Bell1, User } from '../../assets'
+import { Profile } from '../profile/index.js'
+import { useNavigation } from '@react-navigation/core'
 
 const Perpus = () => {
+    const navigation = useNavigation();
     return (
         <ScrollView>
         <View style={styles.pages}>
@@ -15,8 +18,13 @@ const Perpus = () => {
                     <Text style = {{fontSize: 20,fontWeight: 'bold', color: WARNA_SEKUNDER}}>Andrew Willy</Text>
                 </View>
                 <View style = {styles.imgHeader}>
-                    <Bell1 style = {styles.bell}/>
-                    <User style = {styles.user}/>
+                    <Image source ={require('../../assets/icons/bell.png')} style = {styles.bell} />
+                    <TouchableOpacity
+                    onPress = {()=>{
+                        navigation.navigate('Profile',{type:''})
+                    }}> 
+                        <Image source = {require('../../assets/icons/profile.png')} />
+                    </TouchableOpacity>
                 </View>
             </View>
             <View style = {styles.garis}/>
@@ -103,7 +111,7 @@ const styles = StyleSheet.create({
         flex: 1
     },
     bell :{
-        fontSize : 25, 
+        // fontSize : 25, 
         padding : 17,
         right:10,
         top:3.5

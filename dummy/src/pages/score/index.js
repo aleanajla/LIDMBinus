@@ -1,15 +1,15 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, ScrollView } from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
-import { Download, Info_blue} from '../../assets'
+// import { Download, Info_blue} from '../../assets'
 
 const Score = () => {
     return (
         <ScrollView>
             <View style={styles.page}>
                 <View style={styles.header}>
-                    <Download style={styles.download}/>
-                    <Info_blue style={styles.info}/>
+                    {/* <Download style={styles.download}/>
+                    <Info_blue style={styles.info}/> */}
                 </View>
                 <View style={[styles.container]}>
                     <View style={styles.firstBox}>

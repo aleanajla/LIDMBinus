@@ -6,7 +6,7 @@ import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/Deprecate
 import ImageBackground from 'react-native/Libraries/Image/ImageBackground'
 import {SliderBox} from 'react-native-image-slider-box'
 import { useNavigation } from '@react-navigation/core'
-import { Program, News, BrowseAllRewards, Announcement } from '../../pages/index.js'
+import { Program, News, BrowseAllRewards, Announcement, Profile, howToGetPoints, DetailAnnouncement} from '../../pages/index.js'
 
 const image = [
     require('../../assets/slider/poster.jpg'),
@@ -116,42 +116,49 @@ const Home = () => {
                             </View>
                         </View>
                     </TouchableOpacity>
-
-                    <View style = {[styles.conLeftRight, {flex:1}]}>
-                            <View>
-                                <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18, marginTop:10}}>How to</Text>
-                                <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18}}>Get Points?</Text>
-                            </View>
-                            <View>
-                            <Image source = {require('../../assets/images/question.png')}
-                                    style = {{width:50,height:55,marginTop:5}} />
-                            </View>
+                    <TouchableOpacity
+                        onPress = {()=>{
+                            navigation.navigate('howToGetPoints', {type:''});
+                        }}
+                    >
+                        <View style = {[styles.conLeftRight, {flex:1}]}>
+                                <View>
+                                    <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18, marginTop:10}}>How to</Text>
+                                    <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18}}>Get Points?</Text>
+                                </View>
+                                <View>
+                                <Image source = {require('../../assets/images/question.png')}
+                                        style = {{width:50,height:55,marginTop:5}} />
+                                </View>
                         </View>
+                    </TouchableOpacity>
                 </View>
 
                 <View style = {styles.containerAnnounce}>
-                <TouchableOpacity onPress={()=>{navigation.navigate('Announcement',{type:''});}}>
-                    <View style = {{flexDirection: 'row'}}>
-                        <Text style = {{color: '#FFFFFF', fontSize: 25, fontWeight:'bold', marginLeft:20, marginTop:10}}>
-                            Announce
-                        </Text>
-                        <Image source = {require('../../assets/icons/arrow_right_white.png')} 
-                            style = {styles.arrow}
-                        />
-                    </View>
-                </TouchableOpacity>
-                    <View style = {styles.announceLR}>
-                        <View style = {styles.announceLR2}>
-                            <Text style = {styles.announcement1}>11 May 2021</Text>
-                            <Text style = {styles.announcement}>Pembukaan Pendaftaran Mobilitas Mahasiswa Internasional – IISMA</Text>
+                    <TouchableOpacity onPress={()=>{navigation.navigate('Announcement',{type:''});}}>
+                        <View style = {{flexDirection: 'row'}}>
+                            <Text style = {{color: '#FFFFFF', fontSize: 25, fontWeight:'bold', marginLeft:20, marginTop:10}}>
+                                Announce
+                            </Text>
+                            <Image source = {require('../../assets/icons/arrow_right_white.png')} 
+                                style = {styles.arrow}
+                            />
                         </View>
-                        <View style = {styles.announceLR2}>
-                            <Text style = {styles.announcement1}>11 Febuary 2021</Text>
-                            <Text style = {styles.announcement}>Sosialisasi Program Kampus Mengajar Angkatan 1 Tahun 2021</Text>
+                    </TouchableOpacity>
+                   
+                        <View style = {styles.announceLR}>
+                            <TouchableOpacity  onPress={()=>{navigation.navigate('DetailAnnouncement',{type:''});}}>
+                                <View style = {styles.announceLR2}>
+                                    <Text style = {styles.announcement1}>11 May 2021</Text>
+                                    <Text style = {styles.announcement}>Pembukaan Pendaftaran Mobilitas Mahasiswa Internasional – IISMA</Text>
+                                </View>
+                            </TouchableOpacity>
+                            <View style = {styles.announceLR2}>
+                                <Text style = {styles.announcement1}>11 Febuary 2021</Text>
+                                <Text style = {styles.announcement}>Sosialisasi Program Kampus Mengajar Angkatan 1 Tahun 2021</Text>
+                            </View>
                         </View>
-                    </View>
                 </View>
-
                 <View style = {styles.news}>
                     <Text style = {{color: '#28527A', fontSize:25, fontWeight: 'bold', marginLeft:30}}>Information</Text>
                     <View style={styles.containerNews}>
@@ -226,7 +233,7 @@ const styles = StyleSheet.create({
         flex: 1
     },
     bell :{
-        fontSize : 25, 
+        // fontSize : 25, 
         padding : 17,
         right:10,
         top:3.5

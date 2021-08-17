@@ -1,94 +1,129 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
-import { Settingss } from '../../pages/index.js'
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native'
+import { Settingss, Certificate, myRewards} from '../../pages/index.js'
 import { useNavigation } from '@react-navigation/core'
 
 const Profile = () => {
     const navigation = useNavigation();
     return (
-        <View style = {styles.profileCon}>
-            <View style = {styles.header}>
-                <View style = {styles.tempProfile}></View>
-                <View style= {styles.headerStatus}>
-                    <Text style = {styles.name}>ANDREW WILLY</Text>
-                    <Text style = {styles.status}>Undergraduate Student</Text>
-                    <Text style = {styles.univ}>Universitas Bina Nusantara</Text>
-                </View>
-                <View style = {styles.conSetting}>
-                    <TouchableOpacity
-                         onPress = {()=>{
-                            navigation.navigate('Settingss',{type:''})
-                        }}
-                    >
-                        <Image source = {require('../../assets/icons/settings.png')} style = {styles.setting}/>
-                    </TouchableOpacity>
-                </View>
-            </View>
-            <View style = {styles.programCon}>
-                <Text style = {styles.progTittle}>Program </Text>
-                <View style = {styles.progDesc}>
-                    <View>
-                        <Image source = {require('../../assets/images/internship.png')} style = {styles.intershipIMG}/>
+        <ScrollView style = {styles.profileCon}>
+            <View>
+                <View style = {styles.header}>
+                    <View style = {styles.tempProfile}></View>
+                    <View style= {styles.headerStatus}>
+                        <Text style = {styles.name}>ANDREW WILLY</Text>
+                        <Text style = {styles.status}>Undergraduate Student</Text>
+                        <Text style = {styles.univ}>Universitas Bina Nusantara</Text>
                     </View>
-                    <View style = {styles.ketProg}>
-                        <Text style = {{color: '#28527A', fontWeight:'bold', fontSize:15}}>Magang - Lazada</Text>
-                        <Text style = {{color: '#28527A', fontSize:15}}>Artificial Intelligence Intern</Text>
-                    </View>
-                </View>
-            </View>
-            <View style = {styles.conProgress}>
-                <View style = {[styles.conLeftRight, {backgroundColor: '#FFFFFF'}, styles.shadowBox]}>
-                    <Text style = {styles.leftCon}>Program Progress</Text>
-                </View>
-                <View style = {[styles.conLeftRight]}>
-                    <View style = {[styles.gpa, styles.shadowBox]}>
-                        <Text style = {styles.rightCon}>Grade Point Averange</Text>
-                        <View style={{
-                                borderBottomColor: '#00000021',
-                                borderBottomWidth: 1,
+                    <View style = {styles.conSetting}>
+                        <TouchableOpacity
+                            onPress = {()=>{
+                                navigation.navigate('Settingss',{type:''})
                             }}
-                        />
-                        <View style = {{alignItems: 'center'}}>
-                            <Text style = {{fontSize:11, color: '#28527AB8'}}>All Semester</Text>
-                            <Text style ={{fontSize:28, fontWeight:'bold', color: '#28527A'}}>A</Text>
-                            <Image source = {require('../../assets/icons/VeryGood.png')} style = {{width:45,height:10}}/>
+                        >
+                            <Image source = {require('../../assets/icons/settings.png')} style = {styles.setting}/>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+                <View style = {styles.programCon}>
+                    <Text style = {styles.progTittle}>Program </Text>
+                    <View style = {styles.progDesc}>
+                        <View>
+                            <Image source = {require('../../assets/images/internship.png')} style = {styles.intershipIMG}/>
                         </View>
-                    </View>
-                    <View style = {[styles.totalPoints, styles.shadowBox]}>
-                        <Text style = {styles.rightCon}>Total Points Reward</Text>
-                        <View style={{
-                                borderBottomColor: '#00000021',
-                                borderBottomWidth: 1,
-                            }}
-                        />
-                        <View style = {styles.pointDesc}>
-                            <View style = {{alignItems:'center'}}>
-                                <Text style = {{fontWeight:'bold', fontSize:20, color: '#28527A'}}>520</Text>
-                                <Text style = {{color: '#28527A', fontSize:15, fontWeight: '400'}}>Points</Text>
-                            </View>
-                            <View>
-                                <Image source= {require('../../assets/images/redeem-points.png')} style = {{marginLeft:10, width:47, height:44}}/>
-                            </View>
+                        <View style = {styles.ketProg}>
+                            <Text style = {{color: '#28527A', fontWeight:'bold', fontSize:15}}>Magang - Lazada</Text>
+                            <Text style = {{color: '#28527A', fontSize:15}}>Artificial Intelligence Intern</Text>
                         </View>
                     </View>
                 </View>
+                <View style = {styles.conProgress}>
+                    <View style = {[styles.conLeftRight, {backgroundColor: '#FFFFFF'}, styles.shadowBox]}>
+                        <Text style = {styles.leftCon}>Program Progress</Text>
+                    </View>
+                    <View style = {[styles.conLeftRight]}>
+                        <View style = {[styles.gpa, styles.shadowBox]}>
+                            <Text style = {styles.rightCon}>Grade Point Averange</Text>
+                            <View style={{
+                                    borderBottomColor: '#00000021',
+                                    borderBottomWidth: 1,
+                                }}
+                            />
+                            <View style = {{alignItems: 'center'}}>
+                                <Text style = {{fontSize:11, color: '#28527AB8'}}>All Semester</Text>
+                                <Text style ={{fontSize:28, fontWeight:'bold', color: '#28527A'}}>A</Text>
+                                <Image source = {require('../../assets/icons/VeryGood.png')} style = {{width:45,height:10}}/>
+                            </View>
+                        </View>
+                        <View style = {[styles.totalPoints, styles.shadowBox]}>
+                            <Text style = {styles.rightCon}>Total Points Reward</Text>
+                            <View style={{
+                                    borderBottomColor: '#00000021',
+                                    borderBottomWidth: 1,
+                                }}
+                            />
+                            <View style = {styles.pointDesc}>
+                                <View style = {{alignItems:'center'}}>
+                                    <Text style = {{fontWeight:'bold', fontSize:20, color: '#28527A'}}>520</Text>
+                                    <Text style = {{color: '#28527A', fontSize:15, fontWeight: '400'}}>Points</Text>
+                                </View>
+                                <View>
+                                    <Image source= {require('../../assets/images/redeem-points.png')} style = {{marginLeft:10, width:47, height:44}}/>
+                                </View>
+                            </View>
+                        </View>
+                    </View>
+                </View>
+                
+                <View style = {styles.myBook}>
+                    <View style= {{flexDirection:'row'}}>
+                        <Text style ={{color: '#28527A', fontWeight: 'bold', fontSize:18}}>My Books</Text>
+                        <View style = {{marginLeft:220}}>
+                            <Image source= {require('../../assets/icons/arrow_right2.png')}/>
+                        </View>
+                    </View>
+                    <View style = {styles.books}>
+                        <View>
+                            <Image source = {require('../../assets/images/book3.png')}/>
+                            <Text>Progress bar</Text>
+                        </View>
+                        <View>
+                            <Image source = {require('../../assets/images/book4.png')} />
+                            <Text>Progress bar</Text>
+                        </View>
+                    </View>
+                </View>
+                <TouchableOpacity
+                    onPress = {()=>{
+                        navigation.navigate('Certificate',{type:''})
+                    }}
+                >
+                    <View style = {styles.myCertif}>
+                        <Image source = {require('../../assets/images/certif.png')}/>
+                        <Text style={styles.titleBox}>My Certificate</Text>
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress = {()=>{
+                        navigation.navigate('myRewards',{type:''})
+                    }}
+                >
+                <View style = {styles.myRewards}>
+                    <Image source = {require('../../assets/icons/reward.png')} />
+                    <Text style = {styles.titleBox}>My Rewards</Text>
+                </View>
+                </TouchableOpacity>
             </View>
-            
-            <View>
-                <Text>My Books</Text>
-
-            </View>
-
-            <View>
-
-            </View>
-        </View>
+        </ScrollView>
     )
 }
 
 export default Profile;
 
 const styles = StyleSheet.create({
+    profileCon:{
+        marginBottom:30
+    },
     header: {
         flexDirection: 'row',
         backgroundColor: '#8AC4D0',
@@ -220,6 +255,45 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.2,
         shadowRadius: 5,
         elevation:10
+    },
+    myBook:{
+        width:333,
+        height:156,
+        marginLeft:25,
+        marginTop:10,
+        marginRight:25
+    },
+    books:{
+        flexDirection:'row',
+        marginTop:20,
+        justifyContent:'space-around'
+    },
+    myCertif:{
+        width:350,
+        height: 71,
+        marginTop:50,
+        backgroundColor: '#FFFFFF',
+        marginLeft:20,
+        marginRight:20,
+        padding:15,
+        borderRadius:20,
+        flexDirection: 'row',
+    },
+    titleBox:{
+        color:'#28527A', 
+        fontSize:18, 
+        fontWeight: 'bold', 
+        marginLeft:20, 
+        marginTop:10
+    },
+    myRewards:{
+        backgroundColor:'#FFFFFF',
+        marginLeft:20,
+        marginRight:20,
+        padding:15,
+        borderRadius:20,
+        flexDirection: 'row',
+        marginTop:15
     }
     
 })

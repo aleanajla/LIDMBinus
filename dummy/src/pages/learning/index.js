@@ -5,7 +5,7 @@ import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/Deprecate
 import ImageBackground from 'react-native/Libraries/Image/ImageBackground'
 import { Bell1, User } from '../../assets'
 import { useNavigation } from '@react-navigation/core'
-import { VideoLearning, ShareMaterials } from '../../pages/index.js'
+import { VideoLearning, ShareMaterials, Profile } from '../../pages/index.js'
 
 
 const Learning = () => {
@@ -19,8 +19,13 @@ const Learning = () => {
                         <Text style = {{fontSize: 20,fontWeight: 'bold', color: WARNA_SEKUNDER}}>Andrew Willy</Text>
                     </View>
                     <View style = {styles.imgHeader}>
-                        <Bell1 style = {styles.bell}/>
-                        <User style = {styles.user}/>
+                        <Image source ={require('../../assets/icons/bell.png')} style = {styles.bell} />
+                        <TouchableOpacity
+                        onPress = {()=>{
+                            navigation.navigate('Profile',{type:''})
+                        }}> 
+                            <Image source = {require('../../assets/icons/profile.png')} />
+                        </TouchableOpacity>
                     </View>
                 </View>
                 <View style = {styles.garis}/>
@@ -109,7 +114,7 @@ const styles = StyleSheet.create({
         flex: 1
     },
     bell :{
-        fontSize : 25, 
+        // fontSize : 25, 
         padding : 17,
         right:10,
         top:3.5

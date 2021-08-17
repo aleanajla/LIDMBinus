@@ -1,14 +1,41 @@
-import React from 'react'
-import { StyleSheet, Text, View, Image, ScrollView,TouchableOpacity } from 'react-native'
+import React, { useEffect, useState } from 'react'
+import { StyleSheet, Text, View, Image, ScrollView,TouchableOpacity, Platform, Dimensions, FlatList } from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { Bell1, User} from '../../assets'
 import { useNavigation } from '@react-navigation/core'
 import { News, Home, Magang, Profile } from '../../pages/index.js'
+import Modal from 'react-native-modal'
+
+const windowsWidth = Dimensions.get('window').width;
+const windowsHeight = Dimensions.get('window').height;
 
 const Program = () => {
     const navigation = useNavigation();
+    const [modalVisible, setModalVisible] = useState(false);
     return (
         <ScrollView>
+
+            <Modal
+                animationType="slide" 
+                transparent={true} 
+                visible={modalVisible}
+                hasBackdrop={true} 
+                backdropOpacity={0.5}
+                onRequestClose={() => {
+                    setModalVisible(!modalVisible)}}
+                >
+                    <View styles={styles.centeredView}>
+                        <View style={styles.modalView}>
+                            <Text style={styles.text4}><Text>The Program Currently Not Available</Text></Text>
+                        <TouchableOpacity
+                            onPress={()=> setModalVisible(!modalVisible)}>
+                            <View style={styles.closeBtn}>
+                                <Text style={styles.closeTxt}>Close</Text>
+                            </View>
+                        </TouchableOpacity>
+                        </View> 
+                    </View>
+            </Modal>
             <View style = {styles.progContainer}>
                 <View style = {styles.header}>
                     <View style = {styles.welcome}>
@@ -127,69 +154,79 @@ const Program = () => {
                                 <Text style = {styles.closed}>Closed</Text>
                             </View>
                         </View>
-                        <View style = {styles.conRow2}>
-                            <View style = {styles.conImage}>
-                                <Image source = {require('../../assets/images/student.png')}/>
+                        <TouchableOpacity onPress={()=> setModalVisible(true)}>
+                            <View style = {styles.conRow2}>
+                                <View style = {styles.conImage}>
+                                    <Image source = {require('../../assets/images/student.png')}/>
+                                </View>
+                                <View style = {styles.conTitle}>
+                                    <Text style = {styles.titleProg}>Indonesian International Student Mobility Awards</Text>
+                                </View>
+                                <View>
+                                    <Text style = {styles.regPeriod}>Registration Period:</Text>
+                                    <Text style = {styles.closed}>Closed</Text>
+                                </View>
                             </View>
-                            <View style = {styles.conTitle}>
-                                <Text style = {styles.titleProg}>Indonesian International Student Mobility Awards</Text>
-                            </View>
-                            <View>
-                                <Text style = {styles.regPeriod}>Registration Period:</Text>
-                                <Text style = {styles.closed}>Closed</Text>
-                            </View>
-                        </View>
-                        <View style = {styles.conRow2}>
-                            <View style = {styles.conImage}>
-                                <Image source = {require('../../assets/images/village.png')}/>
-                            </View>
-                            <View style = {styles.conTitle}>
-                                <Text style = {styles.titleProg}>Membangun Desa (KKN Tematik)</Text>
-                            </View>
-                            <View>
-                                <Text style = {styles.regPeriod}>Registration Period:</Text>
-                                <Text style = {styles.closed}>Closed</Text>
-                            </View>
-                        </View >
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={()=> setModalVisible(true)}>
+                            <View style = {styles.conRow2}>
+                                <View style = {styles.conImage}>
+                                    <Image source = {require('../../assets/images/village.png')}/>
+                                </View>
+                                <View style = {styles.conTitle}>
+                                    <Text style = {styles.titleProg}>Membangun Desa (KKN Tematik)</Text>
+                                </View>
+                                <View>
+                                    <Text style = {styles.regPeriod}>Registration Period:</Text>
+                                    <Text style = {styles.closed}>Closed</Text>
+                                </View>
+                            </View >
+                        </TouchableOpacity>
                     </View>
 
                     <View style = {styles.row1}>
-                        <View style = {styles.conRow2}>
-                            <View style = {styles.conImage}>
-                                <Image source = {require('../../assets/images/project-management.png')}/>
+                        <TouchableOpacity onPress={()=> setModalVisible(true)}>
+                            <View style = {styles.conRow2}>
+                                <View style = {styles.conImage}>
+                                    <Image source = {require('../../assets/images/project-management.png')}/>
+                                </View>
+                                <View style = {styles.conTitle}>
+                                    <Text style = {styles.titleProg}>Proyek Kemanusiaan</Text>
+                                </View>
+                                <View>
+                                    <Text style = {styles.regPeriod}>Registration Period:</Text>
+                                    <Text style = {styles.closed}>Closed</Text>
+                                </View>
                             </View>
-                            <View style = {styles.conTitle}>
-                                <Text style = {styles.titleProg}>Proyek Kemanusiaan</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={()=> setModalVisible(true)}>
+                            <View style = {styles.conRow2}>
+                                <View style = {styles.conImage}>
+                                    <Image source = {require('../../assets/images/research.png')}/>
+                                </View>
+                                <View style = {styles.conTitle}>
+                                    <Text style = {styles.titleProg}>Riset atau Penilitian</Text>
+                                </View>
+                                <View>
+                                    <Text style = {styles.regPeriod}>Registration Period:</Text>
+                                    <Text style = {styles.closed}>Closed</Text>
+                                </View>
                             </View>
-                            <View>
-                                <Text style = {styles.regPeriod}>Registration Period:</Text>
-                                <Text style = {styles.closed}>Closed</Text>
-                            </View>
-                        </View>
-                        <View style = {styles.conRow2}>
-                            <View style = {styles.conImage}>
-                                <Image source = {require('../../assets/images/research.png')}/>
-                            </View>
-                            <View style = {styles.conTitle}>
-                                <Text style = {styles.titleProg}>Riset atau Penilitian</Text>
-                            </View>
-                            <View>
-                                <Text style = {styles.regPeriod}>Registration Period:</Text>
-                                <Text style = {styles.closed}>Closed</Text>
-                            </View>
-                        </View>
-                        <View style = {styles.conRow2}>
-                            <View style = {styles.conImage}>
-                                <Image source = {require('../../assets/images/entrepreneur.png')}/>
-                            </View>
-                            <View style = {styles.conTitle}>
-                                <Text style = {styles.titleProg}>Wirausaha</Text>
-                            </View>
-                            <View>
-                                <Text style = {styles.regPeriod}>Registration Period:</Text>
-                                <Text style = {styles.closed}>Closed</Text>
-                            </View>
-                        </View >
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={()=> setModalVisible(true)}>
+                            <View style = {styles.conRow2}>
+                                <View style = {styles.conImage}>
+                                    <Image source = {require('../../assets/images/entrepreneur.png')}/>
+                                </View>
+                                <View style = {styles.conTitle}>
+                                    <Text style = {styles.titleProg}>Wirausaha</Text>
+                                </View>
+                                <View>
+                                    <Text style = {styles.regPeriod}>Registration Period:</Text>
+                                    <Text style = {styles.closed}>Closed</Text>
+                                </View>
+                            </View >
+                        </TouchableOpacity>
                     </View>
                 </View>
             </View>
@@ -350,4 +387,51 @@ const styles = StyleSheet.create({
         borderRadius:20,
         alignItems: 'center'
     },
+    centeredView :{
+        flex: 1,
+        justifyContent: "center",
+        width: windowsWidth,
+        height: windowsWidth,
+        alignItems: "center",
+    },
+    modalView: {
+        // width : 300,
+        // height :190,
+        paddingTop:20,
+        paddingRight:35,
+        paddingLeft:35,
+        paddingBottom:20,
+        margin:20,
+        backgroundColor: "white",
+        borderRadius: 20,
+        alignItems: "center",
+        justifyContent: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2
+        },
+        shadowOpacity: 0.25,
+        elevation:5,
+    },
+    text4:{
+        fontSize : 22,
+        color : 'black',
+        fontWeight : 'bold',
+        textAlign : 'center'
+    },
+    closeBtn:{
+        backgroundColor : '#28527A',
+        borderRadius : 20,
+        justifyContent : 'center',
+        alignItems : 'center',
+        width:151,
+        height:36,
+        marginTop : 13
+    },
+    closeTxt:{
+        color : 'white',
+        fontSize : 22,
+        fontWeight : 'bold'
+    }
 })

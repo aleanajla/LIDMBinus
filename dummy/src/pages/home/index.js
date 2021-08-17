@@ -292,7 +292,7 @@ const styles = StyleSheet.create({
     conLeftRight:{
         // width:50,
         // height:79,
-        padding:20,
+        padding:15,
         margin: 5,
         backgroundColor: '#FFFFFF',
         borderRadius: 20,

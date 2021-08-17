@@ -2,11 +2,10 @@ import React from 'react'
 import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity} from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType'
-import ImageBackground from 'react-native/Libraries/Image/ImageBackground'
-import { Bell1, User } from '../../assets'
+// import ImageBackground from 'react-native/Libraries/Image/ImageBackground'
+// import { Bell1, User } from '../../assets'
 import { useNavigation } from '@react-navigation/core'
 import { VideoLearning, ShareMaterials, Profile } from '../../pages/index.js'
-
 
 const Learning = () => {
     const navigation = useNavigation();

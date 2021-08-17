@@ -3,8 +3,7 @@ import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity} from 'reac
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType'
 import ImageBackground from 'react-native/Libraries/Image/ImageBackground'
-// import { Bell1, User } from '../../assets'
-import { Profile } from '../profile/index.js'
+import { Profile} from '../../pages/index.js'
 import { useNavigation } from '@react-navigation/core'
 
 const Perpus = () => {
@@ -18,7 +17,12 @@ const Perpus = () => {
                     <Text style = {{fontSize: 20,fontWeight: 'bold', color: WARNA_SEKUNDER}}>Andrew Willy</Text>
                 </View>
                 <View style = {styles.imgHeader}>
-                    <Image source ={require('../../assets/icons/bell.png')} style = {styles.bell} />
+                    <TouchableOpacity
+                    onPress = {()=>{
+                        navigation.navigate('Notificationn',{type:''})
+                    }}> 
+                        <Image source ={require('../../assets/icons/bell.png')} style = {styles.bell} />
+                    </TouchableOpacity>
                     <TouchableOpacity
                     onPress = {()=>{
                         navigation.navigate('Profile',{type:''})

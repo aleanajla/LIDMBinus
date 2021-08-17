@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView} from 'reac
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { Bell1, User} from '../../assets'
 import { useNavigation } from '@react-navigation/core'
-import { Learning, ShareMaterial,Profile } from '../../pages/index.js'
+import { Learning, ShareMaterials, Profile } from '../../pages/index.js'
 
 const VideoLearning = () => {
     const navigation = useNavigation();

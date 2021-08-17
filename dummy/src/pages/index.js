@@ -22,6 +22,7 @@ import DetailAnnouncement from './detailAnnouncement'
 import howToGetPoints from './howToGetPoints'
 import Certificate from './certificate'
 import myRewards from './myRewards'
+import Notificationn from './notificationn'
 
 
 export{
@@ -49,4 +50,5 @@ export{
     howToGetPoints,
     Certificate,
     myRewards
+    Notificationn
 }

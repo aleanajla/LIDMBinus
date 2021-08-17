@@ -27,7 +27,8 @@ import { Home,
         Certificate,
         myRewards,
         Notificationn,
-        Information
+        Information,
+        GetStarted
 } from '../pages/index.js';
 import { BottomTabNavigator } from '../components';
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType';
@@ -75,6 +76,7 @@ const router = () => {
             <Stack.Screen name="myRewards" component={myRewards} options={{headerShown:false}}/>
             <Stack.Screen name="Notificationn" component={Notificationn} options={{headerShown: false}}/>
             <Stack.Screen name="Information" component={Information} options={{headerShown: false}}/>
+            <Stack.Screen name="GetStarted" component={GetStarted} options={{headerShown: false}}/>
         </Stack.Navigator>
     )
 }

@@ -24,6 +24,7 @@ import Certificate from './certificate'
 import myRewards from './myRewards'
 import Notificationn from './notificationn'
 import Information from './information'
+import GetStarted from './getStarted'
 
 
 export{
@@ -53,5 +54,5 @@ export{
     howToGetPoints,
     Certificate,
     myRewards,
-    Notificationn
+    GetStarted
 }

@@ -50,10 +50,15 @@ const Perpus = () => {
                         <Text style={styles.learnText}>What would you</Text>
                         <Text style={styles.learnText}>like to learn</Text>
                         <Text style={styles.learnText}>today?</Text>
+                        <TouchableOpacity
+                        onPress = {()=>{
+                            navigation.navigate('GetStarted',{type:''})
+                        }}> 
                         <View style={styles.started}>
                             <Text style={styles.textStart}>Get Started</Text>
                             <Image source = {require('../../assets/icons/arrow_right.png')} style={{left : 6}}/>
                         </View>
+                        </TouchableOpacity>
                     </View>
                     <View style={styles.right}>
                         <Image source = {require('../../assets/images/education.png')} style={{top :26}}/>

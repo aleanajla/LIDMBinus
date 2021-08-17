@@ -49,6 +49,6 @@ export{
     DetailAnnouncement,
     howToGetPoints,
     Certificate,
-    myRewards
+    myRewards,
     Notificationn
 }

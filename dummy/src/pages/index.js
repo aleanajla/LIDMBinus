@@ -53,5 +53,5 @@ export{
     howToGetPoints,
     Certificate,
     myRewards,
-    Notificationn
+    
 }

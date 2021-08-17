@@ -14,13 +14,15 @@ const Notificationn = () => {
                 </TouchableOpacity>
                 <Text style={styles.announ}>Notification</Text>
             </View>
-            <View style={styles.container}>
-                <Text style={styles.title}>Pembukaan Pendaftaran Mobilitas Mahasiswa Internasional – IISMA</Text>
-                <Text style={styles.desc}>11 May 2021</Text>
-            </View>
-            <View style={styles.container}>
+            <View style={styles.container1}>
+                <View style={styles.container}>
+                    <Text style={styles.title}>Yuk! Cek jadwal program yang telah anda terima</Text>
+                    <Text style={styles.desc}>11 May 2021</Text>
+                </View>
+                <View style={styles.container}>
                 <Text style={styles.title}>Sosialisasi Program Kampus Mengajar Angkatan 1 Tahun 2021</Text>
                 <Text style={styles.desc}>11 Febuary 2021</Text>
+            </View>
             </View>
         </View>
     )
@@ -37,12 +39,15 @@ const styles = StyleSheet.create({
     },
     announ:{
         alignItems : 'center',
-        left : 52,
+        left : 72,
         fontSize : 25,
         color : '#022E57',
         fontWeight : 'bold',
         top : 15,
         marginBottom : 10
+    },
+    container1:{
+        alignItems : 'center'
     },
     container:{
         width : 330,
@@ -51,7 +56,7 @@ const styles = StyleSheet.create({
         borderRadius : 20,
         justifyContent : 'center',
         paddingLeft : 19,
-        left : 26,
+        // left : 36,
         marginTop : 18,
         shadowColor: '#000',
         shadowOffset: {

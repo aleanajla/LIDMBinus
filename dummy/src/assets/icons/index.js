@@ -14,7 +14,7 @@ import Edit from './edit.svg'
 import Home from './home.svg'
 import Info_blue from './info_blue.svg'
 import Info_white from './info_white.png'
-import Logout from './logout.svg'
+import Logout from './logout.png'
 import Scroll_to_top from './Scroll to Top.svg'
 import Settings from './settings.png'
 import Share_white from './share_white.png'
@@ -73,7 +73,7 @@ export{
     VeryBad,
     VeryGood,
     person_outline,
-    close
+    close,
     Arrow_right,
     Arrow_right2,
     Ppt,

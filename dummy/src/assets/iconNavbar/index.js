@@ -9,7 +9,7 @@ const images = {
     },
     Home: {
         imgName: 'Home', 
-        uri: require('../../assets/iconNavbar/home.png')
+        uri: require('../../assets/icons/home1.png')
       },
     Score: {
         imgName: 'Score', 

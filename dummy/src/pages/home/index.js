@@ -3,10 +3,10 @@ import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity} from 'reac
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { Bell1, User } from '../../assets'
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType'
-import ImageBackground from 'react-native/Libraries/Image/ImageBackground'
+import {ImageBackground} from 'react-native/Libraries/Image/ImageBackground'
 import {SliderBox} from 'react-native-image-slider-box'
 import { useNavigation } from '@react-navigation/core'
-import { Program, News, BrowseAllRewards, Announcement } from '../../pages/index.js'
+import { Program, News, BrowseAllRewards, Announcement, Profile } from '../../pages/index.js'
 
 const image = [
     require('../../assets/slider/poster.jpg'),
@@ -155,10 +155,11 @@ const Home = () => {
                 <View style = {styles.news}>
                     <Text style = {{color: '#28527A', fontSize:25, fontWeight: 'bold', marginLeft:30}}>Information</Text>
                     <View style={styles.containerNews}>
-                        <View>
-                            {/* <Text>Gambar1</Text> */}
-                            <Image source = {require('../../assets/images/info1.png')} />
-                        </View>
+                        <TouchableOpacity onPress = {()=>{ navigation.navigate('Information',{type:''})}}> 
+                            <View>
+                                <Image source = {require('../../assets/images/info1.png')} />
+                            </View>
+                        </TouchableOpacity>
                         <View>
                             <Image source = {require('../../assets/images/info2.png')} />
                         </View>

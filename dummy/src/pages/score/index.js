@@ -8,12 +8,11 @@ const Score = () => {
         <ScrollView>
             <View style={styles.page}>
                 <View style={styles.header}>
-                    <Download style={styles.download}/>
-                    <Info_blue style={styles.info}/>
+                    <Image source ={require('../../assets/icons/download.png')} style = {styles.download} />
+                    <Image source ={require('../../assets/icons/infoBlue.png')} style = {styles.info} />
                 </View>
                 <View style={[styles.container]}>
                     <View style={styles.firstBox}>
-                        {/* <View style={[styles.box, { backgroundColor: "powderblue" }]}/> */}
                         <View style={styles.grade}>
                             <View style={styles.gradeTitle}>
                                 <Text style={styles.grade2}>Grade</Text>

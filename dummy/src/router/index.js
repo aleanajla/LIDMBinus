@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View, SafeAreaView, Image } from 'react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Home, Learning, Perpus, Schedule, Score, Program, News, CreateAccount, Register, SignIn, Profile, ShareMaterials, VideoLearning, Magang, DetailsProgram, BrowseAllRewards, ConTerms, DetailNews, Announcement, DetailAnnouncement, Notificationn, Settingss} from '../pages/index.js';
+import { Home, Learning, Perpus, Schedule, Score, Program, News, CreateAccount, Register, SignIn, Profile, ShareMaterials, VideoLearning, Magang, DetailsProgram, BrowseAllRewards, ConTerms, DetailNews, Announcement, DetailAnnouncement, Notificationn, Settingss, Information} from '../pages/index.js';
 import { BottomTabNavigator } from '../components';
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType';
 
@@ -45,6 +45,7 @@ const router = () => {
             <Stack.Screen name="Announcement" component={Announcement} options={{headerShown: false}}/>
             <Stack.Screen name="DetailAnnouncement" component={DetailAnnouncement} options={{headerShown: false}}/>
             <Stack.Screen name="Notificationn" component={Notificationn} options={{headerShown: false}}/>
+            <Stack.Screen name="Information" component={Information} options={{headerShown: false}}/>
         </Stack.Navigator>
     )
 }

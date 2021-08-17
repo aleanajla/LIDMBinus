@@ -20,6 +20,7 @@ import DetailNews from './detailNews'
 import Announcement from './announcement'
 import DetailAnnouncement from './detailAnnouncement'
 import Notificationn from './notificationn'
+import Information from './information'
 
 
 export{
@@ -34,7 +35,7 @@ export{
     Program,
     News,
     CreateAccount,
-    Settingss
+    Settingss,
     ShareMaterials,
     VideoLearning,
     Magang,
@@ -44,5 +45,6 @@ export{
     DetailNews,
     Announcement,
     DetailAnnouncement,
-    Notificationn
+    Notificationn,
+    Information
 }

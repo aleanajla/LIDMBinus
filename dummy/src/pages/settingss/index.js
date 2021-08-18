@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
-import { ProfileSettings } from '../../pages/index.js'
+import { ProfileSettings, Profile } from '../../pages/index.js'
 import { useNavigation } from '@react-navigation/core'
 
 const Settingss = () => {
@@ -10,7 +10,9 @@ const Settingss = () => {
         <ScrollView>
             <View style={styles.pages}>
                 <View style = {styles.header}>
-                    <Image source = {require('../../assets/icons/close.png')} style = {styles.close}/>
+                    <TouchableOpacity onPress={()=>{navigation.navigate('Profile',{type:''});}}>
+                        <Image source = {require('../../assets/icons/close.png')} style = {styles.close}/>
+                    </TouchableOpacity>
                     <Text style={styles.settings}> SETTINGS </Text>
                     {/* <Text style={styles.save}> SAVE </Text> */}
                 </View>

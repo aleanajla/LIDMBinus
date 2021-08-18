@@ -25,6 +25,7 @@ import myRewards from './myRewards'
 import Notificationn from './notificationn'
 import Information from './information'
 import GetStarted from './getStarted'
+import ProfileSettings from './profileSettings'
 
 
 export{
@@ -54,5 +55,6 @@ export{
     howToGetPoints,
     Certificate,
     myRewards,
-    GetStarted
+    GetStarted,
+    ProfileSettings
 }

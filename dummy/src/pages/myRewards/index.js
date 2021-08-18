@@ -125,8 +125,7 @@ const styles = StyleSheet.create({
         margin:10,
         // marginTop:15,
         alignItems: 'center',
-        paddingTop:20,
-    },
+        paddingTop:20,    },
     ket:{
         marginLeft:15,
         justifyContent:'center'

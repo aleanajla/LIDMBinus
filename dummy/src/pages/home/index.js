@@ -6,7 +6,7 @@ import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/Deprecate
 import {ImageBackground} from 'react-native/Libraries/Image/ImageBackground'
 import {SliderBox} from 'react-native-image-slider-box'
 import { useNavigation } from '@react-navigation/core'
-import { Program, News, BrowseAllRewards, Announcement, Profile, howToGetPoints, DetailAnnouncement} from '../../pages/index.js'
+import { Program, News, BrowseAllRewards, Announcement, Profile, howToGetPoints, DetailAnnouncement, Header} from '../../pages/index.js'
 
 const image = [
     require('../../assets/slider/poster.jpg'),
@@ -20,7 +20,7 @@ const Home = () => {
     return (
         <ScrollView>
             <View style={styles.pages}>
-                <View style = {styles.header}>
+                {/* <View style = {styles.header}>
                     <View style = {styles.welcome}>
                         <Text style = {{fontSize: 14, color : '#28527A'}}>Welcome back,</Text>
                         <Text style = {{fontSize: 20,fontWeight: 'bold', color: WARNA_SEKUNDER}}>Andrew Willy</Text>
@@ -34,14 +34,14 @@ const Home = () => {
                             <Image source = {require('../../assets/icons/profile.png')} />
                         </TouchableOpacity>
                     </View>
-                </View>
+                </View> */}
                 <View>
                     <View style = {styles.garis}/>
                 </View>
                 
                 <View style = {styles.conHeader}>
                     
-                    <TouchableOpacity
+                    {/* <TouchableOpacity
                     onPress={()=>{
                         navigation.navigate('Home',{type:''});
                     }}> 
@@ -66,7 +66,7 @@ const Home = () => {
                         <View style = {styles.optHeader}>
                             <Text style = {styles.titleHeader}>News</Text>
                         </View>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
                 </View>
                 <View style = {styles.sliderCon}>
                     <SliderBox images = {image}
@@ -213,38 +213,38 @@ const styles = StyleSheet.create({
         borderRadius:20,
         alignItems: 'center'
     },
-    welcome :{
-        paddingLeft: 30
-    },
+    // welcome :{
+    //     paddingLeft: 30
+    // },
     pages : {
         //flex : 1,
         backgroundColor : '#F6F5F5',
         fontFamily: 'Open-Sans',
     },
-    header :{
-        flexDirection : 'row',
-        paddingTop: 15,
-        backgroundColor: '#F6F5F5'
-    },
-    imgHeader :{
-        flexDirection : 'row',
-        justifyContent : 'flex-end',
-        paddingRight : 20,
-        // justifyContent : 'space-between',
-        flex: 1
-    },
-    bell :{
-        // fontSize : 25, 
-        padding : 17,
-        right:10,
-        top:3.5
-    },
-    garis:{
-        paddingTop: 8,
-        borderBottomColor: '#28527A',
-        borderBottomWidth: 1,
-        // elevation: 5,
-    },
+    // header :{
+    //     flexDirection : 'row',
+    //     paddingTop: 15,
+    //     backgroundColor: '#F6F5F5'
+    // },
+    // imgHeader :{
+    //     flexDirection : 'row',
+    //     justifyContent : 'flex-end',
+    //     paddingRight : 20,
+    //     // justifyContent : 'space-between',
+    //     flex: 1
+    // },
+    // bell :{
+    //     // fontSize : 25, 
+    //     padding : 17,
+    //     right:10,
+    //     top:3.5
+    // },
+    // garis:{
+    //     paddingTop: 8,
+    //     borderBottomColor: '#28527A',
+    //     borderBottomWidth: 1,
+    //     // elevation: 5,
+    // },
     shadow :{
         // shadowColor: '#000000',
         // shadowOffset: {

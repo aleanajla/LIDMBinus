@@ -26,6 +26,7 @@ import Notificationn from './notificationn'
 import Information from './information'
 import GetStarted from './getStarted'
 import Header from './header'
+import ProfileSettings from './profileSettings'
 
 
 export{
@@ -57,4 +58,5 @@ export{
     myRewards,
     GetStarted,
     Header
+    ProfileSettings
 }

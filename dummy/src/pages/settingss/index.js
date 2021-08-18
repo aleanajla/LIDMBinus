@@ -1,15 +1,20 @@
 import React from 'react'
-import { StyleSheet, Text, View, ScrollView, Image } from 'react-native'
+import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
+import { ProfileSettings, Profile } from '../../pages/index.js'
+import { useNavigation } from '@react-navigation/core'
 
 const Settingss = () => {
+    const navigation = useNavigation();
     return (
         <ScrollView>
             <View style={styles.pages}>
                 <View style = {styles.header}>
-                    <Image source = {require('../../assets/icons/close.png')} style = {styles.close}/>
+                    <TouchableOpacity onPress={()=>{navigation.navigate('Profile',{type:''});}}>
+                        <Image source = {require('../../assets/icons/close.png')} style = {styles.close}/>
+                    </TouchableOpacity>
                     <Text style={styles.settings}> SETTINGS </Text>
-                    <Text style={styles.save}> SAVE </Text>
+                    {/* <Text style={styles.save}> SAVE </Text> */}
                 </View>
                 <View style = {styles.main}>
                     <View style={styles.imgText}>
@@ -18,17 +23,22 @@ const Settingss = () => {
                     </View>
                     <View style = {[styles.garis]}/>
                     <View style = {styles.accountCon}>
-                        <View style={styles.container}>
-                            <Text style={styles.text}>Profile</Text>
-                            <Text style={styles.text}> > </Text>
-                        </View>
+                        <TouchableOpacity
+                            onPress = {()=>{
+                                navigation.navigate('ProfileSettings',{type:''})
+                            }}> 
+                            <View style={styles.container}>
+                                <Text style={styles.text}>Profile</Text>
+                                <Image source = {require('../../assets/icons/arrowForward.png')}/>
+                            </View>
+                        </TouchableOpacity>
                         <View style={styles.container}>
                             <Text style={styles.text}>Complete the Document</Text>
-                            <Text style={styles.text}> > </Text>
+                            <Image source = {require('../../assets/icons/arrowForward.png')}/>
                         </View>
                         <View style={styles.container}>
                             <Text style={styles.text}>Change Password</Text>
-                            <Text style={styles.text}> > </Text>
+                            <Image source = {require('../../assets/icons/arrowForward.png')}/>
                         </View>
                     </View>
                     <View style={styles.imgText}>
@@ -69,9 +79,12 @@ const styles = StyleSheet.create({
     header:{
         display: 'flex',
         flexDirection : 'row',
-        justifyContent: 'space-between',
-        padding:20,
+        alignItems : 'center',
+        // justifyContent: 'space-between',
+        paddingRight: 28,
+        paddingLeft : 28,
         backgroundColor: WARNA_SEKUNDER,
+        height : 84
     },
     head:{
         color: '#022E57',
@@ -125,6 +138,9 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         paddingLeft: 10,
         paddingRight: 10,
+        height : 40,
+        alignItems : 'center',
+        marginBottom : 5
     },
     logout:{
         color: WARNA_UTAMA,
@@ -134,7 +150,6 @@ const styles = StyleSheet.create({
     },
     text:{
         color: '#022E5775',
-        margin: 10,
         fontSize: 20,
         fontWeight: '700'
     },
@@ -142,15 +157,15 @@ const styles = StyleSheet.create({
         paddingTop: 2,
         borderBottomColor: '#28527A',
         borderBottomWidth: 1,
-        // elevation: 5,
     },
     close: {
         marginTop: 10
     },
     settings:{
-        fontSize:30,
+        fontSize:35,
         color: WARNA_UTAMA,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        left : 60
     },
     save:{
         fontSize: 15,

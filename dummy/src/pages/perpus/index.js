@@ -1,10 +1,14 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+import CustomListView from '../../components/ListView'
+import { newsData } from '../../assets/jsonData/newsData'
 
 const Perpus = () => {
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Library Screen</Text>
+        <View style={{ flex: 1}}>
+            <CustomListView
+                itemList={newsData}
+            />
         </View>
     )
 }

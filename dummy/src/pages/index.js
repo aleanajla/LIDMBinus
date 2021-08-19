@@ -27,6 +27,9 @@ import Information from './information'
 import GetStarted from './getStarted'
 import Header from './header'
 import ProfileSettings from './profileSettings'
+import PersonalData from './personalData'
+import PersonalContact from './personalContact'
+import UrgentContact from './urgentContact'
 
 
 export{
@@ -57,6 +60,9 @@ export{
     Certificate,
     myRewards,
     GetStarted,
-    Header
-    ProfileSettings
+    Header,
+    ProfileSettings, 
+    PersonalData,
+    PersonalContact,
+    UrgentContact
 }

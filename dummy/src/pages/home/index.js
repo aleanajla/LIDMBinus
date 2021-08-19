@@ -2,6 +2,8 @@ import React from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { Bell1, User} from '../../assets'
+import * as Progress from 'react-native-progress'
+//install: npm install react-native-progress --save
 
 const Home = ({navigation}) => {
     return (
@@ -35,6 +37,13 @@ const Home = ({navigation}) => {
                     <Text style={{alignItems:'center'}}>Register</Text>
                 </TouchableOpacity>
             </View>
+            
+            {/* ProgressBar */}
+            <Progress.Bar progress={0.3} width={200} color={'#000'} unfilledColor={'#F12'}/>
+            
+            {/* Donnut Pie Chart */}
+            <Progress.Circle progress={0.5} showsText={true} size={200} unfilledColor={'#F12'}/>
+
         </View>
     )
 }

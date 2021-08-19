@@ -24,6 +24,12 @@ import Certificate from './certificate'
 import myRewards from './myRewards'
 import Notificationn from './notificationn'
 import Information from './information'
+import GetStarted from './getStarted'
+import Header from './header'
+import ProfileSettings from './profileSettings'
+import PersonalData from './personalData'
+import PersonalContact from './personalContact'
+import UrgentContact from './urgentContact'
 
 
 export{
@@ -53,5 +59,10 @@ export{
     howToGetPoints,
     Certificate,
     myRewards,
-    
+    GetStarted,
+    Header,
+    ProfileSettings, 
+    PersonalData,
+    PersonalContact,
+    UrgentContact
 }

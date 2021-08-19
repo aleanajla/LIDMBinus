@@ -27,7 +27,7 @@ const TabItem = ({label, isFocused, onLongPress, onPress}) => {
             <TouchableOpacity
                 onPress={onPress}
                 onLongPress={onLongPress}
-                style={styles.container}
+                style = { label === "Home" ? styles.conHome : styles.container}
                 >
                     <Image source= {Icon(label)} styles = {styles.navbar}/>
             </TouchableOpacity>
@@ -41,6 +41,13 @@ const styles = StyleSheet.create({
     container:{
         paddingLeft: 20,
         paddingRight : 20,
+    },
+    conHome:{
+        marginBottom: 20,
+        position: 'absolute',
+        bottom:-10,
+        left:-25,
+
     },
     text: {
         color: WARNA_UTAMA

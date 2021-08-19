@@ -1,15 +1,55 @@
-import React from 'react'
-import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity} from 'react-native'
+import React, { useEffect, useState } from 'react'
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Platform, Dimensions, FlatList} from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType'
 import ImageBackground from 'react-native/Libraries/Image/ImageBackground'
 import { Profile} from '../../pages/index.js'
 import { useNavigation } from '@react-navigation/core'
+import Modal from 'react-native-modal'
+
+const windowsWidth = Dimensions.get('window').width;
+const windowsHeight = Dimensions.get('window').height;
 
 const Perpus = () => {
+    const [modalVisible, setModalVisible] = useState(false);
     const navigation = useNavigation();
     return (
         <ScrollView>
+        <Modal
+            animationType="slide" //slide, fade, none
+            transparent={true} //true or false
+            visible={modalVisible}
+            hasBackdrop={true}
+            backdropOpacity={0.5}
+            onRequestClose={() => {
+                setModalVisible(!modalVisible)}}
+            >
+                <View styles={styles.centeredView}>
+                    <View style={styles.modalView}>
+                    <TouchableOpacity onPress={()=> setModalVisible(!modalVisible)}>
+                        <View style={styles.closeBtn}>
+                            <Image source = {require('../../assets/icons/closeBlack.png')}/>
+                        </View>
+                    </TouchableOpacity>
+                        <View style={styles.topp}>
+                            <Image source={require('../../assets/images/predict.png')} style={styles.cover}/>
+                            <View style={styles.rightt}>
+                                <Text style={styles.title}>New Laws of Robotics: Defending Human Expertise in the Age of AI</Text>
+                                <Text style={styles.author}>by Frank Pasquale</Text>
+                                <View style={styles.add}>
+                                    <Text style={styles.addText}>Add to Libary</Text>
+                                </View>
+                            </View>
+                        </View>
+                        <Text style={styles.desc}>
+                            Isaac Asimov quickened dozens of short stories and half a dozen novels with Laws of Robotics that restricted his fictional machines while leaving enough loopholes for propulsive plots. Frank Pasquale’s New Laws of Robotics takes aim at the more mundane artificial intelligence technology of today and our immediate tomorrow, but with more ambition. He plots a future where technologies like factory robots, medical diagnosis algorithms, and online learning make society more just.
+                            Rather than just binding machines, Pasquale’s new laws aim to limit the humans who build and deploy them. He lays out four: that AI systems never pose as people; do not feed arms races for military or social control; augment professionals but don’t replace them; and always indicate the people who built, own, and control them. 
+                            This form of robot law enforcement is about much more than computer code—Pasquale calls for a society-wide reengineering of policy, politics, economics, and labor relations to set technology on a more regulated and egalitarian path. He wants to reprogram the future of tech like classroom robots and online platforms with labor unions and regulatory agencies. That future can be harder to imagine than the overfamiliar outlines of standard tech utopias, which don’t much concern themselves with administrative law. But Pasquale makes a good case for injecting more bureaucracy into our techno-dreams, if we really want to make the world a better place. —Tom Simonite
+                        </Text>
+                    </View> 
+                </View>
+            
+        </Modal>
         <View style={styles.pages}>
             <View style = {styles.header}>
                 <View style = {styles.welcome}>
@@ -50,10 +90,15 @@ const Perpus = () => {
                         <Text style={styles.learnText}>What would you</Text>
                         <Text style={styles.learnText}>like to learn</Text>
                         <Text style={styles.learnText}>today?</Text>
+                        <TouchableOpacity
+                        onPress = {()=>{
+                            navigation.navigate('GetStarted',{type:''})
+                        }}> 
                         <View style={styles.started}>
                             <Text style={styles.textStart}>Get Started</Text>
                             <Image source = {require('../../assets/icons/arrow_right.png')} style={{left : 6}}/>
                         </View>
+                        </TouchableOpacity>
                     </View>
                     <View style={styles.right}>
                         <Image source = {require('../../assets/images/education.png')} style={{top :26}}/>
@@ -66,7 +111,9 @@ const Perpus = () => {
                     </View>
                     <View style={styles.reccomen}>
                         <View style={styles.bookLeft}>
+                        <TouchableOpacity onPress={()=> setModalVisible(true)}>
                             <Image source = {require('../../assets/images/book1.png')}/>
+                        </TouchableOpacity>
                             <Text style={styles.bookTitle}>Predict and Surveil</Text>
                             <Text style={styles.bookAuthor}>Author : Sarah Brayne</Text>
                         </View>
@@ -230,6 +277,85 @@ const styles = StyleSheet.create({
     arrowMore:{
         top : 2,
         left : 265
+    },
+    centeredView :{
+        flex: 1,
+        justifyContent: "center",
+        width: windowsWidth,
+        height: windowsWidth,
+        alignItems: "center",
+        marginTop: 22
+    },
+    modalView: {
+        backgroundColor: "white",
+        borderRadius: 20,
+        paddingTop: 20,
+        // paddingLeft: 10,
+        // paddingRight:10,
+        paddingBottom: 30,
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2
+        },
+        shadowOpacity: 0.25,
+        elevation:5,
+    },
+    closeBtn :{
+        marginLeft : 290,
+        marginBottom : 5
+    },
+    // btnSeeMore:{
+    //     width: 251.123, 
+    //     height: 44.5, 
+    //     backgroundColor: '#28527A',
+    //     alignItems : 'center',
+    //     justifyContent: 'center',
+    //     borderRadius : 20,
+    //     marginTop : 35
+        
+    // },
+    topp:{
+        flexDirection : 'row'
+    },
+    cover:{
+        marginLeft : 0
+    },
+    title:{
+        width : 200,
+        paddingLeft : 10,
+        fontWeight : 'bold',
+        fontSize : 20,
+        color : '#28527A'
+    },
+    author:{
+        paddingLeft : 10,
+        fontSize : 18,
+        color : '#28527A8C'
+    },
+    add:{
+        marginLeft : 10,
+        marginTop : 4,
+        backgroundColor : '#FAD586',
+        width : 112,
+        height : 35,
+        borderRadius : 10,
+        justifyContent : 'center',
+        alignItems : 'center'
+    },
+    addText:{
+        fontSize : 15,
+        color : '#28527A',
+        fontWeight : 'bold'
+    },
+    desc:{
+        fontSize : 11,
+        color : '#00000080',
+        paddingTop : 17,
+        paddingLeft : 20,
+        paddingRight : 15
     }
+
 
 })

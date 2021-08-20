@@ -8,20 +8,19 @@ import  AnnounceListView from '../../components/ListView'
 
 
 const Schedule = () => {
-    const baseDate = new Date(2019, 6, 15);
+    const [toggleCheckBox, setToggleCheckBox] = useState(false)
 
     return (
-        <View style={styles.calendarCon}>
-            <Calendar style={styles.bgCalendar}
-               
-            />
-            
-        </View>
+        <CheckBox
+            disabled={false}
+            value={toggleCheckBox}
+            onValueChange={(newValue) => setToggleCheckBox(newValue)}
+        />
     )
 }
 
 export default Schedule;
 
 const styles = StyleSheet.create({
-
+    
 })

@@ -1,7 +1,10 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity, paddingTop, TextInput } from 'react-native'
+import { useNavigation } from '@react-navigation/core'
+import { Home } from '../../pages/index.js'
 
 const signIn = () => {
+    const navigation = useNavigation();
     return (
         <View style={styles.page}>
             <View style={styles.up}>
@@ -20,7 +23,7 @@ const signIn = () => {
                 </View>
             </View>
             <View style={[ styles.down, {paddingTop: 30}]}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress = {()=>{ navigation.navigate('Home',{type:''})}}> 
                     <Text style={styles.text}>LOGIN</Text>
                 </TouchableOpacity>
                 <TouchableOpacity>

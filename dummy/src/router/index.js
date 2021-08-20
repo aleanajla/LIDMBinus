@@ -29,8 +29,12 @@ import { Home,
         Notificationn,
         Information,
         GetStarted,
-        Header,
         ProfileSettings,
+        SocialMedia,
+        BankAccount,
+        CompleteDocument,
+        ChangePassword,
+        Header,
         PersonalData,
         PersonalContact,
         UrgentContact
@@ -158,6 +162,10 @@ const router = () => {
             <Stack.Screen name="Information" component={Information} options={{headerShown: false}}/>
             <Stack.Screen name="GetStarted" component={GetStarted} options={{headerShown: false}}/>
             <Stack.Screen name="ProfileSettings" component={ProfileSettings} options={{headerShown: false}}/>
+            <Stack.Screen name="SocialMedia" component={SocialMedia} options={{headerShown: false}}/>
+            <Stack.Screen name="BankAccount" component={BankAccount} options={{headerShown: false}}/>
+            <Stack.Screen name="CompleteDocument" component={CompleteDocument} options={{headerShown: false}}/>
+            <Stack.Screen name="ChangePassword" component={ChangePassword} options={{headerShown: false}}/>
             <Stack.Screen name="PersonalData" component={PersonalData} options={{headerShown: false}}/>
             <Stack.Screen name="PersonalContact" component={PersonalContact} options={{headerShown: false}}/>
             <Stack.Screen name="UrgentContact" component={UrgentContact} options={{headerShown: false}}/>

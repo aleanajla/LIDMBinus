@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Platform, Dimensions, FlatList, ViewPropTypes} from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { useNavigation } from '@react-navigation/core'
-import { Settingss, PersonalData, PersonaContact, UrgentContact } from '../../pages/index.js'
+import { Settingss, SocialMedia, BankAccount, PersonalData, PersonalContact, UrgentContact } from '../../pages/index.js'
 import Modal from 'react-native-modal'
 
 const ProfileSettings = () => {
@@ -55,23 +55,26 @@ const ProfileSettings = () => {
                         <Image source = {require('../../assets/icons/arrowForward.png')}/>
                     </View>
                 </View>
-                <View style={styles.eachContainer}>
-                    <View style={styles.left}>
-                        <Text style={styles.data}>Social Media</Text>
+                <TouchableOpacity onPress={()=>{navigation.navigate('SocialMedia',{type:''});}}>
+                    <View style={styles.eachContainer}>
+                        <View style={styles.left}>
+                            <Text style={styles.data}>Social Media</Text>
+                        </View>
+                        <View style={styles.right}>
+                            <Image source = {require('../../assets/icons/arrowForward.png')}/>
+                        </View>
                     </View>
-                    <View style={styles.right}>
-                        <Image source = {require('../../assets/icons/arrowForward.png')}/>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={()=>{navigation.navigate('BankAccount',{type:''});}}>
+                    <View style={styles.eachContainer}>
+                        <View style={styles.left}>
+                            <Text style={styles.data}>Bank Account</Text>
+                        </View>
+                        <View style={styles.right}>
+                            <Image source = {require('../../assets/icons/arrowForward.png')}/>
+                        </View>
                     </View>
-                </View>
-                <View style={styles.eachContainer}>
-                    <View style={styles.left}>
-                        <Text style={styles.data}>Bank Account</Text>
-                    </View>
-                    <View style={styles.right}>
-                        <Image source = {require('../../assets/icons/arrowForward.png')}/>
-                    </View>
-                </View>
-                
+                </TouchableOpacity>
             </View>
         </View>
         </ScrollView>

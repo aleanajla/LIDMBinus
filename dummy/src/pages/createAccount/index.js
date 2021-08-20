@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity, paddingTop } from 'react-native'
 
+
 const createAccount = () => {
     return (
         <View style={styles.page}>

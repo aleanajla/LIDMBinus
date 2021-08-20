@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Platform, Dimensions, FlatList, ViewPropTypes} from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { useNavigation } from '@react-navigation/core'
-import { Settingss, SocialMedia, BankAccount } from '../../pages/index.js'
+import { Settingss, SocialMedia, BankAccount, PersonalData, PersonalContact, UrgentContact } from '../../pages/index.js'
 import Modal from 'react-native-modal'
 
 const ProfileSettings = () => {
@@ -25,25 +25,32 @@ const ProfileSettings = () => {
             </View>
             <View style={styles.container}>
                 <View style={styles.eachContainer}>
-                    <View style={styles.left}>
-                        <Text style={styles.data}>Personal Data</Text>
-                    </View>
+                    <TouchableOpacity
+                        onPress={()=>{navigation.navigate('PersonalData',{type:''});}}
+                        style={styles.left}
+                    >
+                            <Text style={styles.data}>Personal Data</Text>
+                    </TouchableOpacity>
                     <View style={styles.right}>
                         <Image source = {require('../../assets/icons/arrowForward.png')}/>
                     </View>
                 </View>
                 <View style={styles.eachContainer}>
-                    <View style={styles.left}>
-                        <Text style={styles.data}>Personal Contact</Text>
-                    </View>
+                    <TouchableOpacity style={styles.left} 
+                        onPress={()=>{navigation.navigate('PersonalContact',{type:''});}}
+                    >
+                            <Text style={styles.data}>Personal Contact</Text>
+                    </TouchableOpacity>
                     <View style={styles.right}>
                         <Image source = {require('../../assets/icons/arrowForward.png')}/>
                     </View>
                 </View>
                 <View style={styles.eachContainer}>
-                    <View style={styles.left}>
+                    <TouchableOpacity style={styles.left} 
+                        onPress={()=>{navigation.navigate('UrgentContact',{type:''});}}
+                    >
                         <Text style={styles.data}>Urgent Contact</Text>
-                    </View>
+                    </TouchableOpacity>
                     <View style={styles.right}>
                         <Image source = {require('../../assets/icons/arrowForward.png')}/>
                     </View>
@@ -93,7 +100,8 @@ const styles = StyleSheet.create({
         fontWeight : 'bold',
         fontSize : 25,
         left : 105
-    }, changeProfile :{
+    }, 
+    changeProfile :{
         height : 200,
         justifyContent : 'center',
         alignItems : 'center'

@@ -25,11 +25,15 @@ import myRewards from './myRewards'
 import Notificationn from './notificationn'
 import Information from './information'
 import GetStarted from './getStarted'
+import Header from './header'
 import ProfileSettings from './profileSettings'
 import SocialMedia from './socialMedia'
 import BankAccount from './bankAccount'
 import CompleteDocument from './completeDocument'
 import ChangePassword from './changePassword'
+import PersonalData from './personalData'
+import PersonalContact from './personalContact'
+import UrgentContact from './urgentContact'
 
 
 export{
@@ -65,4 +69,9 @@ export{
     BankAccount,
     CompleteDocument,
     ChangePassword
+    Header,
+    ProfileSettings, 
+    PersonalData,
+    PersonalContact,
+    UrgentContact
 }

@@ -46,6 +46,7 @@ import Gojek from './gojek.png'
 import Udemy from './udemy.png'
 import Arkademi from './arkademi.png'
 import Gramedia from './gramedia.png'
+import Logo from './logo.png'
 
 export {
     Badge,
@@ -95,5 +96,6 @@ export {
     Gojek,
     Udemy,
     Shopee,
-    Dicoding
+    Dicoding,
+    Logo,
 }

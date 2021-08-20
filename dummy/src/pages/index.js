@@ -26,6 +26,10 @@ import Notificationn from './notificationn'
 import Information from './information'
 import GetStarted from './getStarted'
 import ProfileSettings from './profileSettings'
+import SocialMedia from './socialMedia'
+import BankAccount from './bankAccount'
+import CompleteDocument from './completeDocument'
+import ChangePassword from './changePassword'
 
 
 export{
@@ -56,5 +60,9 @@ export{
     Certificate,
     myRewards,
     GetStarted,
-    ProfileSettings
+    ProfileSettings,
+    SocialMedia,
+    BankAccount,
+    CompleteDocument,
+    ChangePassword
 }

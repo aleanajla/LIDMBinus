@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
-import { ProfileSettings, Profile } from '../../pages/index.js'
+import { ProfileSettings, Profile, SignIn, ChangePassword, CompleteDocument } from '../../pages/index.js'
 import { useNavigation } from '@react-navigation/core'
 
 const Settingss = () => {
@@ -14,7 +14,6 @@ const Settingss = () => {
                         <Image source = {require('../../assets/icons/close.png')} style = {styles.close}/>
                     </TouchableOpacity>
                     <Text style={styles.settings}> SETTINGS </Text>
-                    {/* <Text style={styles.save}> SAVE </Text> */}
                 </View>
                 <View style = {styles.main}>
                     <View style={styles.imgText}>
@@ -32,14 +31,20 @@ const Settingss = () => {
                                 <Image source = {require('../../assets/icons/arrowForward.png')}/>
                             </View>
                         </TouchableOpacity>
-                        <View style={styles.container}>
-                            <Text style={styles.text}>Complete the Document</Text>
-                            <Image source = {require('../../assets/icons/arrowForward.png')}/>
-                        </View>
-                        <View style={styles.container}>
-                            <Text style={styles.text}>Change Password</Text>
-                            <Image source = {require('../../assets/icons/arrowForward.png')}/>
-                        </View>
+                        
+                        <TouchableOpacity onPress={()=>{navigation.navigate('CompleteDocument',{type:''});}}>
+                            <View style={styles.container}>
+                                <Text style={styles.text}>Complete the Document</Text>
+                                <Image source = {require('../../assets/icons/arrowForward.png')}/>
+                            </View>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity onPress={()=>{navigation.navigate('ChangePassword',{type:''});}}>
+                            <View style={styles.container}>
+                                <Text style={styles.text}>Change Password</Text>
+                                <Image source = {require('../../assets/icons/arrowForward.png')}/>
+                            </View>
+                        </TouchableOpacity>
                     </View>
                     <View style={styles.imgText}>
                         <Image source ={require('../../assets/icons/bell.png')} style = {styles.bell} />

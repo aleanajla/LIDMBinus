@@ -29,7 +29,11 @@ import { Home,
         Notificationn,
         Information,
         GetStarted,
-        ProfileSettings
+        ProfileSettings,
+        SocialMedia,
+        BankAccount,
+        CompleteDocument,
+        ChangePassword
 } from '../pages/index.js';
 import { BottomTabNavigator } from '../components';
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType';
@@ -79,6 +83,10 @@ const router = () => {
             <Stack.Screen name="Information" component={Information} options={{headerShown: false}}/>
             <Stack.Screen name="GetStarted" component={GetStarted} options={{headerShown: false}}/>
             <Stack.Screen name="ProfileSettings" component={ProfileSettings} options={{headerShown: false}}/>
+            <Stack.Screen name="SocialMedia" component={SocialMedia} options={{headerShown: false}}/>
+            <Stack.Screen name="BankAccount" component={BankAccount} options={{headerShown: false}}/>
+            <Stack.Screen name="CompleteDocument" component={CompleteDocument} options={{headerShown: false}}/>
+            <Stack.Screen name="ChangePassword" component={ChangePassword} options={{headerShown: false}}/>
         </Stack.Navigator>
     )
 }

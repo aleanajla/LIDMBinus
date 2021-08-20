@@ -7,12 +7,15 @@ import {ImageBackground} from 'react-native/Libraries/Image/ImageBackground'
 import {SliderBox} from 'react-native-image-slider-box'
 import { useNavigation } from '@react-navigation/core'
 import { Program, News, BrowseAllRewards, Announcement, Profile, howToGetPoints, DetailAnnouncement, Header} from '../../pages/index.js'
+import { announcementData } from '../../assets/jsonData/announcementData';
+import  AnnounceListView from '../../components/ListView'
+import * as Progress from 'react-native-progress'
 
 const image = [
     require('../../assets/slider/poster.jpg'),
     require('../../assets/slider/poster2.png'),
     require('../../assets/slider/poster3.png'),
-    require('../../assets/slider/poster4.png')
+    require('../../assets/slider/poster4.png'),
 ];
 
 const Home = () => {
@@ -89,9 +92,9 @@ const Home = () => {
                             <Text style = {{color : '#28527A', fontSize: 12, marginTop: 12,marginLeft:2}}>points</Text>
                         </View>
                         <View style = {styles.midBottom}>
-                            <Text style = {{marginTop: 10}}>progress bar</Text>
-                            <Text style = {{color : '#28527A', fontSize:7, marginTop: 7, marginLeft:20}}>Earn 200 Points more to reach Gold!</Text>
-                        </View>
+                            <Progress.Bar progress={0.6} width={140} height={7} color={'#28527A'} unfilledColor={'#FAD586'} style={{marginTop:15}}/>
+                            <Text style = {{color : '#28527A', fontSize:7, marginTop: 7, marginLeft:15}}>Earn 200 Points more to reach Gold!</Text>
+                        </View> 
                     </View>
                     <View style = {styles.rightPoints}>
                         <Image source = {require('../../assets/images/coins.png')}
@@ -145,8 +148,13 @@ const Home = () => {
                             />
                         </View>
                     </TouchableOpacity>
+                    <View style = {{display:'flex', flexDirection:'row'}}>
+                        <AnnounceListView
+                            itemList={announcementData}
+                        />
+                    </View>
                    
-                        <View style = {styles.announceLR}>
+                        {/* <View style = {styles.announceLR}>
                             <TouchableOpacity  onPress={()=>{navigation.navigate('DetailAnnouncement',{type:''});}}>
                                 <View style = {styles.announceLR2}>
                                     <Text style = {styles.announcement1}>11 May 2021</Text>
@@ -157,7 +165,7 @@ const Home = () => {
                                 <Text style = {styles.announcement1}>11 Febuary 2021</Text>
                                 <Text style = {styles.announcement}>Sosialisasi Program Kampus Mengajar Angkatan 1 Tahun 2021</Text>
                             </View>
-                        </View>
+                        </View> */}
                 </View>
                 <View style = {styles.news}>
                     <Text style = {{color: '#28527A', fontSize:25, fontWeight: 'bold', marginLeft:30}}>Information</Text>

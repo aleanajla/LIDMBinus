@@ -1,9 +1,11 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView} from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import {SliderBox} from 'react-native-image-slider-box'
 import { useNavigation } from '@react-navigation/core'
 import { Program, Home, Profile, DetailNews} from '../../pages/index.js'
+import { newsData } from '../../assets/jsonData/newsData'
+import NewsListView from '../../components/NewsListView'
 
 const image =[
     require('../../assets/slider/News1.png'),
@@ -15,105 +17,110 @@ const image =[
 const News = () => {
     const navigation = useNavigation();
     return (
-        <View style={styles.pages}>
-            <View style = {styles.header}>
-                <View style = {styles.welcome}>
-                    <Text style = {{fontSize: 14, color : '#28527A'}}>Welcome back,</Text>
-                    <Text style = {{fontSize: 20,fontWeight: 'bold', color: WARNA_SEKUNDER}}>Andrew Willy</Text>
-                </View>
-                <View style = {styles.imgHeader}>
-                    <Image source ={require('../../assets/icons/bell.png')} style = {styles.bell} />
-                    <TouchableOpacity
-                        onPress = {()=>{
-                            navigation.navigate('Profile',{type:''})
-                        }}> 
-                            <Image source = {require('../../assets/icons/profile.png')} />
-                    </TouchableOpacity>
-                </View>
-            </View>
-            <View style = {styles.garis}/>
-            <View>
-                <View style = {styles.conHeader}>
-                    <TouchableOpacity
-                        onPress={()=>{
-                            navigation.navigate('Home',{type:''});
-                        }}>
-                        <View style = {styles.optHeader}>
-                            <Text style = {styles.titleHeader}>Dashboard</Text>
-                        </View>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity
-                    onPress={()=>{
-                        navigation.navigate('Program',{type:''});
-                    }}> 
-                        <View style = {styles.optHeader}>
-                            <Text style = {styles.titleHeader}>Program</Text>
-                        </View>
-                    </TouchableOpacity>
-
-                    <View style = {styles.optHeader2}>
-                        <Text style = {styles.titleHeader2}>News</Text>
+        <ScrollView>
+            <View style={styles.pages}>
+                <View style = {styles.header}>
+                    <View style = {styles.welcome}>
+                        <Text style = {{fontSize: 14, color : '#28527A'}}>Welcome back,</Text>
+                        <Text style = {{fontSize: 20,fontWeight: 'bold', color: WARNA_SEKUNDER}}>Andrew Willy</Text>
+                    </View>
+                    <View style = {styles.imgHeader}>
+                        <Image source ={require('../../assets/icons/bell.png')} style = {styles.bell} />
+                        <TouchableOpacity
+                            onPress = {()=>{
+                                navigation.navigate('Profile',{type:''})
+                            }}> 
+                                <Image source = {require('../../assets/icons/profile.png')} />
+                        </TouchableOpacity>
                     </View>
                 </View>
-            </View>
-            
-            <View>
-                <SliderBox images = {image}
-                    sliderBoxHeight = {145}
-                    onCurrentImagePressed={index => console.warn(`image ${index} pressed`)}
-                    dotColor="#FAD586"
-                    inactiveDotColor="#28527A"
-                    ImageComponentStyle={{borderRadius: 20, width: '94%', marginTop: 5, marginBottom:25}}
+                <View style = {styles.garis}/>
+                <View>
+                    <View style = {styles.conHeader}>
+                        <TouchableOpacity
+                            onPress={()=>{
+                                navigation.navigate('Home',{type:''});
+                            }}>
+                            <View style = {styles.optHeader}>
+                                <Text style = {styles.titleHeader}>Dashboard</Text>
+                            </View>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity
+                        onPress={()=>{
+                            navigation.navigate('Program',{type:''});
+                        }}> 
+                            <View style = {styles.optHeader}>
+                                <Text style = {styles.titleHeader}>Program</Text>
+                            </View>
+                        </TouchableOpacity>
+
+                        <View style = {styles.optHeader2}>
+                            <Text style = {styles.titleHeader2}>News</Text>
+                        </View>
+                    </View>
+                </View>
+                
+                <View>
+                    <SliderBox images = {image}
+                        sliderBoxHeight = {145}
+                        onCurrentImagePressed={index => console.warn(`image ${index} pressed`)}
+                        dotColor="#FAD586"
+                        inactiveDotColor="#28527A"
+                        ImageComponentStyle={{borderRadius: 20, width: '94%', marginTop: 5, marginBottom:25}}
+                    />
+                </View>
+
+                <View>
+                    <Text  style = {styles.newsHeader}>News About Kampus Merdeka</Text>
+                </View>
+                
+                <NewsListView
+                    itemList ={newsData}
                 />
-            </View>
+                {/* <TouchableOpacity onPress={()=>{navigation.navigate('DetailNews',{type:''});}}>
+                    <View style={styles.eachNews}>
+                        <View styles={styles.left}>
+                            <Image source={require('../../assets/images/nadiem.png')}/>
+                        </View>
+                        <View style={styles.right}>
+                            <Text style = {styles.title}>Kampus Merdeka ala Mas Menteri Nadiem Makarim, Seperti Apa Konsepnya?</Text>
+                            <Text style = {styles.desc}>Menteri Pendidikan dan Kebudayaan Republik Indonesia, Nadiem Makarim,  baru saja
+                                mengeluarkan lima permendikbud mengenai landasan penerapan kebijakan Merdeka...
+                            </Text>
+                            <Text style= {styles.more}>read more...</Text>
+                        </View>
+                    </View>
+                </TouchableOpacity>
 
-            <View>
-                <Text  style = {styles.newsHeader}>News About Kampus Merdeka</Text>
-            </View>
-
-            <TouchableOpacity onPress={()=>{navigation.navigate('DetailNews',{type:''});}}>
                 <View style={styles.eachNews}>
                     <View styles={styles.left}>
-                        <Image source={require('../../assets/images/nadiem.png')}/>
+                        <Image source={require('../../assets/images/nadiem2.png')}/>
                     </View>
                     <View style={styles.right}>
-                        <Text style = {styles.title}>Kampus Merdeka ala Mas Menteri Nadiem Makarim, Seperti Apa Konsepnya?</Text>
-                        <Text style = {styles.desc}>Menteri Pendidikan dan Kebudayaan Republik Indonesia, Nadiem Makarim,  baru saja
-                            mengeluarkan lima permendikbud mengenai landasan penerapan kebijakan Merdeka...
+                        <Text style = {styles.title}>Inilah Arti “Kampus Merdeka” dalam kebijakan “Merdeka Belajar” ala Mendikbud Nadiem</Text>
+                        <Text style = {styles.desc}>Nadiem menegaskan kebijakan Kampus Merdeka ini merupakan kelanjutan dari konsep
+                            Merdeka Belajar. Pelaksanaannya paling memungkinkan untuk segera...
                         </Text>
                         <Text style= {styles.more}>read more...</Text>
                     </View>
                 </View>
-            </TouchableOpacity>
 
-            <View style={styles.eachNews}>
-                <View styles={styles.left}>
-                    <Image source={require('../../assets/images/nadiem2.png')}/>
-                </View>
-                <View style={styles.right}>
-                    <Text style = {styles.title}>Inilah Arti “Kampus Merdeka” dalam kebijakan “Merdeka Belajar” ala Mendikbud Nadiem</Text>
-                    <Text style = {styles.desc}>Nadiem menegaskan kebijakan Kampus Merdeka ini merupakan kelanjutan dari konsep
-                        Merdeka Belajar. Pelaksanaannya paling memungkinkan untuk segera...
-                    </Text>
-                    <Text style= {styles.more}>read more...</Text>
-                </View>
+                <View style={styles.eachNews}>
+                    <View styles={styles.left}>
+                        <Image source={require('../../assets/images/kampusMerdeka.png')}/>
+                    </View>
+                    <View style={styles.right}>
+                        <Text style = {styles.title}>Kampus Merdeka ala Mas Menteri Nadiem Makarim, Seperti Apa Konsepnya?</Text>
+                        <Text style = {styles.desc}>"Kebijakan Kampus Merdeka ini merupakan kelanjutan dari konsep Merdeka Belajar.
+                            Pelaksanaannya paling memungkinkan untuk segera dilangsungkan, hanya mengubah
+                            peraturan menteri, tidak sampai mengubah Peraturan...
+                        </Text>
+                        <Text style= {styles.more}>read more...</Text>
+                    </View>
+                </View> */}
             </View>
-
-            <View style={styles.eachNews}>
-                <View styles={styles.left}>
-                    <Image source={require('../../assets/images/kampusMerdeka.png')}/>
-                </View>
-                <View style={styles.right}>
-                    <Text style = {styles.title}>Kampus Merdeka ala Mas Menteri Nadiem Makarim, Seperti Apa Konsepnya?</Text>
-                    <Text style = {styles.desc}>"Kebijakan Kampus Merdeka ini merupakan kelanjutan dari konsep Merdeka Belajar.
-                        Pelaksanaannya paling memungkinkan untuk segera dilangsungkan, hanya mengubah
-                        peraturan menteri, tidak sampai mengubah Peraturan...
-                    </Text>
-                    <Text style= {styles.more}>read more...</Text>
-                </View>
-            </View>
-        </View>
+        </ScrollView>
     )
 }
 

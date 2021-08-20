@@ -2,6 +2,8 @@ import React from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native'
 import { Settingss, Certificate, myRewards} from '../../pages/index.js'
 import { useNavigation } from '@react-navigation/core'
+import * as Progress from 'react-native-progress';
+import { color } from 'react-native-elements/dist/helpers';
 
 const Profile = () => {
     const navigation = useNavigation();
@@ -40,6 +42,17 @@ const Profile = () => {
                 <View style = {styles.conProgress}>
                     <View style = {[styles.conLeftRight, {backgroundColor: '#FFFFFF'}, styles.shadowBox]}>
                         <Text style = {styles.leftCon}>Program Progress</Text>
+                        <Progress.Circle progress={0.5} showsText={true} size={100} unfilledColor={'#889acc'} color={'#bec7e4'} textStyle={{color:'#000000C9', fontWeight:'bold', fontSize:25}} borderWidth={5} style={{marginTop:10}}/>
+                        <View style={{marginBottom:5}}>
+                            <View style={{flexDirection:'row', alignItems:'center'}}>
+                                <View style={{backgroundColor:'#b7c4e3', width:10, height:10}}></View>
+                                <Text style={styles.indikatorProg}>Done Progress</Text>
+                            </View>
+                            <View style={{flexDirection:'row', alignItems:'center'}}>
+                                <View style={{backgroundColor:'#889acc', width:10, height:10}}></View>
+                                <Text style={styles.indikatorProg}>On Progress</Text>
+                            </View>
+                        </View>
                     </View>
                     <View style = {[styles.conLeftRight]}>
                         <View style = {[styles.gpa, styles.shadowBox]}>
@@ -83,13 +96,13 @@ const Profile = () => {
                         </View>
                     </View>
                     <View style = {styles.books}>
-                        <View>
-                            <Image source = {require('../../assets/images/book3.png')}/>
-                            <Text>Progress bar</Text>
+                        <View style ={styles.styleBooks}>
+                            <Image source = {require('../../assets/images/book3.png')} style={{marginBottom:5}}/>
+                            <Progress.Bar progress={0.3} width={133} height={3} color={'#28527A'} unfilledColor={'#FAD586'}/>
                         </View>
-                        <View>
-                            <Image source = {require('../../assets/images/book4.png')} />
-                            <Text>Progress bar</Text>
+                        <View style ={styles.styleBooks}>
+                            <Image source = {require('../../assets/images/book4.png')} style={{marginBottom:5}}/>
+                            <Progress.Bar progress={0.3} width={133} height={3} color={'#28527A'} unfilledColor={'#FAD586'}/>
                         </View>
                     </View>
                 </View>
@@ -294,6 +307,13 @@ const styles = StyleSheet.create({
         borderRadius:20,
         flexDirection: 'row',
         marginTop:15
+    },
+     indikatorProg:{
+         fontSize:12,
+         marginLeft:5,
+         marginTop:2
+     },
+    styleBooks:{
+        alignItems:'center'
     }
-    
 })

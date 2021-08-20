@@ -80,6 +80,43 @@ const TopTabBarNavigation = () => {
     )
 }
 
+const TopTabLearning = createMaterialTopTabNavigator();
+
+const TopTabBarLearning = () => {
+    return(
+        <TopTabLearning.Navigator
+            screenOptions={{
+            tabBarLabelStyle: {
+                fontSize: 12, 
+                backgroundColor : KUNING, 
+                color: WARNA_SEKUNDER, 
+                padding:10, 
+                height:50,
+                width:100, 
+                alignItems : 'center', 
+                justifyContent:'center',
+                borderRadius:20, 
+                fontWeight : 'bold'},
+            tabBarStyle: { backgroundColor: WARNA_UTAMA},
+       }}
+        >   
+            <TopTabLearning.Screen
+                name="Video Learning"
+                component={VideoLearning}
+            />
+            <TopTabLearning.Screen
+                name="Share Materials"
+                component={ShareMaterials}
+            />
+            <TopTabLearning.Screen
+                name="Related Books"
+                component={Learning}
+            />
+        </TopTabLearning.Navigator>
+    )
+
+}
+
 const MainApp = () => {
     return(
         <SafeAreaView style={{flex:1}} forceInset={{top: "always", bottom: "never"}}>
@@ -88,7 +125,7 @@ const MainApp = () => {
                 <Tab.Screen name="Score" component={Score} options={{headerShown: false}}/>
                 <Tab.Screen name="Home" component={TopTabBarNavigation} options={{headerShown: false}}/>
                 <Tab.Screen name="Schedule" component={Schedule} options={{headerShown: false}}/>
-                <Tab.Screen name="Learning" component={Learning} options={{headerShown: false}}/>
+                <Tab.Screen name="Learning" component={TopTabBarLearning} options={{headerShown: false}}/>
             </Tab.Navigator>
         </SafeAreaView>
     )
@@ -105,8 +142,8 @@ const router = () => {
             <Stack.Screen name="SignIn" component={SignIn} options={{headerShown: false}}/>
             <Stack.Screen name="Profile" component={Profile} options={{headerShown: false}}/>
             <Stack.Screen name="Settingss" component={Settingss} options={{headerShown: false}}/>
-            <Stack.Screen name="ShareMaterials" component={ShareMaterials} options={{headerShown: false}}/>
-            <Stack.Screen name="VideoLearning" component={VideoLearning} options={{headerShown: false}}/>
+            {/* <Stack.Screen name="ShareMaterials" component={ShareMaterials} options={{headerShown: false}}/> */}
+            {/* <Stack.Screen name="VideoLearning" component={VideoLearning} options={{headerShown: false}}/> */}
             <Stack.Screen name="Magang" component={Magang} options={{headerShown: false}}/>
             <Stack.Screen name="DetailsProgram" component={DetailsProgram} options={{headerShown: false}}/>
             <Stack.Screen name="BrowseAllRewards" component={BrowseAllRewards} options={{headerShown: false}}/>

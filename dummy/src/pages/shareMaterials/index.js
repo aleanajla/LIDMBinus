@@ -5,6 +5,8 @@ import { Bell1, User} from '../../assets'
 import {SliderBox} from 'react-native-image-slider-box'
 import { useNavigation } from '@react-navigation/core'
 import { Learning, VideoLearning, Profile } from '../../pages/index.js'
+import ShareMaterialsListView from '../../components/shareMaterialsListView'
+import { shareMaterialsData } from '../../assets/jsonData/shareMaterialsData'
 
 const ShareMaterials = () => {
     const navigation = useNavigation();
@@ -27,7 +29,7 @@ const ShareMaterials = () => {
                     </View>
                 </View>
                 <View style = {styles.garis}/>
-                <View style = {styles.conHeader}>
+                {/* <View style = {styles.conHeader}>
                     <TouchableOpacity onPress={()=>{navigation.navigate('VideoLearning',{type:''});}}>
                         <View style={styles.videoLearning}>
                             <Text style = {styles.text1}>Video</Text>
@@ -44,89 +46,11 @@ const ShareMaterials = () => {
                             <Text style = {styles.text1}>Books</Text>
                         </View>
                     </TouchableOpacity>
-                </View>
+                </View> */}
                 <View styles={styles.container}>
-                    <View style={styles.square}>
-                        <View style={styles.left}>
-                            <Image source = {require('../../assets/icons/ppt.png')}/>
-                        </View>
-                        <View style={styles.right}>
-                            <Text style={styles.title}>IntroductionToPython.ppt</Text>
-                            <Text style={styles.mb}>5 MB</Text>
-                        </View>
-                    </View>
-                    <View style={styles.square}>
-                        <View style={styles.left}>
-                            <Image source = {require('../../assets/icons/pdf.png')}/>
-                        </View>
-                        <View style={styles.right}>
-                            <Text style={styles.title}>IntroductionToPython.pdf</Text>
-                            <Text style={styles.mb}>2 MB</Text>
-                        </View>
-                    </View>
-                    <View style={styles.square}>
-                        <View style={styles.left}>
-                            <Image source = {require('../../assets/icons/pdf.png')}/>
-                        </View>
-                        <View style={styles.right}>
-                            <Text style={styles.title}>IntroductionToPython.pdf</Text>
-                            <Text style={styles.mb}>2 MB</Text>
-                        </View>
-                    </View>
-                    <View style={styles.square}>
-                        <View style={styles.left}>
-                            <Image source = {require('../../assets/icons/ppt.png')}/>
-                        </View>
-                        <View style={styles.right}>
-                            <Text style={styles.title}>AdvancedPandas.pptx</Text>
-                            <Text style={styles.mb}>8 MB</Text>
-                        </View>
-                    </View>
-                    <View style={styles.square}>
-                        <View style={styles.left}>
-                            <Image source = {require('../../assets/icons/pdf.png')}/>
-                        </View>
-                        <View style={styles.right}>
-                            <Text style={styles.title}>AdvancedPandas.pdf</Text>
-                            <Text style={styles.mb}>2 MB</Text>
-                        </View>
-                    </View>
-                    <View style={styles.square}>
-                        <View style={styles.left}>
-                            <Image source = {require('../../assets/icons/ppt.png')}/>
-                        </View>
-                        <View style={styles.right}>
-                            <Text style={styles.title}>DataVisualization.pptx</Text>
-                            <Text style={styles.mb}>4 MB</Text>
-                        </View>
-                    </View>
-                    <View style={styles.square}>
-                        <View style={styles.left}>
-                            <Image source = {require('../../assets/icons/ppt.png')}/>
-                        </View>
-                        <View style={styles.right}>
-                            <Text style={styles.title}>ScikitLearn.pptx</Text>
-                            <Text style={styles.mb}>7 MB</Text>
-                        </View>
-                    </View>
-                    <View style={styles.square}>
-                        <View style={styles.left}>
-                            <Image source = {require('../../assets/icons/pdf.png')}/>
-                        </View>
-                        <View style={styles.right}>
-                            <Text style={styles.title}>ScikitLearn.pdf</Text>
-                            <Text style={styles.mb}>5 MB</Text>
-                        </View>
-                    </View>
-                    <View style={styles.square}>
-                        <View style={styles.left}>
-                            <Image source = {require('../../assets/icons/pdf.png')}/>
-                        </View>
-                        <View style={styles.right}>
-                            <Text style={styles.title}>AI_Application.pdf</Text>
-                            <Text style={styles.mb}>2 MB</Text>
-                        </View>
-                    </View>
+                    <ShareMaterialsListView
+                        itemList = {shareMaterialsData}
+                    />
                 </View>
             </View>
         </ScrollView>
@@ -198,41 +122,4 @@ const styles = StyleSheet.create({
         fontSize : 14,
         fontWeight : 'bold'
     },
-    square:{
-        height: 72,
-        width: 370,
-        backgroundColor: '#CCD1D9',
-        marginLeft: 10,
-        marginRight: 10,
-        marginTop: 19,
-        borderRadius: 15,
-        flexDirection : 'row',
-        elevation : 5,
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 2, 
-            height: 4
-        },
-        shadowOpacity: 0.2,
-        shadowRadius: 5,
-    },
-    left:{
-        justifyContent : 'center',
-        paddingLeft : 16,
-    },
-    right:{
-        paddingLeft : 16,
-        // justifyContent : 'center',
-    },
-    title:{
-        fontWeight : 'bold',
-        fontSize : 17,
-        color : '#1B3A58DB',
-        paddingTop : 22
-    },
-    mb:{
-        fontSize : 12,
-        color : WARNA_SEKUNDER,
-        left : 238
-    }
 })

@@ -6,6 +6,8 @@ import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/Deprecate
 // import { Bell1, User } from '../../assets'
 import { useNavigation } from '@react-navigation/core'
 import { VideoLearning, ShareMaterials, Profile } from '../../pages/index.js'
+import RelatedListView from '../../components/relatedListView'
+import { relatedBooksData } from '../../assets/jsonData/relatedBooksData'
 
 const Learning = () => {
     const navigation = useNavigation();
@@ -53,7 +55,10 @@ const Learning = () => {
                     </View>
                 </View>
                 <View style={{paddingTop : 15}}>
-                    <View style={styles.row}>
+                    <RelatedListView
+                        itemList={relatedBooksData}
+                    />
+                    {/* <View style={styles.row}>
                         <View style={styles.bookLeft}>
                             <Image source = {require('../../assets/images/book3.png')}/>
                             <Text style={styles.bookTitle}>If Then: How the</Text>
@@ -91,7 +96,7 @@ const Learning = () => {
                             <Text style={styles.bookTitle}>New Laws Of Robotic</Text>
                             <Text style={styles.bookAuthor}>Author : Frank Pasquale</Text>
                         </View>
-                    </View>
+                    </View> */}
                 </View>
             </View>
         </ScrollView>

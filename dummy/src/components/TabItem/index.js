@@ -39,8 +39,8 @@ export default TabItem
 
 const styles = StyleSheet.create({
     container:{
-        paddingLeft: 20,
-        paddingRight : 20,
+        paddingLeft: 10,
+        paddingRight : 10,
     },
     conHome:{
         marginBottom: 20,

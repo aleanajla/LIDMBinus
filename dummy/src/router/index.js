@@ -144,7 +144,7 @@ const router = () => {
             <Stack.Screen name="Register" component={Register} options={{headerShown: false}}/>
             <Stack.Screen name="CreateAccount" component={CreateAccount} options={{headerShown: false}}/>
             <Stack.Screen name="SignIn" component={SignIn} options={{headerShown: false}}/>
-            <Stack.Screen name="Profile" component={Profile} options={{headerShown: false}}/>
+            <Stack.Screen name="Profile" component={Profile} options={{headerShown: false}} />
             <Stack.Screen name="Settingss" component={Settingss} options={{headerShown: false}}/>
             {/* <Stack.Screen name="ShareMaterials" component={ShareMaterials} options={{headerShown: false}}/> */}
             {/* <Stack.Screen name="VideoLearning" component={VideoLearning} options={{headerShown: false}}/> */}

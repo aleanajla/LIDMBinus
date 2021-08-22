@@ -4,6 +4,8 @@ import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { Bell1, User} from '../../assets'
 import { useNavigation } from '@react-navigation/core'
 import { Learning, ShareMaterials, Profile } from '../../pages/index.js'
+import VideoLearningListView from '../../components/VideoLearningListView'
+import { vidLearningData } from '../../assets/jsonData/vidLearningData'
 
 const VideoLearning = () => {
     const navigation = useNavigation();
@@ -45,56 +47,9 @@ const VideoLearning = () => {
                     </TouchableOpacity>
                 </View>
                 <View styles={styles.container}>
-                    <View style={styles.square}>
-                        <View style={styles.left}>
-                            <Image source = {require('../../assets/images/youtube1.png')}/>
-                        </View>
-                        <View style={styles.right}>
-                            <Text style={styles.title}>Artifical Intelligence in 5 Minutes | What is Artifical...</Text>
-                            <Text style={styles.acc}>Simplilearn</Text>
-                            <Text style={styles.desc}>By the end of this video, you will understand: 0:00 What is Artificial Intelligence? 03:13 Difference between Artificial intelligence, Machine Learning...</Text>
-                        </View>
-                    </View>
-                    <View style={styles.square}>
-                        <View style={styles.left}>
-                            <Image source = {require('../../assets/images/youtube2.png')}/>
-                        </View>
-                        <View style={styles.right}>
-                            <Text style={styles.title}>Artifical Intelligence Full Course | Artifical Intellige...</Text>
-                            <Text style={styles.acc}>Edureka!</Text>
-                            <Text style={styles.desc}>Following topics are covered in this video: 00:00 Introduction 02:27 History Of AI 06:45 Demand For AI 08:46 What Is Artificial Intelligence?...</Text>
-                        </View>
-                    </View>
-                    <View style={styles.square}>
-                        <View style={styles.left}>
-                            <Image source = {require('../../assets/images/youtube3.png')}/>
-                        </View>
-                        <View style={styles.right}>
-                            <Text style={styles.title}>Penerapan Artifical Intelligence di Indonesia</Text>
-                            <Text style={styles.acc}>Ekrut Offical</Text>
-                            <Text style={styles.desc}>Apa itu Artificial Intelligence? Apa kamu pernah mendengar istilah Artificial Intelligence? Lalu, bagaimana ya penerapan Artificial Intelligence di...</Text>
-                        </View>
-                    </View>
-                    <View style={styles.square}>
-                        <View style={styles.left}>
-                            <Image source = {require('../../assets/images/youtube4.png')}/>
-                        </View>
-                        <View style={styles.right}>
-                            <Text style={styles.title}>Understanding Artifical Intelligence and It’s Future...</Text>
-                            <Text style={styles.acc}>TED x Talks</Text>
-                            <Text style={styles.desc}>Neil Nie demonstrates how artificial intelligence--and particularly, object recognition--works... and how it will effect the future.</Text>
-                        </View>
-                    </View>
-                    <View style={styles.square}>
-                        <View style={styles.left}>
-                            <Image source = {require('../../assets/images/youtube5.png')}/>
-                        </View>
-                        <View style={styles.right}>
-                            <Text style={styles.title}>How Does Artifial Intelligence learn? || Brianna Brownell</Text>
-                            <Text style={styles.acc}>TED-Ed</Text>
-                            <Text style={styles.desc}>Explore the three major methods of machine learning, which allows computers to write their own rules to problem solve and process data.</Text>
-                        </View>
-                    </View>
+                    <VideoLearningListView
+                        itemList = {vidLearningData}
+                    />
                 </View>
             </View>
         </ScrollView>
@@ -171,51 +126,5 @@ const styles = StyleSheet.create({
         paddingTop : 17,
         width: 356,
         height: 72
-    },
-    square:{
-        height: 128,
-        width: 370,
-        backgroundColor: '#CCD1D9',
-        marginLeft: 10,
-        marginRight: 10,
-        marginTop: 19,
-        borderRadius: 15,
-        flexDirection : 'row',
-        elevation : 5,
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 2, 
-            height: 4
-        },
-        shadowOpacity: 0.2,
-        shadowRadius: 5,
-    },
-    left:{
-        justifyContent : 'center',
-        paddingLeft : 16,
-    },
-    right:{
-        paddingLeft : 16,
-        paddingTop : 12
-    },
-    title:{
-        fontWeight : 'bold',
-        fontSize : 13,
-        color : '#1B3A58DB',
-        width : 180,
-        // paddingTop : 22
-    },
-    acc:{
-        paddingTop : 2,
-        fontSize : 11,
-        fontWeight : 'bold',
-        color : '#1B3A58DB',
-    },
-    desc:{
-        paddingTop : 2,
-        paddingRight : 5,
-        fontSize : 10,
-        color : '#787680',
-        width : 200
     },
 })

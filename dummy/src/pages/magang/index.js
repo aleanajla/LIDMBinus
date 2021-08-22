@@ -4,6 +4,8 @@ import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { Bell1, User } from '../../assets'
 import { useNavigation } from '@react-navigation/core'
 import { Program, DetailsProgram, Profile } from '../../pages/index.js'
+import ResultProgramListView from '../../components/ResultProgramListView'
+import {resultProgramData}  from '../../assets/jsonData/resultProgramData.js'
 
 const Magang = () => {
     const navigation = useNavigation();
@@ -31,7 +33,10 @@ const Magang = () => {
                         <Text style={styles.searchText}>Sementara jadi back ke program</Text>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={()=>{navigation.navigate('DetailsProgram',{type:''});}}> 
+                <ResultProgramListView
+                    itemList = {resultProgramData}
+                />
+                {/* <TouchableOpacity onPress={()=>{navigation.navigate('DetailsProgram',{type:''});}}> 
                     <View style={styles.square}>
                         <View style={styles.left}>
                             <Image source = {require('../../assets/images/lazada.png')} style={styles.image}/>
@@ -58,7 +63,7 @@ const Magang = () => {
                     </View>
                     <View style={styles.right}>
                         <Text style={styles.title}>Application/ Software Requirement Analyst</Text>
-                        {/* <Text style={styles.division}>Program Magang Lazada Indonesia Customer Care Team</Text> */}
+                        <Text style={styles.division}>Program Magang Lazada Indonesia Customer Care Team</Text>
                         <View style={styles.inside}>
                             <View style={styles.left2}>
                                 <Text style={styles.leftText}>Kota Jakarta Selatan</Text>
@@ -127,7 +132,7 @@ const Magang = () => {
                             </View>
                         </View>
                     </View>
-                </View>
+                </View> */}
             </View>
         </ScrollView>
     )
@@ -176,62 +181,62 @@ const styles = StyleSheet.create({
         alignItems : 'center',
         color : '#28527A80'
     },
-    square:{
-        height: 105,
-        width: 360,
-        backgroundColor: '#E5E5E5',
-        marginLeft : 15,
-        marginRight : 15,
-        borderRadius : 15,
-        flexDirection : 'row',
-        marginBottom : 13,
-    },
-    left:{
-        width : '25%',
-        justifyContent : 'center',
-        alignItems : 'center'
-    },
-    image:{
-        height : 55,
-        width : 55,
-    },
-    right:{
-        top : 10,
-        width : 250
-    },
-    title:{
-        fontWeight : 'bold',
-        color : '#28527A',
-        fontSize : 15,
-    },
-    division:{
-        color: '#28527AD9',
-        fontSize : 12
-    },
-    inside:{
-        top : 3,
-        flexDirection : 'row'
-    },
-    left2:{
-        width : '50%',
-    },
-    right2:{
-        width : '50%',
-        left : 15,
-        alignItems : 'center',
-        flexDirection : 'row'
-    },
-    leftText:{
-        color : '#0000007A',
-        fontSize : 11
-    },
-    rightText:{
-        fontSize : 11,
-        color : '#71A132'
-    },
-    check:{
-        width : 16,
-        height : 16,
-        marginRight : 2
-    }
+    // square:{
+    //     height: 105,
+    //     width: 360,
+    //     backgroundColor: '#E5E5E5',
+    //     marginLeft : 15,
+    //     marginRight : 15,
+    //     borderRadius : 15,
+    //     flexDirection : 'row',
+    //     marginBottom : 13,
+    // },
+    // left:{
+    //     width : '25%',
+    //     justifyContent : 'center',
+    //     alignItems : 'center'
+    // },
+    // image:{
+    //     height : 55,
+    //     width : 55,
+    // },
+    // right:{
+    //     top : 10,
+    //     width : 250
+    // },
+    // title:{
+    //     fontWeight : 'bold',
+    //     color : '#28527A',
+    //     fontSize : 15,
+    // },
+    // division:{
+    //     color: '#28527AD9',
+    //     fontSize : 12
+    // },
+    // inside:{
+    //     top : 3,
+    //     flexDirection : 'row'
+    // },
+    // left2:{
+    //     width : '50%',
+    // },
+    // right2:{
+    //     width : '50%',
+    //     left : 15,
+    //     alignItems : 'center',
+    //     flexDirection : 'row'
+    // },
+    // leftText:{
+    //     color : '#0000007A',
+    //     fontSize : 11
+    // },
+    // rightText:{
+    //     fontSize : 11,
+    //     color : '#71A132'
+    // },
+    // check:{
+    //     width : 16,
+    //     height : 16,
+    //     marginRight : 2
+    // }
 })

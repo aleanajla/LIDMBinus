@@ -68,9 +68,8 @@ export{
     SocialMedia,
     BankAccount,
     CompleteDocument,
-    ChangePassword
+    ChangePassword,
     Header,
-    ProfileSettings, 
     PersonalData,
     PersonalContact,
     UrgentContact

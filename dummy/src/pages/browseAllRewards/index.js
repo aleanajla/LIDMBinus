@@ -3,6 +3,12 @@ import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity} from 'reac
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { useNavigation } from '@react-navigation/core'
 import { Home, ConTerms } from '../../pages/index.js'
+import FoodVoucherListView from '../../components/foodVoucherListView'
+import { foodVoucherData } from '../../assets/jsonData/foodVoucherData'
+import EducationVoucherListView from '../../components/EducationVoucherListView'
+import { educationVoucherData } from '../../assets/jsonData/educationVoucherData'
+import StationaryVoucherListView from '../../components/StationaryListView'
+import { stationaryVoucherData } from '../../assets/jsonData/stationaryVoucherData'
 
 const BrowseAllRewards = () => {
     const navigation = useNavigation();
@@ -31,7 +37,10 @@ const BrowseAllRewards = () => {
                     <Text style={styles.foodTitle}>Food</Text>
                     <ScrollView horizontal={true}>
                     <View style={styles.row}>
-                        <View style={styles.container}>
+                        <FoodVoucherListView
+                            itemList = {foodVoucherData}
+                        />
+                        {/* <View style={styles.container}>
                             <View style={styles.boxTop}>
                                 <Image source = {require('../../assets/images/shopee.png')}/>
                             </View>
@@ -71,7 +80,7 @@ const BrowseAllRewards = () => {
                                     <Text style={styles.reedem}>Reedem</Text>
                                 </View>
                             </View>
-                        </View>
+                        </View> */}
                     </View>
                     </ScrollView>
                 </View>
@@ -79,7 +88,10 @@ const BrowseAllRewards = () => {
                     <Text style={styles.foodTitle}>Education</Text>
                     <ScrollView horizontal={true}>
                     <View style={styles.row}>
-                        <View style={styles.container}>
+                        <EducationVoucherListView
+                            itemList = {educationVoucherData}
+                        />
+                        {/* <View style={styles.container}>
                             <View style={styles.boxTop}>
                                 <Image source = {require('../../assets/images/dicoding.png')}/>
                             </View>
@@ -117,7 +129,7 @@ const BrowseAllRewards = () => {
                                     <Text style={styles.reedem}>Reedem</Text>
                                 </View>
                             </View>
-                        </View>
+                        </View> */}
                     </View>
                     </ScrollView>
                 </View>
@@ -125,7 +137,10 @@ const BrowseAllRewards = () => {
                     <Text style={styles.foodTitle}>Stationary</Text>
                     <ScrollView horizontal={true}>
                     <View style={styles.row}>
-                        <View style={styles.container}>
+                        <StationaryVoucherListView
+                            itemList = {stationaryVoucherData}
+                        />
+                        {/* <View style={styles.container}>
                             <View style={styles.boxTop}>
                                 <Image source = {require('../../assets/images/gramedia.png')}/>
                             </View>
@@ -163,7 +178,7 @@ const BrowseAllRewards = () => {
                                     <Text style={styles.reedem}>Reedem</Text>
                                 </View>
                             </View>
-                        </View>
+                        </View> */}
                     </View>
                     </ScrollView>
                 </View>

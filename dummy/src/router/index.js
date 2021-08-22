@@ -8,6 +8,7 @@ import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/Deprecate
 import { Book4, Group8, Home2,Study4,Test4 } from '../assets';
 import Register from '../pages/Register'
 import { NavigationContainer } from '@react-navigation/native';
+import newsDetail from '../pages/newsDetail';
 
 
 const Stack = createNativeStackNavigator();
@@ -51,6 +52,7 @@ const router = () => {
             <Stack.Navigator>
                 <Stack.Screen name="MainApp" component={MainApp} options={{headerShown: false}} />
                 <Stack.Screen name="Register" component={Register} options={{headerShown: false}} />
+                <Stack.Screen name="NewsDetail" component={newsDetail} options={{headerShown: false}}/>
             </Stack.Navigator>
     )
 }

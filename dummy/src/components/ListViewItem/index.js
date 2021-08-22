@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
@@ -33,12 +34,10 @@ const styles = StyleSheet.create({
     }
 });
 
-const CustomRow = ({title, description, image_url, id}) => (
-    <TouchableOpacity
-        onPress={() => {
-            // navigation.navigate('NewsDetail', {type:{id}})
-        }}
-    >
+const CustomRow = ({title, description, image_url, id, navigation}) => (
+    <TouchableOpacity onPress= {() => { 
+        navigation.navigate('NewsDetail', {ids: id, title: title, description: description, image: image_url}); //kirim data
+    }}>
         <View style={styles.container}>
                     <Image style={styles.photo} source={{uri: image_url}}/>
                     <View style={styles.container_text}>

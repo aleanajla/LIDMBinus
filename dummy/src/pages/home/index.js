@@ -1,11 +1,47 @@
 import React from 'react'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View, Linking, Alert, Button  } from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { Bell1, User} from '../../assets'
 import * as Progress from 'react-native-progress'
+import { Calendar, CalendarList } from 'react-native-calendars';
+import {format} from 'date-fns'
+import { useCallback } from 'react';
 //install: npm install react-native-progress --save
 
+const formats = (date = new Date()) => format(date, 'yyyy-MM-dd'); 
+const webURL = 'https://google.com';
+
+const OpenURLButton = ({ url, children}) => {
+    const handlePress = useCallback(async() => {
+        const supported = await Linking.canOpenURL(url);
+        if(supported){
+            await Linking.openURL(url);
+        }else{
+            Alert.alert('URL Error');
+        }
+    }, [url]);
+
+    return <Button title={children} onPress={handlePress}/>
+}
+
+const getMarkedDates = (baseDate, appointments) => {
+    const markedDates = {};
+  
+    markedDates[formats(baseDate)] = { selected: true };
+  
+    appointments.forEach((appointment) => {
+      const formattedDate = formats(new Date(appointment.date));
+      markedDates[formattedDate] = {
+        ...markedDates[formattedDate],
+        marked: true,
+      };
+    });
+  
+    return markedDates;
+  };
+
 const Home = ({navigation}) => {
+    const baseDate = new Date(2019, 6, 15);
     return (
         <View style={styles.pages}>
             <View style = {styles.header}>
@@ -43,7 +79,13 @@ const Home = ({navigation}) => {
             
             {/* Donnut Pie Chart */}
             <Progress.Circle progress={0.5} showsText={true} size={200} unfilledColor={'#F12'}/>
+            
+            {/* Calendar */}
+            <Calendar
+            current={formats(baseDate)}/>
 
+            {/* Open Url */}
+            <OpenURLButton url={webURL}>Open Supported URL</OpenURLButton>
         </View>
     )
 }

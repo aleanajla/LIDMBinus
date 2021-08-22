@@ -39,6 +39,7 @@ const BrowseAllRewards = () => {
                     <View style={styles.row}>
                         <FoodVoucherListView
                             itemList = {foodVoucherData}
+                            navigation={navigation}
                         />
                         {/* <View style={styles.container}>
                             <View style={styles.boxTop}>
@@ -90,6 +91,7 @@ const BrowseAllRewards = () => {
                     <View style={styles.row}>
                         <EducationVoucherListView
                             itemList = {educationVoucherData}
+                            navigation={navigation}
                         />
                         {/* <View style={styles.container}>
                             <View style={styles.boxTop}>
@@ -139,6 +141,7 @@ const BrowseAllRewards = () => {
                     <View style={styles.row}>
                         <StationaryVoucherListView
                             itemList = {stationaryVoucherData}
+                            navigation={navigation}
                         />
                         {/* <View style={styles.container}>
                             <View style={styles.boxTop}>

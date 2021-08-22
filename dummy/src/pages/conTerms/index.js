@@ -8,9 +8,10 @@ import { BrowseAllRewards } from '../../pages/index.js'
 const windowsWidth = Dimensions.get('window').width;
 const windowsHeight = Dimensions.get('window').height;
 
-const ConTerms = () => {
+const ConTerms = ({route}) => {
     const [modalVisible, setModalVisible] = useState(false);
     const navigation = useNavigation();
+    const{id, company, description, point, image_url, desc, conTerms} = route.params
     return(
         <ScrollView>
             <Modal
@@ -44,25 +45,22 @@ const ConTerms = () => {
                     <Image source = {require('../../assets/icons/arrowBackBlue.png')} style={{marginTop : 15, left:17, width : 34, height:34}}/>
                 </TouchableOpacity>
                 <View style={styles.logo}>
-                    <Image source = {require('../../assets/icons/gojek2.png')}/>
+                    <Image source = {{uri:image_url}} style={{width:300, height:120}}/>
                 </View>
                 <View style={styles.box}>
-                    <Text style={styles.pt}>Gojek</Text>
-                    <Text style={styles.voucher}>eVoucher Gofood 25k</Text>
+                    <Text style={styles.pt}>{company}</Text>
+                    <Text style={styles.voucher}>{description}</Text>
                     <View style={styles.point}>
                         <View style={styles.angka}>
-                            <Text style={styles.text1}>100</Text>
+                            <Text style={styles.text1}>{point}</Text>
                         </View>
-                        <View style={styles.points}>
+                        {/* <View style={styles.points}>
                             <Text style={styles.text2}>Points</Text>
-                        </View>
+                        </View> */}
                     </View>
-                    <Text style={styles.tukar}>Tukarkan point reward dengan eVoucher Shopee dengan nominal Rp.25.000,00 </Text>
+                    <Text style={styles.tukar}>{desc}</Text>
                     <Text style={styles.syarat}>Syarat '& Ketentuan</Text>
-                    <Text style={styles.text}>- Potongan harga sebesar Rp.25.000,00 tanpa ada minimum transaksi</Text>
-                    <Text style={styles.text}>- Potongan harga berlaku pada produk dengan harga normal</Text>
-                    <Text style={styles.text}>- Telah aktivasi dompet digital ShopeePay, karena pada umumnya memiliki ketentuan voucher bisa digunakan hanya menggunakan ShopeePay.</Text>
-                    <Text style={styles.text}>- Jika voucher telah di klaim, harus menyelesaikan order pada Shopee Food.</Text>
+                    <Text style={styles.text}>{conTerms}</Text>
                     
                     <TouchableOpacity onPress={()=> setModalVisible(true)}>
                         <View style={styles.boxRedeem}>

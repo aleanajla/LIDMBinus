@@ -1,14 +1,19 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import {View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { DetailAnnouncement } from '../../pages';
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 
 
-const AnnouncementListViewItems = ({id, date, title, description}) => (
-    <View style={styles.container}>
-            <Text style={styles.title}>Pembukaan Pendaftaran Mobilitas Mahasiswa Internasional – IISMA</Text>
-            <Text style={styles.desc}>11 May 2021</Text>
-    </View>
+const AnnouncementListViewItems = ({id, date, title, description, navigation}) => (
+    <TouchableOpacity onPress= {() => { 
+        navigation.navigate('DetailAnnouncement', {id: id, title: title, description: description,date: date}); //kirim data
+    }}>
+        <View style={styles.container}>
+                <Text style={styles.title}>{title}</Text>
+                <Text style={styles.desc}>{date}</Text>
+        </View>
+    </TouchableOpacity>
 );
 
 export default AnnouncementListViewItems;
@@ -16,7 +21,7 @@ export default AnnouncementListViewItems;
 const styles = StyleSheet.create({
     container:{
         width : 330,
-        height : 91,
+        height : 80,
         backgroundColor : 'white',
         borderRadius : 20,
         justifyContent : 'center',

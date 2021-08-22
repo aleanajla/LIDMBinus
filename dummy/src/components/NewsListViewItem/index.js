@@ -1,14 +1,17 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { DetailAnnouncement } from '../../pages';
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 
 
-const NewsListViewItems = ({id, title, description, image}) => (
-    <TouchableOpacity>
+const NewsListViewItems = ({id, title, description, image_url, detail, date, navigation}) => (
+    <TouchableOpacity onPress= {() => { 
+        navigation.navigate('DetailNews', {id: id, title: title, description: description, image_url: image_url, date: date, detail: detail}); //kirim data
+    }}>
         <View style={styles.eachNews}>
-            <View styles={styles.left}>
-                {/* <Image source={require({image})} style={styles.images}/> */}
+            <View style={styles.left}>
+                <Image source={{uri: image_url}} style={styles.images}/>
             </View>
             <View style={styles.right}>
                 <Text style = {styles.title}>{title}</Text>
@@ -56,7 +59,11 @@ const styles = StyleSheet.create({
         textAlign:'right'
     },
     images:{
-        height : 55,
-        width : 55,
+        height : 69,
+        width : 129,
+        borderRadius:10
     },
+    left:{
+        justifyContent:'center'
+    }
 })

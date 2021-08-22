@@ -1,23 +1,28 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { WARNA_SEKUNDER } from '../../utils/constants';
+import { useNavigation } from '@react-navigation/native';
 
 
-const StationaryVoucherListViewItems = ({id, company, description, point}) => (
-    <View style={styles.container}>
-        <View style={styles.boxTop}>
-            {/* <Image source = {require('../../assets/images/shopee.png')}/> */}
-            {/* <Image source = {require('../../assets/images/gojek.png')}/> */}
-        </View>
-        <View style={styles.boxBottom}>
-            <Text style={styles.title}>{company}</Text>
-            <Text style={styles.desc}>{description}</Text>
-            <Text style={styles.desc}>{point}</Text>
-            <View style={styles.reedemBox}>
-                <Text style={styles.reedem}>Reedem</Text>
+const StationaryVoucherListViewItems = ({id, company, description, point, image_url, desc, conTerms, navigation}) => (
+    <TouchableOpacity onPress= {() => { 
+        navigation.navigate('ConTerms', {id: id, company: company, description: description, point: point, image_url: image_url, desc: desc, conTerms: conTerms}); //kirim data
+    }}>
+        <View style={styles.container}>
+            <View style={styles.boxTop}>
+                <Image source = {{uri: image_url}} style={styles.pic}/>
+                {/* <Image source = {require('../../assets/images/gojek.png')}/> */}
+            </View>
+            <View style={styles.boxBottom}>
+                <Text style={styles.title}>{company}</Text>
+                <Text style={styles.desc}>{description}</Text>
+                <Text style={styles.desc}>{point}</Text>
+                <View style={styles.reedemBox}>
+                    <Text style={styles.reedem}>Reedem</Text>
+                </View>
             </View>
         </View>
-    </View>
+    </TouchableOpacity>
 );
 
 export default StationaryVoucherListViewItems;
@@ -74,5 +79,9 @@ const styles = StyleSheet.create({
         fontSize : 12,
         color : '#28527A',
         fontWeight : 'bold'
+    },
+    pic:{
+        width: 61,
+        height:49
     }
 })

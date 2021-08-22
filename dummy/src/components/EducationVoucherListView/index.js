@@ -2,7 +2,7 @@ import React from 'react';
 import {View, FlatList, StyleSheet, ScrollView} from 'react-native';
 import EducationVoucherListViewItems from '../EducationVoucherListViewItems';
 
-const EducationVoucherListView = ({itemList}) => (
+const EducationVoucherListView = ({itemList, navigation}) => (
     <ScrollView>
     <View>
         <FlatList
@@ -13,6 +13,10 @@ const EducationVoucherListView = ({itemList}) => (
                 company={item.company}           
                 description={item.description}
                 point={item.point} 
+                image_url={item.image_url}
+                desc= {item.desc}
+                conTerms ={item.conTerms}
+                navigation={navigation}
             />}
         />
     </View>

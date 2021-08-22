@@ -1,11 +1,14 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import {View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { DetailAnnouncement } from '../../pages';
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 
 
-const AnnounceListViewItems = ({id, date, title, description}) => (
-    <TouchableOpacity>
+const AnnounceListViewItems = ({id, date, title, description, navigation}) => (
+    <TouchableOpacity onPress= {() => { 
+        navigation.navigate('DetailAnnouncement', {id: id, title: title, description: description,date: date}); //kirim data
+    }}>
         <View style = {styles.announceLR}>
             <View style = {styles.announceLR2}>
                 <Text style = {styles.announcement1}>{date}</Text>

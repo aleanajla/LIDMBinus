@@ -2,7 +2,7 @@ import React from 'react';
 import {View, FlatList, StyleSheet, ScrollView} from 'react-native';
 import FoodVoucherListViewItems from '../foodVoucherListViewItems';
 
-const FoodVoucherListView = ({itemList}) => (
+const FoodVoucherListView = ({itemList, navigation}) => (
     <ScrollView>
     <View>
         <FlatList
@@ -12,7 +12,11 @@ const FoodVoucherListView = ({itemList}) => (
                 id={item.id}
                 company={item.company}           
                 description={item.description}
-                point={item.point} 
+                point={item.point}
+                image_url= {item.image_url}
+                desc= {item.desc}
+                conTerms ={item.conTerms}
+                navigation={navigation}
             />}
         />
     </View>

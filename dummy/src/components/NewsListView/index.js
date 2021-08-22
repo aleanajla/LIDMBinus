@@ -2,7 +2,7 @@ import React from 'react';
 import {View, FlatList, StyleSheet, ScrollView} from 'react-native';
 import NewsListViewItems from '../NewsListViewItem';
 
-const NewsListView = ({itemList}) => (
+const NewsListView = ({itemList, navigation}) => (
     <ScrollView>
     <View>
             <FlatList
@@ -13,6 +13,9 @@ const NewsListView = ({itemList}) => (
                     title={item.title}            
                     description={item.description}
                     image_url ={item.image_url}
+                    detail = {item.detail}
+                    date = {item.date}
+                    navigation={navigation}
                 />}
             />
     </View>

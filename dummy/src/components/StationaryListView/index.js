@@ -2,7 +2,7 @@ import React from 'react';
 import {View, FlatList, StyleSheet, ScrollView} from 'react-native';
 import StationaryVoucherListViewItems from '../StationaryListViewItems';
 
-const StationaryVoucherListView = ({itemList}) => (
+const StationaryVoucherListView = ({itemList, navigation}) => (
     <ScrollView>
     <View>
         <FlatList
@@ -13,6 +13,10 @@ const StationaryVoucherListView = ({itemList}) => (
                 company={item.company}           
                 description={item.description}
                 point={item.point} 
+                image_url = {item.image_url}
+                desc= {item.desc}
+                conTerms ={item.conTerms}
+                navigation={navigation}
             />}
         />
     </View>

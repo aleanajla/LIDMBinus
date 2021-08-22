@@ -5,20 +5,26 @@ export const foodVoucherData =
            "company": "Shopee",
            "description" : "eVoucher Shopee Food 25k",
            "point": "100 Points",
-            //<Image source = {require('../../assets/images/shopee.png')}/> 
+           "image_url" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Shopee.svg/1000px-Shopee.svg.png",
+           "desc" : "Tukarkan point reward dengan eVoucher Shopee dengan nominal Rp.25.000,00 ",
+           "conTerms" : "Potongan harga sebesar Rp.25.000,00 tanpa ada minimum transaksi\nPotongan harga berlaku pada produk dengan harga normal\nTelah aktivasi dompet digital ShopeePay, karena pada umumnya memiliki ketentuan voucher bisa digunakan hanya menggunakan ShopeePay.\nJika voucher telah di klaim, harus menyelesaikan order pada Shopee Food."
         },
         {
             "id": "2",
             "company": "Gojek",
             "description" : "eVocuher go-food 25k",
             "point": "100 Points",
-            //<Image source = {require('../../assets/images/gojek.png')}/> 
+            "image_url" : "https://1.bp.blogspot.com/-GQEHSrfXoZ4/XzaIUlMv_yI/AAAAAAAAANc/XC5J0j4q-agEVCJy-y8ZwZ82qf0jb5T9QCLcBGAsYHQ/s3390/logo%2Bgojek%2Byogiancreative%2B2.png",
+            "desc" : "Tukarkan point reward dengan eVoucher Arkademi dengan nominal Rp.150.000,00",
+            "conTerms" : "Potongan harga sebesar Rp.150.000,00 tanpa ada minimum transaksi\n\nPotongan harga berlaku pada produk dengan harga normal"
          },
          {
             "id": "3",
             "company": "Gojek",
             "description" : "eVoucher go-food 75k",
             "point": "300 point",
-            //<Image source = {require('../../assets/images/gojek.png')}/> 
+            "image_url" : "https://1.bp.blogspot.com/-GQEHSrfXoZ4/XzaIUlMv_yI/AAAAAAAAANc/XC5J0j4q-agEVCJy-y8ZwZ82qf0jb5T9QCLcBGAsYHQ/s3390/logo%2Bgojek%2Byogiancreative%2B2.png",
+            "desc" : "Tukarkan point reward dengan eVoucher Arkademi dengan nominal Rp.150.000,00",
+            "conTerms" : "Potongan harga sebesar Rp.150.000,00 tanpa ada minimum transaksi\n\nPotongan harga berlaku pada produk dengan harga normal"
          },
     ]

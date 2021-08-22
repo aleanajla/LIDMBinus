@@ -77,6 +77,7 @@ const News = () => {
                 
                 <NewsListView
                     itemList ={newsData}
+                    navigation={navigation}
                 />
                 {/* <TouchableOpacity onPress={()=>{navigation.navigate('DetailNews',{type:''});}}>
                     <View style={styles.eachNews}>

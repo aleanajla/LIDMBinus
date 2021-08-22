@@ -151,6 +151,7 @@ const Home = () => {
                     <View style = {{display:'flex', flexDirection:'row'}}>
                         <AnnounceListView
                             itemList={announcementData}
+                            navigation={navigation}
                         />
                     </View>
                    

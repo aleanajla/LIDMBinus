@@ -11,13 +11,14 @@ const Announcement = () => {
     return(
         <View style={styles.pages}>
             <View style={styles.header}>
-                <TouchableOpacity onPress={()=>{navigation.navigate('Home',{type:''});}}>
+                <TouchableOpacity onPress={()=>{navigation.goBack()}}>
                     <Image source = {require('../../assets/icons/arrowBackBlue.png')} style={[styles.header, {width : 34, height:34, top :8}]}/>
                 </TouchableOpacity>
                 <Text style={styles.announ}>ANNOUNCEMENT</Text>
             </View>
             <AnnouncementListView
                 itemList = {announcementData}
+                navigation={navigation}
             />
             {/* <View style={styles.container}>
                 <Text style={styles.title}>Pembukaan Pendaftaran Mobilitas Mahasiswa Internasional – IISMA</Text>

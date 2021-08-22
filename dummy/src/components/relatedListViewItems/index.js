@@ -7,7 +7,7 @@ const RelatedListViewItems = ({id, title, author, image_url}) => (
     <TouchableOpacity>
         <View style={styles.row}>
             <View style={styles.conBook}>
-                <Image source={{uri: image_url}}/>
+                <Image source={{uri: image_url}} style={styles.imgBook}/>
                 <Text style={styles.bookTitle}>{title}</Text>
                 <Text style={styles.bookAuthor}>Author: {author}</Text>
             </View>                                    
@@ -22,7 +22,6 @@ const styles = StyleSheet.create({
         flexDirection : 'row',
         paddingTop : 15,
         paddingBottom : 15,
-        backgroundColor : 'yellow',
         marginBottom : 10,
         justifyContent :'center',
         alignItems : 'center'
@@ -32,6 +31,7 @@ const styles = StyleSheet.create({
         fontSize : 15,
         fontWeight : 'bold',
         textAlign:'center',
+        width:164
     },
     bookAuthor:{
         color : WARNA_SEKUNDER,
@@ -43,4 +43,8 @@ const styles = StyleSheet.create({
         alignItems : 'center',
         justifyContent : 'center'
     },
+    imgBook:{
+        width:79,
+        height:119
+    }
 })

@@ -4,11 +4,11 @@ import { DetailAnnouncement } from '../../pages';
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 
 
-const NewsListViewItems = ({id, title, description, image_url}) => (
+const NewsListViewItems = ({id, title, description, image}) => (
     <TouchableOpacity>
         <View style={styles.eachNews}>
             <View styles={styles.left}>
-                <Image source={{image_url}}/>
+                {/* <Image source={require({image})} style={styles.images}/> */}
             </View>
             <View style={styles.right}>
                 <Text style = {styles.title}>{title}</Text>
@@ -54,5 +54,9 @@ const styles = StyleSheet.create({
         color : WARNA_SEKUNDER,
         padding : 2,
         textAlign:'right'
-    }
+    },
+    images:{
+        height : 55,
+        width : 55,
+    },
 })

@@ -42,7 +42,19 @@ const Profile = () => {
                 <View style = {styles.conProgress}>
                     <View style = {[styles.conLeftRight, {backgroundColor: '#FFFFFF'}, styles.shadowBox]}>
                         <Text style = {styles.leftCon}>Program Progress</Text>
-                        <Progress.Circle progress={0.5} showsText={true} size={100} unfilledColor={'#889acc'} color={'#bec7e4'} textStyle={{color:'#000000C9', fontWeight:'bold', fontSize:25}} borderWidth={5} style={{marginTop:10}}/>
+                        <Progress.Circle 
+                            progress={0.4} 
+                            animated={true}
+                            showsText={true} 
+                            // formatText(progress) = {}
+                            allowFontScaling={true}
+                            size={100} 
+                            thickness={10} 
+                            unfilledColor={'#889acc'} 
+                            color={'#bec7e4'} 
+                            textStyle={{color:'#000000C9', fontWeight:'bold', fontSize:25}} 
+                            borderWidth={1} style={{marginTop:10}}
+                        />
                         <View style={{marginBottom:5}}>
                             <View style={{flexDirection:'row', alignItems:'center'}}>
                                 <View style={{backgroundColor:'#b7c4e3', width:10, height:10}}></View>

@@ -3,6 +3,8 @@ import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity} from 'reac
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { useNavigation } from '@react-navigation/core'
 import { Home } from '../../pages/index.js'
+import AnnouncementListView from '../../components/AnnouncementListView'
+import { announcementData } from '../../assets/jsonData/announcementData'
 
 const Announcement = () => {
     const navigation = useNavigation();
@@ -14,14 +16,17 @@ const Announcement = () => {
                 </TouchableOpacity>
                 <Text style={styles.announ}>ANNOUNCEMENT</Text>
             </View>
-            <View style={styles.container}>
+            <AnnouncementListView
+                itemList = {announcementData}
+            />
+            {/* <View style={styles.container}>
                 <Text style={styles.title}>Pembukaan Pendaftaran Mobilitas Mahasiswa Internasional – IISMA</Text>
                 <Text style={styles.desc}>11 May 2021</Text>
             </View>
             <View style={styles.container}>
                 <Text style={styles.title}>Sosialisasi Program Kampus Mengajar Angkatan 1 Tahun 2021</Text>
                 <Text style={styles.desc}>11 Febuary 2021</Text>
-            </View>
+            </View> */}
         </View>
     )
 }

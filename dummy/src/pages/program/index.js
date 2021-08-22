@@ -5,6 +5,8 @@ import { Bell1, User} from '../../assets'
 import { useNavigation } from '@react-navigation/core'
 import { News, Home, Magang, Profile } from '../../pages/index.js'
 import Modal from 'react-native-modal'
+import ProgramListView from '../../components/ProgramListView'
+import { programData } from '../../assets/jsonData/programData'
 
 const windowsWidth = Dimensions.get('window').width;
 const windowsHeight = Dimensions.get('window').height;
@@ -99,8 +101,11 @@ const Program = () => {
                             </View>
                         </View>
                     </View>
-
-                    <View style = {styles.row1}>
+                    
+                    <ProgramListView
+                        itemList = {programData}
+                    />
+                    {/* <View style = {styles.row1}>
                         <View style = {styles.conRow1}>
                             <View style = {styles.conImage}>
                                 <Image source = {require('../../assets/images/classroom.png')}/>
@@ -182,7 +187,7 @@ const Program = () => {
                                 </View>
                             </View >
                         </TouchableOpacity>
-                    </View>
+                    </View >
 
                     <View style = {styles.row1}>
                         <TouchableOpacity onPress={()=> setModalVisible(true)}>
@@ -226,8 +231,9 @@ const Program = () => {
                                     <Text style = {styles.closed}>Closed</Text>
                                 </View>
                             </View >
-                        </TouchableOpacity>
+                        </TouchableOpacity> 
                     </View>
+                </View> */}
                 </View>
             </View>
         </ScrollView>

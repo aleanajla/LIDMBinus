@@ -21,20 +21,26 @@ const styles = StyleSheet.create({
     row:{
         flexDirection : 'row',
         paddingTop : 15,
-        paddingBottom : 15
+        paddingBottom : 15,
+        backgroundColor : 'yellow',
+        marginBottom : 10,
+        justifyContent :'center',
+        alignItems : 'center'
     },
     bookTitle:{
         color : WARNA_SEKUNDER,
         fontSize : 15,
         fontWeight : 'bold',
-        textAlign:'center'
+        textAlign:'center',
     },
     bookAuthor:{
         color : WARNA_SEKUNDER,
-        fontSize : 11
+        fontSize : 11,
+        textAlign:'center',
     },
     conBook:{
         width: '50%',
-        alignItems : 'center'
-    }
+        alignItems : 'center',
+        justifyContent : 'center'
+    },
 })

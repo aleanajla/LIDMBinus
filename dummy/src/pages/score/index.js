@@ -4,6 +4,8 @@ import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 // import { Download, Info_blue} from '../../assets'
 import ScoreListView from '../../components/ScoreListView'
 import { scoreData } from '../../assets/jsonData/scoreData'
+import * as Progress from 'react-native-progress';
+import { color } from 'react-native-elements/dist/helpers';
 
 const Score = () => {
     return (
@@ -20,59 +22,69 @@ const Score = () => {
                                 <Text style={styles.grade2}>Grade</Text>
                                 <Text style={styles.pass}>Pass</Text>
                             </View>
-                            <View style = {{paddingTop: 8,
-                                borderBottomColor: '#C4C4C4',
-                                borderBottomWidth: 2,}}/>
-                            <View style={{flexDirection: 'row'}}>
-                                <View style={styles.detailsLeft}>
-                                    <Text style={{fontSize:55, color: WARNA_SEKUNDER, fontWeight:'bold'}}>A</Text>
+                            <View style = {{paddingTop: 8, borderBottomColor: '#C4C4C4', borderBottomWidth: 2,}}/>
+                                <View style={{flexDirection: 'row'}}>
+                                    <View style={styles.detailsLeft}>
+                                        <Progress.Circle 
+                                            progress={1} 
+                                            animated={true}
+                                            // showsText={true} 
+                                            // formatText(progress) = {}
+                                            allowFontScaling={true}
+                                            size={100} 
+                                            thickness={10} 
+                                            unfilledColor={'#889acc'} 
+                                            color={'#FFD95D'} 
+                                            textStyle={{color:'#000000C9', fontWeight:'bold', fontSize:25}} 
+                                            borderWidth={1} 
+                                        />
+                                    </View>
+                                    <View style={styles.detailsRight}>
+                                        <Text style={{color:'#28527A'}}>Very Good</Text>
+                                        <Image source={require('../../assets/icons/VeryGood.png')} />
+                                    </View>
                                 </View>
-                                <View style={styles.detailsRight}>
-                                    <Text style={{color:'#28527A'}}>Very Good</Text>
-                                    <Image source={require('../../assets/icons/VeryGood.png')} />
+                            </View>
+                            <View style={styles.grading}>
+                                <View>
+                                    <Text style={[styles.gradingTitle]}>Grading</Text>
+                                </View>
+                                <View style = {{paddingTop: 8,
+                                    borderBottomColor: '#C4C4C4',
+                                    borderBottomWidth: 2}}/>
+                                <View style= {styles.containerGrading}>
+                                    <View style={styles.ketGrade}>
+                                        <Text style={styles.ketGrading}>A</Text>
+                                        <Text style={styles.ketGrading}>B</Text>
+                                        <Text style={styles.ketGrading}>C</Text>
+                                        <Text style={styles.ketGrading}>D</Text>
+                                        <Text style={styles.ketGrading}>E-F</Text>
+                                    </View>
+                                    <View style ={styles.indikasi}>
+                                        <View style={styles.ketIndikasi}>
+                                            <Text style ={styles.ketIndikasi}>Very Good</Text>
+                                            <Image source={require('../../assets/icons/VeryGood.png')}/>
+                                        </View>
+                                        <View>
+                                            <Text style ={styles.ketIndikasi}>Good</Text>
+                                            <Image source={require('../../assets/icons/Good.png')}/>
+                                        </View>
+                                        <View>
+                                            <Text style ={styles.ketIndikasi}>Enough</Text>
+                                            <Image source={require('../../assets/icons/Enough.png')}/>
+                                        </View>
+                                        <View>
+                                            <Text style ={styles.ketIndikasi}>Bad</Text>
+                                            <Image source={require('../../assets/icons/Bad.png')}/>
+                                        </View>
+                                        <View>
+                                            <Text style ={styles.ketIndikasi}>Very Bad</Text>
+                                            <Image source={require('../../assets/icons/VeryBad.png')}/>
+                                        </View>
+                                    </View>
                                 </View>
                             </View>
                         </View>
-                        <View style={styles.grading}>
-                            <View>
-                                <Text style={[styles.gradingTitle]}>Grading</Text>
-                            </View>
-                            <View style = {{paddingTop: 8,
-                                borderBottomColor: '#C4C4C4',
-                                borderBottomWidth: 2}}/>
-                            <View style= {styles.containerGrading}>
-                                <View style={styles.ketGrade}>
-                                    <Text style={styles.ketGrading}>A</Text>
-                                    <Text style={styles.ketGrading}>B</Text>
-                                    <Text style={styles.ketGrading}>C</Text>
-                                    <Text style={styles.ketGrading}>D</Text>
-                                    <Text style={styles.ketGrading}>E-F</Text>
-                                </View>
-                                <View style ={styles.indikasi}>
-                                    <View style={styles.ketIndikasi}>
-                                        <Text style ={styles.ketIndikasi}>Very Good</Text>
-                                        <Image source={require('../../assets/icons/VeryGood.png')}/>
-                                    </View>
-                                    <View>
-                                        <Text style ={styles.ketIndikasi}>Good</Text>
-                                        <Image source={require('../../assets/icons/Good.png')}/>
-                                    </View>
-                                    <View>
-                                        <Text style ={styles.ketIndikasi}>Enough</Text>
-                                        <Image source={require('../../assets/icons/Enough.png')}/>
-                                    </View>
-                                    <View>
-                                        <Text style ={styles.ketIndikasi}>Bad</Text>
-                                        <Image source={require('../../assets/icons/Bad.png')}/>
-                                    </View>
-                                    <View>
-                                        <Text style ={styles.ketIndikasi}>Very Bad</Text>
-                                        <Image source={require('../../assets/icons/VeryBad.png')}/>
-                                    </View>
-                                </View>
-                            </View>
-                        </View>
-                    </View>
                     <ScoreListView
                         itemList = {scoreData}
                     />
@@ -139,11 +151,11 @@ const styles = StyleSheet.create({
         color : WARNA_SEKUNDER,
     },
     detailsLeft:{
-        // backgroundColor :WARNA_SEKUNDER,
         width : '50%',
         height :'100%',
         justifyContent : 'center',
-        alignItems : 'center'
+        alignItems : 'center',
+        paddingLeft : 15
     },
     detailsRight:{
         width : '50%',

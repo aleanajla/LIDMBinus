@@ -54,11 +54,12 @@ const Learning = () => {
                         <Text style = {styles.text2}>Books</Text>
                     </View>
                 </View>
-                <View style={{paddingTop : 15}}>
+                {/* <View style={{paddingTop : 15}}>
                     <RelatedListView
                         itemList={relatedBooksData}
-                    />
-                    {/* <View style={styles.row}>
+                    /> */}
+                <View>
+                    <View style={styles.row}>
                         <View style={styles.bookLeft}>
                             <Image source = {require('../../assets/images/book3.png')}/>
                             <Text style={styles.bookTitle}>If Then: How the</Text>
@@ -96,7 +97,7 @@ const Learning = () => {
                             <Text style={styles.bookTitle}>New Laws Of Robotic</Text>
                             <Text style={styles.bookAuthor}>Author : Frank Pasquale</Text>
                         </View>
-                    </View> */}
+                    </View>
                 </View>
             </View>
         </ScrollView>

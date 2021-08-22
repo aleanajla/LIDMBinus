@@ -1,11 +1,12 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { WARNA_SEKUNDER } from '../../utils/constants';
+import { useCallback } from 'react';
 
-const VideoLearningListViewItems = ({id, cover, title, creator, description, url}) => (
+const VideoLearningListViewItems = ({id, cover, title, creator, description, url, image_url}) => (
     <View style={styles.square}>
         <View style={styles.left}>
-            {/* <Image source = {require('../../assets/images/youtube1.png')}/> */}
+            <Image source = {{uri:image_url}} style={styles.pic}/>
         </View>
         <View style={styles.right}>
             <Text style={styles.title}>{title}</Text>
@@ -66,4 +67,8 @@ const styles = StyleSheet.create({
         color : '#787680',
         width : 200
     },
+    pic:{
+        width:143.8,
+        height:80
+    }
 })

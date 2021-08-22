@@ -15,6 +15,7 @@ const VideoLearningListView = ({itemList}) => (
                     creator={item.creator}
                     description={item.description}
                     url={item.url}
+                    image_url = {item.image_url}
                 />}
             />
     </View>

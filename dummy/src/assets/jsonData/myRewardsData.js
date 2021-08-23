@@ -19,6 +19,6 @@ export const myRewardsData =
         "company": "Udemy",
         "details" : "eVoucher Udemy 100k",
         "deadline": "Valid untill 20 August 2021",
-        "image_url":"https://i.ibb.co/9nRXNHp/udemy-1.png"
+        "image_url":"https://i.ibb.co/XxVK2wp/udemy.png"
      },
 ]

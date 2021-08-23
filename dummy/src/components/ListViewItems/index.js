@@ -4,7 +4,6 @@ import {View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { DetailAnnouncement } from '../../pages';
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 
-
 const AnnounceListViewItems = ({id, date, title, description, navigation}) => (
     <TouchableOpacity onPress= {() => { 
         navigation.navigate('DetailAnnouncement', {id: id, title: title, description: description,date: date}); //kirim data

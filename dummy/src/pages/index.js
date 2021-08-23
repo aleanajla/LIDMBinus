@@ -34,6 +34,8 @@ import ChangePassword from './changePassword'
 import PersonalData from './personalData'
 import PersonalContact from './personalContact'
 import UrgentContact from './urgentContact'
+import Recomend from './recomend'
+import MoreBooks from './moreBooks'
 
 
 export{
@@ -72,5 +74,7 @@ export{
     Header,
     PersonalData,
     PersonalContact,
-    UrgentContact
+    UrgentContact,
+    Recomend,
+    MoreBooks
 }

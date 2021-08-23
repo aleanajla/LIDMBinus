@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, FlatList, StyleSheet, ScrollView} from 'react-native';
+import {View, FlatList, StyleSheet, ScrollView, } from 'react-native';
 import NewsListViewItems from '../NewsListViewItem';
 
 const NewsListView = ({itemList, navigation}) => (

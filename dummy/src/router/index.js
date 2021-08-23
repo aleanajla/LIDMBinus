@@ -37,7 +37,9 @@ import { Home,
         Header,
         PersonalData,
         PersonalContact,
-        UrgentContact
+        UrgentContact,
+        Recomend,
+        MoreBooks
 } from '../pages/index.js';
 import { BottomTabNavigator } from '../components';
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType';
@@ -169,6 +171,8 @@ const router = () => {
             <Stack.Screen name="PersonalData" component={PersonalData} options={{headerShown: false}}/>
             <Stack.Screen name="PersonalContact" component={PersonalContact} options={{headerShown: false}}/>
             <Stack.Screen name="UrgentContact" component={UrgentContact} options={{headerShown: false}}/>
+            <Stack.Screen name="Recomend" component={Recomend} options={{headerShown: false}}/>
+            <Stack.Screen name="MoreBooks" component={MoreBooks} options={{headerShown: false}}/>
         </Stack.Navigator>
     )
 }

@@ -4,13 +4,13 @@ export const newsData =
             "id": "1",
             "title": "Title 1",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus nibh, varius vitae eleifend sed, maximus eu mauris. Proin venenatis congue tellus nec mollis.",
-            "image_url": "https://cdn.pixabay.com/photo/2020/05/26/15/42/eagle-5223559_960_720.jpg"
+            "image_url": "https://i.ibb.co/vxmYy2w/ZB1-IQVtm-DXYj3-Bxi.jpg"
         },
         {
             "id": "2",
             "title": "Title 2",
             "description": "Ut ultrices augue et augue consequat, quis tempus diam hendrerit. Nullam vitae tempus dui.",
-            "image_url": "https://cdn.pixabay.com/photo/2020/05/26/15/42/eagle-5223559_960_720.jpg"
+            "image_url": "https://i.ibb.co/mqvvNhX/ikan-tuna-1.jpg"
         },
         {
             "id": "3",

@@ -1,10 +1,50 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { Download, Info_blue, VeryGood, VeryBad, Good, Enough, Bad} from '../../assets'
 //import { VeryGood, VeryBad, Good, Enough, Bad } from '../../assets'
+import DatePicker from 'react-native-datepicker'
+import { useState } from 'react/cjs/react.development'
+
+//install: npm install @react-native-community/datetimepicker --save
+import DateTimePicker from '@react-native-community/datetimepicker'
 
 const Score = () => {
+    //inisialisasi default date
+    const [date, setDate] = useState(new Date());
+    const [mode, setMode] = useState('date');
+    const [show, setShow] = useState(false); 
+    const [text, setText] = useState('empty');
+
+    //handle on date / time change
+    const onDateChange = (event, selectedDate) => {
+        const currentDate = selectedDate || date;
+        setShow(Platform.OS === 'ios');
+        setDate(currentDate);
+
+        let tempDate = new Date(currentDate);
+        let fDate = tempDate.getDate() + "/" + (tempDate.getMonth() + 1) + '/' + tempDate.getFullYear();
+        let fTime = 'Hours: ' + tempDate.getHours() + ' | Minutes: ' + tempDate.getMinutes();
+
+        setText(fDate + ' (' + fTime + ')');
+      };
+    
+    //show picker
+    const showMode = (currentMode) => {
+        setShow(true);
+        setMode(currentMode);
+    }
+
+    //show date picker
+    const showDatepicker = () => {
+        showMode('date');
+      };
+    
+    //show time picker
+    const showTimepicker = () => {
+        showMode('time');
+    }
+    
     return (
         <View style={styles.page}>
             <View style={styles.header}>
@@ -67,6 +107,41 @@ const Score = () => {
                         </View>
                 </View> */}
             </View>
+            
+            {/* Date Picker */}
+            {/* cara 1 */}
+            <DatePicker 
+            date={date}
+            mode="date"
+            onDateChange={(date) => {
+                setDate(date);
+              }}
+            customStyles={{}}
+            />
+
+            {/* cara 2 */}
+            <TouchableOpacity onPress={showDatepicker}>
+                <Text>Click to Pick a Date</Text>
+            </TouchableOpacity>
+
+            {/* Time Picker */}
+            <TouchableOpacity onPress={showTimepicker}>
+                <Text>Click to Pick a Time</Text>
+            </TouchableOpacity>
+            {show && (
+                <DateTimePicker
+                testID = "dateTimePicker" //id datetime picker
+                value={date} //default value (tanggal hari ini)
+                mode={mode} //pilih date atau time untuk mode datetimepicker nya
+                is24Hour={true} //untuk mode 24 jam / 12 jam
+                display="default" //tampilan yang di display di hp
+                onChange={onDateChange} //handle ubah date / time
+                />
+            )}
+
+            <Text>Date and time will show here</Text>
+            <Text>{text}</Text>
+
         </View>
     )
 }

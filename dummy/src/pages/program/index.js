@@ -39,7 +39,7 @@ const Program = () => {
                     </View>
             </Modal>
             <View style = {styles.progContainer}>
-                <View style = {styles.header}>
+                {/* <View style = {styles.header}>
                     <View style = {styles.welcome}>
                         <Text style = {{fontSize: 14, color : '#28527A'}}>Welcome back,</Text>
                         <Text style = {{fontSize: 20,fontWeight: 'bold', color: WARNA_SEKUNDER}}>Andrew Willy</Text>
@@ -85,7 +85,7 @@ const Program = () => {
                             </View>
                         </TouchableOpacity>
                     </View>
-                </View>
+                </View> */}
                 <View style = {styles.detailsCon}>
                     <View style = {styles.ket}>
                         <View style = {styles.eachPoint}>
@@ -276,7 +276,8 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
     },
     detailsCon: {
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop: 10,
     },
     ket: {
         flexDirection : 'row',

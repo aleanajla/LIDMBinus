@@ -51,8 +51,10 @@ const TopTab = createMaterialTopTabNavigator();
 
 const TopTabBarNavigation = () => {
     return (
+    <View style={{flex:1}}>
+        <Header/>
         <TopTab.Navigator
-           screenOptions={{
+            screenOptions={{
                 tabBarLabelStyle: {
                     fontSize: 12, 
                     backgroundColor : KUNING, 
@@ -64,23 +66,24 @@ const TopTabBarNavigation = () => {
                     justifyContent:'center',
                     borderRadius:20, 
                     fontWeight : 'bold'},
-                tabBarStyle: { backgroundColor: WARNA_UTAMA},
-           }}
-        >
-            <TopTab.Screen 
-                name ="Dashboard" 
-                component={Home}
-                // options={{backgroundColor : WARNA_SEKUNDER}}
-            />
-            <TopTab.Screen 
-                name ="Program" 
-                component={Program} 
-            />
-            <TopTab.Screen 
-                name ="News" 
-                component={News} 
-            />
-        </TopTab.Navigator>
+                    tabBarStyle: { backgroundColor: WARNA_UTAMA},
+            }}
+            >
+                <TopTab.Screen 
+                    name ="Dashboard" 
+                    component={Home}
+                    // options={{backgroundColor : WARNA_SEKUNDER}}
+                />
+                <TopTab.Screen 
+                    name ="Program" 
+                    component={Program} 
+                />
+                <TopTab.Screen 
+                    name ="News" 
+                    component={News} 
+                />
+            </TopTab.Navigator>
+        </View>
     )
 }
 

@@ -1,8 +1,11 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
+import { Profile, Notification } from '../../pages/index.js'
+import { useNavigation } from '@react-navigation/core'
 
 const Header = () => {
+    const navigation = useNavigation();
     return (
         <View style = {styles.header}>
             <View style = {styles.welcome}>
@@ -10,7 +13,13 @@ const Header = () => {
                 <Text style = {{fontSize: 20,fontWeight: 'bold', color: WARNA_SEKUNDER}}>Andrew Willy</Text>
             </View>
             <View style = {styles.imgHeader}>
-                <Image source ={require('../../assets/icons/bell.png')} style = {styles.bell} />
+                <TouchableOpacity
+                onPress = {()=>{
+                    navigation.navigate('Notification',{type:''})
+                }}>
+                    <Image source ={require('../../assets/icons/bell.png')} style = {styles.bell} />
+                </TouchableOpacity>
+                
                 <TouchableOpacity
                 onPress = {()=>{
                     navigation.navigate('Profile',{type:''})

@@ -1,19 +1,34 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity, Linking, Alert} from 'react-native';
 import { WARNA_SEKUNDER } from '../../utils/constants';
 import { useCallback } from 'react';
 
+// const OpenURLButton = ({ url, children}) => {
+//     const handlePress = useCallback(async() => {
+//         const supported = await Linking.canOpenURL(url);
+//         if(supported){
+//             await Linking.openURL(url);
+//         }else{
+//             Alert.alert('URL Error');
+//         }
+//     }, [url]);
+
+//     return <TouchableOpacity title={children} onPress={handlePress}/>
+// }
+
 const VideoLearningListViewItems = ({id, cover, title, creator, description, url, image_url}) => (
-    <View style={styles.square}>
-        <View style={styles.left}>
-            <Image source = {{uri:image_url}} style={styles.pic}/>
+    // <OpenURLButton url={url}>
+        <View style={styles.square}>
+            <View style={styles.left}>
+                <Image source = {{uri:image_url}} style={styles.pic}/>
+            </View>
+            <View style={styles.right}>
+                <Text style={styles.title}>{title}</Text>
+                <Text style={styles.acc}>{creator}</Text>
+                <Text style={styles.desc}>{description}</Text>
+            </View>
         </View>
-        <View style={styles.right}>
-            <Text style={styles.title}>{title}</Text>
-            <Text style={styles.acc}>{creator}</Text>
-            <Text style={styles.desc}>{description}</Text>
-        </View>
-    </View>
+    // </OpenURLButton>
 );
 
 export default VideoLearningListViewItems;

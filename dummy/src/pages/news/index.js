@@ -19,7 +19,7 @@ const News = () => {
     return (
         <ScrollView>
             <View style={styles.pages}>
-                <View style = {styles.header}>
+                {/* <View style = {styles.header}>
                     <View style = {styles.welcome}>
                         <Text style = {{fontSize: 14, color : '#28527A'}}>Welcome back,</Text>
                         <Text style = {{fontSize: 20,fontWeight: 'bold', color: WARNA_SEKUNDER}}>Andrew Willy</Text>
@@ -59,7 +59,7 @@ const News = () => {
                             <Text style = {styles.titleHeader2}>News</Text>
                         </View>
                     </View>
-                </View>
+                </View> */}
                 
                 <View>
                     <SliderBox images = {image}

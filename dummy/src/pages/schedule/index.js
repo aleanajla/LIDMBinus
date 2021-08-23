@@ -1,8 +1,17 @@
-import React, {useState} from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import React, { useEffect, useState } from 'react'
+import { StyleSheet, Text, View, TouchableOpacity, Image, Platform, Dimensions, FlatList, TextInput} from 'react-native';
 import { Calendar, Agenda, AgendaList, CalendarList } from 'react-native-calendars';
 import { WARNA_SEKUNDER } from '../../utils/constants';
 import {format} from 'date-fns';
+import Modal from 'react-native-modal'
+import { useNavigation } from '@react-navigation/core'
+import DatePicker from 'react-native-datepicker'
+import {TimePicker} from 'react-native-simple-time-picker';
+import DateTimePicker from '@react-native-community/datetimepicker'
+
+
+const windowsWidth = Dimensions.get('window').width;
+const windowsHeight = Dimensions.get('window').height;
 
 const formats = (date = new Date()) => format(date, 'yyyy-MM-dd');
 
@@ -31,6 +40,33 @@ const getMarkedDates = (baseDate, appointments) => {
 const Schedule = () => {
     const baseDate = new Date(2021, 7, 21);
     const [items, setItems] = useState({});
+    const [modalVisible, setModalVisible] = useState(false);
+    const[date, setDate] = useState(new Date());
+    const [mode, setMode] = useState('date');
+    const [show, setShow] = useState(false); 
+    const [text, setText] = useState('empty');
+
+    const onDateChange = (event, selectedDate) => {
+      const currentDate = selectedDate || date;
+      setShow(Platform.OS === 'ios');
+      setDate(currentDate);
+
+      let tempDate = new Date(currentDate);
+      let fDate = tempDate.getDate() + "/" + (tempDate.getMonth() + 1) + '/' + tempDate.getFullYear();
+      let fTime = 'Hours: ' + tempDate.getHours() + ' | Minutes: ' + tempDate.getMinutes();
+
+      setText(fDate + ' (' + fTime + ')');
+    };
+
+    const showMode = (currentMode) => {
+      setShow(true);
+      setMode(currentMode);
+    }
+
+    const showTimepicker = () => {
+      showMode('time');
+  }
+
 
     const loadItems = (day) => {
       setTimeout(() => {
@@ -106,8 +142,73 @@ const Schedule = () => {
 
     return (
        <View style={styles.container}>
+         <Modal
+            animationType="slide" //slide, fade, none
+            transparent={true} //true or false
+            visible={modalVisible}
+            hasBackdrop={true}
+            backdropOpacity={0.5}
+            onRequestClose={() => {
+                setModalVisible(!modalVisible)}}
+            >
+                <View styles={styles.centeredView}>
+                    <View style={styles.modalView}>
+                      <TouchableOpacity
+                        onPress={()=> setModalVisible(!modalVisible)}>
+                        <View style={styles.closeBtn}>
+                            <Image source = {require('../../assets/icons/closeBlack.png')}/>
+                        </View>
+                      </TouchableOpacity>
+                      <View>
+                        <Text style={styles.titlePopUP}>Create an Event</Text>
+                        <View>
+                            <View style={styles.eachCon}>
+                              <Text style={styles.subTitle}>Title</Text>
+                              <TextInput placeholder="Write title here.."/>
+                            </View>
+                            <View style={styles.eachCon}>
+                              <Text style={styles.subTitle}>Date</Text>
+                              <DatePicker
+                                date={date}
+                                mode = "date"
+                                onDateChange= {(date)=>{
+                                  setDate(date);
+                                }}
+                                customStyles={{
+                                    
+                                }}
+                              />
+                            </View>
+                            <View style={styles.eachCon}>
+                              <Text style={styles.subTitle}>Time</Text>
+                              <TouchableOpacity onPress={showTimepicker} style={{flexDirection:'row', alignItems:'center'}}>
+                                  <TextInput  placeholder={text}/>
+                                  <Image style={{marginLeft:5, width:25, height:25}} source={require('../../assets/icons/clock.png')}/>
+                                </TouchableOpacity>
+                                {show && (
+                                    <DateTimePicker
+                                    testID = "dateTimePicker" //id datetime picker
+                                    value={date} //default value (tanggal hari ini)
+                                    mode={mode} //pilih date atau time untuk mode datetimepicker nya
+                                    is24Hour={true} //untuk mode 24 jam / 12 jam
+                                    display="default" //tampilan yang di display di hp
+                                    onChange={onDateChange} //handle ubah date / time
+                                    />
+                                )}
+                                {/* <TextInput  placeholder={text}/> */}
+                            </View>
+                            <TouchableOpacity style={styles.conCreateBtn} onPress={()=> setModalVisible(!modalVisible)}>
+                              <View style={styles.createBtn}>
+                                <Text style={styles.textBtn}>Create</Text>
+                              </View>
+                            </TouchableOpacity>
+                        </View>
+                      </View>
+                    </View> 
+                </View>
+          </Modal>
           <View style={{backgroundColor:'#28527A', padding:10, alignItems:'flex-end'}}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={()=> setModalVisible(true)}>
                 <Image source={require('../../assets/icons/circle_plus.png')} style={{marginRight:15, marginTop:10}}/>
               </TouchableOpacity>
             </View>
@@ -159,4 +260,64 @@ const styles = StyleSheet.create({
     flex: 1,
     // backgroundColor: 'black',
   },
+  centeredView :{
+    flex: 1,
+    justifyContent: "center",
+    width: windowsWidth,
+    height: windowsWidth,
+    alignItems: "center",
+    marginTop: 22
+  },
+  modalView: {
+      margin:20,
+      backgroundColor: "white",
+      borderRadius: 20,
+      paddingTop: 20,
+      paddingLeft:35,
+      paddingRight:35,
+      paddingBottom:35,
+      // alignItems: "center",
+      shadowColor: "#000",
+      shadowOffset: {
+          width: 0,
+          height: 2
+      },
+      shadowOpacity: 0.25,
+      elevation:5,
+  },
+  closeBtn :{
+    marginLeft : 240,
+    marginBottom : 15,
+  },
+  titlePopUP:{
+    color:'#022E57',
+    fontSize:25,
+    fontWeight:'900',
+    marginBottom:5
+  },
+  eachCon:{
+    marginTop:10
+  },
+  createBtn:{
+    backgroundColor:'#022E57',
+    width:111,
+    height:39,
+    borderRadius:20,
+    justifyContent:'center'
+  },
+  textBtn:{
+    color:'white',
+    fontWeight:'bold',
+    fontSize:20,
+    textAlign:'center'
+  },
+  conCreateBtn:{
+    alignItems:'flex-end',
+    marginTop:20
+  },
+  subTitle:{
+    fontSize:18,
+    color:'#28527ACC',
+    fontWeight:'bold'
+  }
 })

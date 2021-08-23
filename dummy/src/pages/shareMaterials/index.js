@@ -13,7 +13,7 @@ const ShareMaterials = () => {
     return (
         <ScrollView>
             <View styles={styles.pages}>
-                <View style = {styles.header}>
+                {/* <View style = {styles.header}>
                     <View style = {styles.welcome}>
                         <Text style = {{fontSize: 14, color : '#28527A'}}>Welcome back,</Text>
                         <Text style = {{fontSize: 20,fontWeight: 'bold', color: WARNA_SEKUNDER}}>Andrew Willy</Text>
@@ -28,7 +28,7 @@ const ShareMaterials = () => {
                         </TouchableOpacity>
                     </View>
                 </View>
-                <View style = {styles.garis}/>
+                <View style = {styles.garis}/> */}
                 {/* <View style = {styles.conHeader}>
                     <TouchableOpacity onPress={()=>{navigation.navigate('VideoLearning',{type:''});}}>
                         <View style={styles.videoLearning}>

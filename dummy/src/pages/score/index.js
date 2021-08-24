@@ -20,8 +20,8 @@ const Score = () => {
                     <View style={styles.firstBox}>
                         <View style={styles.grade}>
                             <View style={styles.gradeTitle}>
-                                <Text style={styles.grade2}>Grade</Text>
-                                <Text style={styles.pass}>Pass</Text>
+                                <Text style={styles.grade2}>Nilai</Text>
+                                <Text style={styles.pass}>Lulus</Text>
                             </View>
                             <View style = {{paddingTop: 8, borderBottomColor: '#C4C4C4', borderBottomWidth: 2,}}/>
                                 <View style={{flexDirection: 'row'}}>
@@ -41,14 +41,14 @@ const Score = () => {
                                         />
                                     </View>
                                     <View style={styles.detailsRight}>
-                                        <Text style={{color:'#28527A'}}>Very Good</Text>
+                                        <Text style={{color:'#28527A'}}>Sangat Baik</Text>
                                         <Image source={require('../../assets/icons/VeryGood.png')} />
                                     </View>
                                 </View>
                             </View>
                             <View style={styles.grading}>
                                 <View>
-                                    <Text style={[styles.gradingTitle]}>Grading</Text>
+                                    <Text style={[styles.gradingTitle]}>Penilaian</Text>
                                 </View>
                                 <View style = {{paddingTop: 8,
                                     borderBottomColor: '#C4C4C4',
@@ -63,23 +63,23 @@ const Score = () => {
                                     </View>
                                     <View style ={styles.indikasi}>
                                         <View style={styles.ketIndikasi}>
-                                            <Text style ={styles.ketIndikasi}>Very Good</Text>
+                                            <Text style ={styles.ketIndikasi}>Sangat Baik</Text>
                                             <Image source={require('../../assets/icons/VeryGood.png')}/>
                                         </View>
                                         <View>
-                                            <Text style ={styles.ketIndikasi}>Good</Text>
+                                            <Text style ={styles.ketIndikasi}>Baik</Text>
                                             <Image source={require('../../assets/icons/Good.png')}/>
                                         </View>
                                         <View>
-                                            <Text style ={styles.ketIndikasi}>Enough</Text>
+                                            <Text style ={styles.ketIndikasi}>Cukup</Text>
                                             <Image source={require('../../assets/icons/Enough.png')}/>
                                         </View>
                                         <View>
-                                            <Text style ={styles.ketIndikasi}>Bad</Text>
+                                            <Text style ={styles.ketIndikasi}>Buruk</Text>
                                             <Image source={require('../../assets/icons/Bad.png')}/>
                                         </View>
                                         <View>
-                                            <Text style ={styles.ketIndikasi}>Very Bad</Text>
+                                            <Text style ={styles.ketIndikasi}>Sangat Buruk</Text>
                                             <Image source={require('../../assets/icons/VeryBad.png')}/>
                                         </View>
                                     </View>

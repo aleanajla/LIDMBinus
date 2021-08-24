@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity} from 'reac
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { Bell1, User } from '../../assets'
 import { useNavigation } from '@react-navigation/core'
-import { Program, DetailsProgram, Profile } from '../../pages/index.js'
+import { Program, DetailsProgram, Profile, Header } from '../../pages/index.js'
 import ResultProgramListView from '../../components/ResultProgramListView'
 import {resultProgramData}  from '../../assets/jsonData/resultProgramData.js'
 
@@ -12,7 +12,8 @@ const Magang = () => {
     return(
         <ScrollView>
             <View styles={styles.pages}>
-                <View style = {styles.header}>
+                <Header/>
+                {/* <View style = {styles.header}>
                     <View style = {styles.welcome}>
                         <Text style = {{fontSize: 14, color : '#28527A'}}>Welcome back,</Text>
                         <Text style = {{fontSize: 20,fontWeight: 'bold', color: WARNA_SEKUNDER}}>Andrew Willy</Text>
@@ -26,7 +27,7 @@ const Magang = () => {
                             <Image source = {require('../../assets/icons/profile.png')} />
                         </TouchableOpacity>
                     </View>
-                </View>
+                </View> */}
                 <View style = {styles.garis}/>
                 <TouchableOpacity onPress={()=>{navigation.navigate('Program',{type:''});}}> 
                     <View style={styles.search}>

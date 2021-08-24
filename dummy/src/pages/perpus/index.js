@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Platform, 
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType'
 import ImageBackground from 'react-native/Libraries/Image/ImageBackground'
-import { Profile} from '../../pages/index.js'
+import { Profile, Header} from '../../pages/index.js'
 import { useNavigation } from '@react-navigation/core'
 import Modal from 'react-native-modal'
 import Recomend from '../recomend'
@@ -53,8 +53,9 @@ const Perpus = () => {
             
         </Modal>
         <View style={styles.pages}>
-            <View style = {styles.header}>
-                <View style = {styles.welcome}>
+            {/* <View style = {styles.header}> */}
+                <Header/>
+                {/* <View style = {styles.welcome}>
                     <Text style = {{fontSize: 14, color : '#28527A'}}>Welcome back,</Text>
                     <Text style = {{fontSize: 20,fontWeight: 'bold', color: WARNA_SEKUNDER}}>Andrew Willy</Text>
                 </View>
@@ -71,33 +72,33 @@ const Perpus = () => {
                     }}> 
                         <Image source = {require('../../assets/icons/profile.png')} />
                     </TouchableOpacity>
-                </View>
-            </View>
+                </View> */}
+            {/* </View> */}
             <View style = {styles.garis}/>
             <ScrollView horizontal={true}>
                 <View style={styles.bookOpt}>
-                    <Text style={styles.option}>All</Text>
-                    <Text style={styles.option}>General</Text>
-                    <Text style={styles.option}>Trending</Text>
-                    <Text style={styles.option}>Technology</Text>
-                    <Text style={styles.option}>Social</Text>
-                    <Text style={styles.option}>Literature</Text>
-                    <Text style={styles.option}>Science</Text>
+                    <Text style={styles.option}>Semua</Text>
+                    <Text style={styles.option}>Umum</Text>
+                    <Text style={styles.option}>Tren</Text>
+                    <Text style={styles.option}>Teknologi</Text>
+                    <Text style={styles.option}>Sosial</Text>
+                    <Text style={styles.option}>Literatur</Text>
+                    <Text style={styles.option}>Sains</Text>
                 </View>
             </ScrollView>
             <View style={styles.square}></View>
             {/* <ScrollView vertical={true}> */}
                 <View style={styles.learnToday}>
                     <View styles={styles.left}>
-                        <Text style={styles.learnText}>What would you</Text>
-                        <Text style={styles.learnText}>like to learn</Text>
-                        <Text style={styles.learnText}>today?</Text>
+                        <Text style={styles.learnText}>Apa yang ingin</Text>
+                        <Text style={styles.learnText}>Anda Pelajari</Text>
+                        <Text style={styles.learnText}>Hari ini?</Text>
                         <TouchableOpacity
                         onPress = {()=>{
                             navigation.navigate('GetStarted',{type:''})
                         }}> 
                         <View style={styles.started}>
-                            <Text style={styles.textStart}>Get Started</Text>
+                            <Text style={styles.textStart}>Mulai</Text>
                             <Image source = {require('../../assets/icons/arrow_right.png')} style={{left : 6}}/>
                         </View>
                         </TouchableOpacity>
@@ -109,7 +110,7 @@ const Perpus = () => {
                 <View style={{padding :17}}>
                     <TouchableOpacity onPress = {()=>{ navigation.navigate('Recomend',{type:''})}}> 
                         <View style={styles.recTop}>
-                            <Text style={styles.recText}>Reccomend For You</Text>
+                            <Text style={styles.recText}>Direkomendasikan untuk Anda</Text>
                             <Image source = {require('../../assets/icons/arrow_right2.png')} style={styles.arrowText}/>
                         </View>
                     </TouchableOpacity>
@@ -130,7 +131,7 @@ const Perpus = () => {
                     </View>
                     <TouchableOpacity onPress = {()=>{ navigation.navigate('MoreBooks',{type:''})}}> 
                         <View style={styles.recTop}>
-                            <Text style={styles.recText}>More</Text>
+                            <Text style={styles.recText}>Lainnya</Text>
                             <Image source = {require('../../assets/icons/arrow_right2.png')} style={styles.arrowMore}/>
                         </View>
                     </TouchableOpacity>

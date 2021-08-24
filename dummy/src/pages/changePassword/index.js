@@ -13,12 +13,12 @@ const ChangePassword = () => {
                     <TouchableOpacity onPress={()=>{navigation.navigate('ProfileSettings',{type:''});}}>
                         <Image source = {require('../../assets/icons/arrowBack.png')} style={{width : 24, height:24}}/>
                     </TouchableOpacity>
-                    <Text style={styles.title3}>SAVE</Text>
+                    <Text style={styles.title3}>SIMPAN</Text>
                 </View>
             </View>
             <View style={styles.inside}>
                 <View style={styles.title}>
-                    <Text style={styles.titleTxt}>Change Password</Text>
+                    <Text style={styles.titleTxt}>Ganti Kata Sandi</Text>
                     <View style={styles.line}></View>
                     <Text style={styles.info}>Silahkan ubah kata sandi dengan yang baru</Text>
                 </View>

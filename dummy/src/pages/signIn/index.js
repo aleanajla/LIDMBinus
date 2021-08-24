@@ -17,17 +17,17 @@ const signIn = () => {
                 <View style={styles.box}>
                     <TextInput style={styles.input} placeholder="Email"/>
                 </View>
-                <Text style={[styles.textBold, {paddingTop:31}]}>Password</Text>
+                <Text style={[styles.textBold, {paddingTop:31}]}>Kata Sandi</Text>
                 <View style={styles.box}>
                     <TextInput style={styles.input} placeholder="Password"/>
                 </View>
             </View>
             <View style={[ styles.down, {paddingTop: 30}]}>
                 <TouchableOpacity onPress = {()=>{ navigation.navigate('Home',{type:''})}}> 
-                    <Text style={styles.text}>LOGIN</Text>
+                    <Text style={styles.text}>MASUK</Text>
                 </TouchableOpacity>
                 <TouchableOpacity>
-                    <Text style={styles.text}>SIGN UP</Text>
+                    <Text style={styles.text}>DAFTAR DIRI</Text>
                 </TouchableOpacity>
                 <TouchableOpacity>
                     <Text style={{fontSize: 15, color: '#28527A', fontWeight: 'bold'}}>Forgot Password? </Text>

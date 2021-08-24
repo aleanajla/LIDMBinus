@@ -89,13 +89,13 @@ const Home = () => {
                     </View>
                     <View style = {styles.conMid}>
                         <View style = {styles.midUpper}>
-                            <Text style = {{color : '#28527A', fontWeight:'bold', fontSize:25}}>Silver</Text>
+                            <Text style = {{color : '#28527A', fontWeight:'bold', fontSize:25}}>Perak</Text>
                             <Text style = {{color : '#28527A', fontWeight: '700', fontSize: 18, marginTop: 7.5, marginLeft: 6}}>520</Text>
-                            <Text style = {{color : '#28527A', fontSize: 12, marginTop: 12,marginLeft:2}}>points</Text>
+                            <Text style = {{color : '#28527A', fontSize: 12, marginTop: 12,marginLeft:2}}>Poin</Text>
                         </View>
                         <View style = {styles.midBottom}>
                             <Progress.Bar progress={0.6} width={140} height={7} color={'#28527A'} unfilledColor={'#FAD586'} style={{marginTop:15}}/>
-                            <Text style = {{color : '#28527A', fontSize:7, marginTop: 7, marginLeft:15}}>Earn 200 Points more to reach Gold!</Text>
+                            <Text style = {{color : '#28527A', fontSize:7, marginTop: 7, marginLeft:15}}>Hasilkan 200 Poin lebih banyak untuk mencapai Emas!</Text>
                         </View> 
                     </View>
                     <View style = {styles.rightPoints}>
@@ -110,9 +110,9 @@ const Home = () => {
                     }}>
                         <View style = {[styles.conLeftRight, {flex:1}]}>
                             <View>
-                                <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18}}>Browse</Text>
-                                <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18}}>All</Text>
-                                <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18}}>Reward</Text>
+                                <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18}}>Jelajahi</Text>
+                                <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18}}>Semua</Text>
+                                <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18}}>Hadiah</Text>
                             </View>
                             <View>
                                 {/* <Text>Gambar1</Text> */}
@@ -128,8 +128,8 @@ const Home = () => {
                     >
                         <View style = {[styles.conLeftRight, {flex:1}]}>
                                 <View>
-                                    <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18, marginTop:10}}>How to</Text>
-                                    <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18}}>Get Points?</Text>
+                                    <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18, marginTop:10}}>Bagaimana caranya</Text>
+                                    <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18}}>Mendapatkn Poin</Text>
                                 </View>
                                 <View>
                                 <Image source = {require('../../assets/images/question.png')}
@@ -143,7 +143,7 @@ const Home = () => {
                     <TouchableOpacity onPress={()=>{navigation.navigate('Announcement',{type:''});}}>
                         <View style = {{flexDirection: 'row'}}>
                             <Text style = {{color: '#FFFFFF', fontSize: 25, fontWeight:'bold', marginLeft:20, marginTop:10}}>
-                                Announce
+                                Pengumuman
                             </Text>
                             <Image source = {require('../../assets/icons/arrow_right_white.png')} 
                                 style = {styles.arrow}
@@ -171,7 +171,7 @@ const Home = () => {
                         </View> */}
                 </View>
                 <View style = {styles.news}>
-                    <Text style = {{color: '#28527A', fontSize:25, fontWeight: 'bold', marginLeft:30}}>Information</Text>
+                    <Text style = {{color: '#28527A', fontSize:25, fontWeight: 'bold', marginLeft:30}}>Informasi</Text>
                     <View style={styles.containerNews}>
                         <InformationListView
                             itemList={informationData}

@@ -14,7 +14,7 @@ const Announcement = () => {
                 <TouchableOpacity onPress={()=>{navigation.goBack()}}>
                     <Image source = {require('../../assets/icons/arrowBackBlue.png')} style={[styles.header, {width : 24, height:24, top :12}]}/>
                 </TouchableOpacity>
-                <Text style={styles.announ}>ANNOUNCEMENT</Text>
+                <Text style={styles.announ}>PENGUMUMAN</Text>
             </View>
             <AnnouncementListView
                 itemList = {announcementData}

@@ -72,7 +72,7 @@ const TopTabBarNavigation = () => {
             }}
             >
                 <TopTab.Screen 
-                    name ="Dashboard" 
+                    name ="Dasbor" 
                     component={Home}
                     // options={{backgroundColor : WARNA_SEKUNDER}}
                 />
@@ -81,7 +81,7 @@ const TopTabBarNavigation = () => {
                     component={Program} 
                 />
                 <TopTab.Screen 
-                    name ="News" 
+                    name ="Berita" 
                     component={News} 
                 />
             </TopTab.Navigator>
@@ -93,35 +93,39 @@ const TopTabLearning = createMaterialTopTabNavigator();
 
 const TopTabBarLearning = () => {
     return(
-        <TopTabLearning.Navigator
-            screenOptions={{
-            tabBarLabelStyle: {
-                fontSize: 12, 
-                backgroundColor : KUNING, 
-                color: WARNA_SEKUNDER, 
-                padding:10, 
-                height:50,
-                width:100, 
-                alignItems : 'center', 
-                justifyContent:'center',
-                borderRadius:20, 
-                fontWeight : 'bold'},
-            tabBarStyle: { backgroundColor: WARNA_UTAMA},
-       }}
-        >   
-            <TopTabLearning.Screen
-                name="Video Learning"
-                component={VideoLearning}
-            />
-            <TopTabLearning.Screen
-                name="Share Materials"
-                component={ShareMaterials}
-            />
-            <TopTabLearning.Screen
-                name="Related Books"
-                component={Learning}
-            />
-        </TopTabLearning.Navigator>
+        <View style={{flex:1}}>
+            <Header/>
+            <TopTabLearning.Navigator
+                    screenOptions={{
+                    tabBarLabelStyle: {
+                        fontSize: 12, 
+                        backgroundColor : KUNING, 
+                        color: WARNA_SEKUNDER, 
+                        padding:10, 
+                        height:50,
+                        width:100, 
+                        alignItems : 'center', 
+                        justifyContent:'center',
+                        borderRadius:20, 
+                        fontWeight : 'bold'},
+                    tabBarStyle: { backgroundColor: WARNA_UTAMA},
+            }}
+            >   
+                <TopTabLearning.Screen
+                    name="Video Pembelajaran"
+                    component={VideoLearning}
+                />
+                <TopTabLearning.Screen
+                    name="Berbagi Materi"
+                    component={ShareMaterials}
+                />
+                <TopTabLearning.Screen
+                    name="Buku yang Berelasi"
+                    component={Learning}
+                />
+            </TopTabLearning.Navigator>
+        </View>
+        
     )
 
 }

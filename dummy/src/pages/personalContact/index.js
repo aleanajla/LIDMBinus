@@ -21,7 +21,7 @@ const PersonaContact = () => {
                     <Text style= {{color:'white', fontSize:18, width:'80%', textAlign:'right', marginLeft:40}}>SAVE</Text>
                 </View>
                 <View style= {styles.contentCon}>
-                    <Text style={styles.title}>Personal Contact</Text>
+                    <Text style={styles.title}>Kontak Pribadi</Text>
                     <View style={{
                             borderBottomColor: '#00000047',
                             borderBottomWidth: 1,
@@ -45,7 +45,7 @@ const PersonaContact = () => {
                 </View>
 
                 <View style= {styles.contentCon}>
-                    <Text style={styles.title}>Home Address</Text>
+                    <Text style={styles.title}>Alamat Rumah</Text>
                     <View style={{
                             borderBottomColor: '#00000047',
                             borderBottomWidth: 1,

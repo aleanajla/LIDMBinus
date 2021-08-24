@@ -4,15 +4,15 @@ import { WARNA_SEKUNDER } from '../../utils/constants';
 
 function checkMyGrade(grade){
     if(grade ==  "A"){
-        return "Very Good";
+        return "Sangat Baik";
     }else if(grade == "B"){
-        return "Good";
+        return "Baik";
     }else if(grade == "C"){
-        return "Enough";
+        return "Cukup";
     }else if(grade == "D"){
-        return "Bad";
+        return "Buruk";
     }else if(grade == "E" || grade == "F"){
-        return "Very Bad";
+        return "Sangat Buruk";
     }
 }
 
@@ -38,12 +38,12 @@ const ScoreListViewItems = ({id, title, grade}) => (
         </View>
         <View style={styles.courseDetails}>
             <View style={styles.left}>
-                <Text style={{color : WARNA_SEKUNDER}}>Grade</Text>
+                <Text style={{color : WARNA_SEKUNDER}}>Nilai</Text>
                 <Text style={styles.courseGrade}>{grade}</Text>
             </View>
             <View style={styles.verticalLine}></View>
             <View style={styles.right}>
-                <Text style={{color : WARNA_SEKUNDER}}>Details</Text>
+                <Text style={{color : WARNA_SEKUNDER}}>Rincian</Text>
                 <Text style={styles.details}>{checkMyGrade(grade)}</Text>
                 <Image source={checkMyStars(grade)}/>
             </View>

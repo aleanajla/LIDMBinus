@@ -21,20 +21,20 @@ const BrowseAllRewards = () => {
                 <View style={styles.boxCoin}>
                     <View style={styles.top}>
                         <Image source = {require('../../assets/images/trophy.png')} style={{width:20, height:20, marginLeft:12}}/>
-                        <Text style={{color : '#FFFFFF', fontWeight : 'bold', fontSize : 15, marginLeft:5}}>Silver</Text>
+                        <Text style={{color : '#FFFFFF', fontWeight : 'bold', fontSize : 15, marginLeft:5}}>Perak</Text>
                     </View>
                     <View style={styles.bottom}>
-                        <Text style={{color:'white', fontSize : 14}}>My Coins</Text>
+                        <Text style={{color:'white', fontSize : 14}}>Koin Saya</Text>
                         <View style={styles.coin}>
                             <Image source = {require('../../assets/images/coins2.png')}/>
                             <Text style={styles.coin2}>542</Text>
                         </View>
-                        <Text style={{color:'white', fontSize : 14}}>Available untill 29 Novmber 2021</Text>
+                        <Text style={{color:'white', fontSize : 14}}>tersedia hingga 29 November 2021</Text>
                     </View>
                 </View>
-                <Text style={styles.reward}>Reward Exchange</Text>
+                <Text style={styles.reward}>Pertukaran Hadiah</Text>
                 <View style={styles.food}>
-                    <Text style={styles.foodTitle}>Food</Text>
+                    <Text style={styles.foodTitle}>Makanan</Text>
                     <ScrollView horizontal={true}>
                     <View style={styles.row}>
                         <FoodVoucherListView
@@ -86,7 +86,7 @@ const BrowseAllRewards = () => {
                     </ScrollView>
                 </View>
                 <View style={styles.food}>
-                    <Text style={styles.foodTitle}>Education</Text>
+                    <Text style={styles.foodTitle}>Edukasi</Text>
                     <ScrollView horizontal={true}>
                     <View style={styles.row}>
                         <EducationVoucherListView
@@ -136,7 +136,7 @@ const BrowseAllRewards = () => {
                     </ScrollView>
                 </View>
                 <View style={styles.food}>
-                    <Text style={styles.foodTitle}>Stationary</Text>
+                    <Text style={styles.foodTitle}>Perlengkapan tulis</Text>
                     <ScrollView horizontal={true}>
                     <View style={styles.row}>
                         <StationaryVoucherListView

@@ -31,7 +31,7 @@ const myRewards = () => {
                                     <Image source = {require('../../assets/icons/closeBlack.png')}/>
                                 </View>
                             </TouchableOpacity>
-                            <Text style={styles.text4}><Text>Voucher Code</Text></Text>
+                            <Text style={styles.text4}><Text>Kode Voucher</Text></Text>
                         <TouchableOpacity
                             onPress={()=> setModalVisible(!modalVisible)}>
                             <View style={styles.voucher}>
@@ -49,7 +49,7 @@ const myRewards = () => {
                     >
                     <Image source = {require('../../assets/icons/arrowBackBlack.png')} />
                 </TouchableOpacity>
-                <Text style={{color:'#022E57',fontSize:25,fontWeight:'bold', marginLeft:80}}>My Rewards</Text>
+                <Text style={{color:'#022E57',fontSize:25,fontWeight:'bold', marginLeft:80}}>Hadiah Saya</Text>
             </View>
             <View style= {styles.boxContent}>
                 <RewardsListView

@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <View style = {styles.header}>
             <View style = {styles.welcome}>
-                <Text style = {{fontSize: 14, color : '#28527A'}}>Welcome back,</Text>
+                <Text style = {{fontSize: 14, color : '#28527A'}}>Selamat Datang,</Text>
                 <Text style = {{fontSize: 20,fontWeight: 'bold', color: WARNA_SEKUNDER}}>Andrew Willy</Text>
             </View>
             <View style = {styles.imgHeader}>

@@ -20,7 +20,7 @@ const UrgentContact = () => {
                     <Text style= {{color:'white', fontSize:18, width:'80%', textAlign:'right', marginLeft:40}}>SAVE</Text>
                 </View>
                 <View style= {styles.contentCon}>
-                    <Text style={styles.title}>Urgent Contact</Text>
+                    <Text style={styles.title}>Kontak Mendesak</Text>
                     <View style={{
                             borderBottomColor: '#00000047',
                             borderBottomWidth: 1,

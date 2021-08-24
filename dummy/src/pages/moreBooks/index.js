@@ -15,7 +15,7 @@ const MoreBooks = () => {
                     <TouchableOpacity onPress={()=>{navigation.goBack()}}>
                         <Image source = {require('../../assets/icons/arrowBack.png')} style={[styles.header, {width : 24, height:24}]}/>
                     </TouchableOpacity>
-                    <Text style={styles.title3}>MORE BOOKS</Text>
+                    <Text style={styles.title3}>BUKU LAINNYA</Text>
                 </View>
                 <View style={{paddingTop : 15}}>
                     <MoreBooksListView

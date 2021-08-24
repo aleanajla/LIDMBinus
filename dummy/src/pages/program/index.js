@@ -28,11 +28,11 @@ const Program = () => {
                 >
                     <View styles={styles.centeredView}>
                         <View style={styles.modalView}>
-                            <Text style={styles.text4}><Text>The Program Currently Not Available</Text></Text>
+                            <Text style={styles.text4}><Text>Program Saat Ini Tidak Tersedia</Text></Text>
                         <TouchableOpacity
                             onPress={()=> setModalVisible(!modalVisible)}>
                             <View style={styles.closeBtn}>
-                                <Text style={styles.closeTxt}>Close</Text>
+                                <Text style={styles.closeTxt}>Tutup</Text>
                             </View>
                         </TouchableOpacity>
                         </View> 
@@ -91,13 +91,13 @@ const Program = () => {
                         <View style = {styles.eachPoint}>
                             <View style = {[styles.point, {backgroundColor: '#28527A'}]}></View>
                             <View style = {styles.pointTitle}>
-                                <Text style = {styles.ketTitle}>Program is Running</Text>
+                                <Text style = {styles.ketTitle}>Program Sedang Berjalan</Text>
                             </View>
                         </View>
                         <View style = {styles.eachPoint}>
                             <View style = {[styles.point, {backgroundColor: '#8AC4D0'}]}></View>
                             <View style = {styles.pointTitle}>
-                                <Text style = {styles.ketTitle}>Program soon available</Text>
+                                <Text style = {styles.ketTitle}>Program Segera Tersedia</Text>
                             </View>
                         </View>
                     </View>

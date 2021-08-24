@@ -72,7 +72,7 @@ const News = () => {
                 </View>
 
                 <View>
-                    <Text  style = {styles.newsHeader}>News About Kampus Merdeka</Text>
+                    <Text  style = {styles.newsHeader}>Berita Tentang Kampus Merdeka</Text>
                 </View>
                 
                 <NewsListView

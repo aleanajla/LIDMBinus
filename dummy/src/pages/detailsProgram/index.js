@@ -32,7 +32,7 @@ const DetailsProgram = () =>{
                     <Image source = {require('../../assets/icons/checkGreen.png')} style={{width: 28, height: 28}}/>
                 </View>
                 <View style={styles.right}>
-                    <Text style={styles.title2}>Certified</Text>
+                    <Text style={styles.title2}>Bersertifikat</Text>
                     <Text style={styles.desc2}>Konversi SKS dan kualitas kegiatan dijamin oleh tim Kemendikbudristek</Text>
                 </View>
             </View>
@@ -47,24 +47,24 @@ const DetailsProgram = () =>{
             </View>
             <View style={styles.box}>
                 <View style={styles.duration}>
-                    <Text style={styles.title1}>Duration</Text>
+                    <Text style={styles.title1}>Durasi</Text>
                     <Text style={styles.durationText}>23 Aug 2021 - 21 Jan 2022</Text>
                     <Text style={styles.durationText}>5 Bulan</Text>
                 </View>
                 <View style={styles.description}>
-                    <Text style={styles.title1}>Description</Text>
+                    <Text style={styles.title1}>Deskripsi</Text>
                     <Image source = {require('../../assets/icons/download.png')} style={{width: 21, height: 21, top : 5}}/>
                 </View>
             </View>
             <View style={styles.description2}>
-                <Text style={styles.title1}>Description</Text>
+                <Text style={styles.title1}>Deskripsi</Text>
                 <Text style={styles.title3}>Program Magang Lazada Indonesia Customer Care Team</Text>
                 <Text style={styles.desc3}>Program Magang Lazada Indonesia Customer Care Team bertujuan untuk memberikan pengembangan kepada mahasiswa/i menggunakan 70-20-10 Learning & Development framework. Mahasiswa akan mendapatkan pengembangan melalui pendampingan intensif selama on-the-job training (70%) dengan disertai oleh dedicated mentor yang akan membantu mahasiswa dalam memberikan pendampingan maupun feedback terkait dengan kinerja mereka (20%) yang akan didukung dengan program kelas pengembangan soft skills yang relevan dengan kebutuhan mahasiswa di dunia kerja (10%).</Text>
             </View>
             <View style={styles.criteria}>
-                <Text style={styles.title1}>Criteria</Text>
+                <Text style={styles.title1}>Kriteria</Text>
                 <Text style={styles.desc3}>1. Mahasiswa perguruan tinggi aktif yang menempuh minimal Semester 5</Text>
-                <Text style={styles.desc3}> 2. Berasal dari Fakultas Ilmu Komputer atau Sistem Informasi dengan IPK Minimal 3.5</Text>
+                <Text style={styles.desc3}>2. Berasal dari Fakultas Ilmu Komputer atau Sistem Informasi dengan IPK Minimal 3.5</Text>
             </View>
         </View>
         </ScrollView>

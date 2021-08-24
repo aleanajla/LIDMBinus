@@ -13,12 +13,12 @@ const Settingss = () => {
                     <TouchableOpacity onPress={()=>{navigation.navigate('Profile',{type:''});}}>
                         <Image source = {require('../../assets/icons/close.png')} style = {styles.close}/>
                     </TouchableOpacity>
-                    <Text style={styles.settings}> SETTINGS </Text>
+                    <Text style={styles.settings}> PENGATURAN </Text>
                 </View>
                 <View style = {styles.main}>
                     <View style={styles.imgText}>
                         <Image source = {require('../../assets/icons/person_outline.png')} style = {styles.img} />
-                        <Text style = {styles.headA}>Account</Text>
+                        <Text style = {styles.headA}>AKUN</Text>
                     </View>
                     <View style = {[styles.garis]}/>
                     <View style = {styles.accountCon}>
@@ -27,33 +27,33 @@ const Settingss = () => {
                                 navigation.navigate('ProfileSettings',{type:''})
                             }}> 
                             <View style={styles.container}>
-                                <Text style={styles.text}>Profile</Text>
+                                <Text style={styles.text}>Profil</Text>
                                 <Image source = {require('../../assets/icons/arrowForward.png')}/>
                             </View>
                         </TouchableOpacity>
                         
                         <TouchableOpacity onPress={()=>{navigation.navigate('CompleteDocument',{type:''});}}>
                             <View style={styles.container}>
-                                <Text style={styles.text}>Complete the Document</Text>
+                                <Text style={styles.text}>Selesaikan Pengiisian Dokumen</Text>
                                 <Image source = {require('../../assets/icons/arrowForward.png')}/>
                             </View>
                         </TouchableOpacity>
 
                         <TouchableOpacity onPress={()=>{navigation.navigate('ChangePassword',{type:''});}}>
                             <View style={styles.container}>
-                                <Text style={styles.text}>Change Password</Text>
+                                <Text style={styles.text}>Ganti Kata Sandi</Text>
                                 <Image source = {require('../../assets/icons/arrowForward.png')}/>
                             </View>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.imgText}>
                         <Image source ={require('../../assets/icons/bell.png')} style = {styles.bell} />
-                        <Text style = {styles.head}>Notification</Text>
+                        <Text style = {styles.head}>Notifikasi</Text>
                     </View>
                     <View style = {[styles.garis]}/>
                     <View style = {styles.notifCon}>
                         <View style={styles.container}>
-                            <Text style={styles.text}>Notification</Text>
+                            <Text style={styles.text}>Notifikasi</Text>
                         </View>
                     </View>
                 </View>
@@ -61,7 +61,7 @@ const Settingss = () => {
                     <View style={styles.imgTextL}>
                         <View style={styles.imgText}>
                             <Image source = {require('../../assets/icons/logout.png')} style ={{marginTop:7}} />
-                            <Text style={styles.logout}>Log Out</Text>
+                            <Text style={styles.logout}>Keluar</Text>
                         </View>
                     </View>
                 </View>  

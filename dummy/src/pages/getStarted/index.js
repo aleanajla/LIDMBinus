@@ -13,7 +13,7 @@ const GetStarted = () => {
                     <TouchableOpacity onPress={()=>{navigation.navigate('Perpus',{type:''});}}>
                         <Image source = {require('../../assets/icons/arrowBack.png')} style={[styles.header, {width : 24, height:24}]}/>
                     </TouchableOpacity>
-                    <Text style={styles.title3}>BOOKS</Text>
+                    <Text style={styles.title3}>BUKU</Text>
                 </View>
                 <View style={{paddingTop : 15}}>
                     <View style={styles.row}>

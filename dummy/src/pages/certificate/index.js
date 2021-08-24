@@ -16,7 +16,7 @@ const Certificate = () => {
                 >
                     <Image source={require('../../assets/icons/arrowBackBlack.png')} />
                 </TouchableOpacity>
-                <Text style = {{color:'#022E57', fontSize:25, fontWeight:'bold', marginLeft:75}}>My Certificate</Text>
+                <Text style = {{color:'#022E57', fontSize:25, fontWeight:'bold', marginLeft:75}}>Sertifikat Saya</Text>
             </View>
             <View style = {styles.certifCon}>
                 <CertificateListView

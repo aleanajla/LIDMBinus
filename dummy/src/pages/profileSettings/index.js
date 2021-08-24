@@ -20,7 +20,7 @@ const ProfileSettings = () => {
                     <Image source = {require('../../assets/icons/userBlack.png')} style={styles.user}/>
                 </View>
                 <View style={styles.changeText}>
-                    <Text style={styles.text}>Change Profile Picture</Text>
+                    <Text style={styles.text}>Ganti Gambar Profil</Text>
                 </View>
             </View>
             <View style={styles.container}>
@@ -29,7 +29,7 @@ const ProfileSettings = () => {
                         onPress={()=>{navigation.navigate('PersonalData',{type:''});}}
                         style={styles.left}
                     >
-                            <Text style={styles.data}>Personal Data</Text>
+                            <Text style={styles.data}>Data Pribadi</Text>
                     </TouchableOpacity>
                     <View style={styles.right}>
                         <Image source = {require('../../assets/icons/arrowForward.png')}/>
@@ -39,7 +39,7 @@ const ProfileSettings = () => {
                     <TouchableOpacity style={styles.left} 
                         onPress={()=>{navigation.navigate('PersonalContact',{type:''});}}
                     >
-                            <Text style={styles.data}>Personal Contact</Text>
+                            <Text style={styles.data}>Kontak Pribaadi</Text>
                     </TouchableOpacity>
                     <View style={styles.right}>
                         <Image source = {require('../../assets/icons/arrowForward.png')}/>
@@ -49,7 +49,7 @@ const ProfileSettings = () => {
                     <TouchableOpacity style={styles.left} 
                         onPress={()=>{navigation.navigate('UrgentContact',{type:''});}}
                     >
-                        <Text style={styles.data}>Urgent Contact</Text>
+                        <Text style={styles.data}>Kontak Mendesak</Text>
                     </TouchableOpacity>
                     <View style={styles.right}>
                         <Image source = {require('../../assets/icons/arrowForward.png')}/>
@@ -58,7 +58,7 @@ const ProfileSettings = () => {
                 <TouchableOpacity onPress={()=>{navigation.navigate('SocialMedia',{type:''});}}>
                     <View style={styles.eachContainer}>
                         <View style={styles.left}>
-                            <Text style={styles.data}>Social Media</Text>
+                            <Text style={styles.data}>Media Sosial</Text>
                         </View>
                         <View style={styles.right}>
                             <Image source = {require('../../assets/icons/arrowForward.png')}/>
@@ -68,7 +68,7 @@ const ProfileSettings = () => {
                 <TouchableOpacity onPress={()=>{navigation.navigate('BankAccount',{type:''});}}>
                     <View style={styles.eachContainer}>
                         <View style={styles.left}>
-                            <Text style={styles.data}>Bank Account</Text>
+                            <Text style={styles.data}>Akun Bank</Text>
                         </View>
                         <View style={styles.right}>
                             <Image source = {require('../../assets/icons/arrowForward.png')}/>

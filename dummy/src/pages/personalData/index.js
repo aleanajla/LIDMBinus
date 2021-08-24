@@ -20,7 +20,7 @@ const PersonalData = () => {
                     <Text style= {{color:'white', fontSize:18, width:'80%', textAlign:'right', marginLeft:40}}>SAVE</Text>
                 </View>
                 <View style= {styles.contentCon}>
-                    <Text style={styles.title}>Personal Data</Text>
+                    <Text style={styles.title}>Data Pribadi</Text>
                     <View style={{
                             borderBottomColor: '#00000047',
                             borderBottomWidth: 1,
@@ -56,7 +56,7 @@ const PersonalData = () => {
                 </View>
 
                 <View style= {styles.contentCon}>
-                    <Text style={styles.title}>Academic Information</Text>
+                    <Text style={styles.title}>Informasi Akademik</Text>
                     <View style={{
                             borderBottomColor: '#00000047',
                             borderBottomWidth: 1,

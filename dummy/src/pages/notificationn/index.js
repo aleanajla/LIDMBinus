@@ -15,7 +15,7 @@ const Notificationn = () => {
                 <TouchableOpacity onPress={()=>{navigation.goBack()}}>
                     <Image source = {require('../../assets/icons/arrowBackBlue.png')} style={[styles.header, {width : 24, height:24, top :15}]}/>
                 </TouchableOpacity>
-                <Text style={styles.announ}>Notification</Text>
+                <Text style={styles.announ}>Notifikasi</Text>
             </View>
             <View style={styles.container1}>
                 <NotificationListView

@@ -4,7 +4,7 @@ import { WARNA_SEKUNDER } from '../../utils/constants';
 
 const ProgramListViewItems = ({id, program, date, image_url}) => (
     //<TouchableOpacity onPress={()=> setModalVisible(true)}>
-        <View style = {[date === "Closed" ? styles.conRow1 : styles.conRow2]}>
+        <View style = {[date === "Tutup" ? styles.conRow1 : styles.conRow2]}>
             <View style = {styles.conImage}>
                 <Image source={{uri: image_url}} style={styles.pic}/>
             </View>
@@ -12,7 +12,7 @@ const ProgramListViewItems = ({id, program, date, image_url}) => (
                 <Text style = {styles.titleProg}>{program}</Text>
             </View>
             <View>
-                <Text style = {styles.regPeriod}>Registration Period:</Text>
+                <Text style = {styles.regPeriod}>Periode Pendaftaran:</Text>
                 <Text style = {styles.closed}>{date}</Text>
             </View>
         </View>

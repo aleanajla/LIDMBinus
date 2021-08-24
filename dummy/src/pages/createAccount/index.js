@@ -12,12 +12,12 @@ const createAccount = () => {
             </View>
             <View style={styles.border}>
                 <TouchableOpacity style={styles.border}>
-                    <Text style={{fontSize : 15, color : '#28527A'}}>Create Account</Text>
+                    <Text style={{fontSize : 15, color : '#28527A'}}>Buat Akun</Text>
                 </TouchableOpacity>
             </View>
             <View style={styles.loginText}>
-                <Text style={{fontSize: 13, color: '#28527A'}}>Have an account already? </Text>
-                <Text style={{fontSize: 13, color: '#28527A', textDecorationLine: 'underline'}}>Login</Text>
+                <Text style={{fontSize: 13, color: '#28527A'}}>Sudah Punya Akun?</Text>
+                <Text style={{fontSize: 13, color: '#28527A', textDecorationLine: 'underline'}}>Masuk</Text>
             </View>
         </View>
     )

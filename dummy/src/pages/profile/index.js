@@ -14,7 +14,7 @@ const Profile = () => {
                     <View style = {styles.tempProfile}></View>
                     <View style= {styles.headerStatus}>
                         <Text style = {styles.name}>ANDREW WILLY</Text>
-                        <Text style = {styles.status}>Undergraduate Student</Text>
+                        <Text style = {styles.status}>Mahasiswa</Text>
                         <Text style = {styles.univ}>Universitas Bina Nusantara</Text>
                     </View>
                     <View style = {styles.conSetting}>
@@ -41,7 +41,7 @@ const Profile = () => {
                 </View>
                 <View style = {styles.conProgress}>
                     <View style = {[styles.conLeftRight, {backgroundColor: '#FFFFFF'}, styles.shadowBox]}>
-                        <Text style = {styles.leftCon}>Program Progress</Text>
+                        <Text style = {styles.leftCon}>Kemajuan Program</Text>
                         <Progress.Circle 
                             progress={0.4} 
                             animated={true}
@@ -58,30 +58,30 @@ const Profile = () => {
                         <View style={{marginBottom:5}}>
                             <View style={{flexDirection:'row', alignItems:'center'}}>
                                 <View style={{backgroundColor:'#b7c4e3', width:10, height:10}}></View>
-                                <Text style={styles.indikatorProg}>Done Progress</Text>
+                                <Text style={styles.indikatorProg}>Selesai</Text>
                             </View>
                             <View style={{flexDirection:'row', alignItems:'center'}}>
                                 <View style={{backgroundColor:'#889acc', width:10, height:10}}></View>
-                                <Text style={styles.indikatorProg}>On Progress</Text>
+                                <Text style={styles.indikatorProg}>Sedang</Text>
                             </View>
                         </View>
                     </View>
                     <View style = {[styles.conLeftRight]}>
                         <View style = {[styles.gpa, styles.shadowBox]}>
-                            <Text style = {styles.rightCon}>Grade Point Averange</Text>
+                            <Text style = {styles.rightCon}>Indeks Prestasi Kumulatif</Text>
                             <View style={{
                                     borderBottomColor: '#00000021',
                                     borderBottomWidth: 1,
                                 }}
                             />
                             <View style = {{alignItems: 'center'}}>
-                                <Text style = {{fontSize:11, color: '#28527AB8'}}>All Semester</Text>
+                                <Text style = {{fontSize:11, color: '#28527AB8'}}>Semua Semester</Text>
                                 <Text style ={{fontSize:28, fontWeight:'bold', color: '#28527A'}}>A</Text>
                                 <Image source = {require('../../assets/icons/VeryGood.png')} style = {{width:45,height:10}}/>
                             </View>
                         </View>
                         <View style = {[styles.totalPoints, styles.shadowBox]}>
-                            <Text style = {styles.rightCon}>Total Points Reward</Text>
+                            <Text style = {styles.rightCon}>Total Poin Hadiah</Text>
                             <View style={{
                                     borderBottomColor: '#00000021',
                                     borderBottomWidth: 1,
@@ -90,7 +90,7 @@ const Profile = () => {
                             <View style = {styles.pointDesc}>
                                 <View style = {{alignItems:'center'}}>
                                     <Text style = {{fontWeight:'bold', fontSize:20, color: '#28527A'}}>520</Text>
-                                    <Text style = {{color: '#28527A', fontSize:15, fontWeight: '400'}}>Points</Text>
+                                    <Text style = {{color: '#28527A', fontSize:15, fontWeight: '400'}}>Poin</Text>
                                 </View>
                                 <View>
                                     <Image source= {require('../../assets/images/redeem-points.png')} style = {{marginLeft:10, width:47, height:44}}/>
@@ -102,7 +102,7 @@ const Profile = () => {
                 
                 <View style = {styles.myBook}>
                     <View style= {{flexDirection:'row'}}>
-                        <Text style ={{color: '#28527A', fontWeight: 'bold', fontSize:18}}>My Books</Text>
+                        <Text style ={{color: '#28527A', fontWeight: 'bold', fontSize:18}}>Buku Saya</Text>
                         <View style = {{marginLeft:220}}>
                             <Image source= {require('../../assets/icons/arrow_right2.png')}/>
                         </View>
@@ -125,7 +125,7 @@ const Profile = () => {
                 >
                     <View style = {styles.myCertif}>
                         <Image source = {require('../../assets/images/certif.png')}/>
-                        <Text style={styles.titleBox}>My Certificate</Text>
+                        <Text style={styles.titleBox}>Sertifikat Saya</Text>
                     </View>
                 </TouchableOpacity>
                 <TouchableOpacity
@@ -135,7 +135,7 @@ const Profile = () => {
                 >
                 <View style = {styles.myRewards}>
                     <Image source = {require('../../assets/icons/reward.png')} />
-                    <Text style = {styles.titleBox}>My Rewards</Text>
+                    <Text style = {styles.titleBox}>Hadiah Saya</Text>
                 </View>
                 </TouchableOpacity>
             </View>

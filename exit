@@ -1,0 +1,458 @@
+[33mcommit 690432d3dfd782f6e5eedb9b1dbf24000b3f2ae7[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: f2d167d 058b3ff
+Author: Sebercheres <andrew.willy@binus.ac.id>
+Date:   Tue Aug 24 08:09:04 2021 +0700
+
+    Merge branch 'main' of https://github.com/aleanajla/LIDMBinus into main
+
+[33mcommit 058b3ff55a72fc5c449cbc7c5e116cccdc4f160f[m
+Merge: 573c33f 04cae6d
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Tue Aug 24 00:48:38 2021 +0700
+
+    Merge branch 'main' of https://github.com/aleanajla/LIDMBinus into main
+
+[33mcommit 573c33f25a8a89763eafda89bab7552583a96953[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Tue Aug 24 00:48:27 2021 +0700
+
+    create new task
+
+[33mcommit 04cae6dc736c56e0972021ea278f1104f9d64f57[m
+Author: anidadpr17 <anidadpr17@gmail.com>
+Date:   Tue Aug 24 00:07:10 2021 +0700
+
+    json
+
+[33mcommit f2d167df79c8cdc2764b7d6504a33647f3ad87ab[m
+Author: Sebercheres <andrew.willy@binus.ac.id>
+Date:   Mon Aug 23 23:23:41 2021 +0700
+
+    header and top bar
+
+[33mcommit 9a3b6ed86cd941ad4ab7d2502986e88befe9398c[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Mon Aug 23 01:25:58 2021 +0700
+
+    videLearning img
+
+[33mcommit 52cb68e6c29bb2b2fefc0f3888e3d225efaf3f77[m
+Merge: d241afa c3d472e
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Mon Aug 23 00:59:46 2021 +0700
+
+    Merge branch 'main' of https://github.com/aleanajla/LIDMBinus into main
+
+[33mcommit d241afafe03758489aa8c8137f8aa5f1a27a504b[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Mon Aug 23 00:59:42 2021 +0700
+
+    jsonData + each page (news, reward, announce)
+
+[33mcommit c3d472ea49e97f5da8c300229e7b108fc167326d[m
+Author: anidadpr17 <anidadpr17@gmail.com>
+Date:   Sun Aug 22 21:48:58 2021 +0700
+
+    json
+
+[33mcommit cd97902639f771bc0edf41b662a62cf383ede6d8[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Sun Aug 22 19:10:53 2021 +0700
+
+    related books
+
+[33mcommit 48f6bde00641b43d6ef7914a8b8c9fecdd5360a5[m
+Merge: d8b5837 ddfea64
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Sun Aug 22 17:08:32 2021 +0700
+
+    Merge branch 'main' of https://github.com/aleanajla/LIDMBinus into main
+
+[33mcommit d8b5837cf5539385b3bc22dc5c9419c9ff4fc0de[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Sun Aug 22 17:08:28 2021 +0700
+
+    schedule
+
+[33mcommit ddfea64b5b5b48371a698ff833a2e01459535851[m
+Author: anidadpr17 <anidadpr17@gmail.com>
+Date:   Sun Aug 22 17:06:58 2021 +0700
+
+    json
+
+[33mcommit 19684aeee431dcc9e9a866c40d7498cb523f9b9f[m
+Merge: 98b3ecc 114d8e4
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Fri Aug 20 20:58:49 2021 +0700
+
+    Merge branch 'main' of https://github.com/aleanajla/LIDMBinus into main
+
+[33mcommit 98b3ecc599acc28b57af06a70710e407870ec76d[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Fri Aug 20 20:55:35 2021 +0700
+
+    jsonData
+
+[33mcommit 114d8e45d6b9908f630628cd7db8ffbcb218f48d[m
+Merge: d8ea59f 901509d
+Author: anidadpr17 <anidadpr17@gmail.com>
+Date:   Fri Aug 20 20:53:43 2021 +0700
+
+    Merge branch 'main' of https://github.com/aleanajla/LIDMBinus into main
+
+[33mcommit d8ea59f07a92724a6c342fcc93c2cf7fa880a372[m
+Author: anidadpr17 <anidadpr17@gmail.com>
+Date:   Fri Aug 20 20:47:28 2021 +0700
+
+    change password, profile settings, sign in, social media
+
+[33mcommit 901509d009234cb57a280afbdbfef2f2b955962f[m
+Merge: b5f03c9 f518732
+Author: Sebercheres <andrew.willy@binus.ac.id>
+Date:   Thu Aug 19 22:31:32 2021 +0700
+
+    Merge branch 'main' of https://github.com/aleanajla/LIDMBinus into main
+
+[33mcommit f5187326d353eaedd95dd735332d4934a10497db[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Thu Aug 19 11:23:49 2021 +0700
+
+    personalContact + PersonalData + Urgent Contact + Schedule
+
+[33mcommit 50bf8371927c88553d032ca20b03ae340f6317f9[m
+Merge: 9eee7bc 1a19b41
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Wed Aug 18 15:42:43 2021 +0700
+
+    Merge branch 'main' of https://github.com/aleanajla/LIDMBinus into main
+
+[33mcommit 1a19b41b2b5d13d08a59f0a6e164834418454e3b[m
+Author: anidadpr17 <anidadpr17@gmail.com>
+Date:   Wed Aug 18 15:41:02 2021 +0700
+
+    navigate settings
+
+[33mcommit 9eee7bc30e655db6b11751e53122b8664825fb2e[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Wed Aug 18 15:40:01 2021 +0700
+
+    header + top tab
+
+[33mcommit 3bdf1832c696832355243c86da8faf399243dc43[m
+Author: anidadpr17 <anidadpr17@gmail.com>
+Date:   Wed Aug 18 15:39:06 2021 +0700
+
+    settings + profile settings
+
+[33mcommit 0521afaace001cb805b0c12398af5f6f005e4fcb[m
+Author: anidadpr17 <anidadpr17@gmail.com>
+Date:   Wed Aug 18 02:22:44 2021 +0700
+
+    voucher code + details book
+
+[33mcommit b5615a521c1dc389510dd22ad131d0cae167cfee[m
+Merge: 37a2a90 6346a40
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Tue Aug 17 17:42:43 2021 +0700
+
+    Merge branch 'main' of https://github.com/aleanajla/LIDMBinus into main
+
+[33mcommit 37a2a902fc0ccf96458692d399e2da199284956f[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Tue Aug 17 17:42:08 2021 +0700
+
+    navbar + popup
+
+[33mcommit 6346a405766e6e65fd901cd6a46c4bea302d9146[m
+Author: anidadpr17 <anidadpr17@gmail.com>
+Date:   Tue Aug 17 15:44:08 2021 +0700
+
+    get started library
+
+[33mcommit b5f03c93618b0c3b835422b1478dd81c9e3d88c5[m
+Author: Sebercheres <andrew.willy@binus.ac.id>
+Date:   Tue Aug 17 15:01:38 2021 +0700
+
+    register2
+
+[33mcommit 4fbe264a5511164710045336ed68ec8079b864c6[m
+Merge: bbbb583 441d88b
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Tue Aug 17 12:53:57 2021 +0700
+
+    Merge branch 'main' of https://github.com/aleanajla/LIDMBinus into main
+
+[33mcommit bbbb583bd9894c2b54a7e55867fd8e40edc3f25c[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Tue Aug 17 12:53:30 2021 +0700
+
+    Update index.js
+
+[33mcommit 441d88b47363101a7b1b0fdd0aac06db74f3e56a[m
+Merge: 78e47af 06af694
+Author: anidadpr17 <anidadpr17@gmail.com>
+Date:   Tue Aug 17 12:52:15 2021 +0700
+
+    Merge branch 'main' of https://github.com/aleanajla/LIDMBinus into main
+
+[33mcommit 78e47af7137de12dc93a615fb81a2c9440ede8fb[m
+Author: anidadpr17 <anidadpr17@gmail.com>
+Date:   Tue Aug 17 12:45:52 2021 +0700
+
+    information, notification, conTerms,
+
+[33mcommit 06af6942d178d0b79e84caedd7983597e2f7af99[m
+Merge: f240b54 e4b7a24
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Tue Aug 17 12:36:25 2021 +0700
+
+    Merge branch 'main' of https://github.com/aleanajla/LIDMBinus into main
+
+[33mcommit f240b544768a058f1087ca6e304fde43303e294a[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Tue Aug 17 12:32:26 2021 +0700
+
+    profile + my rewards + howToGetPoints + detail News + detail Announcement + myCertificate
+
+[33mcommit e4b7a246de4485a285f11ec979afa72fa7bc0afb[m
+Merge: 059f7a7 9abdd26
+Author: anidadpr17 <anidadpr17@gmail.com>
+Date:   Mon Aug 16 11:42:47 2021 +0700
+
+    Merge branch 'main' of https://github.com/aleanajla/LIDMBinus into main
+
+[33mcommit 059f7a7a08148357522c9afffdbde2ae9c1105d5[m
+Author: anidadpr17 <anidadpr17@gmail.com>
+Date:   Mon Aug 16 10:51:11 2021 +0700
+
+    browse all rewards
+
+[33mcommit 9abdd26cbcae98a0369ce3d6d29238cc90e2069d[m
+Merge: 3d89c9b b258c69
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Sun Aug 15 20:49:59 2021 +0700
+
+    Merge branch 'main' of https://github.com/aleanajla/LIDMBinus into main
+
+[33mcommit 3d89c9b1afd746180a2eb8ebf2c01065d2095949[m
+Merge: dd08dee baf421f
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Sun Aug 15 20:49:43 2021 +0700
+
+    Merge branch 'main' of https://github.com/aleanajla/LIDMBinus into main
+
+[33mcommit b258c69efe50bf78b01ea130dec29666027f8377[m
+Author: anidadpr17 <anidadpr17@gmail.com>
+Date:   Sun Aug 15 20:46:32 2021 +0700
+
+    announcement
+
+[33mcommit dd08dee0199e94da0c31f16e653f31215a066c7f[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Sun Aug 15 20:45:58 2021 +0700
+
+    setiings
+
+[33mcommit baf421f4d801a388f307e298b0aeaae34a2000ce[m
+Author: anidadpr17 <anidadpr17@gmail.com>
+Date:   Sun Aug 15 19:50:30 2021 +0700
+
+    intern + details program
+
+[33mcommit 4873693a0340cf0cc5692fc7f64e488071363705[m
+Author: anidadpr17 <anidadpr17@gmail.com>
+Date:   Sat Aug 14 23:02:46 2021 +0700
+
+    library+video learning+share materials+related books
+
+[33mcommit 3cc1e3ec34dfe6667d5900aa8efe6e42f610010d[m
+Author: anidadpr17 <anidadpr17@gmail.com>
+Date:   Sat Aug 14 13:25:55 2021 +0700
+
+    navbar
+
+[33mcommit 436cf772a535a1eff25ad129db66fcb43d20747f[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Fri Aug 13 18:27:56 2021 +0700
+
+    navigation di dlm home
+
+[33mcommit ecad06911b643f5475e61e48c7063af51f196e50[m
+Merge: dd9f236 d030846
+Author: anidadpr17 <anidadpr17@gmail.com>
+Date:   Fri Aug 13 16:47:06 2021 +0700
+
+    Merge branch 'main' of https://github.com/aleanajla/LIDMBinus into main
+
+[33mcommit dd9f236fc52896dd276e12ea90e9e6fa45afb4f7[m
+Author: anidadpr17 <anidadpr17@gmail.com>
+Date:   Fri Aug 13 16:45:30 2021 +0700
+
+    news
+
+[33mcommit d030846d740c89d052d92caab21bda98360e2f8b[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Fri Aug 13 15:35:07 2021 +0700
+
+    profile
+
+[33mcommit 7ba8eacaac59d0756f1e66b0c128560c81af37b4[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Wed Aug 11 22:09:26 2021 +0700
+
+    news
+
+[33mcommit de17d00130571a586b4437eaf4f5615a6c9056a3[m
+Merge: a6a3dc9 cd1b241
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Wed Aug 11 22:05:48 2021 +0700
+
+    Merge branch 'main' of https://github.com/aleanajla/LIDMBinus into main
+
+[33mcommit cd1b2418a0e5ec8620dbcf003cbb8d541b098e82[m
+Author: anidadpr17 <anidadpr17@gmail.com>
+Date:   Wed Aug 11 20:15:26 2021 +0700
+
+    register
+
+[33mcommit df5f40800170cb49ebf2427d305dc10d40020209[m
+Merge: a036f09 85382bb
+Author: anidadpr17 <anidadpr17@gmail.com>
+Date:   Wed Aug 11 14:47:35 2021 +0700
+
+    Merge branch 'main' of https://github.com/aleanajla/LIDMBinus into main
+
+[33mcommit a036f09f49f802ac6bdcd62bbb6fc82ffedae7c2[m
+Author: anidadpr17 <anidadpr17@gmail.com>
+Date:   Wed Aug 11 14:46:58 2021 +0700
+
+    sign in
+
+[33mcommit a6a3dc99c6c02b653106df5f1279967d0ce0385d[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Wed Aug 11 00:05:54 2021 +0700
+
+    font + home + program
+
+[33mcommit 85382bb3a31d5e50870de2351def73c3bc6d5c5c[m
+Merge: eba24be 8fa3be4
+Author: AtlanticNova <idiotcolony97@gmail.com>
+Date:   Tue Aug 10 16:44:03 2021 +0700
+
+    Merge branch 'main' of https://github.com/aleanajla/LIDMBinus into main
+
+[33mcommit 8fa3be403c0c2a78732b91c862224e0993a45995[m
+Author: anidadpr17 <anidadpr17@gmail.com>
+Date:   Mon Aug 9 21:28:05 2021 +0700
+
+    score page
+
+[33mcommit eba24be956c38da798589f6389c85c7b94c86b9a[m
+Author: AtlanticNova <idiotcolony97@gmail.com>
+Date:   Mon Aug 9 17:42:31 2021 +0700
+
+    pusing
+
+[33mcommit 3a590014d5bf68069bc267cb7c9ea54b522b6e2a[m
+Merge: 7970354 95c7a83
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Mon Aug 9 14:12:04 2021 +0700
+
+    Merge branch 'main' of https://github.com/aleanajla/LIDMBinus into main
+
+[33mcommit 79703547d40bedfb5152f2b59aa659932d0003c7[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Mon Aug 9 14:12:00 2021 +0700
+
+    update
+
+[33mcommit 95c7a83d3d6ffe57a582e67ebaf73ef4e0fbaa50[m
+Author: Sebercheres <andrew.willy@binus.ac.id>
+Date:   Sun Aug 8 23:43:20 2021 +0700
+
+    commit
+
+[33mcommit 64049cdbff905b10977ed4b07a6ffd0ed7025e0f[m
+Merge: 67225e4 f0d5e52
+Author: Sebercheres <andrew.willy@binus.ac.id>
+Date:   Sun Aug 8 23:29:22 2021 +0700
+
+    Merge branch 'main' of https://github.com/aleanajla/LIDMBinus into main
+
+[33mcommit 67225e474084cfcd7e6db99b8086491317ef6ddc[m
+Author: Sebercheres <andrew.willy@binus.ac.id>
+Date:   Sun Aug 8 23:29:17 2021 +0700
+
+    commit
+
+[33mcommit f0d5e52ecab2d706ad1a656a9f4adb0fe0f366a0[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Sun Aug 8 17:31:18 2021 +0700
+
+    Update index.js
+
+[33mcommit 69f902cda16b0fd90e5734feb7c94eb8d0587a7c[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Sun Aug 8 16:00:42 2021 +0700
+
+    home header
+
+[33mcommit 51eeec53761e6477e3d80934430165d26e04ae90[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Sun Aug 8 15:31:27 2021 +0700
+
+    progress2
+
+[33mcommit e9f05c4e391cccdd96a322ca10d85c2bde02f2a1[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Sat Aug 7 16:51:25 2021 +0700
+
+    progress1
+
+[33mcommit 41847a3aec22c4b4aba18de6910426881bd20e8a[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Sat Aug 7 14:10:09 2021 +0700
+
+    assets update
+
+[33mcommit 55d6cc5c392281a0a415e3245d9349a00a3576fa[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Sat Aug 7 14:05:56 2021 +0700
+
+    assets
+
+[33mcommit 959829d489144987b5f517cd350a3ab2cd37dddb[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Sat Aug 7 13:15:13 2021 +0700
+
+    new2
+
+[33mcommit 7e53cbcd6a60150465b9ac4a4ba2e96e2f1de76a[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Sat Aug 7 13:11:24 2021 +0700
+
+    new
+
+[33mcommit 13708bee0d414a20fe51358a483aa49dfddb457f[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Sat Aug 7 13:08:42 2021 +0700
+
+    error
+
+[33mcommit 79989b7ac9eeaf07b0ecdd861b8ba4134f111201[m
+Author: Martinus Andika Novanawa <idiotcolony97@gmail.com>
+Date:   Sat Aug 7 10:17:56 2021 +0700
+
+    Rename Folder
+
+[33mcommit 185c6ac3ff0b110837ccbd21508930511ae0aeb6[m
+Author: alea najla <alea.syukur@binus.ac.id>
+Date:   Fri Aug 6 23:34:08 2021 +0700
+
+    init commit
+
+[33mcommit b2466ef72f86d37802cc843ce607580c0c06d30f[m
+Author: aleanajla <76479379+aleanajla@users.noreply.github.com>
+Date:   Fri Aug 6 23:00:16 2021 +0700
+
+    Initial commit

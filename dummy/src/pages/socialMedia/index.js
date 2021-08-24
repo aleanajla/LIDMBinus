@@ -13,12 +13,12 @@ const SocialMedia = () => {
                     <TouchableOpacity onPress={()=>{navigation.navigate('ProfileSettings',{type:''});}}>
                         <Image source = {require('../../assets/icons/arrowBack.png')} style={{width : 24, height:24}}/>
                     </TouchableOpacity>
-                    <Text style={styles.title3}>SAVE</Text>
+                    <Text style={styles.title3}>SIMPAN</Text>
                 </View>
             </View>
             <View style={styles.inside}>
                 <View style={styles.title}>
-                    <Text style={styles.titleTxt}>Social Media</Text>
+                    <Text style={styles.titleTxt}>Media Sosial</Text>
                     <View style={styles.line}></View>
                 </View>
                 <View style={styles.container}>

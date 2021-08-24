@@ -22,28 +22,28 @@ const howToGetPoints = () => {
                     <View style = {styles.imgLevel}>
                         <View style ={styles.imgBox}>
                             <Image source = {require('../../assets/icons/bronze.png')} />
-                            <Text style = {styles.titleLevel}>Bronze</Text>
-                            <Text style = {styles.points}>0 PTS</Text>
+                            <Text style = {styles.titleLevel}>Perunggu</Text>
+                            <Text style = {styles.points}>0 Poin</Text>
                         </View>
                         <View style ={styles.imgBox}>
                             <Image source = {require('../../assets/icons/Silver.png')} />
-                            <Text style = {styles.titleLevel}>Silver</Text>
-                            <Text style = {styles.points}>350 PTS</Text>
+                            <Text style = {styles.titleLevel}>Perak</Text>
+                            <Text style = {styles.points}>350 Poin</Text>
                         </View>
                         <View style ={styles.imgBox}>
                             <Image source = {require('../../assets/icons/gold.png')} />
-                            <Text style = {styles.titleLevel}>Gold</Text>
-                            <Text style = {styles.points}>800 PTS</Text>
+                            <Text style = {styles.titleLevel}>Emas</Text>
+                            <Text style = {styles.points}>800 Poin</Text>
                         </View>
                     <View style ={styles.imgBox}>
                             <Image source = {require('../../assets/icons/Platinum.png')} />
                             <Text style = {styles.titleLevel}>Platinum</Text>
-                            <Text style = {styles.points}>4000 PTS</Text>
+                            <Text style = {styles.points}>4000 Poin</Text>
                     </View>
                     </View>
                 </View>
                 <View style ={[styles.howToEarnPoint, styles.shadowBox]}>
-                    <Text style ={{fontSize:20, fontWeight:'bold',color:'#022E57',marginTop:10}}>How to Get Points?</Text>
+                    <Text style ={{fontSize:20, fontWeight:'bold',color:'#022E57',marginTop:10}}>Bagaimana Cara Mendapatkan Poin?</Text>
                     <View style ={styles.imgBox2}>
                         <View style = {styles.perBox}>
                             <Image source = {require('../../assets/icons/select.png')} />
@@ -51,28 +51,28 @@ const howToGetPoints = () => {
                         </View>
                         <View style = {styles.perBox}>
                             <Image source ={require('../../assets/icons/share.png')}/>
-                            <Text style={[{width:252, height:34}, styles.ket]}>Select share content on social media that available </Text>
+                            <Text style={[{width:252, height:34}, styles.ket]}>Pilih konten program yang disediakan oleh Kampus Merdeka yang dapat diakses dari submenu program di halaman utama</Text>
                         </View>
                         <View style = {styles.perBox}>
                             <Image source={require('../../assets/icons/getPoints.png')}/>
-                            <Text style ={[{width:191,height:20}, styles.ket]}>Users get 5 points for every share </Text>
+                            <Text style ={[{width:191,height:20}, styles.ket]}>Pengguna mendapatkan 5 poin untuk setiap share</Text>
                         </View>
                     </View>
                 </View>
                 <View style = {[styles.HowItWorks, styles.shadowBox]}>
-                    <Text style = {{color:'#022E57', fontSize:20, textAlign:'center', fontWeight:'bold',marginTop:20}}>How it Works?</Text>
+                    <Text style = {{color:'#022E57', fontSize:20, textAlign:'center', fontWeight:'bold',marginTop:20}}>Bagaimana itu bekerja?</Text>
                     <View style ={styles.imgBox3}>
                         <View style = {styles.perBox2}>
                             <Image source={require('../../assets/icons/points.png')}/>
-                            <Text style = {[{width:257, height:33}, styles.ket]}>Users get 5 points for every share of content provided by Kampus Merdeka on social media</Text>
+                            <Text style = {[{width:257, height:33}, styles.ket]}>Pengguna mendapatkan 5 poin untuk setiap share konten yang disediakan oleh Kampus Merdeka di media sosial</Text>
                         </View>
                         <View style = {styles.perBox2}>
                             <Image source={require('../../assets/icons/gifts.png')} />
-                            <Text style = {[{width:257, height:33}, styles.ket]}>Redeem the points to various deals and promotions</Text>
+                            <Text style = {[{width:257, height:33}, styles.ket]}>Tukarkan poin ke berbagai penawaran dan promosi</Text>
                         </View>
                         <View style = {styles.perBox2}>
                             <Image source ={require('../../assets/icons/levelUp.png')} />
-                            <Text style = {[{width:257, height:33}, styles.ket]}>Earn enough points to levels up and unclock the exclusive deals and promotions</Text>
+                            <Text style = {[{width:257, height:33}, styles.ket]}>Dapatkan poin yang cukup untuk naik level dan membuka kunci penawaran dan promosi eksklusif</Text>
                         </View>
                     </View>
                 </View>

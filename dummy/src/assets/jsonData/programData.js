@@ -27,31 +27,31 @@ export const programData =
          {
             "id": "5",
             "program": "Indonesian International Student Mobility Awards",
-            "date" : "Closed",
+            "date" : "Tutup",
             "image_url" : "https://image.flaticon.com/icons/png/512/2416/2416631.png"
          },
          {
             "id": "6",
             "program": "Membangun Desa (KKN Tematik)",
-            "date" : "Closed",
+            "date" : "Tutup",
             "image_url" : "https://image.flaticon.com/icons/png/512/2709/2709011.png"
          },
          {
             "id": "7",
             "program": "Proyek Kemanusiaan",
-            "date" : "Closed",
+            "date" : "Tutup",
             "image_url" : "https://image.flaticon.com/icons/png/512/1087/1087840.png"
          },
          {
             "id": "8",
             "program": "Riset atau Penilitian",
-            "date" : "Closed",
+            "date" : "Tutup",
             "image_url" : "https://image.flaticon.com/icons/png/512/2082/2082022.png"
          },
          {
             "id": "9",
             "program": "Wirausaha",
-            "date" : "Closed",
+            "date" : "Tutup",
             "image_url" : "https://image.flaticon.com/icons/png/512/4576/4576175.png"
          },
     ]

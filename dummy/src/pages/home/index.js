@@ -129,7 +129,7 @@ const Home = () => {
                         <View style = {[styles.conLeftRight, {flex:1}]}>
                                 <View>
                                     <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18, marginTop:10}}>Bagaimana caranya</Text>
-                                    <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18}}>Mendapatkn Poin</Text>
+                                    <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18}}>Mendapatkan Poin</Text>
                                 </View>
                                 <View>
                                 <Image source = {require('../../assets/images/question.png')}

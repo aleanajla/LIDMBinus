@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
         marginTop: 5,
         padding:5,
         flexDirection : 'row',
-        marginRight: 5,
+        justifyContent :'center'
     },
     grade:{
         width: 230,
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 20,
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
-        margin : 5,
+        // margin : 5,
         shadowColor : '#000000',
         shadowOpacity : 0.1,
         shadowRadius : 10,
@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 20,
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
-        margin : 5,
+        marginLeft : 5,
         shadowColor : '#000000',
         shadowOpacity : 0.1,
         shadowRadius : 10,

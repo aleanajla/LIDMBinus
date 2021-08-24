@@ -11,7 +11,7 @@ const GetStarted = () => {
             <View style={styles.pages}>
                 <View style={styles.header}>
                     <TouchableOpacity onPress={()=>{navigation.navigate('Perpus',{type:''});}}>
-                        <Image source = {require('../../assets/icons/arrowBack.png')} style={[styles.header, {width : 34, height:34}]}/>
+                        <Image source = {require('../../assets/icons/arrowBack.png')} style={[styles.header, {width : 24, height:24}]}/>
                     </TouchableOpacity>
                     <Text style={styles.title3}>BOOKS</Text>
                 </View>

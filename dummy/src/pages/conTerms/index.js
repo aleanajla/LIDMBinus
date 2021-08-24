@@ -18,7 +18,6 @@ const ConTerms = ({route}) => {
                     animationType="slide" //slide, fade, none
                     transparent={true} //true or false
                     visible={modalVisible}
-                    hasBackdrop={true} // nit turun nit kebaawa
                     backdropOpacity={0.5}
                     onRequestClose={() => {
                         setModalVisible(!modalVisible)}}

@@ -10,6 +10,8 @@ import { Program, News, BrowseAllRewards, Announcement, Profile, howToGetPoints,
 import { announcementData } from '../../assets/jsonData/announcementData';
 import  AnnounceListView from '../../components/ListView'
 import * as Progress from 'react-native-progress'
+import InformationListView from '../../components/InformationListView'
+import { informationData } from '../../assets/jsonData/informationData'
 
 const image = [
     require('../../assets/slider/poster.jpg'),
@@ -171,14 +173,18 @@ const Home = () => {
                 <View style = {styles.news}>
                     <Text style = {{color: '#28527A', fontSize:25, fontWeight: 'bold', marginLeft:30}}>Information</Text>
                     <View style={styles.containerNews}>
-                        <TouchableOpacity onPress = {()=>{ navigation.navigate('Information',{type:''})}}> 
+                        <InformationListView
+                            itemList={informationData}
+                            navigation={navigation}
+                        />
+                        {/* <TouchableOpacity onPress = {()=>{ navigation.navigate('Information',{type:''})}}> 
                             <View>
                                 <Image source = {require('../../assets/images/info1.png')} />
                             </View>
                         </TouchableOpacity>
                         <View>
                             <Image source = {require('../../assets/images/info2.png')} />
-                        </View>
+                        </View> */}
                     </View>
                 </View>
             </View>

@@ -2,17 +2,6 @@ import React from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { WARNA_SEKUNDER } from '../../utils/constants';
 
-//yg ada warnanya #28527A
-//yg close warnanya #8AC4D0
-
-function checkDate(date){
-    if(date === "Closed"){
-        return "#8AC4D0";
-    }else{
-        return "#28527A";
-    }
-}
-
 const ProgramListViewItems = ({id, program, date, image_url}) => (
     //<TouchableOpacity onPress={()=> setModalVisible(true)}>
         <View style = {[date === "Closed" ? styles.conRow1 : styles.conRow2]}>

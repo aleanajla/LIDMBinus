@@ -7,6 +7,7 @@ import { scoreData } from '../../assets/jsonData/scoreData'
 import * as Progress from 'react-native-progress';
 import { color } from 'react-native-elements/dist/helpers';
 
+
 const Score = () => {
     return (
         <ScrollView>

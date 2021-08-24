@@ -6,6 +6,8 @@ import ImageBackground from 'react-native/Libraries/Image/ImageBackground'
 import { Profile} from '../../pages/index.js'
 import { useNavigation } from '@react-navigation/core'
 import Modal from 'react-native-modal'
+import Recomend from '../recomend'
+import MoreBooks from '../moreBooks'
 
 const windowsWidth = Dimensions.get('window').width;
 const windowsHeight = Dimensions.get('window').height;
@@ -105,10 +107,12 @@ const Perpus = () => {
                     </View>
                 </View>
                 <View style={{padding :17}}>
-                    <View style={styles.recTop}>
-                        <Text style={styles.recText}>Reccomend For You</Text>
-                        <Image source = {require('../../assets/icons/arrow_right2.png')} style={styles.arrowText}/>
-                    </View>
+                    <TouchableOpacity onPress = {()=>{ navigation.navigate('Recomend',{type:''})}}> 
+                        <View style={styles.recTop}>
+                            <Text style={styles.recText}>Reccomend For You</Text>
+                            <Image source = {require('../../assets/icons/arrow_right2.png')} style={styles.arrowText}/>
+                        </View>
+                    </TouchableOpacity>
                     <View style={styles.reccomen}>
                         <View style={styles.bookLeft}>
                         <TouchableOpacity onPress={()=> setModalVisible(true)}>
@@ -124,10 +128,12 @@ const Perpus = () => {
                             <Text style={styles.bookAuthor}>Moira Weigel</Text>
                         </View>
                     </View>
-                    <View style={styles.recTop}>
-                        <Text style={styles.recText}>More</Text>
-                        <Image source = {require('../../assets/icons/arrow_right2.png')} style={styles.arrowMore}/>
-                    </View>
+                    <TouchableOpacity onPress = {()=>{ navigation.navigate('MoreBooks',{type:''})}}> 
+                        <View style={styles.recTop}>
+                            <Text style={styles.recText}>More</Text>
+                            <Image source = {require('../../assets/icons/arrow_right2.png')} style={styles.arrowMore}/>
+                        </View>
+                    </TouchableOpacity>
                     <View style={styles.reccomen}>
                         <View style={styles.bookLeft}>
                             <Image source = {require('../../assets/images/book5.png')}/>

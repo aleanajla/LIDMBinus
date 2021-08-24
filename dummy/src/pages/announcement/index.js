@@ -12,7 +12,7 @@ const Announcement = () => {
         <View style={styles.pages}>
             <View style={styles.header}>
                 <TouchableOpacity onPress={()=>{navigation.goBack()}}>
-                    <Image source = {require('../../assets/icons/arrowBackBlue.png')} style={[styles.header, {width : 34, height:34, top :8}]}/>
+                    <Image source = {require('../../assets/icons/arrowBackBlue.png')} style={[styles.header, {width : 24, height:24, top :12}]}/>
                 </TouchableOpacity>
                 <Text style={styles.announ}>ANNOUNCEMENT</Text>
             </View>
@@ -20,14 +20,6 @@ const Announcement = () => {
                 itemList = {announcementData}
                 navigation={navigation}
             />
-            {/* <View style={styles.container}>
-                <Text style={styles.title}>Pembukaan Pendaftaran Mobilitas Mahasiswa Internasional – IISMA</Text>
-                <Text style={styles.desc}>11 May 2021</Text>
-            </View>
-            <View style={styles.container}>
-                <Text style={styles.title}>Sosialisasi Program Kampus Mengajar Angkatan 1 Tahun 2021</Text>
-                <Text style={styles.desc}>11 Febuary 2021</Text>
-            </View> */}
         </View>
     )
 }
@@ -40,6 +32,7 @@ const styles = StyleSheet.create({
         flexDirection : 'row',
         height : 60,
         alignItems : 'center',
+        marginBottom : 10
     },
     announ:{
         alignItems : 'center',
@@ -56,8 +49,8 @@ const styles = StyleSheet.create({
         backgroundColor : 'white',
         borderRadius : 20,
         justifyContent : 'center',
-        paddingLeft : 19,
-        left : 26,
+        // paddingLeft : 19,
+        // left : 26,
         marginTop : 18,
         shadowColor: '#000',
         shadowOffset: {

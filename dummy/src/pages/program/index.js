@@ -55,8 +55,8 @@ const Program = () => {
                         
                     </View>
                 </View>
-                <View style = {styles.garis}/>
-                <View>
+                <View style = {styles.garis}/> */}
+                {/* <View>
                     <View style = {styles.conHeader}>
                         <TouchableOpacity
                             onPress={()=>{
@@ -245,6 +245,7 @@ export default Program;
 const styles = StyleSheet.create({
     progContainer:{
         // alignItems: 'center'
+        marginTop:20
     },
     welcome :{
         paddingLeft: 30

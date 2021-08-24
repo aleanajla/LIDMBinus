@@ -12,7 +12,7 @@ const VideoLearning = () => {
     return (
         <ScrollView>
             <View styles={styles.pages}>
-                <View style = {styles.header}>
+                {/* <View style = {styles.header}>
                     <View style = {styles.welcome}>
                         <Text style = {{fontSize: 14, color : '#28527A'}}>Welcome back,</Text>
                         <Text style = {{fontSize: 20,fontWeight: 'bold', color: WARNA_SEKUNDER}}>Andrew Willy</Text>
@@ -45,7 +45,7 @@ const VideoLearning = () => {
                             <Text style = {styles.text1}>Books</Text>
                         </View>
                     </TouchableOpacity>
-                </View>
+                </View> */}
                 <View styles={styles.container}>
                     <VideoLearningListView
                         itemList = {vidLearningData}

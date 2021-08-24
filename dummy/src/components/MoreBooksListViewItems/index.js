@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/core'
 import Modal from 'react-native-modal'
 
 
-const RelatedListViewItems = ({id, title, author, image_url}) => (
+const MoreBooksListViewItems = ({id, title, author, image_url}) => (
     <TouchableOpacity>
         <View style={styles.row}>
             <View style={styles.conBook}>
@@ -17,7 +17,7 @@ const RelatedListViewItems = ({id, title, author, image_url}) => (
     </TouchableOpacity>
 );
 
-export default RelatedListViewItems;
+export default MoreBooksListViewItems;
 
 const styles = StyleSheet.create({
     row:{
@@ -33,7 +33,8 @@ const styles = StyleSheet.create({
         fontSize : 15,
         fontWeight : 'bold',
         textAlign:'center',
-        width:164
+        width:164,
+        paddingTop : 4
     },
     bookAuthor:{
         color : WARNA_SEKUNDER,

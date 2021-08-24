@@ -18,6 +18,7 @@ import { useCallback } from 'react';
 
 const VideoLearningListViewItems = ({id, cover, title, creator, description, url, image_url}) => (
     // <OpenURLButton url={url}>
+    <View style={styles.container}>
         <View style={styles.square}>
             <View style={styles.left}>
                 <Image source = {{uri:image_url}} style={styles.pic}/>
@@ -28,6 +29,7 @@ const VideoLearningListViewItems = ({id, cover, title, creator, description, url
                 <Text style={styles.desc}>{description}</Text>
             </View>
         </View>
+    </View>
     // </OpenURLButton>
 );
 
@@ -38,8 +40,6 @@ const styles = StyleSheet.create({
         height: 128,
         width: 370,
         backgroundColor: '#CCD1D9',
-        marginLeft: 10,
-        marginRight: 10,
         marginTop: 19,
         borderRadius: 15,
         flexDirection : 'row',
@@ -85,5 +85,8 @@ const styles = StyleSheet.create({
     pic:{
         width:143.8,
         height:80
+    },
+    container:{
+        alignItems :'center'
     }
 })

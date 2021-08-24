@@ -11,13 +11,15 @@ function checkType(type){
 }
 
 const ShareMaterialsListViewItems = ({id, title, size, type}) => (
-    <View style={styles.square}>
-        <View style={styles.left}>
-            <Image source = {checkType(type)}/>
-        </View>
-        <View style={styles.right}>
-            <Text style={styles.title}>{title}</Text>
-            <Text style={styles.mb}>{size}</Text>
+    <View style={styles.container}>
+        <View style={styles.square}>
+            <View style={styles.left}>
+                <Image source = {checkType(type)}/>
+            </View>
+            <View style={styles.right}>
+                <Text style={styles.title}>{title}</Text>
+                <Text style={styles.mb}>{size}</Text>
+            </View>
         </View>
     </View>
 );
@@ -25,12 +27,13 @@ const ShareMaterialsListViewItems = ({id, title, size, type}) => (
 export default ShareMaterialsListViewItems;
 
 const styles = StyleSheet.create({
+    container:{
+        alignItems : 'center'
+    },
     square:{
         height: 72,
         width: 370,
         backgroundColor: '#CCD1D9',
-        marginLeft: 10,
-        marginRight: 10,
         marginTop: 19,
         borderRadius: 15,
         flexDirection : 'row',
@@ -42,6 +45,7 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.2,
         shadowRadius: 5,
+        // backgroundColor : 'yellow'
     },
     left:{
         justifyContent : 'center',

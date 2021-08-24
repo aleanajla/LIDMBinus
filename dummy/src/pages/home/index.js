@@ -25,54 +25,10 @@ const Home = () => {
     return (
         <ScrollView>
             <View style={styles.pages}>
-                {/* <View style = {styles.header}>
-                    <View style = {styles.welcome}>
-                        <Text style = {{fontSize: 14, color : '#28527A'}}>Welcome back,</Text>
-                        <Text style = {{fontSize: 20,fontWeight: 'bold', color: WARNA_SEKUNDER}}>Andrew Willy</Text>
-                    </View>
-                    <View style = {styles.imgHeader}>
-                        <Image source ={require('../../assets/icons/bell.png')} style = {styles.bell} />
-                        <TouchableOpacity
-                        onPress = {()=>{
-                            navigation.navigate('Profile',{type:''})
-                        }}> 
-                            <Image source = {require('../../assets/icons/profile.png')} />
-                        </TouchableOpacity>
-                    </View>
-                </View> */}
                 <View>
                     <View style = {styles.garis}/>
                 </View>
-                
-                <View style = {styles.conHeader}>
-                    
-                    {/* <TouchableOpacity
-                    onPress={()=>{
-                        navigation.navigate('Home',{type:''});
-                    }}> 
-                            <View style = {styles.optHeader2}>
-                                <Text style = {styles.titleHeader2}>Dashboard</Text>
-                            </View>
-                    </TouchableOpacity>
-                    
-                    <TouchableOpacity
-                    onPress={()=>{
-                        navigation.navigate('Program',{type:''});
-                    }}> 
-                        <View style = {styles.optHeader}>
-                            <Text style = {styles.titleHeader}>Program</Text>
-                        </View>
-                    </TouchableOpacity>
-                    
-                    <TouchableOpacity
-                    onPress={()=>{
-                        navigation.navigate('News',{type:''});
-                    }}>
-                        <View style = {styles.optHeader}>
-                            <Text style = {styles.titleHeader}>News</Text>
-                        </View>
-                    </TouchableOpacity> */}
-                </View>
+                <View style = {styles.conHeader}></View>
                 <View style = {styles.sliderCon}>
                     <SliderBox images = {image}
                         sliderBoxHeight = {162}
@@ -104,7 +60,7 @@ const Home = () => {
                     </View>
                 </View>
                 <View style={styles.containerRow}>
-                <TouchableOpacity
+                    <TouchableOpacity
                     onPress={()=>{
                         navigation.navigate('BrowseAllRewards',{type:''});
                     }}>
@@ -139,52 +95,35 @@ const Home = () => {
                     </TouchableOpacity>
                 </View>
 
-                <View style = {styles.containerAnnounce}>
-                    <TouchableOpacity onPress={()=>{navigation.navigate('Announcement',{type:''});}}>
-                        <View style = {{flexDirection: 'row'}}>
-                            <Text style = {{color: '#FFFFFF', fontSize: 25, fontWeight:'bold', marginLeft:20, marginTop:10}}>
-                                Announce
-                            </Text>
-                            <Image source = {require('../../assets/icons/arrow_right_white.png')} 
-                                style = {styles.arrow}
+                <View style={styles.announceContainer}>
+                    <View style = {styles.containerAnnounce}>
+                        <TouchableOpacity onPress={()=>{navigation.navigate('Announcement',{type:''});}}>
+                            <View style = {{flexDirection: 'row'}}>
+                                <Text style = {{color: '#FFFFFF', fontSize: 25, fontWeight:'bold', marginLeft:20, marginTop:10}}>
+                                    Announce
+                                </Text>
+                                <Image source = {require('../../assets/icons/arrow_right_white.png')} 
+                                    style = {styles.arrow}
+                                />
+                            </View>
+                        </TouchableOpacity>
+                        <View style = {{display:'flex', flexDirection:'row'}}>
+                            <AnnounceListView
+                                itemList={announcementData}
+                                navigation={navigation}
                             />
                         </View>
-                    </TouchableOpacity>
-                    <View style = {{display:'flex', flexDirection:'row'}}>
-                        <AnnounceListView
-                            itemList={announcementData}
-                            navigation={navigation}
-                        />
                     </View>
-                   
-                        {/* <View style = {styles.announceLR}>
-                            <TouchableOpacity  onPress={()=>{navigation.navigate('DetailAnnouncement',{type:''});}}>
-                                <View style = {styles.announceLR2}>
-                                    <Text style = {styles.announcement1}>11 May 2021</Text>
-                                    <Text style = {styles.announcement}>Pembukaan Pendaftaran Mobilitas Mahasiswa Internasional – IISMA</Text>
-                                </View>
-                            </TouchableOpacity>
-                            <View style = {styles.announceLR2}>
-                                <Text style = {styles.announcement1}>11 Febuary 2021</Text>
-                                <Text style = {styles.announcement}>Sosialisasi Program Kampus Mengajar Angkatan 1 Tahun 2021</Text>
-                            </View>
-                        </View> */}
                 </View>
                 <View style = {styles.news}>
                     <Text style = {{color: '#28527A', fontSize:25, fontWeight: 'bold', marginLeft:30}}>Information</Text>
                     <View style={styles.containerNews}>
-                        <InformationListView
-                            itemList={informationData}
-                            navigation={navigation}
-                        />
-                        {/* <TouchableOpacity onPress = {()=>{ navigation.navigate('Information',{type:''})}}> 
-                            <View>
-                                <Image source = {require('../../assets/images/info1.png')} />
-                            </View>
-                        </TouchableOpacity>
                         <View>
-                            <Image source = {require('../../assets/images/info2.png')} />
-                        </View> */}
+                            <InformationListView
+                                itemList={informationData}
+                                navigation={navigation}
+                            />
+                        </View>
                     </View>
                 </View>
             </View>
@@ -203,9 +142,7 @@ const styles = StyleSheet.create({
         paddingBottom:10
     },
     optHeader: {
-        // padding: 20,
         margin:8,
-        // backgroundColor : '#ffffff',
         width: 105,
         height: 35,
         borderRadius:20,
@@ -228,47 +165,9 @@ const styles = StyleSheet.create({
         borderRadius:20,
         alignItems: 'center'
     },
-    // welcome :{
-    //     paddingLeft: 30
-    // },
     pages : {
-        //flex : 1,
         backgroundColor : '#F6F5F5',
         fontFamily: 'Open-Sans',
-    },
-    // header :{
-    //     flexDirection : 'row',
-    //     paddingTop: 15,
-    //     backgroundColor: '#F6F5F5'
-    // },
-    // imgHeader :{
-    //     flexDirection : 'row',
-    //     justifyContent : 'flex-end',
-    //     paddingRight : 20,
-    //     // justifyContent : 'space-between',
-    //     flex: 1
-    // },
-    // bell :{
-    //     // fontSize : 25, 
-    //     padding : 17,
-    //     right:10,
-    //     top:3.5
-    // },
-    // garis:{
-    //     paddingTop: 8,
-    //     borderBottomColor: '#28527A',
-    //     borderBottomWidth: 1,
-    //     // elevation: 5,
-    // },
-    shadow :{
-        // shadowColor: '#000000',
-        // shadowOffset: {
-        //     width: 0, 
-        //     height: 4
-        // },
-        // shadowOpacity: 10,
-        // shadowRadius: 10,
-        // elevation:10
     },
     sliderCon: {
         
@@ -290,9 +189,7 @@ const styles = StyleSheet.create({
         elevation:10
     },
     conMid: {
-        // alignItems: 'center',
         marginLeft:15,
-        // marginTop: 10,
     },
     midUpper:{
         flexDirection: 'row'
@@ -300,13 +197,11 @@ const styles = StyleSheet.create({
     containerRow : {
         flexDirection: 'row',
         marginTop:5,
-        // paddingLeft:20,
-        // paddingRight:20,
-        padding: 10
+        paddingTop : 10,
+        alignItems :'center',
+        justifyContent : 'center'
     },
     conLeftRight:{
-        // width:50,
-        // height:79,
         padding:15,
         margin: 5,
         backgroundColor: '#FFFFFF',
@@ -320,12 +215,15 @@ const styles = StyleSheet.create({
         shadowRadius: 5,
         elevation:10
     },
+    announceContainer:{
+        marginTop : 18,
+        marginBottom : 18,
+        alignItems : 'center'
+    },
     containerAnnounce:{
         backgroundColor: '#8AC4D0',
-        // padding:100,
         width:360,
         height:230,
-        margin:18,
         borderRadius: 20
     },
     arrow :{
@@ -344,7 +242,6 @@ const styles = StyleSheet.create({
         margin: 5,
         backgroundColor: '#FFFFFF',
         borderRadius: 20,
-        // flexDirection: 'row',
         shadowOffset: {
             width: 0, 
             height: 4
@@ -366,8 +263,9 @@ const styles = StyleSheet.create({
     },
     containerNews:{
         flexDirection: 'row',
-        margin:20
+        justifyContent :'center',
+        paddingBottom : 15,
+        paddingTop : 10
     }
-
 })
 

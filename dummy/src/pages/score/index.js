@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, Picker, Switch, Share } from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { Download, Info_blue, VeryGood, VeryBad, Good, Enough, Bad} from '../../assets'
 //import { VeryGood, VeryBad, Good, Enough, Bad } from '../../assets'
@@ -9,12 +9,39 @@ import { useState } from 'react/cjs/react.development'
 //install: npm install @react-native-community/datetimepicker --save
 import DateTimePicker from '@react-native-community/datetimepicker'
 
+//install : npm i react-native-check-box --save
+import CheckBox from 'react-native-check-box'
+
 const Score = () => {
     //inisialisasi default date
     const [date, setDate] = useState(new Date());
     const [mode, setMode] = useState('date');
     const [show, setShow] = useState(false); 
     const [text, setText] = useState('empty');
+    const [selectedPicker, setSelectedPicker] = useState("");
+    const [isChecked, setIsChecked] = useState(false);
+    const [isEnabled, setIsEnabled] = useState(false);
+    const [isTriggerError, setIsTriggerError] = useState(false);
+
+    //handle share
+
+        const onShare = async () => {
+            try {
+                const result = await Share.share({
+                    message: "Text untuk di share di sini",
+                });
+                if(result.action === Share.sharedAction){
+                    if(result.activityType){
+
+                    }else{
+
+                    }
+                }
+            }catch (error){
+                alert(error.message);
+            }
+        }
+    
 
     //handle on date / time change
     const onDateChange = (event, selectedDate) => {
@@ -142,6 +169,48 @@ const Score = () => {
             <Text>Date and time will show here</Text>
             <Text>{text}</Text>
 
+            {/* Picker */}
+            <Picker
+                style={{paddingLeft: 10}}
+                selectedValue={selectedPicker}
+                onValueChange={(itemValue, itemIndex)=> setSelectedPicker(itemValue)}>
+                <Picker.Item label="Label 1" value="1"/>
+                <Picker.Item label="Label 2" value="2"/>
+            </Picker>
+            <Text>{selectedPicker}</Text>
+
+            {/* CheckBox */}
+            <CheckBox
+                style={{paddingLeft: 10}}
+                isChecked = {isChecked}
+                onClick= {() => {setIsChecked(!isChecked)}}
+                rightText={"Checkbox"}
+            />
+            <Text>Checked: {isChecked ? "True" : "False"}</Text>
+
+            {/* Switch */}
+            <View style={{}}>
+                <Switch
+                    trackColor={{false: "#767577", true:"#81b0ff"}}
+                    thumbColor={isEnabled? "#f5dd4b" : "#f4f3f4"}
+                    onValueChange={setIsEnabled}
+                    value={isEnabled}
+                    ios_backgroundColor="#3e3e3e"
+                />
+            </View>
+
+            <Text>Switch : {isEnabled? "True" : "False"}</Text>
+
+            {/* Share */}
+            <TouchableOpacity
+                onPress={onShare}>
+                <Text>Share Button</Text>
+            </TouchableOpacity>
+
+            {/* Trigger Error text */}
+            <Text>{isTriggerError? "Error": ""}</Text>
+            
+            
         </View>
     )
 }

@@ -1,5 +1,5 @@
-import React from 'react'
-import { StyleSheet, Text, TextInput, View } from 'react-native'
+import React, { useEffect } from 'react'
+import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import CustomListView from '../../components/ListView'
 import { newsData } from '../../assets/jsonData/newsData'
 import { useState } from 'react/cjs/react.development'
@@ -8,6 +8,30 @@ const Perpus = ({navigation}) => {
     const [search, setSearch] = useState('');
     const [filteredDataSource, setFilteredDataSource] = useState(newsData);
     const [masterDataSource, setMasterDataSource] = useState(newsData);
+    // const [toggleSort, setToggleSort] = useState(false);
+    const [isFiltered, setIsFiltered] = useState(false);
+    const [isDataSet, setIsDataSet] = useState([]);
+
+    // const toggleOrderm = () => {
+    //     setToggleSort(!toggleSort);
+    // }
+
+    const toggleFilter = () => {
+        setIsFiltered(!isFiltered);
+        console.log(isFiltered);
+    }
+
+    const getData = () => {
+        if(filteredDataSource != null){
+            let datas = [];
+            datas = isFiltered ? filteredDataSource.sort((a,b) => a.title.localeCompare(b.title)): masterDataSource;
+            setIsDataSet(datas);
+        }
+    }
+
+    useEffect(()=> {
+        getData();
+    })
 
     const searchFilterFunction = (text) => {
         if(text){
@@ -35,10 +59,16 @@ const Perpus = ({navigation}) => {
                 underlineColorAndroid="transparent"
                 placeholder="Search Here"
             />
+            <TouchableOpacity onPress= {toggleFilter}>
+                <Text>Press To Sort ASC</Text>
+            </TouchableOpacity>
+            
             <CustomListView
-                itemList={filteredDataSource}
+                itemList={isDataSet}
                 navigation={navigation}
             />
+
+            {console.log(isDataSet)}
         </View>
     )
 }

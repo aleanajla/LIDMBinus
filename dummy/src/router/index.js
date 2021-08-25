@@ -112,15 +112,15 @@ const TopTabBarLearning = () => {
             }}
             >   
                 <TopTabLearning.Screen
-                    name="Video Pembelajaran"
+                    name="Video Terkait"
                     component={VideoLearning}
                 />
                 <TopTabLearning.Screen
-                    name="Berbagi Materi"
+                    name="Materi Terkait"
                     component={ShareMaterials}
                 />
                 <TopTabLearning.Screen
-                    name="Buku yang Berelasi"
+                    name="Buku Terkait"
                     component={Learning}
                 />
             </TopTabLearning.Navigator>

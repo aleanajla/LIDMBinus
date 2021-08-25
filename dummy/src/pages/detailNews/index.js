@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity} from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Share } from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { useNavigation } from '@react-navigation/core'
 import { News } from '../../pages/index.js'
@@ -8,15 +8,44 @@ const DetailNews = ({route}) => {
     const navigation = useNavigation();
 
     const {id, title, description, image_url, detail, date}  = route.params;
+    
+    
+    //handle share
 
+    const onShare = async () => {
+        try {
+            const result = await Share.share({
+                message: "Text untuk di share di sini",
+            });
+            if(result.action === Share.sharedAction){
+                if(result.activityType){
+
+                }else{
+
+                }
+            }
+        }catch (error){
+            alert(error.message);
+        }
+    }
+    
     return(
         <ScrollView>
             <View style = {styles.detailCon}>
-                <TouchableOpacity
-                   onPress={()=>{navigation.goBack()}}
-                >
-                    <Image source = {require('../../assets/icons/arrowBackBlack.png')} />
-                </TouchableOpacity>
+                <View style={{flexDirection:'row', justifyContent:"space-between", alignItems :'center'}}>
+                    <TouchableOpacity
+                    onPress={()=>{navigation.goBack()}}
+                    >
+                        <Image source = {require('../../assets/icons/arrowBackBlack.png')} />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                        onPress={onShare}
+                     >
+                        <Image source={require('../../assets/icons/sharee.png')}/>
+                        
+                    </TouchableOpacity>
+                </View>
                 <View style = {styles.newsCon}>
                     <Text style = {styles.date}>{date}</Text>
                     <Text style = {styles.title}>{title}</Text>

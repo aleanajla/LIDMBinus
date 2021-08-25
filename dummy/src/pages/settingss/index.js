@@ -1,16 +1,18 @@
 import React from 'react'
-import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity, Switch } from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { ProfileSettings, Profile, SignIn, ChangePassword, CompleteDocument } from '../../pages/index.js'
 import { useNavigation } from '@react-navigation/core'
+import { useState } from 'react/cjs/react.development'
 
 const Settingss = () => {
     const navigation = useNavigation();
+    const [isEnabled, setIsEnabled] = useState(false);
     return (
         <ScrollView>
             <View style={styles.pages}>
                 <View style = {styles.header}>
-                    <TouchableOpacity onPress={()=>{navigation.navigate('Profile',{type:''});}}>
+                    <TouchableOpacity onPress={()=>{navigation.navigate('Profile',{type:''});}} style={styles.conClose}>
                         <Image source = {require('../../assets/icons/close.png')} style = {styles.close}/>
                     </TouchableOpacity>
                     <Text style={styles.settings}> PENGATURAN </Text>
@@ -54,6 +56,15 @@ const Settingss = () => {
                     <View style = {styles.notifCon}>
                         <View style={styles.container}>
                             <Text style={styles.text}>Notifikasi</Text>
+                            <View style={{}}>
+                                <Switch
+                                    trackColor={{false: "white", true:"#022E57"}}
+                                    thumbColor={isEnabled? "white" : "#022E57"}
+                                    onValueChange={setIsEnabled}
+                                    value={isEnabled}
+                                    ios_backgroundColor="#3e3e3e"
+                                />
+                            </View>
                         </View>
                     </View>
                 </View>
@@ -89,7 +100,8 @@ const styles = StyleSheet.create({
         paddingRight: 28,
         paddingLeft : 28,
         backgroundColor: WARNA_SEKUNDER,
-        height : 84
+        height : 84,
+        justifyContent:'center'
     },
     head:{
         color: '#022E57',
@@ -164,13 +176,15 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
     },
     close: {
-        marginTop: 10
+        marginTop: 5,
+        alignItems:'flex-start',
+        alignContent:'flex-start'
     },
     settings:{
-        fontSize:35,
+        fontSize:30,
         color: WARNA_UTAMA,
         fontWeight: 'bold',
-        left : 60
+        // left : 60
     },
     save:{
         fontSize: 15,
@@ -188,4 +202,8 @@ const styles = StyleSheet.create({
     notifCon: {
         marginTop:10
     },
+    conClose:{
+        position:'absolute',
+        left:25
+    }
 })

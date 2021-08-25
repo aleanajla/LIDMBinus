@@ -11,7 +11,7 @@ const MoreBooksListViewItems = ({id, title, author, image_url}) => (
             <View style={styles.conBook}>
                 <Image source={{uri: image_url}} style={styles.imgBook}/>
                 <Text style={styles.bookTitle}>{title}</Text>
-                <Text style={styles.bookAuthor}>Author: {author}</Text>
+                <Text style={styles.bookAuthor}>Penulis: {author}</Text>
             </View>                                    
         </View>
     </TouchableOpacity>

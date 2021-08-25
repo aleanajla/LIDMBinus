@@ -5,16 +5,18 @@ import { useNavigation } from '@react-navigation/core'
 import { Settingss } from '../../pages/index.js'
 import Modal from 'react-native-modal'
 import { Input } from 'react-native-elements'
-import { CheckBox } from 'react-native-elements'
+import CheckBox from 'react-native-check-box'
 
 const PersonaContact = () => {
     const navigation = useNavigation();
+    const [isChecked, setIsChecked] = useState(false);
+
     return(
         <ScrollView>
             <View>
                 <View style = {styles.header}>
                     <TouchableOpacity
-                            onPress={()=>{navigation.navigate('ProfileSettings',{type:''});}}
+                            onPress={()=>{navigation.goBack()}}
                         >
                         <Image source={require('../../assets/icons/arrowBack.png')} />
                     </TouchableOpacity>
@@ -84,11 +86,15 @@ const PersonaContact = () => {
                             </View>
                         </View>
                     </View>
+                    <CheckBox
+                        style={{ marginLeft:5, marginTop:20}}
+                        tintColor = {isChecked? '#28527A' : 'white'}
+                        isChecked = {isChecked}
+                        onClick= {() => {setIsChecked(!isChecked)}}
+                        rightText={"Alamat sesuai dengan alamat KTP"}
+                    />
                 </View>
-                <CheckBox
-                    title='Click Here'
-                    checked={this.state.checked}
-                />
+                
             </View>
         </ScrollView>
     )

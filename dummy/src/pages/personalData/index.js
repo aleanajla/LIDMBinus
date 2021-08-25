@@ -13,7 +13,7 @@ const PersonalData = () => {
             <View>
                 <View style = {styles.header}>
                     <TouchableOpacity
-                        onPress={()=>{navigation.navigate('PersonalData',{type:''});}}
+                        onPress={()=>{navigation.goBack()}}
                     >
                         <Image source={require('../../assets/icons/arrowBack.png')} />
                     </TouchableOpacity>

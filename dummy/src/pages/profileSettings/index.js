@@ -39,7 +39,7 @@ const ProfileSettings = () => {
                     <TouchableOpacity style={styles.left} 
                         onPress={()=>{navigation.navigate('PersonalContact',{type:''});}}
                     >
-                            <Text style={styles.data}>Kontak Pribaadi</Text>
+                            <Text style={styles.data}>Kontak Pribadi</Text>
                     </TouchableOpacity>
                     <View style={styles.right}>
                         <Image source = {require('../../assets/icons/arrowForward.png')}/>

@@ -53,27 +53,8 @@ const Perpus = () => {
             
         </Modal>
         <View style={styles.pages}>
-            {/* <View style = {styles.header}> */}
-                <Header/>
-                {/* <View style = {styles.welcome}>
-                    <Text style = {{fontSize: 14, color : '#28527A'}}>Welcome back,</Text>
-                    <Text style = {{fontSize: 20,fontWeight: 'bold', color: WARNA_SEKUNDER}}>Andrew Willy</Text>
-                </View>
-                <View style = {styles.imgHeader}>
-                    <TouchableOpacity
-                    onPress = {()=>{
-                        navigation.navigate('Notificationn',{type:''})
-                    }}> 
-                        <Image source ={require('../../assets/icons/bell.png')} style = {styles.bell} />
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                    onPress = {()=>{
-                        navigation.navigate('Profile',{type:''})
-                    }}> 
-                        <Image source = {require('../../assets/icons/profile.png')} />
-                    </TouchableOpacity>
-                </View> */}
-            {/* </View> */}
+            <Header/>
+                
             <View style = {styles.garis}/>
             <ScrollView horizontal={true}>
                 <View style={styles.bookOpt}>
@@ -99,7 +80,7 @@ const Perpus = () => {
                         }}> 
                         <View style={styles.started}>
                             <Text style={styles.textStart}>Mulai</Text>
-                            <Image source = {require('../../assets/icons/arrow_right.png')} style={{left : 6}}/>
+                            <Image source = {require('../../assets/icons/arrow_right.png')} style={{left : 30}}/>
                         </View>
                         </TouchableOpacity>
                     </View>
@@ -234,8 +215,8 @@ const styles = StyleSheet.create({
         width : 125,
         height : 37,
         paddingTop : 7,
-        paddingLeft : 7,
-        paddingRight : 7,
+        paddingLeft : 15,
+        paddingRight : 15,
         borderRadius : 10,
         marginTop : 10,
         flexDirection: 'row'
@@ -255,7 +236,7 @@ const styles = StyleSheet.create({
         fontSize : 18,
     },
     arrowText:{
-        left : 150,
+        left : 80,
         top : 2
     },
     reccomen:{

@@ -85,7 +85,7 @@ const Home = () => {
                 <View style = {styles.conPoints}>
                     <View>
                         <Image source = {require('../../assets/images/trophy.png')}
-                            style = {{width:70, height:70, marginTop:5}} />
+                            style = {{width:65, height:65, marginTop:5}} />
                     </View>
                     <View style = {styles.conMid}>
                         <View style = {styles.midUpper}>
@@ -95,12 +95,12 @@ const Home = () => {
                         </View>
                         <View style = {styles.midBottom}>
                             <Progress.Bar progress={0.6} width={140} height={7} color={'#28527A'} unfilledColor={'#FAD586'} style={{marginTop:15}}/>
-                            <Text style = {{color : '#28527A', fontSize:7, marginTop: 7, marginLeft:15}}>Hasilkan 200 Poin lebih banyak untuk mencapai Emas!</Text>
+                            <Text style = {{color : '#28527A', fontSize:7, marginTop: 7}}>Hasilkan 200 Poin lebih banyak untuk mencapai Emas!</Text>
                         </View> 
                     </View>
                     <View style = {styles.rightPoints}>
                         <Image source = {require('../../assets/images/coins.png')}
-                            style = {{width:73, height:73, marginTop:8, marginLeft:35}} />
+                            style = {{width:65, height:65, marginTop:10, marginLeft:10}} />
                     </View>
                 </View>
                 <View style={styles.containerRow}>
@@ -128,8 +128,9 @@ const Home = () => {
                     >
                         <View style = {[styles.conLeftRight, {flex:1}]}>
                                 <View>
-                                    <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18, marginTop:10}}>Bagaimana caranya</Text>
-                                    <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18}}>Mendapatkan Poin</Text>
+                                    <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18, marginTop:10}}>Cara</Text>
+                                    <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18}}>Memperoleh</Text>
+                                    <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18}}>Poin</Text>
                                 </View>
                                 <View>
                                 <Image source = {require('../../assets/images/question.png')}
@@ -145,9 +146,9 @@ const Home = () => {
                             <Text style = {{color: '#FFFFFF', fontSize: 25, fontWeight:'bold', marginLeft:20, marginTop:10}}>
                                 Pengumuman
                             </Text>
-                            <Image source = {require('../../assets/icons/arrow_right_white.png')} 
-                                style = {styles.arrow}
-                            />
+                            <View style = {styles.arrow}>
+                                <Image source = {require('../../assets/icons/arrow_right_white.png')}/>
+                            </View>
                         </View>
                     </TouchableOpacity>
                     <View style = {{display:'flex', flexDirection:'row'}}>
@@ -306,7 +307,6 @@ const styles = StyleSheet.create({
     },
     conLeftRight:{
         // width:50,
-        // height:79,
         padding:15,
         margin: 5,
         backgroundColor: '#FFFFFF',
@@ -318,7 +318,9 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.2,
         shadowRadius: 5,
-        elevation:10
+        elevation:10,
+        justifyContent: 'space-around',
+        alignItems:'center'
     },
     containerAnnounce:{
         backgroundColor: '#8AC4D0',
@@ -329,7 +331,7 @@ const styles = StyleSheet.create({
         borderRadius: 20
     },
     arrow :{
-        marginLeft: 160,
+        marginLeft:120,
         marginTop: 15,
         width: 50,
         height:30

@@ -284,7 +284,8 @@ const styles = StyleSheet.create({
         flexDirection : 'row',
     },
     eachPoint:{
-        flexDirection: 'row'
+        flexDirection: 'row',
+        margin:5
     },
     point : {
         padding:8,

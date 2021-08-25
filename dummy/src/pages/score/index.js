@@ -29,8 +29,8 @@ const Score = () => {
                                         <Progress.Circle 
                                             progress={1} 
                                             animated={true}
-                                            // showsText={true} 
-                                            // formatText(progress) = {}
+                                            showsText={true} 
+                                            // formatText(progress) = {"A"}
                                             allowFontScaling={true}
                                             size={100} 
                                             thickness={10} 
@@ -62,25 +62,35 @@ const Score = () => {
                                         <Text style={styles.ketGrading}>E-F</Text>
                                     </View>
                                     <View style ={styles.indikasi}>
-                                        <View style={styles.ketIndikasi}>
+                                        <View style={styles.conIndikasi}>
                                             <Text style ={styles.ketIndikasi}>Sangat Baik</Text>
-                                            <Image source={require('../../assets/icons/VeryGood.png')}/>
+                                            <View style={styles.picRating}>
+                                                <Image source={require('../../assets/icons/VeryGood.png')}/>
+                                            </View>
                                         </View>
-                                        <View>
+                                        <View style={styles.conIndikasi}>
                                             <Text style ={styles.ketIndikasi}>Baik</Text>
-                                            <Image source={require('../../assets/icons/Good.png')}/>
+                                            <View style={styles.picRating}>
+                                                <Image source={require('../../assets/icons/Good.png')}/>
+                                            </View>
                                         </View>
-                                        <View>
+                                        <View style={styles.conIndikasi}>
                                             <Text style ={styles.ketIndikasi}>Cukup</Text>
-                                            <Image source={require('../../assets/icons/Enough.png')}/>
+                                            <View style={styles.picRating}>
+                                                <Image source={require('../../assets/icons/Enough.png')}/>
+                                            </View>
                                         </View>
-                                        <View>
+                                        <View style={styles.conIndikasi}>
                                             <Text style ={styles.ketIndikasi}>Buruk</Text>
-                                            <Image source={require('../../assets/icons/Bad.png')}/>
+                                            <View  style={styles.picRating}>
+                                                <Image source={require('../../assets/icons/Bad.png')}/>
+                                            </View>
                                         </View>
-                                        <View>
+                                        <View style={styles.conIndikasi}>
                                             <Text style ={styles.ketIndikasi}>Sangat Buruk</Text>
-                                            <Image source={require('../../assets/icons/VeryBad.png')}/>
+                                            <View style={styles.picRating}>
+                                                <Image source={require('../../assets/icons/VeryBad.png')}/>
+                                            </View>
                                         </View>
                                     </View>
                                 </View>
@@ -212,11 +222,15 @@ const styles = StyleSheet.create({
     indikasi:{
         alignItems: 'center',
         justifyContent: 'space-evenly',
-        flexDirection: 'column',
+        flexDirection: 'column'
     },
     ketIndikasi :{
         fontSize: 9,
         color: '#28527A',
         alignItems: 'center',
+        textAlign:'center'
+    },
+    picRating:{
+        alignItems:'center'
     }
 })

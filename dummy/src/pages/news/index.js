@@ -1,11 +1,12 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView} from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, TextInput} from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import {SliderBox} from 'react-native-image-slider-box'
 import { useNavigation } from '@react-navigation/core'
 import { Program, Home, Profile, DetailNews} from '../../pages/index.js'
 import { newsData } from '../../assets/jsonData/newsData'
 import NewsListView from '../../components/NewsListView'
+import { useState } from 'react/cjs/react.development'
 
 const image =[
     require('../../assets/slider/News1.png'),
@@ -16,6 +17,27 @@ const image =[
 
 const News = () => {
     const navigation = useNavigation();
+    const [search, setSearch] = useState('');
+    const [filteredDataSource, setFilteredDataSource] = useState(newsData);
+    const [masterDataSource, setMasterDataSource] = useState(newsData);
+
+    const searchFilterFunction = (text) => {
+        if(text){
+            const newData = masterDataSource.filter(
+                function (item) {
+                    const itemData = item.title ? item.title.toUpperCase(): ''.toUpperCase();
+                    const textData = text.toUpperCase();
+                    return itemData.indexOf(textData)>-1;
+                }
+            );
+            setFilteredDataSource(newData);
+            setSearch(text);
+        }else{
+            setFilteredDataSource(masterDataSource);
+            setSearch(text);
+        }
+    }
+
     return (
         <ScrollView>
             <View style={styles.pages}>
@@ -60,7 +82,16 @@ const News = () => {
                         </View>
                     </View>
                 </View> */}
-                
+                <View style={styles.searchCon}>
+                    <TextInput
+                        style = {{marginLeft:20}}
+                        onChangeText={(text) => searchFilterFunction(text)}
+                        value={search}
+                        underlineColorAndroid="transparent"
+                        placeholder="Search Here"
+                    />
+                     <Image source={require('../../assets/icons/Search.png')} style={{marginLeft:185}}/>
+                </View>
                 <View>
                     <SliderBox images = {image}
                         sliderBoxHeight = {145}
@@ -76,7 +107,8 @@ const News = () => {
                 </View>
                 
                 <NewsListView
-                    itemList ={newsData}
+                    // itemList ={newsData}
+                    itemList={filteredDataSource}
                     navigation={navigation}
                 />
                 {/* <TouchableOpacity onPress={()=>{navigation.navigate('DetailNews',{type:''});}}>
@@ -244,5 +276,17 @@ const styles = StyleSheet.create({
         fontWeight : 'bold',
         color : WARNA_SEKUNDER,
         padding : 2,
+    },
+    searchCon:{
+        flexDirection: 'row',
+        // justifyContent: 'center',
+        alignItems: 'center',
+        borderColor: '#000',
+        height: 40,
+        borderRadius: 5,
+        margin: 10,
+        borderRadius: 20,
+        backgroundColor:'#E5E5E5', 
+        width:330
     }
 })

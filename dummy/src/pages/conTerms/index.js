@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Platform, 
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import Modal from 'react-native-modal'
 import { useNavigation } from '@react-navigation/core'
-import { BrowseAllRewards } from '../../pages/index.js'
+import { BrowseAllRewards, MyRewards } from '../../pages/index.js'
 
 const windowsWidth = Dimensions.get('window').width;
 const windowsHeight = Dimensions.get('window').height;
@@ -32,9 +32,12 @@ const ConTerms = ({route}) => {
                                 </TouchableOpacity>
                                 <Image source={require('../../assets/icons/rewardBig.png')}/>
                                 <Text style={{fontSize:15, color:WARNA_SEKUNDER, fontWeight:'bold',marginTop:5}}>Berhasil Menukarkan Hadiah!</Text>
-                                <View style = {styles.btnSeeMore}>
-                                    <Text style={{color:'#FFFFFF', fontWeight:'bold', fontSize:20}}>Lihat Hadiah</Text>
-                                </View>
+                                <TouchableOpacity onPress={()=>{navigation.navigate('myRewards',{type:''});}}>
+                                    <View style = {styles.btnSeeMore}>
+                                        <Text style={{color:'#FFFFFF', fontWeight:'bold', fontSize:20}}>Lihat Hadiah</Text>
+                                    </View>
+                                </TouchableOpacity>
+                                
                             </View> 
                         </View>
                     

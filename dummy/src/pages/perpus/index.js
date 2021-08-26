@@ -8,6 +8,11 @@ import { useNavigation } from '@react-navigation/core'
 import Modal from 'react-native-modal'
 import Recomend from '../recomend'
 import MoreBooks from '../moreBooks'
+import { recomendBooksData } from '../../assets/jsonData/recomendBooksData'
+import RecomendBooksListView from '../../components/RecomendBooksListView'
+import { moreBooksData } from '../../assets/jsonData/moreBooksData'
+import MoreBooksListView from '../../components/MoreBooksListView'
+
 
 const windowsWidth = Dimensions.get('window').width;
 const windowsHeight = Dimensions.get('window').height;
@@ -95,39 +100,45 @@ const Perpus = () => {
                             <Image source = {require('../../assets/icons/arrow_right2.png')} style={styles.arrowText}/>
                         </View>
                     </TouchableOpacity>
-                    <View style={styles.reccomen}>
+                    <RecomendBooksListView
+                        itemList = {recomendBooksData}
+                    />
+                    {/* <View style={styles.reccomen}>
                         <View style={styles.bookLeft}>
                         <TouchableOpacity onPress={()=> setModalVisible(true)}>
                             <Image source = {require('../../assets/images/book1.png')}/>
                         </TouchableOpacity>
                             <Text style={styles.bookTitle}>Predict and Surveil</Text>
-                            <Text style={styles.bookAuthor}>Author : Sarah Brayne</Text>
+                            <Text style={styles.bookAuthor}>Penulis : Sarah Brayne</Text>
                         </View>
                         <View style={styles.bookRight}>
                             <Image source = {require('../../assets/images/book2.png')}/>
                             <Text style={styles.bookTitle}>Voices From the Valley</Text>
-                            <Text style={styles.bookAuthor}>Author : Ben Tarnoff and</Text>
+                            <Text style={styles.bookAuthor}>Penulis : Ben Tarnoff and</Text>
                             <Text style={styles.bookAuthor}>Moira Weigel</Text>
                         </View>
-                    </View>
+                    </View> */}
                     <TouchableOpacity onPress = {()=>{ navigation.navigate('MoreBooks',{type:''})}}> 
                         <View style={styles.recTop}>
                             <Text style={styles.recText}>Lainnya</Text>
                             <Image source = {require('../../assets/icons/arrow_right2.png')} style={styles.arrowMore}/>
                         </View>
                     </TouchableOpacity>
-                    <View style={styles.reccomen}>
+                    <MoreBooksListView
+                        itemList = {moreBooksData}
+                    />
+                    {/* <View style={styles.reccomen}>
                         <View style={styles.bookLeft}>
                             <Image source = {require('../../assets/images/book5.png')}/>
                             <Text style={styles.bookTitle}>Digitize and Punish</Text>
-                            <Text style={styles.bookAuthor}>Author : Brian Jefferson</Text>
+                            <Text style={styles.bookAuthor}>Penulis : Brian Jefferson</Text>
                         </View>
                         <View style={styles.bookRight}>
                             <Image source = {require('../../assets/images/book4.png')}/>
                             <Text style={styles.bookTitle}>The Hype Machine</Text>
-                            <Text style={styles.bookAuthor}>Author : Sinan Aral</Text>
+                            <Text style={styles.bookAuthor}>Penulis : Sinan Aral</Text>
                         </View>
-                    </View>
+                    </View> */}
                 </View>
             {/* </ScrollView> */}
         </View>

@@ -10,7 +10,7 @@ const ChangePassword = () => {
         <ScrollView>
             <View style={StyleSheet.pages}>
                 <View style={styles.header}>
-                    <TouchableOpacity onPress={()=>{navigation.navigate('ProfileSettings',{type:''});}}>
+                    <TouchableOpacity onPress={()=>{navigation.navigate('Settingss',{type:''});}}>
                         <Image source = {require('../../assets/icons/arrowBack.png')} style={{width : 24, height:24}}/>
                     </TouchableOpacity>
                     <Text style={styles.title3}>SIMPAN</Text>

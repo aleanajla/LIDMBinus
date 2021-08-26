@@ -45,7 +45,7 @@ const myRewards = () => {
         <View style= {styles.outer}>
             <View style= {styles.header}>  
                 <TouchableOpacity
-                    onPress={()=>{navigation.navigate('Profile',{type:''});}}
+                    onPress={()=>{navigation.pop()}}
                     >
                     <Image source = {require('../../assets/icons/arrowBackBlack.png')} />
                 </TouchableOpacity>

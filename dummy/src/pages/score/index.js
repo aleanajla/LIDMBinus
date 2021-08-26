@@ -1,20 +1,27 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 // import { Download, Info_blue} from '../../assets'
 import ScoreListView from '../../components/ScoreListView'
 import { scoreData } from '../../assets/jsonData/scoreData'
 import * as Progress from 'react-native-progress';
 import { color } from 'react-native-elements/dist/helpers';
-
+import { useNavigation } from '@react-navigation/core'
+import { Register3 } from '..'
 
 const Score = () => {
+    const navigation = useNavigation();
     return (
         <ScrollView>
             <View style={styles.page}>
                 <View style={styles.header}>
                     <Image source ={require('../../assets/icons/download.png')} style = {styles.download} />
-                    <Image source ={require('../../assets/icons/infoBlue.png')} style = {styles.info} />
+                    <TouchableOpacity
+                    onPress={()=>{
+                        navigation.navigate('Register3',{type:''});
+                    }}>
+                        <Image source ={require('../../assets/icons/infoBlue.png')} style = {styles.info} />
+                    </TouchableOpacity>
                 </View>
                 <View style={[styles.container]}>
                     <View style={styles.firstBox}>

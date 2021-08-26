@@ -36,6 +36,8 @@ import PersonalContact from './personalContact'
 import UrgentContact from './urgentContact'
 import Recomend from './recomend'
 import MoreBooks from './moreBooks'
+import Register2 from './register2'
+import Register3 from './register3'
 
 
 export{
@@ -76,5 +78,7 @@ export{
     PersonalContact,
     UrgentContact,
     Recomend,
-    MoreBooks
+    MoreBooks,
+    Register2,
+    Register3
 }

@@ -39,7 +39,9 @@ import { Home,
         PersonalContact,
         UrgentContact,
         Recomend,
-        MoreBooks
+        MoreBooks,
+        Register2,
+        Register3
 } from '../pages/index.js';
 import { BottomTabNavigator } from '../components';
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType';
@@ -180,6 +182,8 @@ const router = () => {
             <Stack.Screen name="UrgentContact" component={UrgentContact} options={{headerShown: false}}/>
             <Stack.Screen name="Recomend" component={Recomend} options={{headerShown: false}}/>
             <Stack.Screen name="MoreBooks" component={MoreBooks} options={{headerShown: false}}/>
+            <Stack.Screen name="Register2" component={Register2} options={{headerShown: false}}/>
+            <Stack.Screen name="Register3" component={Register3} options={{headerShown: false}}/>
         </Stack.Navigator>
     )
 }

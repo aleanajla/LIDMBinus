@@ -10,6 +10,11 @@ const Profile = () => {
     return (
         <ScrollView style = {styles.profileCon}>
             <View>
+                <View style={{backgroundColor:'#8AC4D0'}}>
+                    <TouchableOpacity onPress={()=>{navigation.goBack()}}>
+                        <Image source = {require('../../assets/icons/arrowBack.png')} style={{width : 20, height:20, marginLeft:20, marginTop:20}}/>
+                    </TouchableOpacity>
+                </View>
                 <View style = {styles.header}>
                     <View style = {styles.tempProfile}></View>
                     <View style= {styles.headerStatus}>

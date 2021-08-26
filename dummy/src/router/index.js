@@ -114,15 +114,15 @@ const TopTabBarLearning = () => {
             }}
             >   
                 <TopTabLearning.Screen
-                    name="Video Pembelajaran"
+                    name="Video Terkait"
                     component={VideoLearning}
                 />
                 <TopTabLearning.Screen
-                    name="Berbagi Materi"
+                    name="Materi Terkait"
                     component={ShareMaterials}
                 />
                 <TopTabLearning.Screen
-                    name="Buku yang Berelasi"
+                    name="Buku Terkait"
                     component={Learning}
                 />
             </TopTabLearning.Navigator>
@@ -169,7 +169,7 @@ const router = () => {
             <Stack.Screen name="howToGetPoints" component={howToGetPoints} options={{headerShown: false}}/>
             <Stack.Screen name="Certificate" component={Certificate} options={{headerShown:false}}/>
             <Stack.Screen name="myRewards" component={myRewards} options={{headerShown:false}}/>
-            <Stack.Screen name="Notificationn" component={Notificationn} options={{headerShown: false}}/>
+            <Stack.Screen name="Notification" component={Notificationn} options={{headerShown: false}}/>
             <Stack.Screen name="Information" component={Information} options={{headerShown: false}}/>
             <Stack.Screen name="GetStarted" component={GetStarted} options={{headerShown: false}}/>
             <Stack.Screen name="ProfileSettings" component={ProfileSettings} options={{headerShown: false}}/>

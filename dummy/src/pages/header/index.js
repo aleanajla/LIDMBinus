@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
-import { Profile, Notification } from '../../pages/index.js'
+import { Profile, Notificationn } from '../../pages/index.js'
 import { useNavigation } from '@react-navigation/core'
 
 const Header = () => {

@@ -30,13 +30,14 @@ const Score = () => {
                                 <Text style={styles.grade2}>Nilai</Text>
                                 <Text style={styles.pass}>Lulus</Text>
                             </View>
-                            <View style = {{paddingTop: 8, borderBottomColor: '#C4C4C4', borderBottomWidth: 2,}}/>
-                                <View style={{flexDirection: 'row'}}>
+                            <View style = {{paddingTop: 8, borderBottomColor: '#C4C4C4', borderBottomWidth: 2, }}/>
+                                <View style={{flexDirection: 'row', height : '75%'}}>
                                     <View style={styles.detailsLeft}>
+                                        <Text style={{fontSize:40, fontWeight:'bold', position:'absolute', left:50, color :'#28527A'}}>A</Text>
                                         <Progress.Circle 
                                             progress={1} 
                                             animated={true}
-                                            showsText={true} 
+                                            // showsText={true} 
                                             // formatText(progress) = {"A"}
                                             allowFontScaling={true}
                                             size={100} 
@@ -173,7 +174,8 @@ const styles = StyleSheet.create({
         height :'100%',
         justifyContent : 'center',
         alignItems : 'center',
-        paddingLeft : 15
+        paddingLeft : 15,
+        flexDirection:'row'
     },
     detailsRight:{
         width : '50%',

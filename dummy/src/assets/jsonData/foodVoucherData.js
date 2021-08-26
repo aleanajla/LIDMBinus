@@ -14,7 +14,7 @@ export const foodVoucherData =
             "company": "Gojek",
             "description" : "eVocuher go-food 25k",
             "point": "100 Points",
-            "image_url" : "https://1.bp.blogspot.com/-GQEHSrfXoZ4/XzaIUlMv_yI/AAAAAAAAANc/XC5J0j4q-agEVCJy-y8ZwZ82qf0jb5T9QCLcBGAsYHQ/s3390/logo%2Bgojek%2Byogiancreative%2B2.png",
+            "image_url" : "https://i.ibb.co/Hgywzm9/logo-Gojek-1.png",
             "desc" : "Tukarkan point reward dengan eVoucher Arkademi dengan nominal Rp.150.000,00",
             "conTerms" : "Potongan harga sebesar Rp.150.000,00 tanpa ada minimum transaksi\n\nPotongan harga berlaku pada produk dengan harga normal"
          },
@@ -23,7 +23,7 @@ export const foodVoucherData =
             "company": "Gojek",
             "description" : "eVoucher go-food 75k",
             "point": "300 point",
-            "image_url" : "https://1.bp.blogspot.com/-GQEHSrfXoZ4/XzaIUlMv_yI/AAAAAAAAANc/XC5J0j4q-agEVCJy-y8ZwZ82qf0jb5T9QCLcBGAsYHQ/s3390/logo%2Bgojek%2Byogiancreative%2B2.png",
+            "image_url" : "https://i.ibb.co/Hgywzm9/logo-Gojek-1.png",
             "desc" : "Tukarkan point reward dengan eVoucher Arkademi dengan nominal Rp.150.000,00",
             "conTerms" : "Potongan harga sebesar Rp.150.000,00 tanpa ada minimum transaksi\n\nPotongan harga berlaku pada produk dengan harga normal"
          },

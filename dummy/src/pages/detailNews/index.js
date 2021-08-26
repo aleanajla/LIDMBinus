@@ -8,9 +8,6 @@ const DetailNews = ({route}) => {
     const navigation = useNavigation();
 
     const {id, title, description, image_url, detail, date}  = route.params;
-    
-    
-    //handle share
 
     const onShare = async () => {
         try {

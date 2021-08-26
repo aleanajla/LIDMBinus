@@ -41,47 +41,7 @@ const BrowseAllRewards = () => {
                             itemList = {foodVoucherData}
                             navigation={navigation}
                         />
-                        {/* <View style={styles.container}>
-                            <View style={styles.boxTop}>
-                                <Image source = {require('../../assets/images/shopee.png')}/>
-                            </View>
-                            <View style={styles.boxBottom}>
-                                <Text style={styles.title}>Shopee</Text>
-                                <Text style={styles.desc}>eVoucher Shopee Food 25k</Text>
-                                <Text style={styles.desc}>100 Points</Text>
-                                <View style={styles.reedemBox}>
-                                    <Text style={styles.reedem}>Reedem</Text>
-                                </View>
-                            </View>
-                        </View>
-                        <TouchableOpacity onPress={()=>{navigation.navigate('ConTerms',{type:''});}}>
-                        <View style={styles.container}>
-                            <View style={styles.boxTop}>
-                                <Image source = {require('../../assets/images/gojek.png')}/>
-                            </View>
-                            <View style={styles.boxBottom}>
-                                <Text style={styles.title}>Gojek</Text>
-                                <Text style={styles.desc}>eVoucher Gofood 25k</Text>
-                                <Text style={styles.desc}>100 Points</Text>
-                                <View style={styles.reedemBox}>
-                                    <Text style={styles.reedem}>Reedem</Text>
-                                </View>
-                            </View>
-                        </View>
-                        </TouchableOpacity>
-                        <View style={styles.container}>
-                            <View style={styles.boxTop}>
-                                <Image source = {require('../../assets/images/gojek.png')}/>
-                            </View>
-                            <View style={styles.boxBottom}>
-                                <Text style={styles.title}>Shopee</Text>
-                                <Text style={styles.desc}>eVoucher gofood 75k</Text>
-                                <Text style={styles.desc}>300 Points</Text>
-                                <View style={styles.reedemBox}>
-                                    <Text style={styles.reedem}>Reedem</Text>
-                                </View>
-                            </View>
-                        </View> */}
+                        
                     </View>
                     </ScrollView>
                 </View>
@@ -93,45 +53,6 @@ const BrowseAllRewards = () => {
                             itemList = {educationVoucherData}
                             navigation={navigation}
                         />
-                        {/* <View style={styles.container}>
-                            <View style={styles.boxTop}>
-                                <Image source = {require('../../assets/images/dicoding.png')}/>
-                            </View>
-                            <View style={styles.boxBottom}>
-                                <Text style={styles.title}>Dicoding</Text>
-                                <Text style={styles.desc}>eVoucher Course 150k</Text>
-                                <Text style={styles.desc}>500 Points</Text>
-                                <View style={styles.reedemBox}>
-                                    <Text style={styles.reedem}>Reedem</Text>
-                                </View>
-                            </View>
-                        </View>
-                        <View style={styles.container}>
-                            <View style={styles.boxTop}>
-                                <Image source = {require('../../assets/images/arkademi.png')}/>
-                            </View>
-                            <View style={styles.boxBottom}>
-                                <Text style={styles.title}>Arkademi</Text>
-                                <Text style={styles.desc}>eVoucher Course 150k</Text>
-                                <Text style={styles.desc}>500 Points</Text>
-                                <View style={styles.reedemBox}>
-                                    <Text style={styles.reedem}>Reedem</Text>
-                                </View>
-                            </View>
-                        </View>
-                        <View style={styles.container}>
-                            <View style={styles.boxTop}>
-                                <Image source = {require('../../assets/images/udemy.png')}/>
-                            </View>
-                            <View style={styles.boxBottom}>
-                                <Text style={styles.title}>udemy</Text>
-                                <Text style={styles.desc}>eVoucher Course 150k</Text>
-                                <Text style={styles.desc}>500 Points</Text>
-                                <View style={styles.reedemBox}>
-                                    <Text style={styles.reedem}>Reedem</Text>
-                                </View>
-                            </View>
-                        </View> */}
                     </View>
                     </ScrollView>
                 </View>
@@ -143,45 +64,6 @@ const BrowseAllRewards = () => {
                             itemList = {stationaryVoucherData}
                             navigation={navigation}
                         />
-                        {/* <View style={styles.container}>
-                            <View style={styles.boxTop}>
-                                <Image source = {require('../../assets/images/gramedia.png')}/>
-                            </View>
-                            <View style={styles.boxBottom}>
-                                <Text style={styles.title}>Gramedia</Text>
-                                <Text style={styles.desc}>eVoucher Digital 25k</Text>
-                                <Text style={styles.desc}>100 Points</Text>
-                                <View style={styles.reedemBox}>
-                                    <Text style={styles.reedem}>Reedem</Text>
-                                </View>
-                            </View>
-                        </View>
-                        <View style={styles.container}>
-                            <View style={styles.boxTop}>
-                                <Image source = {require('../../assets/images/gramedia.png')}/>
-                            </View>
-                            <View style={styles.boxBottom}>
-                                <Text style={styles.title}>Gramedia</Text>
-                                <Text style={styles.desc}>eVoucher Digital 50k</Text>
-                                <Text style={styles.desc}>200 Points</Text>
-                                <View style={styles.reedemBox}>
-                                    <Text style={styles.reedem}>Reedem</Text>
-                                </View>
-                            </View>
-                        </View>
-                        <View style={styles.container}>
-                            <View style={styles.boxTop}>
-                                <Image source = {require('../../assets/images/gramedia.png')}/>
-                            </View>
-                            <View style={styles.boxBottom}>
-                                <Text style={styles.title}>Gramedia</Text>
-                                <Text style={styles.desc}>eVoucher Digital 50k</Text>
-                                <Text style={styles.desc}>200 Points</Text>
-                                <View style={styles.reedemBox}>
-                                    <Text style={styles.reedem}>Reedem</Text>
-                                </View>
-                            </View>
-                        </View> */}
                     </View>
                     </ScrollView>
                 </View>

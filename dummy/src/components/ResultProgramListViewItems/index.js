@@ -1,27 +1,33 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { WARNA_SEKUNDER } from '../../utils/constants';
+import { DetailsProgram } from '../../pages';
+import { useNavigation } from '@react-navigation/native';
 
-const ResultProgramListViewItems = ({id, title, division, place, time}) => (
-    <View style={styles.square}>
-        <View style={styles.left}>
-            {/* <Image source = {require('../../assets/images/lazada.png')} style={styles.image}/> */}
-        </View>
-        <View style={styles.right}>
-            <Text style={styles.title}>{title}</Text>
-            <Text style={styles.division}>{division}</Text>
-            <View style={styles.inside}>
-                <View style={styles.left2}>
-                    <Text style={styles.leftText}>{place}</Text>
-                    <Text style={styles.leftText}>{time}</Text>
-                </View>
-                <View style={styles.right2}>
-                    <Image source = {require('../../assets/icons/checkGreen.png')} style={styles.check}/>
-                    <Text style={styles.rightText}>Certified</Text>
+const ResultProgramListViewItems = ({id, title, division, place, time, image_url, remote, desc, kriteria, durasiWaktu, durasiBulan, navigation}) => (
+    <TouchableOpacity onPress= {() => { 
+        navigation.navigate("DetailsProgram", {id: id, title: title, division: division, place:place, time:time, image_url: image_url, remote:remote, desc:desc, kriteria:kriteria, durasiWaktu : durasiWaktu, durasiBulan : durasiBulan}); //kirim data
+    }}>
+        <View style={styles.square}>
+            <View style={styles.left}>
+                <Image source = {{uri: image_url}} style={styles.pic}/>
+            </View>
+            <View style={styles.right}>
+                <Text style={styles.title}>{title}</Text>
+                <Text style={styles.division}>{division}</Text>
+                <View style={styles.inside}>
+                    <View style={styles.left2}>
+                        <Text style={styles.leftText}>{place}</Text>
+                        <Text style={styles.leftText}>{time}</Text>
+                    </View>
+                    <View style={styles.right2}>
+                        <Image source = {require('../../assets/icons/checkGreen.png')} style={styles.check}/>
+                        <Text style={styles.rightText}>Certified</Text>
+                    </View>
                 </View>
             </View>
         </View>
-    </View>
+    </TouchableOpacity>
 );
 
 export default ResultProgramListViewItems;
@@ -38,7 +44,7 @@ const styles = StyleSheet.create({
         marginBottom : 13,
     },
     left:{
-        width : '25%',
+        width : '26%',
         justifyContent : 'center',
         alignItems : 'center'
     },
@@ -84,5 +90,9 @@ const styles = StyleSheet.create({
         width : 16,
         height : 16,
         marginRight : 2
+    },
+    pic:{
+        width : 50,
+        height : 50
     }
 })

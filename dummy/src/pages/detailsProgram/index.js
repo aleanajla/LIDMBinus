@@ -2,26 +2,30 @@ import React from 'react'
 import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity} from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { useNavigation } from '@react-navigation/core'
-import { Magang, Profile } from '../../pages/index.js'
+import { Magang } from '..'
+import { Profile } from '..'
 
-const DetailsProgram = () =>{
+const DetailsProgram = ({route}) =>{
     const navigation = useNavigation();
+    const {id, title, division, place, time, image_url, remote, desc, kriteria, durasiWaktu, durasiBulan}  = route.params;
     return(
         <ScrollView>
         <View style={styles.pages}>
             <View style={styles.square}>
                 <View style={styles.header}>
-                    <TouchableOpacity onPress={()=>{navigation.navigate('Magang',{type:''});}}> 
+                    <TouchableOpacity
+                        onPress={()=>{navigation.goBack()}}
+                    >
                         <Image source = {require('../../assets/icons/arrowBack.png')} style={styles.img1}/>
                     </TouchableOpacity>
                     <Image source = {require('../../assets/icons/info_white.png')} style={styles.img2}/>
                     <Image source = {require('../../assets/icons/share_white.png')} style={styles.img2}/>
                 </View>
                 <View style={styles.detail}>
-                    <Text style={styles.title}>Artificial Intelligence Intern</Text>
-                    <Text style={styles.desc}>Lazada</Text>
-                    <Text style={styles.desc}>Kota Jakarta Selatan</Text>
-                    <Text style={styles.desc}>20 SKS - 5 Bulan</Text>
+                    <Text style={styles.title}>{title}</Text>
+                    <Text style={styles.desc}>{division}</Text>
+                    <Text style={styles.desc}>{place}</Text>
+                    <Text style={styles.desc}>{time}</Text>
                 </View>
                 <View style={styles.conDaftar}>
                     <Text style={styles.daftar}>Daftar</Text>
@@ -41,15 +45,15 @@ const DetailsProgram = () =>{
                     <Image source = {require('../../assets/images/portfolio.png')} style={{width: 35, height: 35}}/>
                 </View>
                 <View style={styles.right}>
-                    <Text style={styles.title2}>Pekerjaan ini Kadang Remote</Text>
+                    <Text style={styles.title2}>{remote}</Text>
                     <Text style={styles.desc2}>Kamu akan ada jadwal masuk ke kantor dan  bekerja dari manapun</Text>
                 </View>
             </View>
             <View style={styles.box}>
                 <View style={styles.duration}>
                     <Text style={styles.title1}>Durasi</Text>
-                    <Text style={styles.durationText}>23 Aug 2021 - 21 Jan 2022</Text>
-                    <Text style={styles.durationText}>5 Bulan</Text>
+                    <Text style={styles.durationText}>{durasiWaktu}</Text>
+                    <Text style={styles.durationText}>{durasiBulan}</Text>
                 </View>
                 <View style={styles.description}>
                     <Text style={styles.title1}>Deskripsi</Text>
@@ -58,13 +62,12 @@ const DetailsProgram = () =>{
             </View>
             <View style={styles.description2}>
                 <Text style={styles.title1}>Deskripsi</Text>
-                <Text style={styles.title3}>Program Magang Lazada Indonesia Customer Care Team</Text>
-                <Text style={styles.desc3}>Program Magang Lazada Indonesia Customer Care Team bertujuan untuk memberikan pengembangan kepada mahasiswa/i menggunakan 70-20-10 Learning & Development framework. Mahasiswa akan mendapatkan pengembangan melalui pendampingan intensif selama on-the-job training (70%) dengan disertai oleh dedicated mentor yang akan membantu mahasiswa dalam memberikan pendampingan maupun feedback terkait dengan kinerja mereka (20%) yang akan didukung dengan program kelas pengembangan soft skills yang relevan dengan kebutuhan mahasiswa di dunia kerja (10%).</Text>
+                <Text style={styles.title3}>{division}</Text>
+                <Text style={styles.desc3}>{desc}</Text>
             </View>
             <View style={styles.criteria}>
                 <Text style={styles.title1}>Kriteria</Text>
-                <Text style={styles.desc3}>1. Mahasiswa perguruan tinggi aktif yang menempuh minimal Semester 5</Text>
-                <Text style={styles.desc3}>2. Berasal dari Fakultas Ilmu Komputer atau Sistem Informasi dengan IPK Minimal 3.5</Text>
+                <Text style={styles.desc3}>{kriteria}</Text>
             </View>
         </View>
         </ScrollView>
@@ -78,26 +81,30 @@ const styles = StyleSheet.create({
         backgroundColor : '#F6F5F5'
     },
     square:{
-        height: 235,
+        // height: 235,
         width: '100%',
         backgroundColor: '#28527A',
         borderBottomLeftRadius : 25,
         borderBottomRightRadius : 25,
         paddingLeft : 20,
         paddingRight : 20,
-        paddingTop : 19
+        paddingTop : 19,
+        paddingBottom : 40
     },
     header:{
         flexDirection : 'row',
-        marginBottom : 12
+        marginBottom : 12,
+        paddingTop : 3,
+        paddingBottom : 3,
+        alignItems : 'center'
     },
     img1:{
-        width : 32,
-        height : 32
+        width : 24,
+        height : 24
     },
     img2:{
-        width: 32,
-        height : 32,
+        width: 30,
+        height : 30,
         marginRight : 7,
         left : 245
     },
@@ -112,7 +119,8 @@ const styles = StyleSheet.create({
     desc:{
         color : '#FFFFFF',
         fontSize : 15,
-        marginTop : 2
+        marginTop : 2,
+        width : 340
     },
     conDaftar:{
         top : 18,
@@ -122,7 +130,7 @@ const styles = StyleSheet.create({
         height : 30,
         borderRadius : 10,
         alignItems :'center',
-        justifyContent : 'center'
+        justifyContent : 'center',
     },
     daftar:{
         color : '#28527A',
@@ -221,7 +229,7 @@ const styles = StyleSheet.create({
     },
     title3:{
         fontSize : 14,
-        color : "#28527A"
+        color : "#28527AE3",
     },
     desc3:{
         color : '#00000080',

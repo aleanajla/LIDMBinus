@@ -1,13 +1,19 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, TextInput, Dimensions} from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, TextInput, Dimensions, Picker} from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
+import { useState } from 'react/cjs/react.development'
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType'
+import CheckBox from 'react-native-check-box'
+import { Home } from '..'
+import { useNavigation } from '@react-navigation/core'
 
 const windowsWidth = Dimensions.get('window').width;
 const windowsHeight = Dimensions.get('window').height;
 
 const Register3 = () => {
-    // const navigation = useNavigation();
+    const navigation = useNavigation();
+    const [isChecked, setIsChecked] = useState(false);
+    const [selectedPicker, setSelectedPicker] = useState("tgl");
     return (
         <ScrollView>
             <View style={styles.page}>
@@ -57,7 +63,16 @@ const Register3 = () => {
                     <View style={styles.ttl}>
                         <View style={styles.box2}>
                             <TextInput style={styles.input} placeholder="tgl"/>
+                            {/* <Picker
+                                // style={{paddingLeft: 10}}
+                                selectedValue={selectedPicker}
+                                onValueChange={(itemValue, itemIndex)=> setSelectedPicker(itemValue)}>
+                                <Picker.Item label="Label 1" value="1" style={{color:'red'}}/>
+                                <Picker.Item label="Label 2" value="2"/>
+                            </Picker>
+                            <Text>{selectedPicker}</Text> */}
                         </View>
+                        
                         <View style={styles.box3}>
                             <TextInput style={styles.input} placeholder="bulan"/>
                         </View>
@@ -68,8 +83,18 @@ const Register3 = () => {
                 </View>
             </View>
             <View style={styles.form}>
-                <Text style={styles.textBold2}>Dengan ini saya menyetujui Ketentuan Penggunaan dan Kebijakan Privasi dari Kampus Merdeka</Text>
-                <TouchableOpacity>
+                <View style={{flexDirection : 'row', alignItems : 'center'}}>
+                    <CheckBox
+                        style={{paddingLeft: 50, width : '20%'}}
+                        isChecked = {isChecked}
+                        onClick= {() => {setIsChecked(!isChecked)}}
+                        tintColors={{false: "white", true:"#022E57"}}
+                        // rightText={"Dengan ini saya menyetujui Ketentuan Penggunaan dan Kebijakan Privasi dari Kampus Merdeka"}
+                    />
+                    <Text style={styles.textBold2}>Dengan ini saya menyetujui Ketentuan Penggunaan dan Kebijakan Privasi dari Kampus Merdeka</Text>
+                </View>
+
+                <TouchableOpacity onPress={()=>{navigation.navigate('Home',{type:''});}} style={styles.conClose}>
                     <View style={{width : windowsWidth, alignItems : 'center', marginTop : 23}}>
                         <View style={styles.selanjutnya}>
                             <Text style={styles.selanjutnyaText}>SELANJUTNYA</Text>
@@ -127,7 +152,8 @@ const styles = StyleSheet.create({
     },
     box2:{
         backgroundColor : '#E5E5E5',
-        width : 77,
+        // width : windowsWidth-250,
+        width : 80,
         height : 40,
         borderRadius : 10,
         marginTop : 5,
@@ -157,12 +183,13 @@ const styles = StyleSheet.create({
         paddingRight : 47,
     },
     textBold2:{
-        left : 97,
+        // left : 97,
+        left: 20,
         fontSize : 13,
         fontWeight : 'bold',
         color : '#28527AE5',
         width : 275,
-        top : 10
+        // top : 10
     },
     textBold3:{
         fontSize : 16,

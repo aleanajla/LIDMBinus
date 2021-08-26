@@ -7,28 +7,20 @@ import { Program, DetailsProgram, Profile, Header } from '../../pages/index.js'
 import ResultProgramListView from '../../components/ResultProgramListView'
 import {resultProgramData}  from '../../assets/jsonData/resultProgramData.js'
 
-const Magang = () => {
+const Magang = ({route}) => {
     const navigation = useNavigation();
     return(
         <ScrollView>
             <View styles={styles.pages}>
-                <Header/>
-                {/* <View style = {styles.header}>
-                    <View style = {styles.welcome}>
-                        <Text style = {{fontSize: 14, color : '#28527A'}}>Welcome back,</Text>
-                        <Text style = {{fontSize: 20,fontWeight: 'bold', color: WARNA_SEKUNDER}}>Andrew Willy</Text>
+                {/* <Header/> */}
+                {/* <View style = {styles.garis}/> */}
+                <TouchableOpacity
+                    onPress={()=>{navigation.goBack()}}
+                >
+                    <View style={styles.img1}>
+                        <Image source = {require('../../assets/icons/arrowBackBlue.png')}/>
                     </View>
-                    <View style = {styles.imgHeader}>
-                        <Image source ={require('../../assets/icons/bell.png')} style = {styles.bell} />
-                        <TouchableOpacity
-                        onPress = {()=>{
-                            navigation.navigate('Profile',{type:''})
-                        }}> 
-                            <Image source = {require('../../assets/icons/profile.png')} />
-                        </TouchableOpacity>
-                    </View>
-                </View> */}
-                <View style = {styles.garis}/>
+                </TouchableOpacity>
                 <TouchableOpacity onPress={()=>{navigation.navigate('Program',{type:''});}}> 
                     <View style={styles.search}>
                         <Text style={styles.searchText}>Sementara jadi back ke program</Text>
@@ -36,6 +28,7 @@ const Magang = () => {
                 </TouchableOpacity>
                 <ResultProgramListView
                     itemList = {resultProgramData}
+                    navigation={navigation}
                 />
                 {/* <TouchableOpacity onPress={()=>{navigation.navigate('DetailsProgram',{type:''});}}> 
                     <View style={styles.square}>
@@ -182,6 +175,10 @@ const styles = StyleSheet.create({
         alignItems : 'center',
         color : '#28527A80'
     },
+    img1:{
+        paddingTop : 15,
+        paddingLeft : 15
+    }
     // square:{
     //     height: 105,
     //     width: 360,

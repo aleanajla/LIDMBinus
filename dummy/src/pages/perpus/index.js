@@ -228,7 +228,9 @@ const styles = StyleSheet.create({
     },
     recTop:{
         flexDirection : 'row',
-        paddingLeft : 5
+        paddingLeft : 5,
+        justifyContent : 'space-between',
+        alignItems : 'center'
     },
     recText:{
         fontWeight : 'bold',
@@ -236,8 +238,7 @@ const styles = StyleSheet.create({
         fontSize : 18,
     },
     arrowText:{
-        left : 80,
-        top : 2
+        top : 2,
     },
     reccomen:{
         flexDirection : 'row',
@@ -264,7 +265,6 @@ const styles = StyleSheet.create({
     },
     arrowMore:{
         top : 2,
-        left : 265
     },
     centeredView :{
         flex: 1,

@@ -44,7 +44,7 @@ const ConTerms = ({route}) => {
                     <Image source = {require('../../assets/icons/arrowBackBlue.png')} style={{marginTop : 15, left:17, width : 34, height:34}}/>
                 </TouchableOpacity>
                 <View style={styles.logo}>
-                    <Image source = {{uri:image_url}} style={{width:300, height:120}}/>
+                    <Image source = {{uri:image_url}} style={{width:310, height: '55%'}}/>
                 </View>
                 <View style={styles.box}>
                     <Text style={styles.pt}>{company}</Text>
@@ -53,9 +53,6 @@ const ConTerms = ({route}) => {
                         <View style={styles.angka}>
                             <Text style={styles.text1}>{point}</Text>
                         </View>
-                        {/* <View style={styles.points}>
-                            <Text style={styles.text2}>Points</Text>
-                        </View> */}
                     </View>
                     <Text style={styles.tukar}>{desc}</Text>
                     <Text style={styles.syarat}>Syarat '& Ketentuan</Text>
@@ -80,7 +77,8 @@ const styles = StyleSheet.create({
         height : 180,
         // backgroundColor : 'grey',
         justifyContent : 'center',
-        alignItems : 'center'
+        alignItems : 'center',
+        // backgroundColor : 'red'
     },
     box:{
         backgroundColor : '#28527A',

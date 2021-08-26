@@ -11,7 +11,6 @@ const StationaryVoucherListViewItems = ({id, company, description, point, image_
         <View style={styles.container}>
             <View style={styles.boxTop}>
                 <Image source = {{uri: image_url}} style={styles.pic}/>
-                {/* <Image source = {require('../../assets/images/gojek.png')}/> */}
             </View>
             <View style={styles.boxBottom}>
                 <Text style={styles.title}>{company}</Text>
@@ -81,7 +80,8 @@ const styles = StyleSheet.create({
         fontWeight : 'bold'
     },
     pic:{
-        width: 61,
-        height:49
+        width: 120,
+        height:49,
+        // backgroundColor : 'red'
     }
 })

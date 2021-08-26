@@ -1,74 +1,54 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions, TextInput, ScrollView} from 'react-native'
+import { useNavigation } from '@react-navigation/core'
 
 const windowsWidth = Dimensions.get('window').width;
 const windowsHeight = Dimensions.get('window').height;
 
 const Register2 = () =>{
+    const navigation = useNavigation();
     return (
-        <ScrollView>
         <View style={styles.page}>
             <View style={styles.up}>
                 <Image
-                    source={require('../../assets/images/logo2.png')}
+                    source={require('../../assets/images/logo.png')}
                 />
             </View>
-            <View style={styles.data}>
-                <Text style={styles.dataText}>DATA</Text>
-            </View>
-            <View style={styles.form}>
-                <Text style={styles.textBold}>Perguruan Tinggi Asal</Text>
-                <View style={{alignItems : 'center'}}>
+            <View style={styles.loginText}>
+                <View>
+                    <Text style={styles.textBold}>Email</Text>
                     <View style={styles.box}>
-                        <TextInput style={styles.input} placeholder="Masukkan perguruan tinggi asal"/>
+                        <TextInput style={styles.input} placeholder="Masukkan alamat email yang aktif"/>
                     </View>
+                    <Text style={style.little}>>Pastikan alamat email ini dapat anda akses</Text>
                 </View>
-            </View>
-            <View style={styles.form}>
-                <Text style={styles.textBold}>Program Studi</Text>
-                <View style={{alignItems : 'center'}}>
+                <View>
+                    <Text style={styles.textBold}>Ketik Ulang Email</Text>
                     <View style={styles.box}>
-                        <TextInput style={styles.input} placeholder="Masukkan program studi"/>
+                        <TextInput style={styles.input} placeholder="Masukkan alamat email yang aktif"/>
                     </View>
+                    <Text style={style.little}>>Pastikan alamat email ini dapat anda akses</Text>
                 </View>
-            </View>
-            <View style={styles.form}>
-                <Text style={styles.textBold}>Nomor Induk Mahasiswa (NIM)</Text>
-                <View style={{alignItems : 'center'}}>
+                <View>
+                    <Text style={styles.textBold}>Kata Sandi</Text>
                     <View style={styles.box}>
-                        <TextInput style={styles.input} placeholder="Masukkan NIM lengkap"/>
+                        <TextInput style={styles.input} placeholder="Kata Sandi"/>
                     </View>
+                    <Text style={style.little}>Minimal 8 karakter, dan mengandung kombinasi huruf kecil, huruf besar dan angka</Text>
                 </View>
             </View>
-            <View style={styles.form}>
-                <Text style={styles.textBold}>Nomor Induk Kependudukan (NIK)</Text>
-                <View style={{alignItems : 'center'}}>
-                    <View style={styles.box}>
-                        <TextInput style={styles.input} placeholder="Masukkan NIK lengkap"/>
-                    </View>
-                </View>
+            <View style={[ styles.down, {paddingTop: 30}]}>
+                <TouchableOpacity onPress = {()=>{ navigation.navigate('Register3',{type:''})}}> 
+                    <Text style={styles.text}>SELANJUTNYA</Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Text style={styles.text}>DAFTAR DIRI</Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Text style={{fontSize: 15, color: '#28527A', fontWeight: 'bold'}}>Forgot Password? </Text>
+                </TouchableOpacity>
             </View>
-            <View style={styles.form}>
-                <Text style={styles.textBold}>Tanggal Lahir</Text>
-                <View style={{alignItems : 'center'}}>
-                    <View style={styles.ttl}>
-                        <View style={styles.box2}>
-                            <TextInput style={styles.input} placeholder="tgl"/>
-                        </View>
-                        <View style={styles.box3}>
-                            <TextInput style={styles.input} placeholder="bulan"/>
-                        </View>
-                        <View style={styles.box4}>
-                            <TextInput style={styles.input} placeholder="tahun"/>
-                        </View>
-                    </View>
-                </View>
-            </View>
-            {/* <View>
-                <Text>Dengan ini saya menyetujui Ketentuan Penggunaan dan Kebijakan Privasi dari Kampus Merdeka</Text>
-            </View> */}
         </View>
-        </ScrollView>
     )
 }
 
@@ -76,77 +56,54 @@ export default Register2;
 
 const styles = StyleSheet.create({
     page:{
-        // alignItems:'center'
+        // alignItems:'center',
     },
     up:{
-        paddingTop : 22,
+        paddingTop : 139,
+        // justifyContent :'flex-end',
         alignItems: 'center'
     },
-    data:{
-        width : windowsWidth,
-        backgroundColor : '#28527A',
-        height : 48,
-        justifyContent : 'center',
-        alignItems : 'center',
-    },
-    dataText:{
-        color : 'white',
-        fontSize : 20,
-        fontWeight : 'bold'
-    },
-    form:{
-        top : 53,
-        marginBottom : 20
-    },
-    box:{
-        backgroundColor : '#E5E5E5',
-        width : 305,
-        height : 40,
-        borderRadius : 10,
-        top : 5,
-        paddingLeft : 25
+    loginText:{
+        paddingRight : 50,
+        paddingLeft : 50,
+        paddingTop : 40,
     },
     textBold:{
-        left : 47,
-        fontSize : 16,
+        fontSize : 18,
         fontWeight : 'bold',
-        color : '#28527A'
+        color: '#28527A',
+        padding : 8
+    },
+    down:{
+        alignItems : 'center'
+    },
+    text:{
+        width: 122,
+        height : 34,
+        fontSize: 15,
+        fontWeight : 'bold',
+        color: '#28527A',
+        paddingTop: 7,
+        paddingLeft : 37,
+        margin : 9,
+        // alignItems: 'center',
+        backgroundColor : '#FAD586',
+        borderBottomLeftRadius: 60,
+        borderTopLeftRadius: 60,
+        borderBottomRightRadius: 60,
+        borderTopRightRadius: 60,
+    },
+    box:{
+        height: 40,
+        width: '100%',
+        backgroundColor: '#E5E5E5',
+        borderBottomLeftRadius: 10,
+        borderTopLeftRadius: 10,
+        borderBottomRightRadius: 10,
+        borderTopRightRadius: 10,
     },
     input:{
-        fontSize : 14,
-        color : '#28527A66'
-    },
-    box2:{
-        backgroundColor : '#E5E5E5',
-        width : 77,
-        height : 40,
-        borderRadius : 10,
-        top : 5,
-        alignItems : 'center'
-    },
-    box3:{
-        backgroundColor : '#E5E5E5',
-        width : 117,
-        height : 40,
-        borderRadius : 10,
-        top : 5,
-        alignItems : 'center'
-    },
-    box4:{
-        backgroundColor : '#E5E5E5',
-        width : 87,
-        height : 40,
-        borderRadius : 10,
-        top : 5,
-        alignItems : 'center'
-    },
-    ttl:{
-        flexDirection : 'row', 
-        justifyContent : 'space-between', 
-        // backgroundColor : 'yellow', 
-        width : windowsWidth,
-        paddingLeft : 47,
-        paddingRight : 47,
+        marginLeft: 10,
     }
 
 })

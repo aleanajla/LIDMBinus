@@ -15,7 +15,7 @@ export const educationVoucherData =
             "company": "Arkademi",
             "description" : "eVocuher Course 150k",
             "point": "500 Points",
-            "image_url": "https://i.ibb.co/f9d54y2/arkademi.png",
+            "image_url":"https://i.ibb.co/d4xmgNR/arkademi-1-removebg-preview.png",
             "desc" : "Tukarkan point reward dengan eVoucher Arkademi dengan nominal Rp.150.000,00",
             "conTerms" : "Potongan harga sebesar Rp.150.000,00 tanpa ada minimum transaksi\n\nPotongan harga berlaku pada produk dengan harga normal"
             
@@ -25,7 +25,7 @@ export const educationVoucherData =
             "company": "Udemy",
             "description" : "eVoucher Course 150k",
             "point": "500 point",
-            "image_url": "https://i.ibb.co/g4pWdTC/udemy.png",
+            "image_url": "https://i.ibb.co/vhVhDgY/udemy-logo-1-removebg-preview-2.png",
             "desc": "Tukarkan point reward dengan eVoucher Udemy dengan nominal Rp.150.000,00",
             "conTerms" : "Potongan harga sebesar Rp.150.000,00 tanpa ada minimum transaksi\n\nPotongan harga berlaku pada produk dengan harga normal"
             

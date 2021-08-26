@@ -39,53 +39,6 @@ const Program = () => {
                     </View>
             </Modal>
             <View style = {styles.progContainer}>
-                {/* <View style = {styles.header}>
-                    <View style = {styles.welcome}>
-                        <Text style = {{fontSize: 14, color : '#28527A'}}>Welcome back,</Text>
-                        <Text style = {{fontSize: 20,fontWeight: 'bold', color: WARNA_SEKUNDER}}>Andrew Willy</Text>
-                    </View>
-                    <View style = {styles.imgHeader}>
-                        <Image source ={require('../../assets/icons/bell.png')} style = {styles.bell} />
-                        <TouchableOpacity
-                        onPress = {()=>{
-                            navigation.navigate('Profile',{type:''})
-                        }}> 
-                            <Image source = {require('../../assets/icons/profile.png')} />
-                        </TouchableOpacity>
-                        
-                    </View>
-                </View>
-                <View style = {styles.garis}/> */}
-                {/* <View>
-                    <View style = {styles.conHeader}>
-                        <TouchableOpacity
-                            onPress={()=>{
-                                navigation.navigate('Home',{type:''});
-                            }}>
-                            <View style = {styles.optHeader}>
-                                <Text style = {styles.titleHeader}>Dashboard</Text>
-                            </View>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity
-                        onPress={()=>{
-                            navigation.navigate('Program',{type:''});
-                        }}> 
-                            <View style = {styles.optHeader2}>
-                                <Text style = {styles.titleHeader2}>Program</Text>
-                            </View>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity
-                        onPress={()=>{
-                            navigation.navigate('News',{type:''});
-                        }}> 
-                            <View style = {styles.optHeader}>
-                                <Text style = {styles.titleHeader}>News</Text>
-                            </View>
-                        </TouchableOpacity>
-                    </View>
-                </View> */}
                 <View style = {styles.detailsCon}>
                     <View style = {styles.ket}>
                         <View style = {styles.eachPoint}>
@@ -102,10 +55,10 @@ const Program = () => {
                         </View>
                     </View>
                     
-                    <ProgramListView
+                    {/* <ProgramListView
                         itemList = {programData}
-                    />
-                    {/* <View style = {styles.row1}>
+                    /> */}
+                    <View style = {styles.row1}>
                         <View style = {styles.conRow1}>
                             <View style = {styles.conImage}>
                                 <Image source = {require('../../assets/images/classroom.png')}/>
@@ -233,7 +186,6 @@ const Program = () => {
                             </View >
                         </TouchableOpacity> 
                     </View>
-                </View> */}
                 </View>
             </View>
         </ScrollView>
@@ -243,39 +195,6 @@ const Program = () => {
 export default Program;
 
 const styles = StyleSheet.create({
-    progContainer:{
-        // alignItems: 'center'
-        marginTop:20
-    },
-    welcome :{
-        paddingLeft: 30
-    },
-    pages : {
-        backgroundColor : '#F6F5F5',
-        fontFamily: 'Open-Sans'
-    },
-    header :{
-        flexDirection : 'row',
-        paddingTop: 15,
-        backgroundColor: '#F6F5F5'
-    },
-    imgHeader :{
-        flexDirection : 'row',
-        justifyContent : 'flex-end',
-        paddingRight : 20,
-        flex: 1
-    },
-    bell :{
-        fontSize : 25, 
-        padding : 17,
-        right:10,
-        top:3.5
-    },
-    garis:{
-        paddingTop: 8,
-        borderBottomColor: '#28527A',
-        borderBottomWidth: 1,
-    },
     detailsCon: {
         alignItems: 'center',
         marginTop: 10,

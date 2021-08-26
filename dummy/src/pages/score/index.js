@@ -5,6 +5,7 @@ import { Download, Info_blue, VeryGood, VeryBad, Good, Enough, Bad} from '../../
 //import { VeryGood, VeryBad, Good, Enough, Bad } from '../../assets'
 import DatePicker from 'react-native-datepicker'
 import { useState } from 'react/cjs/react.development'
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 //install: npm install @react-native-community/datetimepicker --save
 import DateTimePicker from '@react-native-community/datetimepicker'
@@ -22,6 +23,20 @@ const Score = () => {
     const [isChecked, setIsChecked] = useState(false);
     const [isEnabled, setIsEnabled] = useState(false);
     const [isTriggerError, setIsTriggerError] = useState(false);
+    const [userData, setUserData] = useState([]);
+
+    const getData = async()=> {
+        try{
+          const value = await AsyncStorage.getItem('@storage_key');
+          if(value !== null){
+            setUserData(value);
+            console.log("get ok");
+            console.log(value);
+          }
+        }catch(error){
+          console.log(error);
+        }
+      }
 
     //handle share
 
@@ -210,7 +225,11 @@ const Score = () => {
             {/* Trigger Error text */}
             <Text>{isTriggerError? "Error": ""}</Text>
             
-            
+            {/* get json data */}
+            <TouchableOpacity
+                onPress={getData}>
+                <Text>Get JSON</Text>
+            </TouchableOpacity>
         </View>
     )
 }

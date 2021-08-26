@@ -1,111 +1,93 @@
 import React, { useState } from "react";
-import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
+import { View, TouchableOpacity, Text, StyleSheet, TextInput } from "react-native";
 
-const JustifyContentBasics = () => {
-  const [justifyContent, setJustifyContent] = useState("flex-start");
+//install: npm install @react-native-async-storage/async-storage
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+
+const Learning = () => {
+  const [isLoading, setLoading] = useState(true);
+  const [userData, setUserData] = useState([]);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const storeData = async () => {
+    try {
+      const data = {
+        "email": email,
+        "password": password
+      }
+      const jsonValue = JSON.stringify(data);
+      await AsyncStorage.setItem('@storage_key', jsonValue);
+      console.log("ok");
+    }catch(error){
+      console.log(error);
+    }
+  }
+
+  const getData = async()=> {
+    try{
+      const value = await AsyncStorage.getItem('@storage_key');
+      if(value !== null){
+        setUserData(value);
+        console.log("get ok");
+        console.log(value);
+      }else{
+        console.log("kosong");
+      }
+    }catch(error){
+      console.log(error);
+    }
+  }
+
+  const formData = new FormData();
+  formData.append('email', email);
+  formData.append('password', password);
+
+  const getLoginUser = async() => {
+      fetch('https://mustseeum.com/kampus_merdeka/API/auth/login', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: formData
+      }).then(response => {
+        console.log(response)
+      }).catch(err => {
+        console.log(err)
+      })
+  }
 
   return (
-    <PreviewLayout
-      label="justifyContent"
-      selectedValue={justifyContent}
-      values={[
-        "flex-start",
-        "flex-end",
-        "center",
-        "space-between",
-        "space-around",
-        "space-evenly",
-      ]}
-      setSelectedValue={setJustifyContent}
-    >
-      <View
-        style={[styles.box, { backgroundColor: "powderblue" }]}
+    <View>
+      <TextInput
+        onChangeText={setEmail}
+        value={email}
+        placeholder={"input email"}
       />
-      <View
-        style={[styles.box, { backgroundColor: "skyblue" }]}
+      <TextInput
+        onChangeText={setPassword}
+        value={password}
+        placeholder={"input password"}
       />
-      <View
-        style={[styles.box, { backgroundColor: "steelblue" }]}
-      />
-    </PreviewLayout>
+      <TouchableOpacity
+        onPress={getLoginUser}>
+        <Text>Send</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={storeData}>
+        <Text>Save JSON</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={getData}>
+        <Text>Get JSON</Text>
+      </TouchableOpacity>
+    </View>
   );
 };
 
-const PreviewLayout = ({
-  label,
-  children,
-  values,
-  selectedValue,
-  setSelectedValue,
-}) => (
-  <View style={{ padding: 10, flex: 1 }}>
-    <Text style={styles.label}>{label}</Text>
-    <View style={styles.row}>
-      {values.map((value) => (
-        <TouchableOpacity
-          key={value}
-          onPress={() => setSelectedValue(value)}
-          style={[styles.button, selectedValue === value && styles.selected]}
-        >
-          <Text
-            style={[
-              styles.buttonLabel,
-              selectedValue === value && styles.selectedLabel,
-            ]}
-          >
-            {value}
-          </Text>
-        </TouchableOpacity>
-      ))}
-    </View>
-    <View style={[styles.container, { [label]: selectedValue }]}>
-      {children}
-    </View>
-  </View>
-);
-
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: 8,
-    backgroundColor: "aliceblue",
-  },
-  box: {
-    width: 50,
-    height: 50,
-  },
-  row: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-  },
-  button: {
-    paddingHorizontal: 8,
-    paddingVertical: 6,
-    borderRadius: 4,
-    backgroundColor: "oldlace",
-    alignSelf: "flex-start",
-    marginHorizontal: "1%",
-    marginBottom: 6,
-    minWidth: "48%",
-    textAlign: "center",
-  },
-  selected: {
-    backgroundColor: "coral",
-    borderWidth: 0,
-  },
-  buttonLabel: {
-    fontSize: 12,
-    fontWeight: "500",
-    color: "coral",
-  },
-  selectedLabel: {
-    color: "white",
-  },
-  label: {
-    textAlign: "center",
-    marginBottom: 10,
-    fontSize: 24,
-  },
+  
 });
 
-export default JustifyContentBasics;
+export default Learning;

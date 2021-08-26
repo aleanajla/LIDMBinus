@@ -38,6 +38,7 @@ import Recomend from './recomend'
 import MoreBooks from './moreBooks'
 import Register2 from './register2'
 import Register3 from './register3'
+import DetailsBook from './detailsBook'
 
 
 export{
@@ -80,5 +81,6 @@ export{
     Recomend,
     MoreBooks,
     Register2,
-    Register3
+    Register3,
+    DetailsBook
 }

@@ -9,9 +9,9 @@ import Modal from 'react-native-modal'
 import Recomend from '../recomend'
 import MoreBooks from '../moreBooks'
 import { recomendBooksData } from '../../assets/jsonData/recomendBooksData'
-import RecomendBooksListView from '../../components/RecomendBooksListView'
+import RekomenBukuListView from '../../components/RekomenBukuListView'
 import { moreBooksData } from '../../assets/jsonData/moreBooksData'
-import MoreBooksListView from '../../components/MoreBooksListView'
+import BukuLainnyaListView from '../../components/bukuLainnyaListView'
 
 
 const windowsWidth = Dimensions.get('window').width;
@@ -100,47 +100,19 @@ const Perpus = () => {
                             <Image source = {require('../../assets/icons/arrow_right2.png')} style={styles.arrowText}/>
                         </View>
                     </TouchableOpacity>
-                    <RecomendBooksListView
+                    <RekomenBukuListView
                         itemList = {recomendBooksData}
                     />
-                    {/* <View style={styles.reccomen}>
-                        <View style={styles.bookLeft}>
-                        <TouchableOpacity onPress={()=> setModalVisible(true)}>
-                            <Image source = {require('../../assets/images/book1.png')}/>
-                        </TouchableOpacity>
-                            <Text style={styles.bookTitle}>Predict and Surveil</Text>
-                            <Text style={styles.bookAuthor}>Penulis : Sarah Brayne</Text>
-                        </View>
-                        <View style={styles.bookRight}>
-                            <Image source = {require('../../assets/images/book2.png')}/>
-                            <Text style={styles.bookTitle}>Voices From the Valley</Text>
-                            <Text style={styles.bookAuthor}>Penulis : Ben Tarnoff and</Text>
-                            <Text style={styles.bookAuthor}>Moira Weigel</Text>
-                        </View>
-                    </View> */}
                     <TouchableOpacity onPress = {()=>{ navigation.navigate('MoreBooks',{type:''})}}> 
                         <View style={styles.recTop}>
                             <Text style={styles.recText}>Lainnya</Text>
                             <Image source = {require('../../assets/icons/arrow_right2.png')} style={styles.arrowMore}/>
                         </View>
                     </TouchableOpacity>
-                    <MoreBooksListView
+                    <BukuLainnyaListView
                         itemList = {moreBooksData}
                     />
-                    {/* <View style={styles.reccomen}>
-                        <View style={styles.bookLeft}>
-                            <Image source = {require('../../assets/images/book5.png')}/>
-                            <Text style={styles.bookTitle}>Digitize and Punish</Text>
-                            <Text style={styles.bookAuthor}>Penulis : Brian Jefferson</Text>
-                        </View>
-                        <View style={styles.bookRight}>
-                            <Image source = {require('../../assets/images/book4.png')}/>
-                            <Text style={styles.bookTitle}>The Hype Machine</Text>
-                            <Text style={styles.bookAuthor}>Penulis : Sinan Aral</Text>
-                        </View>
-                    </View> */}
                 </View>
-            {/* </ScrollView> */}
         </View>
         </ScrollView>
     )
@@ -149,23 +121,6 @@ const Perpus = () => {
 export default Perpus;
 
 const styles = StyleSheet.create({
-    header :{
-        flexDirection : 'row',
-        paddingTop: 15,
-        backgroundColor: '#F6F5F5'
-    },
-    imgHeader :{
-        flexDirection : 'row',
-        justifyContent : 'flex-end',
-        paddingRight : 20,
-        flex: 1
-    },
-    bell :{
-        // fontSize : 25, 
-        padding : 17,
-        right:10,
-        top:3.5
-    },
     garis:{
         paddingTop: 8,
         borderBottomColor: '#28527A',
@@ -262,7 +217,7 @@ const styles = StyleSheet.create({
     },
     bookRight:{
         // backgroundColor: 'yellow',
-        width: '50%',
+        // width: '50%',
         alignItems : 'center'
     },
     bookTitle:{
@@ -289,8 +244,6 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         borderRadius: 20,
         paddingTop: 20,
-        // paddingLeft: 10,
-        // paddingRight:10,
         paddingBottom: 30,
         alignItems: "center",
         shadowColor: "#000",
@@ -305,16 +258,6 @@ const styles = StyleSheet.create({
         marginLeft : 290,
         marginBottom : 5
     },
-    // btnSeeMore:{
-    //     width: 251.123, 
-    //     height: 44.5, 
-    //     backgroundColor: '#28527A',
-    //     alignItems : 'center',
-    //     justifyContent: 'center',
-    //     borderRadius : 20,
-    //     marginTop : 35
-        
-    // },
     topp:{
         flexDirection : 'row'
     },

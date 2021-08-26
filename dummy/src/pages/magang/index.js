@@ -1,19 +1,39 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity} from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, TextInput} from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { Bell1, User } from '../../assets'
 import { useNavigation } from '@react-navigation/core'
 import { Program, DetailsProgram, Profile, Header } from '../../pages/index.js'
 import ResultProgramListView from '../../components/ResultProgramListView'
 import {resultProgramData}  from '../../assets/jsonData/resultProgramData.js'
+import { useState } from 'react/cjs/react.development'
 
 const Magang = ({route}) => {
     const navigation = useNavigation();
+    const [search, setSearch] = useState('');
+    const [filteredDataSource, setFilteredDataSource] = useState(resultProgramData);
+    const [masterDataSource, setMasterDataSource] = useState(resultProgramData);
+
+    const searchFilterFunction = (text) => {
+        if(text){
+            const newData = masterDataSource.filter(
+                function (item) {
+                    const itemData = item.title ? item.title.toUpperCase(): ''.toUpperCase();
+                    const textData = text.toUpperCase();
+                    return itemData.indexOf(textData)>-1;
+                }
+            );
+            setFilteredDataSource(newData);
+            setSearch(text);
+        }else{
+            setFilteredDataSource(masterDataSource);
+            setSearch(text);
+        }
+    }
+
     return(
         <ScrollView>
             <View styles={styles.pages}>
-                {/* <Header/> */}
-                {/* <View style = {styles.garis}/> */}
                 <TouchableOpacity
                     onPress={()=>{navigation.goBack()}}
                 >
@@ -21,112 +41,23 @@ const Magang = ({route}) => {
                         <Image source = {require('../../assets/icons/arrowBackBlue.png')}/>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={()=>{navigation.navigate('Program',{type:''});}}> 
-                    <View style={styles.search}>
-                        <Text style={styles.searchText}>Sementara jadi back ke program</Text>
+                <View style={styles.container}>
+                    <View style={styles.searchCon}>
+                        <TextInput
+                            style = {{marginLeft:20}}
+                            onChangeText={(text) => searchFilterFunction(text)}
+                            value={search}
+                            underlineColorAndroid="transparent"
+                            placeholder="Search Here"
+                        />
+                        <Image source={require('../../assets/icons/Search.png')} style={{marginLeft:185}}/>
                     </View>
-                </TouchableOpacity>
+                    <Image source = {require('../../assets/icons/sort.png')}/>
+                </View>
                 <ResultProgramListView
-                    itemList = {resultProgramData}
+                    itemList = {filteredDataSource}
                     navigation={navigation}
                 />
-                {/* <TouchableOpacity onPress={()=>{navigation.navigate('DetailsProgram',{type:''});}}> 
-                    <View style={styles.square}>
-                        <View style={styles.left}>
-                            <Image source = {require('../../assets/images/lazada.png')} style={styles.image}/>
-                        </View>
-                        <View style={styles.right}>
-                            <Text style={styles.title}>Artificial Intelligence Intern</Text>
-                            <Text style={styles.division}>Program Magang Lazada Indonesia Customer Care Team</Text>
-                            <View style={styles.inside}>
-                                <View style={styles.left2}>
-                                    <Text style={styles.leftText}>Kota Jakarta Selatan</Text>
-                                    <Text style={styles.leftText}>20 SKS - 5 Bulan</Text>
-                                </View>
-                                <View style={styles.right2}>
-                                    <Image source = {require('../../assets/icons/checkGreen.png')} style={styles.check}/>
-                                    <Text style={styles.rightText}>Certified</Text>
-                                </View>
-                            </View>
-                        </View>
-                    </View>
-                </TouchableOpacity>
-                <View style={styles.square}>
-                    <View style={styles.left}>
-                        <Image source = {require('../../assets/images/telkom.png')} style={styles.image}/>
-                    </View>
-                    <View style={styles.right}>
-                        <Text style={styles.title}>Application/ Software Requirement Analyst</Text>
-                        <Text style={styles.division}>Program Magang Lazada Indonesia Customer Care Team</Text>
-                        <View style={styles.inside}>
-                            <View style={styles.left2}>
-                                <Text style={styles.leftText}>Kota Jakarta Selatan</Text>
-                                <Text style={styles.leftText}>20 SKS - 6 Bulan</Text>
-                            </View>
-                            <View style={styles.right2}>
-                                <Image source = {require('../../assets/icons/checkGreen.png')} style={styles.check}/>
-                                <Text style={styles.rightText}>Certified</Text>
-                            </View>
-                        </View>
-                    </View>
-                </View>
-                <View style={styles.square}>
-                    <View style={styles.left}>
-                        <Image source = {require('../../assets/images/smartfren.png')} style={styles.image}/>
-                    </View>
-                    <View style={styles.right}>
-                        <Text style={styles.title}>Software Developer</Text>
-                        <Text style={styles.division}>Smartfren Technology Internship</Text>
-                        <View style={styles.inside}>
-                            <View style={styles.left2}>
-                                <Text style={styles.leftText}>Kota Jakarta Pusat</Text>
-                                <Text style={styles.leftText}>20 SKS - 5 Bulan</Text>
-                            </View>
-                            <View style={styles.right2}>
-                                <Image source = {require('../../assets/icons/checkGreen.png')} style={styles.check}/>
-                                <Text style={styles.rightText}>Certified</Text>
-                            </View>
-                        </View>
-                    </View>
-                </View>
-                <View style={styles.square}>
-                    <View style={styles.left}>
-                        <Image source = {require('../../assets/images/tokopedia.png')} style={styles.image}/>
-                    </View>
-                    <View style={styles.right}>
-                        <Text style={styles.title}>Data Analyst</Text>
-                        <Text style={styles.division}>Program Magang</Text>
-                        <View style={styles.inside}>
-                            <View style={styles.left2}>
-                                <Text style={styles.leftText}>Kota Jakarta Selatan</Text>
-                                <Text style={styles.leftText}>20 SKS - 3 Bulan</Text>
-                            </View>
-                            <View style={styles.right2}>
-                                <Image source = {require('../../assets/icons/checkGreen.png')} style={styles.check}/>
-                                <Text style={styles.rightText}>Certifed</Text>
-                            </View>
-                        </View>
-                    </View>
-                </View>
-                <View style={styles.square}>
-                    <View style={styles.left}>
-                        <Image source = {require('../../assets/images/tokopedia.png')} style={styles.image}/>
-                    </View>
-                    <View style={styles.right}>
-                        <Text style={styles.title}>Software Engineer</Text>
-                        <Text style={styles.division}>Tokopedia</Text>
-                        <View style={styles.inside}>
-                            <View style={styles.left2}>
-                                <Text style={styles.leftText}>Kota Jakarta Selatan</Text>
-                                <Text style={styles.leftText}>20 SKS - 6 Bulan</Text>
-                            </View>
-                            <View style={styles.right2}>
-                                <Image source = {require('../../assets/icons/checkGreen.png')} style={styles.check}/>
-                                <Text style={styles.rightText}>Certifed</Text>
-                            </View>
-                        </View>
-                    </View>
-                </View> */}
             </View>
         </ScrollView>
     )
@@ -178,63 +109,23 @@ const styles = StyleSheet.create({
     img1:{
         paddingTop : 15,
         paddingLeft : 15
+    },
+    searchCon:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        borderColor: '#000',
+        height: 40,
+        borderRadius: 5,
+        borderRadius: 20,
+        backgroundColor:'#E5E5E5', 
+        width:330,
+        marginRight : 3
+    },
+    container:{
+        flexDirection : 'row',
+        alignItems : 'center',
+        justifyContent : 'center',
+        marginBottom: 10,
+        marginTop : 10,
     }
-    // square:{
-    //     height: 105,
-    //     width: 360,
-    //     backgroundColor: '#E5E5E5',
-    //     marginLeft : 15,
-    //     marginRight : 15,
-    //     borderRadius : 15,
-    //     flexDirection : 'row',
-    //     marginBottom : 13,
-    // },
-    // left:{
-    //     width : '25%',
-    //     justifyContent : 'center',
-    //     alignItems : 'center'
-    // },
-    // image:{
-    //     height : 55,
-    //     width : 55,
-    // },
-    // right:{
-    //     top : 10,
-    //     width : 250
-    // },
-    // title:{
-    //     fontWeight : 'bold',
-    //     color : '#28527A',
-    //     fontSize : 15,
-    // },
-    // division:{
-    //     color: '#28527AD9',
-    //     fontSize : 12
-    // },
-    // inside:{
-    //     top : 3,
-    //     flexDirection : 'row'
-    // },
-    // left2:{
-    //     width : '50%',
-    // },
-    // right2:{
-    //     width : '50%',
-    //     left : 15,
-    //     alignItems : 'center',
-    //     flexDirection : 'row'
-    // },
-    // leftText:{
-    //     color : '#0000007A',
-    //     fontSize : 11
-    // },
-    // rightText:{
-    //     fontSize : 11,
-    //     color : '#71A132'
-    // },
-    // check:{
-    //     width : 16,
-    //     height : 16,
-    //     marginRight : 2
-    // }
 })

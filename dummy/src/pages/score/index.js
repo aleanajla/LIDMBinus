@@ -8,6 +8,7 @@ import * as Progress from 'react-native-progress';
 import { color } from 'react-native-elements/dist/helpers';
 import { useNavigation } from '@react-navigation/core'
 import { Register3 } from '..'
+import { Register2 } from '..'
 
 const Score = () => {
     const navigation = useNavigation();
@@ -18,7 +19,7 @@ const Score = () => {
                     <Image source ={require('../../assets/icons/download.png')} style = {styles.download} />
                     <TouchableOpacity
                     onPress={()=>{
-                        navigation.navigate('Register3',{type:''});
+                        navigation.navigate('Register2',{type:''});
                     }}>
                         <Image source ={require('../../assets/icons/infoBlue.png')} style = {styles.info} />
                     </TouchableOpacity>

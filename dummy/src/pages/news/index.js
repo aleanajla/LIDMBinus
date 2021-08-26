@@ -82,15 +82,18 @@ const News = () => {
                         </View>
                     </View>
                 </View> */}
-                <View style={styles.searchCon}>
-                    <TextInput
-                        style = {{marginLeft:20}}
-                        onChangeText={(text) => searchFilterFunction(text)}
-                        value={search}
-                        underlineColorAndroid="transparent"
-                        placeholder="Search Here"
-                    />
-                     <Image source={require('../../assets/icons/Search.png')} style={{marginLeft:185}}/>
+                <View style={styles.container}>
+                    <View style={styles.searchCon}>
+                        <TextInput
+                            style = {{marginLeft:20}}
+                            onChangeText={(text) => searchFilterFunction(text)}
+                            value={search}
+                            underlineColorAndroid="transparent"
+                            placeholder="Search Here"
+                        />
+                        <Image source={require('../../assets/icons/Search.png')} style={{marginLeft:185}}/>
+                    </View>
+                    <Image source = {require('../../assets/icons/sort.png')}/>
                 </View>
                 <View>
                     <SliderBox images = {image}
@@ -279,14 +282,20 @@ const styles = StyleSheet.create({
     },
     searchCon:{
         flexDirection: 'row',
-        // justifyContent: 'center',
         alignItems: 'center',
         borderColor: '#000',
         height: 40,
         borderRadius: 5,
-        margin: 10,
         borderRadius: 20,
         backgroundColor:'#E5E5E5', 
-        width:330
+        width:330,
+        marginRight : 3
+    },
+    container:{
+        flexDirection : 'row',
+        alignItems : 'center',
+        justifyContent : 'center',
+        marginBottom: 10,
+        marginTop : 10,
     }
 })

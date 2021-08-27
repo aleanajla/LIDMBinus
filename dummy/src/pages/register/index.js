@@ -1,9 +1,11 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, Picker } from 'react-native'
 import { useNavigation } from '@react-navigation/core'
+import { useState } from 'react/cjs/react.development'
 
 const Register = () =>{
     const navigation = useNavigation();
+    const [selectedPicker, setSelectedPicker] = useState("");
     return (
         <View style={styles.page}>
             <View style={styles.up}>
@@ -13,7 +15,17 @@ const Register = () =>{
             </View>
             <View style={styles.loginText}>
                 <Text style={styles.textBold}>Pilih Posisi yang Sesuai</Text>
-                <View style={styles.box}></View>
+                <View style={styles.box}>
+                    <Picker
+                        style={{paddingLeft: 10}}
+                        selectedValue={selectedPicker}
+                        onValueChange={(itemValue, itemIndex)=> setSelectedPicker(itemValue)}>
+                        <Picker.Item label="Mahasiswa" value="1"/>
+                        <Picker.Item label="Dosen" value="2"/>
+                        <Picker.Item label="Sekolah" value="3"/>
+                        <Picker.Item label="Perguruan Tinggi" value="4"/>
+                    </Picker>
+                </View>
             </View>
             <View style={[ styles.down, {paddingTop: 30}]} >
                 <TouchableOpacity onPress={()=>{
@@ -59,7 +71,6 @@ const styles = StyleSheet.create({
         padding: 8,
         paddingLeft : 14,
         margin : 9,
-        // alignItems: 'center',
         backgroundColor : '#FAD586',
         borderBottomLeftRadius: 60,
         borderTopLeftRadius: 60,
@@ -74,5 +85,7 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 10,
         borderBottomRightRadius: 10,
         borderTopRightRadius: 10,
+        justifyContent : 'center',
+        paddingLeft : 8
     }
 })

@@ -1,11 +1,32 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity} from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Share, Dimensions} from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { useNavigation } from '@react-navigation/core'
 import { Magang } from '..'
 import { Profile } from '..'
 
+const windowsWidth = Dimensions.get('window').width;
+const windowsHeight = Dimensions.get('window').height;
+
 const DetailsProgram = ({route}) =>{
+
+    const onShare = async () => {
+        try {
+            const result = await Share.share({
+                message: "Text untuk di share di sini",
+            });
+            if(result.action === Share.sharedAction){
+                if(result.activityType){
+
+                }else{
+
+                }
+            }
+        }catch (error){
+            alert(error.message);
+        }
+    }
+
     const navigation = useNavigation();
     const {id, title, division, place, time, image_url, remote, desc, kriteria, durasiWaktu, durasiBulan}  = route.params;
     return(
@@ -18,8 +39,12 @@ const DetailsProgram = ({route}) =>{
                     >
                         <Image source = {require('../../assets/icons/arrowBack.png')} style={styles.img1}/>
                     </TouchableOpacity>
-                    <Image source = {require('../../assets/icons/info_white.png')} style={styles.img2}/>
-                    <Image source = {require('../../assets/icons/share_white.png')} style={styles.img2}/>
+                    <TouchableOpacity
+                        onPress={onShare}
+                    >
+                        <Image source={require('../../assets/icons/share_white.png')}/>
+                        
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.detail}>
                     <Text style={styles.title}>{title}</Text>
@@ -96,7 +121,8 @@ const styles = StyleSheet.create({
         marginBottom : 12,
         paddingTop : 3,
         paddingBottom : 3,
-        alignItems : 'center'
+        alignItems : 'center',
+        justifyContent : 'space-between'
     },
     img1:{
         width : 24,
@@ -240,6 +266,12 @@ const styles = StyleSheet.create({
         left : 20,
         marginBottom : 30,
         width : 360
+    },
+    row:{
+        flexDirection : 'row',
+        justifyContent : 'flex-end',
+        alignItems : 'flex-end',
+        width : 325,
     }
     
 })

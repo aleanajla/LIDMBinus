@@ -128,14 +128,13 @@ const styles = StyleSheet.create({
         backgroundColor:'#E5E5E5', 
         width:330,
         marginRight : 3,
-        marginTop:10
     },
     container:{
         flexDirection : 'row',
         alignItems : 'center',
         justifyContent : 'center',
         marginBottom: 10,
-        marginTop : 10,
+        marginTop : 20,
     },
     subTitle1:{
         fontSize: 20,

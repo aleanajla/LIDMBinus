@@ -1,28 +1,32 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity} from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Dimensions} from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { useNavigation } from '@react-navigation/core'
 import { Home } from '../../pages/index.js'
 import NotificationListView from '../../components/NotificationListView'
 import { notificationData } from '../../assets/jsonData/notificationData'
-// import {notificationData} from ''
+
+const windowsWidth = Dimensions.get('window').width;
+const windowsHeight = Dimensions.get('window').height;
 
 const Notificationn = () => {
     const navigation = useNavigation();
     return(
-        <View style={styles.pages}>
-            <View style={styles.header}>
-                <TouchableOpacity onPress={()=>{navigation.goBack()}}>
-                    <Image source = {require('../../assets/icons/arrowBackBlue.png')} style={[styles.header, {width : 24, height:24, top :15}]}/>
-                </TouchableOpacity>
-                <Text style={styles.announ}>Notifikasi</Text>
+        <ScrollView>
+            <View style={styles.pages}>
+                <View style = {styles.header}>
+                    <TouchableOpacity onPress={()=>{navigation.goBack()}} style={styles.conClose}>
+                        <Image source = {require('../../assets/icons/arrowBackBlue.png')} style = {styles.close}/>
+                    </TouchableOpacity>
+                    <Text style={styles.settings}>NOTIFIKASI</Text>
+                </View>
+                <View style={styles.container1}>
+                    <NotificationListView
+                        itemList = {notificationData}
+                    />
+                </View>
             </View>
-            <View style={styles.container1}>
-                <NotificationListView
-                    itemList = {notificationData}
-                />
-            </View>
-        </View>
+        </ScrollView>
     )
 }
 
@@ -30,15 +34,31 @@ export default Notificationn;
 
 const styles = StyleSheet.create({
     pages:{
-        height : 900,
+        height : windowsHeight,
         backgroundColor : '#FFFFFF'
     },
     header:{
-        paddingLeft : 25,
+        display: 'flex',
         flexDirection : 'row',
-        height : 60,
         alignItems : 'center',
-        marginBottom : 10
+        paddingRight: 28,
+        paddingLeft : 28,
+        height : 74,
+        justifyContent:'center'
+    },
+    close: {
+        marginTop: 5,
+        alignItems:'flex-start',
+        alignContent:'flex-start'
+    },
+    conClose:{
+        position:'absolute',
+        left:25
+    },
+    settings:{
+        fontSize: 23,
+        color : '#022E57',
+        fontWeight: 'bold',
     },
     announ:{
         alignItems : 'center',

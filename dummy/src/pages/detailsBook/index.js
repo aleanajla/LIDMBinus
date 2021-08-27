@@ -5,18 +5,41 @@ import { useNavigation } from '@react-navigation/core'
 import { News } from '../../pages/index.js'
 
 const DetailsBook = ({route}) => {
+    const onShare = async () => {
+        try {
+            const result = await Share.share({
+                message: "Text untuk di share di sini",
+            });
+            if(result.action === Share.sharedAction){
+                if(result.activityType){
+
+                }else{
+
+                }
+            }
+        }catch (error){
+            alert(error.message);
+        }
+    }
+
     const navigation = useNavigation();
     const {id, title, author, image_url, desc}  = route.params;
     return(
         <ScrollView>
             <View style={styles.page}>
-                <TouchableOpacity
-                    onPress={()=>{navigation.goBack()}}
-                >
-                    <View style={styles.img1}>
-                        <Image source = {require('../../assets/icons/arrowBackBlue.png')}/>
-                    </View>
-                </TouchableOpacity>
+                <View style={styles.header}>
+                    <TouchableOpacity
+                        onPress={()=>{navigation.goBack()}}
+                    >
+                        <Image source = {require('../../assets/icons/arrowBackBlue.png')} style={styles.img1}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={onShare}
+                    >
+                        <Image source={require('../../assets/icons/shareBlue.png')}/>
+                        
+                    </TouchableOpacity>
+                </View>
                 <View style={styles.header}>
                     <View style={styles.left}>
                         <Image source={{uri: image_url}} style={styles.images}/>
@@ -24,9 +47,14 @@ const DetailsBook = ({route}) => {
                     <View style={styles.right}>
                         <Text style={styles.title}>{title}</Text>
                         <Text style={styles.author}>{author}</Text>
-                        <View style={styles.add}>
-                            <Text style={styles.addText}>Add to Libary</Text>
-                        </View>
+                        <TouchableOpacity
+                        onPress = {()=>{
+                            navigation.navigate('MyBooks',{type:''})
+                        }}> 
+                            <View style={styles.add}>
+                                <Text style={styles.addText}>Add to Libary</Text>
+                            </View>
+                        </TouchableOpacity>
                     </View>
                 </View>
                 <Text style={styles.desc}>{desc}</Text>
@@ -44,11 +72,13 @@ const styles = StyleSheet.create({
         paddingRight : 17
     },
     header:{
-        marginTop : 18,
-        // paddingLeft : 15,
-        // paddingRight : 15,
         flexDirection : 'row',
-        // backgroundColor : 'red'
+        marginBottom : 12,
+        paddingTop : 3,
+        paddingBottom : 3,
+        marginRight : 10,
+        alignItems : 'center',
+        justifyContent : 'space-between'
     },
     left:{
         width : '40%',

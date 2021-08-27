@@ -11,11 +11,11 @@ const MoreBooks = () => {
     return(
         <ScrollView>
             <View style={styles.pages}>
-                <View style={styles.header}>
-                    <TouchableOpacity onPress={()=>{navigation.goBack()}}>
-                        <Image source = {require('../../assets/icons/arrowBack.png')} style={[styles.header, {width : 24, height:24}]}/>
+                <View style = {styles.header}>
+                    <TouchableOpacity onPress={()=>{navigation.goBack()}} style={styles.conClose}>
+                        <Image source = {require('../../assets/icons/arrowBack.png')} style = {styles.close}/>
                     </TouchableOpacity>
-                    <Text style={styles.title3}>BUKU LAINNYA</Text>
+                    <Text style={styles.settings}> BUKU LAINNYA </Text>
                 </View>
                 <View style={{paddingTop : 15}}>
                     <MoreBooksListView
@@ -32,13 +32,28 @@ export default MoreBooks;
 
 const styles = StyleSheet.create({
     header:{
-        paddingLeft : 20,
+        display: 'flex',
         flexDirection : 'row',
-        height : 70,
-        backgroundColor : '#28527A',
         alignItems : 'center',
-        borderBottomLeftRadius : 20,
-        borderBottomRightRadius : 20
+        paddingRight: 28,
+        paddingLeft : 28,
+        backgroundColor: WARNA_SEKUNDER,
+        height : 74,
+        justifyContent:'center'
+    },
+    close: {
+        marginTop: 5,
+        alignItems:'flex-start',
+        alignContent:'flex-start'
+    },
+    conClose:{
+        position:'absolute',
+        left:25
+    },
+    settings:{
+        fontSize: 23,
+        color: WARNA_UTAMA,
+        fontWeight: 'bold',
     },
     title3:{
         color : 'white',

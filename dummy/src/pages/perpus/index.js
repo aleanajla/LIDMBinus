@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Platform, Dimensions, FlatList} from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Platform, Dimensions, FlatList, TextInput} from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType'
 import ImageBackground from 'react-native/Libraries/Image/ImageBackground'
@@ -18,11 +18,32 @@ const windowsWidth = Dimensions.get('window').width;
 const windowsHeight = Dimensions.get('window').height;
 
 const Perpus = () => {
+    const [search, setSearch] = useState('');
+    const [filteredDataSource, setFilteredDataSource] = useState(recomendBooksData);
+    const [masterDataSource, setMasterDataSource] = useState(recomendBooksData);
+
+    const searchFilterFunction = (text) => {
+        if(text){
+            const newData = masterDataSource.filter(
+                function (item) {
+                    const itemData = item.title ? item.title.toUpperCase(): ''.toUpperCase();
+                    const textData = text.toUpperCase();
+                    return itemData.indexOf(textData)>-1;
+                }
+            );
+            setFilteredDataSource(newData);
+            setSearch(text);
+        }else{
+            setFilteredDataSource(masterDataSource);
+            setSearch(text);
+        }
+    }
+
     const [modalVisible, setModalVisible] = useState(false);
     const navigation = useNavigation();
     return (
         <ScrollView>
-        <Modal
+        {/* <Modal
             animationType="slide" //slide, fade, none
             transparent={true} //true or false
             visible={modalVisible}
@@ -56,7 +77,7 @@ const Perpus = () => {
                     </View> 
                 </View>
             
-        </Modal>
+        </Modal> */}
         <View style={styles.pages}>
             <Header/>
                 
@@ -87,7 +108,20 @@ const Perpus = () => {
                    
                 </View>
             </ScrollView>
-            <View style={styles.square}></View>
+            {/* <View style={styles.square}></View> */}
+            <View style={styles.container}>
+                <View style={styles.searchCon}>
+                    <TextInput
+                        style = {{marginLeft:20}}
+                        onChangeText={(text) => searchFilterFunction(text)}
+                        value={search}
+                        underlineColorAndroid="transparent"
+                        placeholder="Search Here"
+                    />
+                    <Image source={require('../../assets/icons/Search.png')} style={{marginLeft:185}}/>
+                </View>
+                <Image source = {require('../../assets/icons/sort.png')}/>
+            </View>
             {/* <ScrollView vertical={true}> */}
                 <View style={styles.learnToday}>
                     <View styles={styles.left}>
@@ -116,7 +150,7 @@ const Perpus = () => {
                         </View>
                     </TouchableOpacity>
                     <RekomenBukuListView
-                        itemList = {recomendBooksData}
+                        itemList = {filteredDataSource}
                         navigation={navigation}
                     />
                     <TouchableOpacity onPress = {()=>{ navigation.navigate('MoreBooks',{type:''})}}> 
@@ -228,13 +262,10 @@ const styles = StyleSheet.create({
         paddingTop : 14
     },
     bookLeft:{
-        // backgroundColor: 'red',
         width: '50%',
         alignItems : 'center'
     },
     bookRight:{
-        // backgroundColor: 'yellow',
-        // width: '50%',
         alignItems : 'center'
     },
     bookTitle:{
@@ -314,6 +345,23 @@ const styles = StyleSheet.create({
         paddingTop : 17,
         paddingLeft : 20,
         paddingRight : 15
+    },
+    searchCon:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        borderColor: '#000',
+        height: 40,
+        borderRadius: 5,
+        borderRadius: 20,
+        backgroundColor:'#E5E5E5', 
+        width:330,
+        marginRight : 3
+    },
+    container:{
+        flexDirection : 'row',
+        alignItems : 'center',
+        justifyContent : 'center',
+        marginBottom: 10,
     }
 
 

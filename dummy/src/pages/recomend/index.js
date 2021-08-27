@@ -11,11 +11,11 @@ const Recomend = () => {
     return(
         <ScrollView>
             <View style={styles.pages}>
-                <View style={styles.header}>
-                    <TouchableOpacity onPress={()=>{navigation.goBack()}}>
-                        <Image source = {require('../../assets/icons/arrowBack.png')} style={[styles.header, {width : 24, height:24}]}/>
+                <View style = {styles.header}>
+                    <TouchableOpacity onPress={()=>{navigation.goBack()}} style={styles.conClose}>
+                        <Image source = {require('../../assets/icons/arrowBack.png')} style = {styles.close}/>
                     </TouchableOpacity>
-                    <Text style={styles.title3}>REKOMENDASI BUKU</Text>
+                    <Text style={styles.settings}> REKOMENDASI BUKU </Text>
                 </View>
                 <View style={{paddingTop : 15}}>
                     <RecomendBooksListView
@@ -32,13 +32,27 @@ export default Recomend;
 
 const styles = StyleSheet.create({
     header:{
-        paddingLeft : 20,
+        display: 'flex',
         flexDirection : 'row',
-        height : 70,
-        backgroundColor : '#28527A',
         alignItems : 'center',
-        borderBottomLeftRadius : 20,
-        borderBottomRightRadius : 20
+        paddingRight: 28,
+        paddingLeft : 28,
+        height : 74,
+        justifyContent:'center',
+        backgroundColor : WARNA_SEKUNDER
+    },
+    close: {
+        alignItems:'flex-start',
+        alignContent:'flex-start'
+    },
+    conClose:{
+        position:'absolute',
+        left:25
+    },
+    settings:{
+        fontSize: 25,
+        color: 'white',
+        fontWeight: 'bold',
     },
     title3:{
         color : 'white',
@@ -55,4 +69,9 @@ const styles = StyleSheet.create({
         fontSize : 14,
         fontWeight : 'bold'
     },
+    garis:{
+        backgroundColor : '#022E574A',
+        width : 400,
+        height : 2,
+    }
 })

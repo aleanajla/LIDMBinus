@@ -7,8 +7,6 @@ import { Home } from '../../pages/index.js'
 
 const DetailAnnouncement = ({route}) => {
 
-    //handle share
-
     const onShare = async () => {
         try {
             const result = await Share.share({

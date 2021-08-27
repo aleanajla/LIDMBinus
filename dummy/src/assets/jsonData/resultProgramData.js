@@ -14,12 +14,12 @@ export const resultProgramData =
             "durasiBulan" : "5 bulan"
         },
         {
-            "id": "1",
+            "id": "2",
             "title": "Android Developer Intern",
             "division": "#InternAtCampaign - Developer",
             "place": "Kota Jakarta Selatan",
             "time": "20 SKS - 6 Bulan",
-            "image_url" : "https://i.ibb.co/31DB1nB/Logogram.png",
+            "image_url" : "https://i.ibb.co/tHnsckb/A51-C6703-8-A3-C-411-A-BCB3-6943-AD050044-removebg-preview.png",
             "remote" : "Pekerjaan Ini Remote", 
             "desc" : "Dalam periode magang ini, peserta akan berpartisipasi dalam proyek untuk ekspansi ke USA. Memperluas dampak Campaign #ForChange di luar Indonesia adalah salah satu mimpi besar tim Campaign.com semenjak awal kami berdiri. Di tahun 2020, kami akhirnya memutuskan untuk bekerja sama dengan mahasiswa Indonesia yang sedang menjalankan studi di Amerika Serikat untuk melakukan riset lebih lanjut dan yang kami temukan sangat luar biasa. \n\nSebagai platform aksi sosial, Campaign.com menemukan banyaknya kesempatan di Amerika Serikat, di mana tren social giving terus berkembang. Di tahun 2019, warga Amerika Serikat memecahkan rekor negara tersebut dengan memberi sebanyak USD 449 miliar donasi kepada beragam badan amal (2). Ditambah dengan tren pendanaan corporate social responsibility yang sangat kuat, Campaign.com bisa melihat jelas bahwa masa depan kami akan melibatkan organisasi sosial, sponsor, dan pendukung sosial Amerika Serikat.",
             "kriteria" : "Campaign.com menyambut semua pelamar tanpa memandang lokasi, pendidikan, usia, atau latar belakang\nDiutamakan mahasiswa/i di semester 4 keatas dengan pertimbangan sudah menerima materi perkuliahan dasar yang sesuai dengan jurusan yang dilamar.\nBersemangat untuk menyelesaikan masalah sosial\nMemiliki pola pikir yang kreatif dan menyenangkan, mampu bekerja secara mandiri dan dalam tim\nBersedia untuk bekerja dari jarak jauh\nBersedia bekerja pada akhir pekan (subjek akan dibahas)",

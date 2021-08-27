@@ -1,8 +1,10 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity, paddingTop } from 'react-native'
-
+import { Register } from '..'
+import { useNavigation } from '@react-navigation/core'
 
 const createAccount = () => {
+    const navigation = useNavigation();
     return (
         <View style={styles.page}>
             <View style={{paddingBottom: 50}}>
@@ -11,7 +13,8 @@ const createAccount = () => {
                 />
             </View>
             <View style={styles.border}>
-                <TouchableOpacity style={styles.border}>
+                <TouchableOpacity style={styles.border} onPress={()=>{
+                        navigation.navigate('Register',{type:''});}}>
                     <Text style={{fontSize : 15, color : '#28527A'}}>Buat Akun</Text>
                 </TouchableOpacity>
             </View>

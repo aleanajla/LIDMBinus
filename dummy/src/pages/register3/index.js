@@ -4,7 +4,7 @@ import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { useState } from 'react/cjs/react.development'
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType'
 import CheckBox from 'react-native-check-box'
-import { Home } from '..'
+// import { Home } from '..'
 import { useNavigation } from '@react-navigation/core'
 
 const windowsWidth = Dimensions.get('window').width;
@@ -94,7 +94,7 @@ const Register3 = () => {
                     <Text style={styles.textBold2}>Dengan ini saya menyetujui Ketentuan Penggunaan dan Kebijakan Privasi dari Kampus Merdeka</Text>
                 </View>
 
-                <TouchableOpacity onPress={()=>{navigation.navigate('Home',{type:''});}} style={styles.conClose}>
+                <TouchableOpacity onPress={()=>{navigation.navigate('MainApp',{type:''});}} style={styles.conClose}>
                     <View style={{width : windowsWidth, alignItems : 'center', marginTop : 23}}>
                         <View style={styles.selanjutnya}>
                             <Text style={styles.selanjutnyaText}>SELANJUTNYA</Text>

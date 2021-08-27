@@ -149,12 +149,13 @@ const MainApp = () => {
 
 const router = () => {
     return (
+
         <Stack.Navigator>
+            <Stack.Screen name="CreateAccount" component={CreateAccount} options={{headerShown: false}}/>
             <Stack.Screen name="MainApp" component={MainApp} options={{headerShown: false}} />
             {/* <Stack.Screen name="Program" component= {Program} options= {{headerShown: false}}/> */}
             {/* <Stack.Screen name="News" component={News} options={{headerShown: false}}/> */}
             <Stack.Screen name="Register" component={Register} options={{headerShown: false}}/>
-            <Stack.Screen name="CreateAccount" component={CreateAccount} options={{headerShown: false}}/>
             <Stack.Screen name="SignIn" component={SignIn} options={{headerShown: false}}/>
             <Stack.Screen name="Profile" component={Profile} options={{headerShown: false}} />
             <Stack.Screen name="Settingss" component={Settingss} options={{headerShown: false}}/>

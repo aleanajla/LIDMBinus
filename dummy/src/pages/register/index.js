@@ -1,7 +1,9 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
+import { useNavigation } from '@react-navigation/core'
 
 const Register = () =>{
+    const navigation = useNavigation();
     return (
         <View style={styles.page}>
             <View style={styles.up}>
@@ -13,8 +15,9 @@ const Register = () =>{
                 <Text style={styles.textBold}>Pilih Posisi yang Sesuai</Text>
                 <View style={styles.box}></View>
             </View>
-            <View style={[ styles.down, {paddingTop: 30}]}>
-                <TouchableOpacity>
+            <View style={[ styles.down, {paddingTop: 30}]} >
+                <TouchableOpacity onPress={()=>{
+                        navigation.navigate('Register2',{type:''});}}>
                     <Text style={styles.text}>SELANJUTNYA</Text>
                 </TouchableOpacity>
             </View>

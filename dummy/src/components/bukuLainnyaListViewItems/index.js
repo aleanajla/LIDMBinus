@@ -4,8 +4,10 @@ import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { useNavigation } from '@react-navigation/core'
 
 
-const BukuLainnyaListViewItems = ({id, title, author, image_url}) => (
-    <TouchableOpacity>
+const BukuLainnyaListViewItems = ({id, title, author, image_url, desc, navigation}) => (
+    <TouchableOpacity onPress= {() => { 
+        navigation.navigate('DetailsBook', {id: id, title:title, author:author, image_url: image_url, desc:desc}); //kirim data
+    }}>
         <View style={styles.row}>
             <View style={styles.conBook}>
                 <Image source={{uri: image_url}} style={styles.imgBook}/>

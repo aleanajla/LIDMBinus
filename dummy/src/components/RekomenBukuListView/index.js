@@ -1,8 +1,9 @@
 import React from 'react';
 import {View, FlatList, StyleSheet, ScrollView, Image} from 'react-native';
 import RekomenBukuListViewItems from '../RekomenBukuListViewItems';
+import { useNavigation } from '@react-navigation/core';
 
-const RekomenBukuListView = ({itemList}) => (
+const RekomenBukuListView = ({itemList, navigation}) => (
     <ScrollView>
       <View>
         <FlatList 
@@ -12,7 +13,9 @@ const RekomenBukuListView = ({itemList}) => (
                 id={item.id}
                 title={item.title}            
                 author={item.author}
+                desc={item.desc}
                 image_url ={item.image_url}
+                navigation={navigation}
             />}
             // numColumns = {2}
         />

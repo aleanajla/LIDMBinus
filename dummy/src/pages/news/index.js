@@ -114,47 +114,6 @@ const News = () => {
                     itemList={filteredDataSource}
                     navigation={navigation}
                 />
-                {/* <TouchableOpacity onPress={()=>{navigation.navigate('DetailNews',{type:''});}}>
-                    <View style={styles.eachNews}>
-                        <View styles={styles.left}>
-                            <Image source={require('../../assets/images/nadiem.png')}/>
-                        </View>
-                        <View style={styles.right}>
-                            <Text style = {styles.title}>Kampus Merdeka ala Mas Menteri Nadiem Makarim, Seperti Apa Konsepnya?</Text>
-                            <Text style = {styles.desc}>Menteri Pendidikan dan Kebudayaan Republik Indonesia, Nadiem Makarim,  baru saja
-                                mengeluarkan lima permendikbud mengenai landasan penerapan kebijakan Merdeka...
-                            </Text>
-                            <Text style= {styles.more}>read more...</Text>
-                        </View>
-                    </View>
-                </TouchableOpacity>
-
-                <View style={styles.eachNews}>
-                    <View styles={styles.left}>
-                        <Image source={require('../../assets/images/nadiem2.png')}/>
-                    </View>
-                    <View style={styles.right}>
-                        <Text style = {styles.title}>Inilah Arti “Kampus Merdeka” dalam kebijakan “Merdeka Belajar” ala Mendikbud Nadiem</Text>
-                        <Text style = {styles.desc}>Nadiem menegaskan kebijakan Kampus Merdeka ini merupakan kelanjutan dari konsep
-                            Merdeka Belajar. Pelaksanaannya paling memungkinkan untuk segera...
-                        </Text>
-                        <Text style= {styles.more}>read more...</Text>
-                    </View>
-                </View>
-
-                <View style={styles.eachNews}>
-                    <View styles={styles.left}>
-                        <Image source={require('../../assets/images/kampusMerdeka.png')}/>
-                    </View>
-                    <View style={styles.right}>
-                        <Text style = {styles.title}>Kampus Merdeka ala Mas Menteri Nadiem Makarim, Seperti Apa Konsepnya?</Text>
-                        <Text style = {styles.desc}>"Kebijakan Kampus Merdeka ini merupakan kelanjutan dari konsep Merdeka Belajar.
-                            Pelaksanaannya paling memungkinkan untuk segera dilangsungkan, hanya mengubah
-                            peraturan menteri, tidak sampai mengubah Peraturan...
-                        </Text>
-                        <Text style= {styles.more}>read more...</Text>
-                    </View>
-                </View> */}
             </View>
         </ScrollView>
     )

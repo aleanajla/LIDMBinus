@@ -2,7 +2,7 @@ import React from 'react';
 import {View, FlatList, StyleSheet, ScrollView, Image} from 'react-native';
 import RelatedListViewItems from '../relatedListViewItems';
 
-const RelatedListView = ({itemList}) => (
+const RelatedListView = ({itemList, navigation}) => (
     <ScrollView>
       <View>
         <FlatList 
@@ -12,7 +12,9 @@ const RelatedListView = ({itemList}) => (
                 id={item.id}
                 title={item.title}            
                 author={item.author}
+                desc={item.desc}
                 image_url ={item.image_url}
+                navigation={navigation}
             />}
             numColumns = {2}
         />

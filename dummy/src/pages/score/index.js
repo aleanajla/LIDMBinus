@@ -1,7 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
-// import { Download, Info_blue} from '../../assets'
 import ScoreListView from '../../components/ScoreListView'
 import { scoreData } from '../../assets/jsonData/scoreData'
 import * as Progress from 'react-native-progress';
@@ -9,6 +8,7 @@ import { color } from 'react-native-elements/dist/helpers';
 import { useNavigation } from '@react-navigation/core'
 import { Register3 } from '..'
 import { Register2 } from '..'
+import { DetailsBook } from '..'
 
 const Score = () => {
     const navigation = useNavigation();
@@ -19,7 +19,7 @@ const Score = () => {
                     <Image source ={require('../../assets/icons/download.png')} style = {styles.download} />
                     <TouchableOpacity
                     onPress={()=>{
-                        navigation.navigate('Register2',{type:''});
+                        navigation.navigate('DetailsBook',{type:''});
                     }}>
                         <Image source ={require('../../assets/icons/infoBlue.png')} style = {styles.info} />
                     </TouchableOpacity>
@@ -38,8 +38,6 @@ const Score = () => {
                                         <Progress.Circle 
                                             progress={1} 
                                             animated={true}
-                                            // showsText={true} 
-                                            // formatText(progress) = {"A"}
                                             allowFontScaling={true}
                                             size={100} 
                                             thickness={10} 

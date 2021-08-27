@@ -3,10 +3,13 @@ import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Platform, 
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
 import { useNavigation } from '@react-navigation/core'
 import Modal from 'react-native-modal'
+import { DetailsBook } from '../../pages'
 
 
-const RelatedListViewItems = ({id, title, author, image_url}) => (
-    <TouchableOpacity>
+const RelatedListViewItems = ({id, title, author, image_url, desc, navigation}) => (
+    <TouchableOpacity onPress= {() => { 
+        navigation.navigate('DetailsBook', {id: id, title:title, author:author, image_url: image_url, desc:desc}); //kirim data
+    }}>
         <View style={styles.row}>
             <View style={styles.conBook}>
                 <Image source={{uri: image_url}} style={styles.imgBook}/>

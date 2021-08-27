@@ -2,7 +2,7 @@ import React from 'react';
 import {View, FlatList, StyleSheet, ScrollView, Image} from 'react-native';
 import MoreBooksListViewItems from '../MoreBooksListViewItems';
 
-const MoreBooksListView = ({itemList}) => (
+const MoreBooksListView = ({itemList, navigation}) => (
     <ScrollView>
       <View>
         <FlatList 
@@ -13,6 +13,8 @@ const MoreBooksListView = ({itemList}) => (
                 title={item.title}            
                 author={item.author}
                 image_url ={item.image_url}
+                desc={item.desc}
+                navigation={navigation}
             />}
             numColumns = {2}
         />

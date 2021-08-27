@@ -20,6 +20,7 @@ const MoreBooks = () => {
                 <View style={{paddingTop : 15}}>
                     <MoreBooksListView
                         itemList = {moreBooksData}
+                        navigation = {navigation}
                     />
                 </View>
             </View>

@@ -20,6 +20,7 @@ const Recomend = () => {
                 <View style={{paddingTop : 15}}>
                     <RecomendBooksListView
                         itemList = {recomendBooksData}
+                        navigation = {navigation}
                     />
                 </View>
             </View>

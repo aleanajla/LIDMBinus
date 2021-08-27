@@ -4,19 +4,22 @@ export const recomendBooksData =
             "id": "1",
             "title": "Predict and Surveil",
             "author": "Sarah Brayne",
-            "image_url": "https://i.ibb.co/Hg0y1hQ/book8.png"
+            "image_url": "https://i.ibb.co/Hg0y1hQ/book8.png",
+            "desc" : "Isaac Asimov quickened dozens of short stories and half a dozen novels with Laws of Robotics that restricted his fictional machines while leaving enough loopholes for propulsive plots. Frank Pasquale’s New Laws of Robotics takes aim at the more mundane artificial intelligence technology of today and our immediate tomorrow, but with more ambition. He plots a future where technologies like factory robots, medical diagnosis algorithms, and online learning make society more just. \n\nRather than just binding machines, Pasquale’s new laws aim to limit the humans who build and deploy them. He lays out four: that AI systems never pose as people; do not feed arms races for military or social control; augment professionals but don’t replace them; and always indicate the people who built, own, and control them.\nThis form of robot law enforcement is about much more than computer code—Pasquale calls for a society-wide reengineering of policy, politics, economics, and labor relations to set technology on a more regulated and egalitarian path. He wants to reprogram the future of tech like classroom robots and online platforms with labor unions and regulatory agencies. That future can be harder to imagine than the overfamiliar outlines of standard tech utopias, which don’t much concern themselves with administrative law. But Pasquale makes a good case for injecting more bureaucracy into our techno-dreams, if we really want to make the world a better place. —Tom Simonite "
         },
         {
             "id": "2",
             "title": "Voices From the Valley",
             "author": "Ben Tarnoff and Moira Weigel",
-            "image_url": "https://i.ibb.co/KzWDMZL/book7.png"
+            "image_url": "https://i.ibb.co/KzWDMZL/book7.png",
+            "desc" : "In Voices from the Valley, the celebrated writers and Logic cofounders Moira Weigel and Ben Tarnoff take an unprecedented dive into the tech industry, conducting unfiltered, in-depth, anonymous interviews with tech workers at all levels, including a data scientist, a start-up founder, a cook who serves their lunch, and a PR wizard. In the process, Weigel and Tarnoff open the conversation about the tech industry at large, a conversation that has previously been dominated by the voices of CEOs. Deeply illuminating, revealing, and at times lurid, Voices from the Valley is a vital and comprehensive view of an industry that governs our lives.\n\nFSG Originals × Logic dissects the way technology functions in everyday lives. The titans of Silicon Valley, for all their utopian imaginings, never really had our best interests at heart: recent threats to democracy, truth, privacy, and safety, as a result of tech’s reckless pursuit of progress, have shown as much. We present an alternate story, one that delights in capturing technology in all its contradictions and innovation, across borders and socioeconomic divisions, from history through the future, beyond platitudes and PR hype, and past doom and gloom. Our collaboration features four brief but provocative forays into the tech industry’s many worlds, and aspires to incite fresh conversations about technology focused on nuanced and accessible explorations of the emerging tools that reorganize and redefine life today."
         },
         {
             "id": "3",
             "title": "New Laws of Robotics",
             "author": "Brian Jefferson",
-            "image_url": "https://i.ibb.co/b2Cbn9D/book6.png"
+            "image_url": "https://i.ibb.co/b2Cbn9D/book6.png",
+            "desc" : "AI is poised to disrupt our work and our lives. We can harness these technologies rather than fall captive to them—but only through wise regulation.\n\nToo many CEOs tell a simple story about the future of work: if a machine can do what you do, your job will be automated. They envision everyone from doctors to soldiers rendered superfluous by ever-more-powerful artificial intelligence. They offer stark alternatives: make robots or be replaced by them.\n\nHow far should AI be entrusted to assume tasks once performed by humans? What is gained and lost when it does? What is the optimal mix of robotic and human interaction? New Laws of Robotics makes the case that policymakers must not allow corporations or engineers to answer these questions alone. The kind of automation we get—and who it benefits—will depend on myriad small decisions about how to develop AI. Pasquale proposes ways to democratize that decision making, rather than centralize it in unaccountable firms. Sober yet optimistic, New Laws of Robotics offers an inspiring vision of technological progress, in which human capacities and expertise are the irreplaceable center of an inclusive economy."
         },
 
     ]

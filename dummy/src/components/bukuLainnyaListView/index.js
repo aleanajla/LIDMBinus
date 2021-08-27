@@ -2,7 +2,7 @@ import React from 'react';
 import {View, FlatList, StyleSheet, ScrollView, Image} from 'react-native';
 import BukuLainnyaListViewItems from '../bukuLainnyaListViewItems';
 
-const BukuLainnyaListView = ({itemList}) => (
+const BukuLainnyaListView = ({itemList, navigation}) => (
     <ScrollView>
       <View>
         <FlatList 
@@ -13,6 +13,8 @@ const BukuLainnyaListView = ({itemList}) => (
                 title={item.title}            
                 author={item.author}
                 image_url ={item.image_url}
+                desc={item.desc}
+                navigation={navigation}
             />}
         />
       </View>

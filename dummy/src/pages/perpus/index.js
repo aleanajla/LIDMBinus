@@ -63,13 +63,28 @@ const Perpus = () => {
             <View style = {styles.garis}/>
             <ScrollView horizontal={true}>
                 <View style={styles.bookOpt}>
-                    <Text style={styles.option}>Semua</Text>
-                    <Text style={styles.option}>Umum</Text>
-                    <Text style={styles.option}>Tren</Text>
-                    <Text style={styles.option}>Teknologi</Text>
-                    <Text style={styles.option}>Sosial</Text>
-                    <Text style={styles.option}>Literatur</Text>
-                    <Text style={styles.option}>Sains</Text>
+                    <TouchableOpacity>
+                        <Text style={styles.option}>Semua</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Text style={styles.option}>Umum</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Text style={styles.option}>Tren</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Text style={styles.option}>Teknologi</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Text style={styles.option}>Sosial</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Text style={styles.option}>Literatur</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Text style={styles.option}>Sains</Text>
+                    </TouchableOpacity>
+                   
                 </View>
             </ScrollView>
             <View style={styles.square}></View>
@@ -102,6 +117,7 @@ const Perpus = () => {
                     </TouchableOpacity>
                     <RekomenBukuListView
                         itemList = {recomendBooksData}
+                        navigation={navigation}
                     />
                     <TouchableOpacity onPress = {()=>{ navigation.navigate('MoreBooks',{type:''})}}> 
                         <View style={styles.recTop}>
@@ -111,6 +127,7 @@ const Perpus = () => {
                     </TouchableOpacity>
                     <BukuLainnyaListView
                         itemList = {moreBooksData}
+                        navigation={navigation}
                     />
                 </View>
         </View>

@@ -42,7 +42,8 @@ import { Home,
         MoreBooks,
         Register2,
         Register3,
-        DetailsBook
+        DetailsBook,
+        MyBooks
 } from '../pages/index.js';
 import { BottomTabNavigator } from '../components';
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType';
@@ -187,6 +188,7 @@ const router = () => {
             <Stack.Screen name="Register2" component={Register2} options={{headerShown: false}}/>
             <Stack.Screen name="Register3" component={Register3} options={{headerShown: false}}/>
             <Stack.Screen name="DetailsBook" component={DetailsBook} options={{headerShown: false}}/>
+            <Stack.Screen name="MyBooks" component={MyBooks} options={{headerShown: false}}/>
         </Stack.Navigator>
     )
 }

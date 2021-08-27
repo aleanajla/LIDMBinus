@@ -39,6 +39,7 @@ import MoreBooks from './moreBooks'
 import Register2 from './register2'
 import Register3 from './register3'
 import DetailsBook from './detailsBook'
+import MyBooks from './myBooks'
 
 
 export{
@@ -82,5 +83,6 @@ export{
     MoreBooks,
     Register2,
     Register3,
-    DetailsBook
+    DetailsBook,
+    MyBooks
 }

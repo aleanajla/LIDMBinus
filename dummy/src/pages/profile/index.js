@@ -106,12 +106,15 @@ const Profile = () => {
                 </View>
                 
                 <View style = {styles.myBook}>
-                    <View style= {{flexDirection:'row'}}>
-                        <Text style ={{color: '#28527A', fontWeight: 'bold', fontSize:18}}>Buku Saya</Text>
-                        <View style = {{marginLeft:220}}>
-                            <Image source= {require('../../assets/icons/arrow_right2.png')}/>
+                    <TouchableOpacity onPress = {()=>{
+                                navigation.navigate('MyBooks',{type:''})}}>
+                        <View style= {{flexDirection:'row'}}>
+                            <Text style ={{color: '#28527A', fontWeight: 'bold', fontSize:18}}>Buku Saya</Text>
+                            <View style = {{marginLeft:220}}>
+                                <Image source= {require('../../assets/icons/arrow_right2.png')}/>
+                            </View>
                         </View>
-                    </View>
+                    </TouchableOpacity>
                     <View style = {styles.books}>
                         <View style ={styles.styleBooks}>
                             <Image source = {require('../../assets/images/book3.png')} style={{marginBottom:5}}/>

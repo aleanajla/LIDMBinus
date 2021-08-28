@@ -1,10 +1,30 @@
-import React from 'react'
+import React, {useState} from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, paddingTop, TextInput } from 'react-native'
 import { useNavigation } from '@react-navigation/core'
 import { Home } from '../../pages/index.js'
+import { Button } from 'react-native-elements';
 
-const signIn = () => {
+const SignIn = () => {
     const navigation = useNavigation();
+    const [textInputPassword, setTextInputPassword] = useState('');
+    const [textInputEmail, setTextInputEmail] = useState('');
+
+    const checkTextInput = () => {
+        //Check for the Email TextInput
+        if (!textInputEmail.trim()) {
+          alert('Masukkan Email');
+          return;
+        }
+        //Check for the Password TextInput
+        if (!textInputPassword.trim()) {
+          alert('Masukkan kata sandi');
+          return;
+        }
+        //Checked Successfully
+        //Do whatever you want
+        navigation.navigate('MainApp');
+    };
+
     return (
         <View style={styles.page}>
             <View style={styles.up}>
@@ -15,33 +35,49 @@ const signIn = () => {
             <View style={styles.loginText}>
                 <Text style={styles.textBold}>Email</Text>
                 <View style={styles.box}>
-                    <TextInput style={styles.input} placeholder="Email"/>
+                    <TextInput 
+                    style={styles.input} 
+                    onChangeText={(value) => setTextInputEmail(value)}
+                    underlineColorAndroid="transparent" placeholder="Email"/>
                 </View>
                 <Text style={[styles.textBold, {paddingTop:31}]}>Kata Sandi</Text>
                 <View style={styles.box}>
-                    <TextInput style={styles.input} placeholder="Password"/>
+                    <TextInput 
+                    style={styles.input} 
+                    onChangeText={(value) => setTextInputPassword(value)}
+                    underlineColorAndroid="transparent"
+                    placeholder="Password"/>
                 </View>
             </View>
-            <View style={[ styles.down, {paddingTop: 30}]}>
-                <TouchableOpacity onPress = {()=>{ navigation.navigate('Home',{type:''})}}> 
+            <View style={styles.down}>
+                {/* <TouchableOpacity onPress={()=>{navigation.navigate('MainApp',{type:''});}} style={styles.conClose}>
                     <Text style={styles.text}>MASUK</Text>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text style={styles.text}>DAFTAR DIRI</Text>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text style={{fontSize: 15, color: '#28527A', fontWeight: 'bold'}}>Forgot Password? </Text>
+                </TouchableOpacity> */}
+                <View style={{alignItems : 'center'}}>
+                    <View style={styles.button}>
+                        <Button 
+                            title="MASUK"
+                            type="clear"
+                            onPress={checkTextInput}
+                            color='white' 
+                            buttonStyle={{color : 'white'}}
+                            containerStyle={{borderRadius:20, width : 140, height:40, justifyContent : 'center'}}
+                            titleStyle={{color : '#28527A', fontWeight : 'bold', fontSize : 15}}
+                        />
+                    </View>
+                </View>
+                <TouchableOpacity onPress={()=>{navigation.navigate('LupaKataSandi',{type:''});}}>
+                    <Text style={{fontSize: 15, marginTop : 10, color: '#28527A', fontWeight: 'bold'}}>Lupa Kata Sandi? </Text>
                 </TouchableOpacity>
             </View>
         </View>
     )
 }
 
-export default signIn;
+export default SignIn;
 
 const styles = StyleSheet.create({
     page:{
-        // alignItems:'center',
     },
     up:{
         paddingTop : 139,
@@ -60,7 +96,10 @@ const styles = StyleSheet.create({
         padding : 8
     },
     down:{
-        alignItems : 'center'
+        alignItems : 'center',
+        // backgroundColor : 'red',
+        height : 150,
+        justifyContent : 'center'
     },
     text:{
         width: 122,
@@ -71,7 +110,6 @@ const styles = StyleSheet.create({
         paddingTop: 7,
         paddingLeft : 37,
         margin : 9,
-        // alignItems: 'center',
         backgroundColor : '#FAD586',
         borderBottomLeftRadius: 60,
         borderTopLeftRadius: 60,
@@ -89,5 +127,10 @@ const styles = StyleSheet.create({
     },
     input:{
         marginLeft: 10,
+    },
+    button:{
+        backgroundColor : '#FAD586',
+        borderRadius :64,
+        justifyContent : 'center'
     }
 })

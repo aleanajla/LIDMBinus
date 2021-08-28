@@ -12,6 +12,7 @@ import { recomendBooksData } from '../../assets/jsonData/recomendBooksData'
 import RekomenBukuListView from '../../components/RekomenBukuListView'
 import { moreBooksData } from '../../assets/jsonData/moreBooksData'
 import BukuLainnyaListView from '../../components/bukuLainnyaListView'
+import { allBooksData } from '../../assets/jsonData/allBooks'
 
 
 const windowsWidth = Dimensions.get('window').width;
@@ -43,41 +44,6 @@ const Perpus = () => {
     const navigation = useNavigation();
     return (
         <ScrollView>
-        {/* <Modal
-            animationType="slide" //slide, fade, none
-            transparent={true} //true or false
-            visible={modalVisible}
-            hasBackdrop={true}
-            backdropOpacity={0.5}
-            onRequestClose={() => {
-                setModalVisible(!modalVisible)}}
-            >
-                <View styles={styles.centeredView}>
-                    <View style={styles.modalView}>
-                    <TouchableOpacity onPress={()=> setModalVisible(!modalVisible)}>
-                        <View style={styles.closeBtn}>
-                            <Image source = {require('../../assets/icons/closeBlack.png')}/>
-                        </View>
-                    </TouchableOpacity>
-                        <View style={styles.topp}>
-                            <Image source={require('../../assets/images/predict.png')} style={styles.cover}/>
-                            <View style={styles.rightt}>
-                                <Text style={styles.title}>New Laws of Robotics: Defending Human Expertise in the Age of AI</Text>
-                                <Text style={styles.author}>by Frank Pasquale</Text>
-                                <View style={styles.add}>
-                                    <Text style={styles.addText}>Add to Libary</Text>
-                                </View>
-                            </View>
-                        </View>
-                        <Text style={styles.desc}>
-                            Isaac Asimov quickened dozens of short stories and half a dozen novels with Laws of Robotics that restricted his fictional machines while leaving enough loopholes for propulsive plots. Frank Pasquale’s New Laws of Robotics takes aim at the more mundane artificial intelligence technology of today and our immediate tomorrow, but with more ambition. He plots a future where technologies like factory robots, medical diagnosis algorithms, and online learning make society more just.
-                            Rather than just binding machines, Pasquale’s new laws aim to limit the humans who build and deploy them. He lays out four: that AI systems never pose as people; do not feed arms races for military or social control; augment professionals but don’t replace them; and always indicate the people who built, own, and control them. 
-                            This form of robot law enforcement is about much more than computer code—Pasquale calls for a society-wide reengineering of policy, politics, economics, and labor relations to set technology on a more regulated and egalitarian path. He wants to reprogram the future of tech like classroom robots and online platforms with labor unions and regulatory agencies. That future can be harder to imagine than the overfamiliar outlines of standard tech utopias, which don’t much concern themselves with administrative law. But Pasquale makes a good case for injecting more bureaucracy into our techno-dreams, if we really want to make the world a better place. —Tom Simonite
-                        </Text>
-                    </View> 
-                </View>
-            
-        </Modal> */}
         <View style={styles.pages}>
             <Header/>
                 
@@ -116,9 +82,9 @@ const Perpus = () => {
                         onChangeText={(text) => searchFilterFunction(text)}
                         value={search}
                         underlineColorAndroid="transparent"
-                        placeholder="Search Here"
+                        placeholder="Cari disini"
                     />
-                    <Image source={require('../../assets/icons/Search.png')} style={{marginLeft:185}}/>
+                    <Image source={require('../../assets/icons/Search.png')} style={{marginLeft:200}}/>
                 </View>
                 <Image source = {require('../../assets/icons/sort.png')}/>
             </View>
@@ -260,22 +226,6 @@ const styles = StyleSheet.create({
     reccomen:{
         flexDirection : 'row',
         paddingTop : 14
-    },
-    bookLeft:{
-        width: '50%',
-        alignItems : 'center'
-    },
-    bookRight:{
-        alignItems : 'center'
-    },
-    bookTitle:{
-        color : WARNA_SEKUNDER,
-        fontSize : 15,
-        fontWeight : 'bold'
-    },
-    bookAuthor:{
-        color : WARNA_SEKUNDER,
-        fontSize : 11
     },
     arrowMore:{
         top : 2,

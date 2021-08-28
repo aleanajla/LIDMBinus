@@ -40,6 +40,7 @@ import Register2 from './register2'
 import Register3 from './register3'
 import DetailsBook from './detailsBook'
 import MyBooks from './myBooks'
+import LupaKataSandi from './lupaKataSandi'
 
 
 export{
@@ -84,5 +85,6 @@ export{
     Register2,
     Register3,
     DetailsBook,
-    MyBooks
+    MyBooks,
+    LupaKataSandi
 }

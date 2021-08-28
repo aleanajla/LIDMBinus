@@ -1,11 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react';
 import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, TextInput, Dimensions, Picker} from 'react-native'
 import { WARNA_SEKUNDER, WARNA_UTAMA } from '../../utils/constants'
-import { useState } from 'react/cjs/react.development'
+// import { useState } from 'react/cjs/react.development'
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType'
 import CheckBox from 'react-native-check-box'
-// import { Home } from '..'
 import { useNavigation } from '@react-navigation/core'
+import Modal from 'react-native-modal'
+import { Button } from 'react-native-elements';
 
 const windowsWidth = Dimensions.get('window').width;
 const windowsHeight = Dimensions.get('window').height;
@@ -14,8 +15,64 @@ const Register3 = () => {
     const navigation = useNavigation();
     const [isChecked, setIsChecked] = useState(false);
     const [selectedPicker, setSelectedPicker] = useState("tgl");
+    const [modalVisible, setModalVisible] = useState(false);
+
+    const [textInputUniv, setTextInputUniv] = useState('');
+    const [textInputProdi, setTextInputProdi] = useState('');
+    const [textInputNim, setTextInputNim] = useState('');
+    const [textInputNik, setTextInputNik] = useState('');
+
+    const checkTextInput = () => {
+        if (!textInputUniv.trim()) {
+            alert('Masukkan Perguruan Tinggi Asal');
+            return;
+        }
+          if (!textInputProdi.trim()) {
+            alert('Masukkan Program Studi');
+            return;
+        }
+          if (!textInputNim.trim()) {
+            alert('Masukkan Nomor Induk Mahasiswa');
+            return;
+        }
+        if (!textInputNik.trim()) {
+            alert('Masukkan Nomor Induk Kependudukan');
+            return;
+        }
+        setModalVisible(true);
+    }
+    
     return (
+        
         <ScrollView>
+            <Modal
+                animationType="slide" //slide, fade, none
+                transparent={true} //true or false
+                visible={modalVisible}
+                backdropOpacity={0.5}
+                onRequestClose={() => {
+                setModalVisible(!modalVisible)}}
+                >
+                    <View styles={styles.centeredView}>
+                        <View style={styles.modalView}>
+                            <TouchableOpacity
+                                onPress={()=> setModalVisible(!modalVisible)}>
+                                <View style={styles.closeBtn}>
+                                    <Image source = {require('../../assets/icons/closeBlack.png')}/>
+                                </View>
+                            </TouchableOpacity>
+                            <Image source = {require('../../assets/icons/checked.png')} style={{width : 100, height:100}}/>
+                            <Text style={{fontSize:16, color:WARNA_SEKUNDER, fontWeight:'bold', marginTop:15, textAlign : 'center'}}>Akun Anda Telah Berhasil Dibuat</Text>
+                            <TouchableOpacity onPress={()=>{navigation.navigate('SignIn',{type:''});}}>
+                                <View style = {styles.btnSeeMore}>
+                                    <Text style={{color : '#28527A', fontWeight:'bold', fontSize : 15}}>SIGN IN</Text>
+                                </View>
+                            </TouchableOpacity>
+                            
+                        </View> 
+                    </View>
+                    
+            </Modal>
             <View style={styles.page}>
             <View style={styles.up}>
                 <Image
@@ -29,7 +86,11 @@ const Register3 = () => {
                 <Text style={styles.textBold}>Perguruan Tinggi Asal</Text>
                 <View style={{alignItems : 'center'}}>
                     <View style={styles.box}>
-                        <TextInput style={styles.input} placeholder="Masukkan perguruan tinggi asal"/>
+                        <TextInput onChangeText={
+                                    (value) => setTextInputUniv(value)
+                                }
+                              underlineColorAndroid="transparent"
+                              style={styles.input} placeholder="Masukkan perguruan tinggi asal"/>
                     </View>
                 </View>
             </View>
@@ -37,7 +98,12 @@ const Register3 = () => {
                 <Text style={styles.textBold}>Program Studi</Text>
                 <View style={{alignItems : 'center'}}>
                     <View style={styles.box}>
-                        <TextInput style={styles.input} placeholder="Masukkan program studi"/>
+                        <TextInput 
+                        onChangeText={
+                            (value) => setTextInputProdi(value)
+                        }
+                      underlineColorAndroid="transparent"
+                      style={styles.input} placeholder="Masukkan program studi"/>
                     </View>
                 </View>
             </View>
@@ -45,7 +111,12 @@ const Register3 = () => {
                 <Text style={styles.textBold}>Nomor Induk Mahasiswa (NIM)</Text>
                 <View style={{alignItems : 'center'}}>
                     <View style={styles.box}>
-                        <TextInput style={styles.input} placeholder="Masukkan NIM lengkap"/>
+                        <TextInput s
+                        onChangeText={
+                            (value) => setTextInputNim(value)
+                        }
+                      underlineColorAndroid="transparent"
+                      tyle={styles.input} placeholder="Masukkan NIM lengkap"/>
                     </View>
                 </View>
             </View>
@@ -53,7 +124,12 @@ const Register3 = () => {
                 <Text style={styles.textBold}>Nomor Induk Kependudukan (NIK)</Text>
                 <View style={{alignItems : 'center'}}>
                     <View style={styles.box}>
-                        <TextInput style={styles.input} placeholder="Masukkan NIK lengkap"/>
+                        <TextInput 
+                        onChangeText={
+                            (value) => setTextInputNik(value)
+                        }
+                      underlineColorAndroid="transparent"
+                      style={styles.input} placeholder="Masukkan NIK lengkap"/>
                     </View>
                 </View>
             </View>
@@ -64,13 +140,15 @@ const Register3 = () => {
                         <View style={styles.box2}>
                             <TextInput style={styles.input} placeholder="tgl"/>
                             {/* <Picker
-                                // style={{paddingLeft: 10}}
+                                style={{paddingLeft: 10}}
                                 selectedValue={selectedPicker}
                                 onValueChange={(itemValue, itemIndex)=> setSelectedPicker(itemValue)}>
-                                <Picker.Item label="Label 1" value="1" style={{color:'red'}}/>
-                                <Picker.Item label="Label 2" value="2"/>
-                            </Picker>
-                            <Text>{selectedPicker}</Text> */}
+                                <Picker.Item label="tgl" value="1"/>
+                                <Picker.Item label="1" value="2"/>
+                                <Picker.Item label="2" value="3"/>
+                                <Picker.Item label="3" value="4"/>
+                            </Picker> */}
+                            {/* <Text>{selectedPicker}</Text> */}
                         </View>
                         
                         <View style={styles.box3}>
@@ -89,18 +167,22 @@ const Register3 = () => {
                         isChecked = {isChecked}
                         onClick= {() => {setIsChecked(!isChecked)}}
                         tintColors={{false: "white", true:"#022E57"}}
-                        // rightText={"Dengan ini saya menyetujui Ketentuan Penggunaan dan Kebijakan Privasi dari Kampus Merdeka"}
                     />
                     <Text style={styles.textBold2}>Dengan ini saya menyetujui Ketentuan Penggunaan dan Kebijakan Privasi dari Kampus Merdeka</Text>
                 </View>
-
-                <TouchableOpacity onPress={()=>{navigation.navigate('MainApp',{type:''});}} style={styles.conClose}>
-                    <View style={{width : windowsWidth, alignItems : 'center', marginTop : 23}}>
-                        <View style={styles.selanjutnya}>
-                            <Text style={styles.selanjutnyaText}>SELANJUTNYA</Text>
-                        </View>
+                <View style={{alignItems : 'center', marginTop : 20}}>
+                    <View style={styles.button}>
+                        <Button 
+                            title="BUAT AKUN"
+                            type="clear"
+                            onPress={checkTextInput}
+                            color='white' 
+                            buttonStyle={{color : 'white'}}
+                            containerStyle={{borderRadius:20, width : 140, height:40, justifyContent : 'center'}}
+                            titleStyle={{color : '#28527A', fontWeight : 'bold', fontSize : 15}}
+                        />
                     </View>
-                </TouchableOpacity>
+                </View>
             </View>
             
             </View>
@@ -152,11 +234,11 @@ const styles = StyleSheet.create({
     },
     box2:{
         backgroundColor : '#E5E5E5',
-        // width : windowsWidth-250,
-        width : 80,
-        height : 40,
         borderRadius : 10,
-        marginTop : 5,
+        justifyContent : 'center',
+        paddingLeft : 8,
+        width : 60,
+        height : 40,
         alignItems : 'center'
     },
     box3:{
@@ -164,7 +246,6 @@ const styles = StyleSheet.create({
         width : 117,
         height : 40,
         borderRadius : 10,
-        marginTop : 5,
         alignItems : 'center'
     },
     box4:{
@@ -172,7 +253,6 @@ const styles = StyleSheet.create({
         width : 87,
         height : 40,
         borderRadius : 10,
-        marginTop : 5,
         alignItems : 'center'
     },
     ttl:{
@@ -181,6 +261,7 @@ const styles = StyleSheet.create({
         width : windowsWidth,
         paddingLeft : 47,
         paddingRight : 47,
+        marginTop : 5,
     },
     textBold2:{
         // left : 97,
@@ -212,6 +293,50 @@ const styles = StyleSheet.create({
     selanjutnyaText:{
         color : '#28527A',
         fontWeight : 'bold',
+    },
+    centeredView :{
+        flex: 1,
+        justifyContent: "center",
+        width: windowsWidth,
+        height: windowsWidth,
+        alignItems: "center",
+        marginTop: 22
+    },
+    modalView: {
+        margin:20,
+        backgroundColor: "white",
+        borderRadius: 20,
+        paddingTop: 20,
+        paddingLeft:35,
+        paddingRight:35,
+        paddingBottom:35,
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2
+        },
+        shadowOpacity: 0.25,
+        elevation:5,
+    },
+    closeBtn :{
+        marginLeft : 250,
+        marginBottom : 20
+    },
+    btnSeeMore:{
+        width: 110, 
+        height: 35, 
+        backgroundColor : '#FAD586',
+        alignItems : 'center',
+        justifyContent: 'center',
+        borderRadius : 20,
+        marginTop : 15
+        
+    },
+    button:{
+        backgroundColor : '#FAD586',
+        borderRadius :64,
+        justifyContent : 'center'
     }
 
 

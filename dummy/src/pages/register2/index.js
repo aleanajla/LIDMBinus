@@ -1,12 +1,41 @@
-import React from 'react'
+import React, {useState} from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions, TextInput, ScrollView} from 'react-native'
 import { useNavigation } from '@react-navigation/core'
+import { Button } from 'react-native-elements';
 
 const windowsWidth = Dimensions.get('window').width;
 const windowsHeight = Dimensions.get('window').height;
 
+
 const Register2 = () =>{
     const navigation = useNavigation();
+    const [textInputPassword, setTextInputPassword] = useState('');
+    const [textInputEmail, setTextInputEmail] = useState('');
+    const [textInputCheckEmail, setTextInputCheckEmail] = useState('');
+    const checkTextInput = () => {
+        //Check for the Password TextInput
+        if (!textInputEmail.trim()) {
+          alert('Masukkan Email');
+          return;
+        }
+        if(!textInputCheckEmail.trim()){
+            alert('Masukkan Cek Email');
+            return;
+        }
+        if(textInputEmail.trim() != textInputCheckEmail.trim()){
+            alert('Alamat email tidak cocok');
+            return;
+        }
+        //Check for the Email TextInput
+        if (!textInputPassword.trim()) {
+          alert('Masukkan kata sandi');
+          return;
+        }
+        //Checked Successfully
+        //Do whatever you want
+        navigation.navigate("Register3");
+    };
+
     return (
         <ScrollView>
             <View style={styles.page}>
@@ -22,32 +51,62 @@ const Register2 = () =>{
                     <View style={styles.container}>
                         <Text style={styles.textBold}>Email</Text>
                         <View style={styles.box}>
-                            <TextInput style={styles.input} placeholder="Masukkan alamat email yang aktif"/>
+                            <TextInput 
+                             onChangeText={
+                                    (value) => setTextInputEmail(value)
+                                }
+                              underlineColorAndroid="transparent"
+                              style={styles.input} placeholder="Masukkan alamat email yang aktif"/>
                         </View>
                         <Text style={styles.little}>Pastikan alamat email ini dapat anda akses</Text>
                     </View>
                     <View style={styles.container}>
                         <Text style={styles.textBold}>Ketik Ulang Email</Text>
                         <View style={styles.box}>
-                            <TextInput style={styles.input} placeholder="Masukkan alamat email yang aktif"/>
+                            <TextInput style={styles.input}
+                            onChangeText={
+                                (value) => setTextInputCheckEmail(value)
+                              }
+                              underlineColorAndroid="transparent"
+                            placeholder="Masukkan alamat email yang aktif"/>
                         </View>
                         <Text style={styles.little}>Pastikan alamat email ini dapat anda akses</Text>
                     </View>
                     <View style={styles.container}>
                         <Text style={styles.textBold}>Kata Sandi</Text>
                         <View style={styles.box}>
-                            <TextInput style={styles.input} placeholder="Kata Sandi"/>
+                            <TextInput 
+                            onChangeText={
+                                (value) => setTextInputPassword(value)
+                              }
+                              underlineColorAndroid="transparent"
+                              style={styles.input} placeholder="Kata Sandi"
+                              secureTextEntry = {true}
+                              />
                         </View>
                         <Text style={styles.little}>Minimal 8 karakter, dan mengandung kombinasi huruf kecil, huruf besar dan angka</Text>
                     </View>
                 </View>
-                <TouchableOpacity onPress={()=>{navigation.navigate("Register3", {type:''});}} style={styles.conClose}>
+                <View style={{alignItems : 'center'}}>
+                    <View style={styles.button}>
+                        <Button 
+                            title="SELANJUTNYA"
+                            type="clear"
+                            onPress={checkTextInput}
+                            color='white' 
+                            buttonStyle={{color : 'white'}}
+                            containerStyle={{borderRadius:20, width : 140, height:40, justifyContent : 'center'}}
+                            titleStyle={{color : '#28527A', fontWeight : 'bold', fontSize : 15}}
+                        />
+                    </View>
+                </View>
+                {/* <TouchableOpacity onPress={()=>{navigation.navigate("Register3", {type:''});}} style={styles.conClose}>
                     <View style={{width : windowsWidth, alignItems : 'center', marginTop : 23}}>
                         <View style={styles.selanjutnya}>
                             <Text style={styles.selanjutnyaText}>SELANJUTNYA</Text>
                         </View>
                     </View>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
             </View>
         </ScrollView>
     )
@@ -126,18 +185,10 @@ const styles = StyleSheet.create({
     container:{
         marginBottom: 25,
     },
-    selanjutnya :{
-        // marginTop : 20,
+    button:{
         backgroundColor : '#FAD586',
-        width : 140,
-        height : 40,
-        justifyContent : 'center',
-        alignItems : 'center',
-        borderRadius :64
-    },
-    selanjutnyaText:{
-        color : '#28527A',
-        fontWeight : 'bold',
+        borderRadius :64,
+        justifyContent : 'center'
     }
 
 })

@@ -52,9 +52,11 @@ const DetailsProgram = ({route}) =>{
                     <Text style={styles.desc}>{place}</Text>
                     <Text style={styles.desc}>{time}</Text>
                 </View>
-                <View style={styles.conDaftar}>
-                    <Text style={styles.daftar}>Daftar</Text>
-                </View>
+                <TouchableOpacity onPress={()=>{navigation.navigate('CompleteDocument',{type:''});}}>
+                    <View style={styles.conDaftar}>
+                        <Text style={styles.daftar}>Daftar</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
             <View style={styles.certif}>
                 <View style={styles.left}>

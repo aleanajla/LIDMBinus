@@ -10,15 +10,17 @@ const CompleteDocument = () => {
         <ScrollView>
              <View style={StyleSheet.pages}>
                 <View style={styles.header}>
-                    <TouchableOpacity onPress={()=>{navigation.navigate('Settingss',{type:''});}}>
+                    <TouchableOpacity onPress={()=>{navigation.goBack()}}>
                         <Image source = {require('../../assets/icons/arrowBack.png')} style={{width : 24, height:24}}/>
                     </TouchableOpacity>
-                    <Text style={styles.title3}>SIMPAN</Text>
+                    <TouchableOpacity onPress={()=>{navigation.goBack()}}>
+                        <Text style={styles.title3}>SIMPAN</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
             <View style={styles.inside}>
                 <View style={styles.title}>
-                    <Text style={styles.titleTxt}>Selesaikan Pengiisian Dokumen</Text>
+                    <Text style={styles.titleTxt}>Selesaikan Pengisian Dokumen</Text>
                     <View style={styles.line}></View>
                 </View>
                 <View style={styles.container}>

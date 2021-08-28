@@ -4,32 +4,37 @@ import { Settingss, Certificate, myRewards} from '../../pages/index.js'
 import { useNavigation } from '@react-navigation/core'
 import * as Progress from 'react-native-progress';
 import { color } from 'react-native-elements/dist/helpers';
+import { Avatar } from 'react-native-elements';
 
 const Profile = () => {
     const navigation = useNavigation();
     return (
         <ScrollView style = {styles.profileCon}>
             <View>
-                <View style={{backgroundColor:'#8AC4D0'}}>
-                    <TouchableOpacity onPress={()=>{navigation.goBack()}}>
-                        <Image source = {require('../../assets/icons/arrowBack.png')} style={{width : 20, height:20, marginLeft:20, marginTop:20}}/>
+                <View style={styles.header1}>
+                    <View>
+                        <TouchableOpacity onPress={()=>{navigation.goBack()}}>
+                            <Image source = {require('../../assets/icons/arrowBack.png')}/>
+                        </TouchableOpacity>
+                    </View>
+                    <TouchableOpacity onPress = {()=>{navigation.navigate('Settingss',{type:''})}}>
+                            <Image source = {require('../../assets/icons/settings.png')} style = {styles.setting}/>
                     </TouchableOpacity>
                 </View>
                 <View style = {styles.header}>
-                    <View style = {styles.tempProfile}></View>
+                    <Avatar
+                        size="large"
+                        rounded
+                        overlayContainerStyle={{backgroundColor: 'white'}}
+                        title="AW"
+                        onPress={() => console.log("Works!")}
+                        activeOpacity={0.7}
+                        titleStyle={{color : 'black', fontSize : 25, fontWeight: 'bold'}}
+                    />
                     <View style= {styles.headerStatus}>
                         <Text style = {styles.name}>ANDREW WILLY</Text>
                         <Text style = {styles.status}>Mahasiswa</Text>
                         <Text style = {styles.univ}>Universitas Bina Nusantara</Text>
-                    </View>
-                    <View style = {styles.conSetting}>
-                        <TouchableOpacity
-                            onPress = {()=>{
-                                navigation.navigate('Settingss',{type:''})
-                            }}
-                        >
-                            <Image source = {require('../../assets/icons/settings.png')} style = {styles.setting}/>
-                        </TouchableOpacity>
                     </View>
                 </View>
                 <View style = {styles.programCon}>
@@ -157,13 +162,23 @@ const styles = StyleSheet.create({
     profileCon:{
         marginBottom:30
     },
+    header1:{
+        flexDirection: 'row',
+        backgroundColor: '#8AC4D0',
+        justifyContent : 'space-between',
+        alignItems : 'center',
+        paddingLeft : 20,
+        paddingRight : 20,
+        paddingTop : 15
+
+    },
     header: {
         flexDirection: 'row',
         backgroundColor: '#8AC4D0',
-        height: 120,
+        height: 100,
         borderBottomRightRadius: 20,
         borderBottomLeftRadius: 20,
-        padding: 20
+        paddingLeft : 50
     },
     tempProfile: {
         backgroundColor: '#FFFFFF',
@@ -172,13 +187,14 @@ const styles = StyleSheet.create({
         borderRadius:50
     },
     headerStatus: {
-        marginLeft: 30,
+        marginLeft: 20,
         marginTop:8,
     },
     name: {
         fontSize: 22,
         fontWeight: 'bold',
         color: '#000000',
+        left : 4
     },
     status: {
         color: '#000000',

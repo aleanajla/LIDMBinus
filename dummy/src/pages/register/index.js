@@ -27,10 +27,12 @@ const Register = () =>{
                     </Picker>
                 </View>
             </View>
-            <View style={[ styles.down, {paddingTop: 30}]} >
+            <View style={{alignItems : 'center', marginTop : 30}}>
                 <TouchableOpacity onPress={()=>{
                         navigation.navigate('Register2',{type:''});}}>
-                    <Text style={styles.text}>SELANJUTNYA</Text>
+                    <View style={styles.box1}>
+                        <Text style={styles.text}>SELANJUTNYA</Text>
+                    </View>
                 </TouchableOpacity>
             </View>
         </View>
@@ -59,23 +61,18 @@ const styles = StyleSheet.create({
         color: '#28527A',
         padding : 8
     },
-    down:{
-        alignItems : 'center'
+    box1:{
+        backgroundColor : '#FAD586',
+        width : 140,
+        height : 40,
+        justifyContent : 'center',
+        alignItems : 'center',
+        borderRadius : 20
     },
     text:{
-        width: 130,
-        height : 37,
-        fontSize: 15,
+        fontSize : 15,
         fontWeight : 'bold',
-        color: '#28527A',
-        padding: 8,
-        paddingLeft : 14,
-        margin : 9,
-        backgroundColor : '#FAD586',
-        borderBottomLeftRadius: 60,
-        borderTopLeftRadius: 60,
-        borderBottomRightRadius: 60,
-        borderTopRightRadius: 60,
+        color : '#28527A',
     },
     box:{
         height: 40,

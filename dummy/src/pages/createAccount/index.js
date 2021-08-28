@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, paddingTop } from 'rea
 import { Register } from '..'
 import { useNavigation } from '@react-navigation/core'
 
+
 const createAccount = () => {
     const navigation = useNavigation();
     return (
@@ -20,7 +21,10 @@ const createAccount = () => {
             </View>
             <View style={styles.loginText}>
                 <Text style={{fontSize: 13, color: '#28527A'}}>Sudah Punya Akun?</Text>
-                <Text style={{fontSize: 13, color: '#28527A', textDecorationLine: 'underline'}}>Masuk</Text>
+                <TouchableOpacity onPress={()=>{
+                        navigation.navigate('SignIn',{type:''});}}>
+                    <Text style={{fontSize: 13, color: '#28527A', textDecorationLine: 'underline', marginLeft : 5}}>Masuk</Text>
+                </TouchableOpacity>
             </View>
         </View>
     )

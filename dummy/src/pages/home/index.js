@@ -25,54 +25,10 @@ const Home = () => {
     return (
         <ScrollView>
             <View style={styles.pages}>
-                {/* <View style = {styles.header}>
-                    <View style = {styles.welcome}>
-                        <Text style = {{fontSize: 14, color : '#28527A'}}>Welcome back,</Text>
-                        <Text style = {{fontSize: 20,fontWeight: 'bold', color: WARNA_SEKUNDER}}>Andrew Willy</Text>
-                    </View>
-                    <View style = {styles.imgHeader}>
-                        <Image source ={require('../../assets/icons/bell.png')} style = {styles.bell} />
-                        <TouchableOpacity
-                        onPress = {()=>{
-                            navigation.navigate('Profile',{type:''})
-                        }}> 
-                            <Image source = {require('../../assets/icons/profile.png')} />
-                        </TouchableOpacity>
-                    </View>
-                </View> */}
                 <View>
                     <View style = {styles.garis}/>
                 </View>
-                
-                <View style = {styles.conHeader}>
-                    
-                    {/* <TouchableOpacity
-                    onPress={()=>{
-                        navigation.navigate('Home',{type:''});
-                    }}> 
-                            <View style = {styles.optHeader2}>
-                                <Text style = {styles.titleHeader2}>Dashboard</Text>
-                            </View>
-                    </TouchableOpacity>
-                    
-                    <TouchableOpacity
-                    onPress={()=>{
-                        navigation.navigate('Program',{type:''});
-                    }}> 
-                        <View style = {styles.optHeader}>
-                            <Text style = {styles.titleHeader}>Program</Text>
-                        </View>
-                    </TouchableOpacity>
-                    
-                    <TouchableOpacity
-                    onPress={()=>{
-                        navigation.navigate('News',{type:''});
-                    }}>
-                        <View style = {styles.optHeader}>
-                            <Text style = {styles.titleHeader}>News</Text>
-                        </View>
-                    </TouchableOpacity> */}
-                </View>
+                <View style = {styles.conHeader}></View>
                 <View style = {styles.sliderCon}>
                     <SliderBox images = {image}
                         sliderBoxHeight = {162}
@@ -104,10 +60,7 @@ const Home = () => {
                     </View>
                 </View>
                 <View style={styles.containerRow}>
-                <TouchableOpacity
-                    onPress={()=>{
-                        navigation.navigate('BrowseAllRewards',{type:''});
-                    }}>
+                    <TouchableOpacity onPress={()=>{ navigation.navigate('BrowseAllRewards',{type:''});}}>
                         <View style = {[styles.conLeftRight, {flex:1}]}>
                             <View>
                                 <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18}}>Jelajahi</Text>
@@ -115,9 +68,7 @@ const Home = () => {
                                 <Text style = {{color: '#28527A', fontWeight: 'bold', fontSize: 18}}>Hadiah</Text>
                             </View>
                             <View>
-                                {/* <Text>Gambar1</Text> */}
-                                <Image source = {require('../../assets/images/badge.png')}
-                                    style = {{width:60,height:60,marginLeft:20,marginTop:5}} />
+                                <Image source = {require('../../assets/images/badge.png')} style = {{width:60,height:60,marginLeft:20,marginTop:5}} />
                             </View>
                         </View>
                     </TouchableOpacity>
@@ -157,19 +108,6 @@ const Home = () => {
                             navigation={navigation}
                         />
                     </View>
-                   
-                        {/* <View style = {styles.announceLR}>
-                            <TouchableOpacity  onPress={()=>{navigation.navigate('DetailAnnouncement',{type:''});}}>
-                                <View style = {styles.announceLR2}>
-                                    <Text style = {styles.announcement1}>11 May 2021</Text>
-                                    <Text style = {styles.announcement}>Pembukaan Pendaftaran Mobilitas Mahasiswa Internasional – IISMA</Text>
-                                </View>
-                            </TouchableOpacity>
-                            <View style = {styles.announceLR2}>
-                                <Text style = {styles.announcement1}>11 Febuary 2021</Text>
-                                <Text style = {styles.announcement}>Sosialisasi Program Kampus Mengajar Angkatan 1 Tahun 2021</Text>
-                            </View>
-                        </View> */}
                 </View>
                 <View style = {styles.news}>
                     <Text style = {{color: '#28527A', fontSize:25, fontWeight: 'bold', marginLeft:30}}>Informasi</Text>
@@ -178,14 +116,6 @@ const Home = () => {
                             itemList={informationData}
                             navigation={navigation}
                         />
-                        {/* <TouchableOpacity onPress = {()=>{ navigation.navigate('Information',{type:''})}}> 
-                            <View>
-                                <Image source = {require('../../assets/images/info1.png')} />
-                            </View>
-                        </TouchableOpacity>
-                        <View>
-                            <Image source = {require('../../assets/images/info2.png')} />
-                        </View> */}
                     </View>
                 </View>
             </View>

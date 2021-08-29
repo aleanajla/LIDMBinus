@@ -43,7 +43,8 @@ const SignIn = () => {
                 <Text style={[styles.textBold, {paddingTop:31}]}>Kata Sandi</Text>
                 <View style={styles.box}>
                     <TextInput 
-                    style={styles.input} 
+                    style={styles.input}
+                    secureTextEntry = {true}
                     onChangeText={(value) => setTextInputPassword(value)}
                     underlineColorAndroid="transparent"
                     placeholder="Password"/>
